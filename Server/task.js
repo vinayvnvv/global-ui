@@ -13,7 +13,8 @@ var gulpActivity = function(app, http) {
 	               'sass/*',
 	               'sass/base/*',
 	               'sass/utitlities/*',
-	               'sass/test/*'
+	               'sass/test/*',
+	               'sass/grids/*'
 	               ];
 	var css = ['css/*'];
 	var html = [
