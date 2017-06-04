@@ -372,11 +372,42 @@ html, body {
       margin-left: 100%; } }
 
 .button {
-  background-color: #009b9e;
-  color: white;
-  cursor: pointer;
-  padding: 13px 19px;
-  border: 1px solid #00d1b2; }
+  color: rgba(0, 0, 0, 0.95);
+  background-color: #dbdbdb;
+  display: inline-block;
+  min-height: 1em;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
+  margin: 0 .25em 0 0;
+  padding: .78571429em 1.5em .78571429em;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 500;
+  line-height: 1em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  border-radius: .28571429rem;
+  box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34, 36, 38, 0.15) inset;
+  -webkit-transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+  transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+  -webkit-tap-highlight-color: transparent; }
+  .button.no-curve {
+    border-radius: 0px; }
+  .button.outline {
+    background-color: transparent;
+    border: 1px solid #dbdbdb; }
+  .button.outline:hover {
+    background-color: transparent;
+    border: 1px solid #8f8f8f; }
 
 .button:hover {
-  background-color: #009e86; }
+  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #c2c2c2;
+  cursor: pointer; }
+
+.button:active {
+  background-color: #a8a8a8;
+  cursor: pointer;
+  box-shadow: 6px 6px 9px 10px rgba(125, 16, 16, 0) inset, 2px 3px 2px 0px rgba(0, 66, 132, 0.15) inset; }

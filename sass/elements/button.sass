@@ -1,0 +1,56 @@
+//default vars
+$button-color: rgba(0,0,0,.95)
+$button-background-color: $grey-lighter
+
+$button-background-hover-color: darken($button-background-color, 10%)
+$button-hover-color: rgba(0,0,0,.8)
+
+$button-background-active-color: darken($button-background-color, 20%)
+$button-active-color: #babbbc
+
+
+.button
+  color: $button-color
+  background-color: $button-background-color
+  cursor:pointer
+  display: inline-block
+  min-height: 1em
+  outline: 0
+  border: none
+  vertical-align: baseline
+  margin: 0 .25em 0 0
+  padding: .78571429em 1.5em .78571429em
+  text-transform: none
+  text-shadow: none
+  font-weight: 500
+  line-height: 1em
+  font-style: normal
+  text-align: center
+  text-decoration: none
+  border-radius: .28571429rem
+  box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset
+  -webkit-transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease
+  transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease
+  -webkit-tap-highlight-color: transparent
+
+  &.no-curve
+   border-radius: 0px
+
+  &.outline
+   background-color: transparent
+   border: 1px solid $button-background-color
+
+  &.outline:hover
+   background-color: transparent
+   border: 1px solid darken($button-background-color, 30%)	
+
+
+.button:hover
+   background-color: $button-hover-color
+   background-color: $button-background-hover-color
+   cursor: pointer
+
+.button:active
+   background-color: $button-background-active-color
+   cursor: pointer   
+   box-shadow: 6px 6px 9px 10px rgba(125, 16, 16, 0) inset, 2px 3px 2px 0px rgba(0, 66, 132, 0.15) inset

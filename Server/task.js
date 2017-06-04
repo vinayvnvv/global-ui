@@ -13,6 +13,7 @@ var gulpActivity = function(app, http) {
 	               'sass/*',
 	               'sass/base/*',
 	               'sass/utitlities/*',
+	               'sass/elements/*',
 	               'sass/test/*',
 	               'sass/grids/*'
 	               ];
@@ -40,7 +41,7 @@ var gulpActivity = function(app, http) {
 		gulp.task('watch', function(event) {
 			//livereload.listen();
 			gulp.watch(sass_files, ['sass']);
-			gulp.watch(html, ['gulp-autoreload']);
+			//gulp.watch(html, ['gulp-autoreload']);
 		})
 
       
