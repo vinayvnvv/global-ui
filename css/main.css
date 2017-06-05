@@ -377,6 +377,24 @@ html, body {
     .rows > .row.grow-offset-fullhd-12 {
       margin-left: 100%; } }
 
+span.icon {
+  display: inline-block;
+  opacity: 1;
+  margin: 0 .25rem 0 0;
+  width: 1.18em;
+  height: 1em;
+  font-family: Icons;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: inherit;
+  text-align: center;
+  speak: none;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
 .button {
   color: rgba(0, 0, 0, 0.95);
   background-color: #dbdbdb;
@@ -800,3 +818,6 @@ html, body {
       color: #fff; }
     .button.danger.outline-hovered:active {
       background-color: #d1002a; }
+
+.icon.button {
+  padding: .78571429em .78571429em .78571429em; }
