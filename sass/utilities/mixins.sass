@@ -5,10 +5,32 @@
   border-radius:         $radius
 
 
+@keyframes button-spinner
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(359deg)
 
 
+=loading
+    position: absolute
+    content: ''
+    top: 46%
+    left: 48%
+    margin: -.64285714em 0 0 -.64285714em
+    width: 1.28571429em
+    height: 1.28571429em
+    -webkit-animation: button-spinner .6s linear
+    animation: button-spinner .6s linear
+    -webkit-animation-iteration-count: infinite
+    animation-iteration-count: infinite
+    border-radius: 500rem
+    border-color: transparent transparent transparent transparent
+    border-style: solid
+    border-width: .2em
+    box-shadow: 0 0 0 1px transparent
 
-  //responsiveness
+//responsiveness
 
 
 

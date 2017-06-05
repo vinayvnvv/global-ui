@@ -2,21 +2,34 @@
 $button-color: rgba(0,0,0,.95)
 $button-background-color: $grey-lighter
 
-$button-background-hover-color: darken($button-background-color, 10%)
-$button-hover-color: rgba(0,0,0,.8)
+$button-hover-darkness: 10%
+$button-active-darkness: 20%
+$button-outline-hover-border-darkness: 30%
 
-$button-background-active-color: darken($button-background-color, 20%)
-$button-active-color: #babbbc
+$button-focus-darkness: $button-hover-darkness
+
+
+//sizes
+$btn-mini : .78571429rem
+$btn-tiny : .85714286rem
+$btn-small : .92857143rem
+$btn-medium : 1rem
+$btn-large : 1.14285714rem
+$btn-big : 1.28571429rem
+$btn-huge : 1.42857143rem
+
+//mixins
+=btn-active-shadow($color, $darkness)
+  box-shadow: 6px 6px 9px 10px darken($color, $darkness) inset, 2px 3px 2px 0px darken($color, $darkness) inset
 
 
 .button
   color: $button-color
   background-color: $button-background-color
-  cursor:pointer
   display: inline-block
   min-height: 1em
   outline: 0
-  border: none
+  border: 1px solid transparent
   vertical-align: baseline
   margin: 0 .25em 0 0
   padding: .78571429em 1.5em .78571429em
@@ -32,25 +45,112 @@ $button-active-color: #babbbc
   -webkit-transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease
   transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease
   -webkit-tap-highlight-color: transparent
+  cursor: pointer
+  user-select: none
 
   &.no-curve
    border-radius: 0px
 
-  &.outline
+  &.outline,  &.outline-hovered
    background-color: transparent
    border: 1px solid $button-background-color
 
   &.outline:hover
    background-color: transparent
-   border: 1px solid darken($button-background-color, 30%)	
+   border: 1px solid darken($button-background-color, $button-outline-hover-border-darkness)	
+  &.outline:active
+   box-shadow: none
 
+  &.outline-hovered:hover
+     background-color: $button-background-color 
+     border: 1px solid $button-background-color
+  &.outline-hovered:active
+     background-color: darken($button-background-color , $button-active-darkness)
 
-.button:hover
-   background-color: $button-hover-color
-   background-color: $button-background-hover-color
-   cursor: pointer
+  &:hover
+   background-color: darken($button-background-color, $button-hover-darkness)
 
-.button:active
-   background-color: $button-background-active-color
-   cursor: pointer   
-   box-shadow: 6px 6px 9px 10px rgba(125, 16, 16, 0) inset, 2px 3px 2px 0px rgba(0, 66, 132, 0.15) inset
+  &:active
+   background-color: darken($button-background-color, $button-active-darkness)
+   +btn-active-shadow($button-background-color, $button-active-darkness)
+  &:focus
+   background-color: darken($button-background-color, $button-focus-darkness)
+
+  &.loading
+    position: relative
+    color: transparent
+    cursor: default
+    pointer-events: none!important
+    &:after
+      +loading
+      border-color: lighten($button-color, 2%) lighten($button-color, 80%) lighten($button-color, 80%) lighten($button-color, 80%) !important
+  &.disabled
+    cursor: default;
+    opacity: .45!important;
+    background-image: none!important;
+    box-shadow: none!important;
+    pointer-events: none!important;
+    cursor: not-allowed!important;
+
+  &.mini
+    font-size: $btn-mini
+  &.tiny
+    font-size: $btn-tiny
+  &.small
+    font-size: $btn-small
+  &.medium
+    font-size: $btn-medium
+  &.large
+    font-size: $btn-large
+  &.big
+    font-size: $btn-big
+  &.huge
+    font-size: $btn-huge
+
+  @each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}
+      color: $color-invert
+      background-color: $color
+      &:hover
+       background-color: darken($color, $button-hover-darkness)
+      &:active
+       background-color: darken($color, $button-active-darkness)
+       +btn-active-shadow($color, $button-active-darkness)
+      &:focus
+       background-color: darken($color, $button-focus-darkness)
+
+      &.loading
+        color: transparent
+        &:after
+          border-color: lighten($color, 90%) lighten($color, 5%) lighten($color, 5%) lighten($color, 5%) !important
+      &.loading:hover,  &.loading:active  &.loading:focus
+        color: transparent!important
+
+      &.outline, &.outline-hovered
+       background-color: transparent
+       border: 1px solid $color
+       color: $color
+
+       &.loading
+         color: transparent
+         &:after
+          border-color: darken($color, 3%) lighten($color, 30%) lighten($color, 30%) lighten($color, 30%) !important
+
+      &.outline:hover
+         background-color: transparent
+         border: 1px solid darken($color, $button-outline-hover-border-darkness)  
+      &.outline:active
+         box-shadow: none
+         border: 1px solid lighten($color, 10%)
+         color: darken($color, 20%)
+      &.outline-hovered:hover
+         background-color: $color 
+         border: 1px solid $color
+         color: $color-invert
+      &.outline-hovered:active
+       background-color: darken($color, $button-active-darkness)
+
+      
+
