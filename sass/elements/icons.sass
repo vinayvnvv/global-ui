@@ -1,17 +1,26 @@
-span.icon
-	display: inline-block
-	opacity: 1
-	margin: 0 .25rem 0 0
+.icon:not(.button)
+	display: inline-flex
 	width: 1.18em
 	height: 1em
-	font-family: Icons
 	font-style: normal
 	font-weight: 400
 	text-decoration: inherit
 	text-align: center
 	speak: none
-	font-smoothing: antialiased
-	-moz-osx-font-smoothing: grayscale
-	-webkit-font-smoothing: antialiased
-	-webkit-backface-visibility: hidden
-	backface-visibility: hidden
+	align-items: center
+	justify-content: center
+
+.icon:not(.button):first-child:not(:last-child)
+      margin: 0px 0.1875em 0px calc(-0.375em - 1px) 
+
+.icon:not(.button):last-child:not(:first-child)
+      margin: 0px 0.1875em 0px 0.375em
+
+.icon:not(.button):first-child:last-child
+      margin: 0px calc(-0.375em - 1px) 0px calc(-0.375em - 1px)
+
+
+
+
+
+	

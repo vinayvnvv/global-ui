@@ -25,13 +25,14 @@ $btn-huge : 1.42857143rem
 .button
   color: $button-color
   background-color: $button-background-color
-  display: inline-block
+  display: inline-flex
+  align-items: center
+  justify-content: center
   min-height: 1em
   outline: 0
   border: 1px solid transparent
   vertical-align: baseline
-  margin: 0 .25em 0 0
-  padding: .78571429em 1.5em .78571429em
+  padding: 0 1em
   text-transform: none
   text-shadow: none
   font-weight: 500
@@ -46,9 +47,42 @@ $btn-huge : 1.42857143rem
   -webkit-tap-highlight-color: transparent
   cursor: pointer
   user-select: none
+  vertical-align: top
+  &:not(.icon)
+   height: 2.25em
 
   &.no-curve
    border-radius: 0px
+  &.circle
+    border-radius: 10em!important
+  &.label:not(.label-left)
+    padding-right: 0px
+  &.label.label-left
+    padding-left: 0px
+  &.label label
+    height: inherit
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    background: lighten($button-background-color, 15%)
+    padding: 0 1em
+    color: darken($button-background-color, 40%)
+    &.loading
+      color: transparent!important
+      &:after
+       +loading
+       position: relative!important
+       top: 12%
+       left: -25%
+       border-color: lighten($button-color, 2%) lighten($button-color, 80%) lighten($button-color, 80%) lighten($button-color, 80%) !important
+  &.label:not(.label-left) label
+    margin-left: 0.7em
+    border-top-right-radius: inherit
+    border-bottom-right-radius: inherit
+  &.label.label-left label
+    margin-right: 0.7em
+    border-top-left-radius: inherit
+    border-bottom-left-radius: inherit
 
   &.outline,  &.outline-hovered
    background-color: transparent
@@ -66,7 +100,7 @@ $btn-huge : 1.42857143rem
   &.outline-hovered:active
      background-color: darken($button-background-color , $button-active-darkness)
 
-  &:hover
+  &:hover, &.active
    background-color: darken($button-background-color, $button-hover-darkness)
 
   &:active
@@ -83,13 +117,15 @@ $btn-huge : 1.42857143rem
     &:after
       +loading
       border-color: lighten($button-color, 2%) lighten($button-color, 80%) lighten($button-color, 80%) lighten($button-color, 80%) !important
+  &.label.loading:after
+      left: 31%
   &.disabled
-    cursor: default;
-    opacity: .45!important;
-    background-image: none!important;
-    box-shadow: none!important;
-    pointer-events: none!important;
-    cursor: not-allowed!important;
+    cursor: default
+    opacity: .45!important
+    background-image: none!important
+    box-shadow: none!important
+    pointer-events: none!important
+    cursor: not-allowed!important
 
   &.mini
     font-size: $btn-mini
@@ -112,7 +148,7 @@ $btn-huge : 1.42857143rem
     &.#{$name}
       color: $color-invert
       background-color: $color
-      &:hover
+      &:hover, &.active
        background-color: darken($color, $button-hover-darkness)
       &:active
        background-color: darken($color, $button-active-darkness)
@@ -126,6 +162,8 @@ $btn-huge : 1.42857143rem
           border-color: lighten($color, 90%) lighten($color, 5%) lighten($color, 5%) lighten($color, 5%) !important
       &.loading:hover,  &.loading:active  &.loading:focus
         color: transparent!important
+      &.label label.loading:after
+        border-color: darken($color, 10%) lighten($color, 10%) lighten($color, 10%) lighten($color, 10%) !important
 
       &.outline, &.outline-hovered
        background-color: transparent
@@ -149,10 +187,95 @@ $btn-huge : 1.42857143rem
          border: 1px solid $color
          color: $color-invert
       &.outline-hovered:active
-       background-color: darken($color, $button-active-darkness)
+       background-color: darken($color, $button-active-darkness)  
+
+      &.label label
+       background-color: lighten($color, 37%)
+       color: darken($color, 27%) 
 
 //icon button
 
-.icon.button
-  padding: .78571429em .78571429em .78571429em      
+.button.icon
+    display: inline-flex !important
+    height: 2.3em
+
+    & .icon
+      width: 1.68em
+
+
+
+//button grps
+.button-group
+  display: inline-flex
+  &.divider .button:not(.outline-hovered):not(.outline)
+    border-right: 1px solid transparentize(#000000, 0.85)
+    &:last-child
+      border-right: 0px
+  &.grow-items
+    display: flex
+    width: 100%
+    align-items: center
+    align-content: center
+    justify-content: center
+    & .button
+      flex-grow: 1
+
+  & .button
+    margin: 0px
+    &:not(:first-child):not(:last-child)
+      border-radius: 0px!important
+    &:first-child
+      border-top-right-radius: 0px
+      border-bottom-right-radius: 0px
+    &:last-child
+      border-top-left-radius: 0px
+      border-bottom-left-radius: 0px
+    &.outline, &.outline-hovered
+      margin-left: -1px
+
+//or button
+.button-or
+  display: inline-flex
+
+  & .or
+    display: inline-flex
+    position: relative
+    width: 0.2666em
+    &:before
+      position: absolute
+      text-align: center
+      border-radius: 500rem
+      content: 'or'
+      top: 50%
+      left: 50%
+      background-color: #fff
+      text-shadow: none
+      margin-top: -.89285714em
+      margin-left: -.89285714em
+      width: 1.78571429em
+      height: 1.78571429em
+      line-height: 1.78571429em
+      color: rgba(0,0,0,.4)
+      font-style: normal
+      font-weight: 700
+      box-shadow: 0 0 0 1px transparent inset
+    &.square:before
+      border-radius: 0px
+
+
+  & .button
+    margin: 0px
+    &:first-child
+      border-top-right-radius: 0px!important
+      border-bottom-right-radius: 0px!important
+    &:last-child
+      border-top-left-radius: 0px!important
+      border-bottom-left-radius: 0px!important
+
+
+
+
+
+
+          
 

@@ -377,34 +377,38 @@ html, body {
     .rows > .row.grow-offset-fullhd-12 {
       margin-left: 100%; } }
 
-span.icon {
-  display: inline-block;
-  opacity: 1;
-  margin: 0 .25rem 0 0;
+.icon:not(.button) {
+  display: inline-flex;
   width: 1.18em;
   height: 1em;
-  font-family: Icons;
   font-style: normal;
   font-weight: 400;
   text-decoration: inherit;
   text-align: center;
   speak: none;
-  font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden; }
+  align-items: center;
+  justify-content: center; }
+
+.icon:not(.button):first-child:not(:last-child) {
+  margin: 0px 0.1875em 0px calc(-0.375em - 1px); }
+
+.icon:not(.button):last-child:not(:first-child) {
+  margin: 0px 0.1875em 0px 0.375em; }
+
+.icon:not(.button):first-child:last-child {
+  margin: 0px calc(-0.375em - 1px) 0px calc(-0.375em - 1px); }
 
 .button {
   color: rgba(0, 0, 0, 0.95);
   background-color: #dbdbdb;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 1em;
   outline: 0;
   border: 1px solid transparent;
   vertical-align: baseline;
-  margin: 0 .25em 0 0;
-  padding: .78571429em 1.5em .78571429em;
+  padding: 0 1em;
   text-transform: none;
   text-shadow: none;
   font-weight: 500;
@@ -418,9 +422,57 @@ span.icon {
   transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
-  user-select: none; }
+  user-select: none;
+  vertical-align: top; }
+  .button:not(.icon) {
+    height: 2.25em; }
   .button.no-curve {
     border-radius: 0px; }
+  .button.circle {
+    border-radius: 10em !important; }
+  .button.label:not(.label-left) {
+    padding-right: 0px; }
+  .button.label.label-left {
+    padding-left: 0px; }
+  .button.label label {
+    height: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 0 1em;
+    color: #757575; }
+    .button.label label.loading {
+      color: transparent !important; }
+      .button.label label.loading:after {
+        position: absolute;
+        content: '';
+        top: 47%;
+        left: 49%;
+        margin: -.64285714em 0 0 -.64285714em;
+        width: 1em;
+        height: 1em;
+        -webkit-animation: button-spinner .6s linear;
+        animation: button-spinner .6s linear;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        border-radius: 500rem;
+        border-color: transparent transparent transparent transparent;
+        border-style: solid;
+        border-width: .2em;
+        box-shadow: 0 0 0 1px transparent;
+        position: relative !important;
+        top: 12%;
+        left: -25%;
+        border-color: rgba(5, 5, 5, 0.95) rgba(204, 204, 204, 0.95) rgba(204, 204, 204, 0.95) rgba(204, 204, 204, 0.95) !important; }
+  .button.label:not(.label-left) label {
+    margin-left: 0.7em;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit; }
+  .button.label.label-left label {
+    margin-right: 0.7em;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit; }
   .button.outline, .button.outline-hovered {
     background-color: transparent;
     border: 1px solid #dbdbdb; }
@@ -434,7 +486,7 @@ span.icon {
     border: 1px solid #dbdbdb; }
   .button.outline-hovered:active {
     background-color: #a8a8a8; }
-  .button:hover {
+  .button:hover, .button.active {
     background-color: #c2c2c2; }
   .button:active {
     background-color: #a8a8a8;
@@ -449,11 +501,11 @@ span.icon {
     .button.loading:after {
       position: absolute;
       content: '';
-      top: 46%;
-      left: 48%;
+      top: 47%;
+      left: 49%;
       margin: -.64285714em 0 0 -.64285714em;
-      width: 1.28571429em;
-      height: 1.28571429em;
+      width: 1em;
+      height: 1em;
       -webkit-animation: button-spinner .6s linear;
       animation: button-spinner .6s linear;
       -webkit-animation-iteration-count: infinite;
@@ -464,6 +516,8 @@ span.icon {
       border-width: .2em;
       box-shadow: 0 0 0 1px transparent;
       border-color: rgba(5, 5, 5, 0.95) rgba(204, 204, 204, 0.95) rgba(204, 204, 204, 0.95) rgba(204, 204, 204, 0.95) !important; }
+  .button.label.loading:after {
+    left: 31%; }
   .button.disabled {
     cursor: default;
     opacity: 0.45 !important;
@@ -488,7 +542,7 @@ span.icon {
   .button.white {
     color: #0a0a0a;
     background-color: white; }
-    .button.white:hover {
+    .button.white:hover, .button.white.active {
       background-color: #e6e6e6; }
     .button.white:active {
       background-color: #cccccc;
@@ -501,6 +555,8 @@ span.icon {
         border-color: white white white white !important; }
     .button.white.loading:hover, .button.white.loading:active .button.white.loading:focus {
       color: transparent !important; }
+    .button.white.label label.loading:after {
+      border-color: #e6e6e6 white white white !important; }
     .button.white.outline, .button.white.outline-hovered {
       background-color: transparent;
       border: 1px solid white;
@@ -522,10 +578,13 @@ span.icon {
       color: #0a0a0a; }
     .button.white.outline-hovered:active {
       background-color: #cccccc; }
+    .button.white.label label {
+      background-color: white;
+      color: #bababa; }
   .button.black {
     color: white;
     background-color: #0a0a0a; }
-    .button.black:hover {
+    .button.black:hover, .button.black.active {
       background-color: black; }
     .button.black:active {
       background-color: black;
@@ -538,6 +597,8 @@ span.icon {
         border-color: #f0f0f0 #171717 #171717 #171717 !important; }
     .button.black.loading:hover, .button.black.loading:active .button.black.loading:focus {
       color: transparent !important; }
+    .button.black.label label.loading:after {
+      border-color: black #242424 #242424 #242424 !important; }
     .button.black.outline, .button.black.outline-hovered {
       background-color: transparent;
       border: 1px solid #0a0a0a;
@@ -559,10 +620,13 @@ span.icon {
       color: white; }
     .button.black.outline-hovered:active {
       background-color: black; }
+    .button.black.label label {
+      background-color: dimgray;
+      color: black; }
   .button.light {
     color: #363636;
     background-color: whitesmoke; }
-    .button.light:hover {
+    .button.light:hover, .button.light.active {
       background-color: #dbdbdb; }
     .button.light:active {
       background-color: #c2c2c2;
@@ -575,6 +639,8 @@ span.icon {
         border-color: white white white white !important; }
     .button.light.loading:hover, .button.light.loading:active .button.light.loading:focus {
       color: transparent !important; }
+    .button.light.label label.loading:after {
+      border-color: #dbdbdb white white white !important; }
     .button.light.outline, .button.light.outline-hovered {
       background-color: transparent;
       border: 1px solid whitesmoke;
@@ -596,10 +662,13 @@ span.icon {
       color: #363636; }
     .button.light.outline-hovered:active {
       background-color: #c2c2c2; }
+    .button.light.label label {
+      background-color: white;
+      color: #b0b0b0; }
   .button.dark {
     color: whitesmoke;
     background-color: #363636; }
-    .button.dark:hover {
+    .button.dark:hover, .button.dark.active {
       background-color: #1c1c1c; }
     .button.dark:active {
       background-color: #030303;
@@ -612,6 +681,8 @@ span.icon {
         border-color: white #424242 #424242 #424242 !important; }
     .button.dark.loading:hover, .button.dark.loading:active .button.dark.loading:focus {
       color: transparent !important; }
+    .button.dark.label label.loading:after {
+      border-color: #1c1c1c #4f4f4f #4f4f4f #4f4f4f !important; }
     .button.dark.outline, .button.dark.outline-hovered {
       background-color: transparent;
       border: 1px solid #363636;
@@ -633,10 +704,13 @@ span.icon {
       color: whitesmoke; }
     .button.dark.outline-hovered:active {
       background-color: #030303; }
+    .button.dark.label label {
+      background-color: #949494;
+      color: black; }
   .button.primary {
     color: #fff;
     background-color: #00d1b2; }
-    .button.primary:hover {
+    .button.primary:hover, .button.primary.active {
       background-color: #009e86; }
     .button.primary:active {
       background-color: #006b5b;
@@ -649,6 +723,8 @@ span.icon {
         border-color: white #00ebc7 #00ebc7 #00ebc7 !important; }
     .button.primary.loading:hover, .button.primary.loading:active .button.primary.loading:focus {
       color: transparent !important; }
+    .button.primary.label label.loading:after {
+      border-color: #009e86 #05ffda #05ffda #05ffda !important; }
     .button.primary.outline, .button.primary.outline-hovered {
       background-color: transparent;
       border: 1px solid #00d1b2;
@@ -670,10 +746,13 @@ span.icon {
       color: #fff; }
     .button.primary.outline-hovered:active {
       background-color: #006b5b; }
+    .button.primary.label label {
+      background-color: #8fffee;
+      color: #00473d; }
   .button.info {
     color: #fff;
     background-color: #3273dc; }
-    .button.info:hover {
+    .button.info:hover, .button.info.active {
       background-color: #205bbc; }
     .button.info:active {
       background-color: #184690;
@@ -686,6 +765,8 @@ span.icon {
         border-color: white #4882e0 #4882e0 #4882e0 !important; }
     .button.info.loading:hover, .button.info.loading:active .button.info.loading:focus {
       color: transparent !important; }
+    .button.info.label label.loading:after {
+      border-color: #205bbc #5e91e4 #5e91e4 #5e91e4 !important; }
     .button.info.outline, .button.info.outline-hovered {
       background-color: transparent;
       border: 1px solid #3273dc;
@@ -707,10 +788,13 @@ span.icon {
       color: #fff; }
     .button.info.outline-hovered:active {
       background-color: #184690; }
+    .button.info.label label {
+      background-color: #d3e1f8;
+      color: #133771; }
   .button.success {
     color: #fff;
     background-color: #23d160; }
-    .button.success:hover {
+    .button.success:hover, .button.success.active {
       background-color: #1ca64c; }
     .button.success:active {
       background-color: #157a38;
@@ -723,6 +807,8 @@ span.icon {
         border-color: white #32dc6e #32dc6e #32dc6e !important; }
     .button.success.loading:hover, .button.success.loading:active .button.success.loading:focus {
       color: transparent !important; }
+    .button.success.label label.loading:after {
+      border-color: #1ca64c #48e07d #48e07d #48e07d !important; }
     .button.success.outline, .button.success.outline-hovered {
       background-color: transparent;
       border: 1px solid #23d160;
@@ -744,10 +830,13 @@ span.icon {
       color: #fff; }
     .button.success.outline-hovered:active {
       background-color: #157a38; }
+    .button.success.label label {
+      background-color: #bef4d1;
+      color: #105c2a; }
   .button.warning {
     color: rgba(0, 0, 0, 0.7);
     background-color: #ffdd57; }
-    .button.warning:hover {
+    .button.warning:hover, .button.warning.active {
       background-color: #ffd324; }
     .button.warning:active {
       background-color: #f0c000;
@@ -760,6 +849,8 @@ span.icon {
         border-color: white #ffe270 #ffe270 #ffe270 !important; }
     .button.warning.loading:hover, .button.warning.loading:active .button.warning.loading:focus {
       color: transparent !important; }
+    .button.warning.label label.loading:after {
+      border-color: #ffd324 #ffe88a #ffe88a #ffe88a !important; }
     .button.warning.outline, .button.warning.outline-hovered {
       background-color: transparent;
       border: 1px solid #ffdd57;
@@ -781,10 +872,13 @@ span.icon {
       color: rgba(0, 0, 0, 0.7); }
     .button.warning.outline-hovered:active {
       background-color: #f0c000; }
+    .button.warning.label label {
+      background-color: white;
+      color: #cca300; }
   .button.danger {
     color: #fff;
     background-color: #ff3860; }
-    .button.danger:hover {
+    .button.danger:hover, .button.danger.active {
       background-color: #ff0537; }
     .button.danger:active {
       background-color: #d1002a;
@@ -797,6 +891,8 @@ span.icon {
         border-color: white #ff5274 #ff5274 #ff5274 !important; }
     .button.danger.loading:hover, .button.danger.loading:active .button.danger.loading:focus {
       color: transparent !important; }
+    .button.danger.label label.loading:after {
+      border-color: #ff0537 #ff6b89 #ff6b89 #ff6b89 !important; }
     .button.danger.outline, .button.danger.outline-hovered {
       background-color: transparent;
       border: 1px solid #ff3860;
@@ -818,6 +914,74 @@ span.icon {
       color: #fff; }
     .button.danger.outline-hovered:active {
       background-color: #d1002a; }
+    .button.danger.label label {
+      background-color: #fff5f7;
+      color: #ad0023; }
 
-.icon.button {
-  padding: .78571429em .78571429em .78571429em; }
+.button.icon {
+  display: inline-flex !important;
+  height: 2.3em; }
+  .button.icon .icon {
+    width: 1.68em; }
+
+.button-group {
+  display: inline-flex; }
+  .button-group.divider .button:not(.outline-hovered):not(.outline) {
+    border-right: 1px solid rgba(0, 0, 0, 0.15); }
+    .button-group.divider .button:not(.outline-hovered):not(.outline):last-child {
+      border-right: 0px; }
+  .button-group.grow-items {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content: center; }
+    .button-group.grow-items .button {
+      flex-grow: 1; }
+  .button-group .button {
+    margin: 0px; }
+    .button-group .button:not(:first-child):not(:last-child) {
+      border-radius: 0px !important; }
+    .button-group .button:first-child {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px; }
+    .button-group .button:last-child {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px; }
+    .button-group .button.outline, .button-group .button.outline-hovered {
+      margin-left: -1px; }
+
+.button-or {
+  display: inline-flex; }
+  .button-or .or {
+    display: inline-flex;
+    position: relative;
+    width: 0.2666em; }
+    .button-or .or:before {
+      position: absolute;
+      text-align: center;
+      border-radius: 500rem;
+      content: 'or';
+      top: 50%;
+      left: 50%;
+      background-color: #fff;
+      text-shadow: none;
+      margin-top: -.89285714em;
+      margin-left: -.89285714em;
+      width: 1.78571429em;
+      height: 1.78571429em;
+      line-height: 1.78571429em;
+      color: rgba(0, 0, 0, 0.4);
+      font-style: normal;
+      font-weight: 700;
+      box-shadow: 0 0 0 1px transparent inset; }
+    .button-or .or.square:before {
+      border-radius: 0px; }
+  .button-or .button {
+    margin: 0px; }
+    .button-or .button:first-child {
+      border-top-right-radius: 0px !important;
+      border-bottom-right-radius: 0px !important; }
+    .button-or .button:last-child {
+      border-top-left-radius: 0px !important;
+      border-bottom-left-radius: 0px !important; }
