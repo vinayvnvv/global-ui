@@ -1963,22 +1963,30 @@ html, body {
     line-height: 1.21428571em;
     padding: .67857143em 1em;
     background: #fff;
-    border: 1px solid rgba(34, 36, 38, 0.15);
+    border: 1px solid #dedede;
     color: rgba(0, 0, 0, 0.87);
     border-radius: .28571429rem;
-    -webkit-transition: box-shadow .1s ease,border-color .1s ease;
-    transition: box-shadow .1s ease,border-color .1s ease;
+    transition: .1s all ease;
     box-shadow: none; }
     .input input:not(:first-child) {
       padding-left: 2.7em; }
     .input input:first-child {
       padding-right: 2.7em; }
+    .input input:hover {
+      border-color: #c5c5c5; }
+    .input input:focus {
+      border-color: #929292; }
   .input .icon {
     position: absolute;
     margin: 0 !important;
     width: 2.67142857em;
-    height: 100%; }
+    height: 100%;
+    color: #dedede; }
     .input .icon:first-child {
       left: 0; }
     .input .icon:last-child {
       right: 0; }
+  .input:hover .icon {
+    color: #c5c5c5; }
+  .input input:focus .icon {
+    color: #929292; }

@@ -1,3 +1,8 @@
+//vars 
+$input-text-color: rgba(0,0,0,.87)
+$input-border-color: #dedede
+$input-background-color: #fff
+
 .input
   position: relative
   font-style: normal
@@ -11,23 +16,32 @@
       text-align: left
       line-height: 1.21428571em
       padding: .67857143em 1em
-      background: #fff
-      border: 1px solid rgba(34,36,38,.15)
-      color: rgba(0,0,0,.87)
+      background: $input-background-color
+      border: 1px solid $input-border-color
+      color: $input-text-color
       border-radius: .28571429rem
-      -webkit-transition: box-shadow .1s ease,border-color .1s ease
-      transition: box-shadow .1s ease,border-color .1s ease
+      transition: .1s all ease
       box-shadow: none
       &:not(:first-child)
       	padding-left: 2.7em
       &:first-child
       	padding-right: 2.7em
+      &:hover
+      	border-color: darken($input-border-color, 10%)
+      &:focus
+      	border-color: darken($input-border-color, 30%)
   & .icon
    	  position: absolute
    	  margin: 0!important
    	  width: 2.67142857em
    	  height: 100%
+   	  color: $input-border-color
    	  &:first-child
    	  	left: 0
    	  &:last-child
    	  	right: 0
+  &:hover
+  	& .icon
+  		color: darken($input-border-color, 10%)
+  & input:focus .icon
+  		color: darken($input-border-color, 30%)
