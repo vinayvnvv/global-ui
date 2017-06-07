@@ -1,0 +1,50 @@
+//headers
+$h-size-1 : 2rem
+$h-size-2 : 1.71428571rem
+$h-size-3 : 1.28571429rem
+$h-size-4 : 1.07142857rem
+$h-size-5 : 0.800rem
+//light&strong-headers
+$h-light : 400
+$h-extra-light: 300
+//sub headers
+$s-h-size-offset: 0.2566
+$s-h-light-offset: 100
+
+.header
+	font-weight: 700
+	padding: 0
+	&.h1
+		font-size: $h-size-1
+	&.h2
+		font-size: $h-size-2
+	&.h3
+		font-size: $h-size-3
+	&.h4
+		font-size: $h-size-4
+	&.h5
+		font-size: $h-size-5
+	&.light
+		font-weight: $h-light
+	&.extra-light
+		font-weight: $h-extra-light
+.sub-header
+	font-size: 1.7rem
+	font-weight: 600
+	&.light
+		font-weight: $h-light
+	&.extra-light
+		font-weight: $h-extra-light
+	@for $i from 2 through 5
+ 		&.size-#{$i} 
+ 	  		font-size: 1.7rem -  $i * $s-h-size-offset
+
+
+
+.caption
+  font-size: 12px
+  letter-spacing: 0.02em
+  &.strong
+    	font-weight: 600
+  &.light
+    	font-weight: 300

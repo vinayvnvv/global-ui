@@ -12,6 +12,29 @@ $danger: $red !default
 $light: $white-ter !default
 $dark: $grey-darker !default
 
+
+// fixed - colors -theme
+$red: #F44336
+$pink: #E91E63
+$purple: #9C27B0
+$deep-purple: #673AB7
+$indigo: #3F51B5
+$blue: #2196F3
+$light-blue: #03A9F4
+$teal: #009688
+$cyan: #00BCD4
+$green: #4CAF50
+$light-green: #8BC34A
+$lime: #CDDC39
+$yellow: #FFEB3B
+$amber: #FFC107
+$orange: #FF9800
+$deep-orange: #FF5722
+$brown: #795548
+$grey: #9E9E9E
+$blue-grey: #607D8B
+$black: #000000
+$white: #ffffff
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
 // 3. Applied variables
@@ -35,4 +58,5 @@ $dark-invert: $light !default
 
 
 //arrays 
-$colors: ("white": ($white, $black), "black": ($black, $white), "light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert), "info": ($info, $info-invert), "success": ($success, $success-invert), "warning": ($warning, $warning-invert), "danger": ($danger, $danger-invert)) !default
+$colors: ("light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert), "info": ($info, $info-invert), "success": ($success, $success-invert), "warning": ($warning, $warning-invert), "danger": ($danger, $danger-invert), "red": ($red, findColorInvert($red)), "pink": ($pink, findColorInvert($pink)), "purple": ($purple, findColorInvert($purple)), "deep-purple": ($deep-purple, findColorInvert($deep-purple)), "indigo": ($indigo, findColorInvert($indigo)), "blue": ($blue, findColorInvert($blue)), "light-blue
+": ($light-blue, findColorInvert($light-blue)), "cyan": ($cyan, findColorInvert($cyan)), "teal": ($teal, findColorInvert($teal)), "green": ($green, findColorInvert($green)), "light-green": ($light-green, findColorInvert($light-green)), "lime": ($lime, findColorInvert($lime)), "yellow": ($yellow, findColorInvert($yellow)), "amber": ($amber, findColorInvert($amber)), "orange": ($orange, findColorInvert($orange)), "deep-orange": ($deep-orange, findColorInvert($deep-orange)), "brown": ($brown, findColorInvert($brown)), "grey": ($grey, findColorInvert($grey)), "blue-grey": ($blue-grey, findColorInvert($blue-grey)), "black": ($black, findColorInvert($black)), "white": ($white, findColorInvert($white))) !default

@@ -8,7 +8,9 @@ $button-outline-hover-border-darkness: 30%
 
 $button-focus-darkness: $button-hover-darkness
 
-
+//btn height
+$btn-height :  2.25em
+$btn-width: 3.25em
 //sizes
 $btn-mini : .78571429rem
 $btn-tiny : .85714286rem
@@ -17,6 +19,8 @@ $btn-medium : 1rem
 $btn-large : 1.14285714rem
 $btn-big : 1.28571429rem
 $btn-huge : 1.42857143rem
+
+
 
 //mixins
 =btn-active-shadow($color, $darkness)
@@ -49,7 +53,7 @@ $btn-huge : 1.42857143rem
   user-select: none
   vertical-align: top
   &:not(.icon)
-   height: 2.25em
+   height: $btn-height
 
   &.square
    border-radius: 0px
@@ -101,8 +105,10 @@ $btn-huge : 1.42857143rem
   &.outline-hovered:hover
      background-color: $button-background-color 
      border: 1px solid $button-background-color
+     border-color: transparent
   &.outline-hovered:active
      background-color: darken($button-background-color , $button-active-darkness)
+     border-color: transparent
 
   &:hover, &.active
    background-color: darken($button-background-color, $button-hover-darkness)
@@ -146,6 +152,16 @@ $btn-huge : 1.42857143rem
   &.huge
     font-size: $btn-huge
 
+  @for $i from 1 through 10
+    &.grow-x-#{$i}
+      width: $btn-width + $i
+    &.grow-y-#{$i}
+      height: $btn-height + $i
+
+  @for $i from 0 through 10
+    &.border-#{$i}
+      border-width: $i!important
+
   @each $name, $pair in $colors
     $color: nth($pair, 1)
     $color-invert: nth($pair, 2)
@@ -172,7 +188,10 @@ $btn-huge : 1.42857143rem
       &.outline, &.outline-hovered
        background-color: transparent
        border: 1px solid $color
-       color: $color
+       @if $color == white
+        color: $color-invert
+       @else
+        color: darken($color, 10%)
 
        &.loading
          color: transparent
@@ -190,8 +209,10 @@ $btn-huge : 1.42857143rem
          background-color: $color 
          border: 1px solid $color
          color: $color-invert
+         border-color: transparent
       &.outline-hovered:active
        background-color: darken($color, $button-active-darkness)  
+       border-color: transparent
 
       &.label label
        background-color: lighten($color, 37%)
