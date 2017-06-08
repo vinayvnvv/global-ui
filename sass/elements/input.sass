@@ -1,7 +1,16 @@
 //vars 
-$input-text-color: rgba(0,0,0,.87)
+$input-text-color: #666
 $input-border-color: #dedede
 $input-background-color: #fff
+
+//sizes
+$input-mini : .78571429rem
+$input-tiny : .85714286rem
+$input-small : .92857143rem
+$input-medium : 1rem
+$input-large : 1.14285714rem
+$input-big : 1.28571429rem
+$input-huge : 1.42857143rem
 
 .input
   position: relative
@@ -20,28 +29,48 @@ $input-background-color: #fff
       border: 1px solid $input-border-color
       color: $input-text-color
       border-radius: .28571429rem
-      transition: .1s all ease
+      transition: .2s all
       box-shadow: none
-      &:not(:first-child)
-      	padding-left: 2.7em
-      &:first-child
-      	padding-right: 2.7em
+      font-size: 0.8em
       &:hover
       	border-color: darken($input-border-color, 10%)
+      	color: darken($input-text-color, 30%)
+      	& + .icon
+      		color: darken($input-border-color, 40%)
       &:focus
       	border-color: darken($input-border-color, 30%)
+      	color: darken($input-text-color, 60%)
+      	& + .icon
+      		color: darken($input-border-color, 70%)
+
+  &.icon-left
+  	& input
+  		padding-left: 2.7em
+  	& .icon
+  		left: 0
+  &.icon-right
+  	& input
+  		padding-right: 2.7em
+  	& .icon
+  		right: 0
   & .icon
    	  position: absolute
    	  margin: 0!important
    	  width: 2.67142857em
    	  height: 100%
-   	  color: $input-border-color
-   	  &:first-child
-   	  	left: 0
-   	  &:last-child
-   	  	right: 0
-  &:hover
-  	& .icon
-  		color: darken($input-border-color, 10%)
-  & input:focus .icon
-  		color: darken($input-border-color, 30%)
+      color: darken($input-border-color, 20%)
+
+  &.mini
+    font-size: $input-mini
+  &.tiny
+    font-size: $input-tiny
+  &.small
+    font-size: $input-small
+  &.medium
+    font-size: $input-medium
+  &.large
+    font-size: $input-large
+  &.big
+    font-size: $input-big
+  &.huge
+    font-size: $input-huge

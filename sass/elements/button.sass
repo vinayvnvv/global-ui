@@ -46,15 +46,20 @@ $btn-huge : 1.42857143rem
   text-decoration: none
   border-radius: .28571429rem
   box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset
-  -webkit-transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease
-  transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease
+  transition: .1s all
   -webkit-tap-highlight-color: transparent
   cursor: pointer
   user-select: none
   vertical-align: top
   &:not(.icon)
    height: $btn-height
-
+  &.gradient
+    background-image: linear-gradient(180deg, $button-background-color 0%, lighten($button-background-color, 7%) 90%)
+    &:hover
+      background-image: linear-gradient(180deg, lighten($button-background-color, 3%) 0%, lighten($button-background-color, 10%) 90%)
+    &:active
+      box-shadow: none;
+      background-image: linear-gradient(180deg, lighten($button-background-color, 10%) 0%, lighten($button-background-color, 3%) 90%)
   &.square
    border-radius: 0px
   &.circle
@@ -168,6 +173,13 @@ $btn-huge : 1.42857143rem
     &.#{$name}
       color: $color-invert
       background-color: $color
+      &.gradient
+        background-image: linear-gradient(180deg, $color 0%, lighten($color, 9%) 90%)
+        &:hover
+          background-image: linear-gradient(180deg, lighten($color, 3%) 0%, lighten($color, 12%) 90%)
+        &:active
+          box-shadow: none;
+          background-image: linear-gradient(180deg, lighten($color, 12%) 0%, lighten($color, 3%) 90%)
       &:hover, &.active
        background-color: darken($color, $button-hover-darkness)
       &:active

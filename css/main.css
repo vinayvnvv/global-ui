@@ -460,14 +460,20 @@ html, body {
   text-decoration: none;
   border-radius: .28571429rem;
   box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34, 36, 38, 0.15) inset;
-  -webkit-transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
-  transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
+  transition: .1s all;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   user-select: none;
   vertical-align: top; }
   .button:not(.icon) {
     height: 2.25em; }
+  .button.gradient {
+    background-image: linear-gradient(180deg, #dbdbdb 0%, #ededed 90%); }
+    .button.gradient:hover {
+      background-image: linear-gradient(180deg, #e3e3e3 0%, whitesmoke 90%); }
+    .button.gradient:active {
+      box-shadow: none;
+      background-image: linear-gradient(180deg, whitesmoke 0%, #e3e3e3 90%); }
   .button.square {
     border-radius: 0px; }
   .button.circle {
@@ -652,6 +658,13 @@ html, body {
   .button.light {
     color: #363636;
     background-color: whitesmoke; }
+    .button.light.gradient {
+      background-image: linear-gradient(180deg, whitesmoke 0%, white 90%); }
+      .button.light.gradient:hover {
+        background-image: linear-gradient(180deg, #fcfcfc 0%, white 90%); }
+      .button.light.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, white 0%, #fcfcfc 90%); }
     .button.light:hover, .button.light.active {
       background-color: #dbdbdb; }
     .button.light:active {
@@ -696,6 +709,13 @@ html, body {
   .button.dark {
     color: whitesmoke;
     background-color: #363636; }
+    .button.dark.gradient {
+      background-image: linear-gradient(180deg, #363636 0%, #4d4d4d 90%); }
+      .button.dark.gradient:hover {
+        background-image: linear-gradient(180deg, #3d3d3d 0%, #545454 90%); }
+      .button.dark.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #545454 0%, #3d3d3d 90%); }
     .button.dark:hover, .button.dark.active {
       background-color: #1c1c1c; }
     .button.dark:active {
@@ -740,6 +760,13 @@ html, body {
   .button.primary {
     color: #fff;
     background-color: #00d1b2; }
+    .button.primary.gradient {
+      background-image: linear-gradient(180deg, #00d1b2 0%, #00ffd9 90%); }
+      .button.primary.gradient:hover {
+        background-image: linear-gradient(180deg, #00e0bf 0%, #0fffdb 90%); }
+      .button.primary.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #0fffdb 0%, #00e0bf 90%); }
     .button.primary:hover, .button.primary.active {
       background-color: #009e86; }
     .button.primary:active {
@@ -784,6 +811,13 @@ html, body {
   .button.info {
     color: #fff;
     background-color: #3273dc; }
+    .button.info.gradient {
+      background-image: linear-gradient(180deg, #3273dc 0%, #598ee3 90%); }
+      .button.info.gradient:hover {
+        background-image: linear-gradient(180deg, #3f7cde 0%, #6697e5 90%); }
+      .button.info.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #6697e5 0%, #3f7cde 90%); }
     .button.info:hover, .button.info.active {
       background-color: #205bbc; }
     .button.info:active {
@@ -828,6 +862,13 @@ html, body {
   .button.success {
     color: #fff;
     background-color: #23d160; }
+    .button.success.gradient {
+      background-image: linear-gradient(180deg, #23d160 0%, #43df7a 90%); }
+      .button.success.gradient:hover {
+        background-image: linear-gradient(180deg, #29db67 0%, #51e183 90%); }
+      .button.success.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #51e183 0%, #29db67 90%); }
     .button.success:hover, .button.success.active {
       background-color: #1ca64c; }
     .button.success:active {
@@ -872,6 +913,13 @@ html, body {
   .button.warning {
     color: rgba(0, 0, 0, 0.7);
     background-color: #ffdd57; }
+    .button.warning.gradient {
+      background-image: linear-gradient(180deg, #ffdd57 0%, #ffe785 90%); }
+      .button.warning.gradient:hover {
+        background-image: linear-gradient(180deg, #ffe066 0%, #ffea94 90%); }
+      .button.warning.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #ffea94 0%, #ffe066 90%); }
     .button.warning:hover, .button.warning.active {
       background-color: #ffd324; }
     .button.warning:active {
@@ -916,6 +964,13 @@ html, body {
   .button.danger {
     color: #fff;
     background-color: #ff3860; }
+    .button.danger.gradient {
+      background-image: linear-gradient(180deg, #ff3860 0%, #ff6685 90%); }
+      .button.danger.gradient:hover {
+        background-image: linear-gradient(180deg, #ff476c 0%, #ff7591 90%); }
+      .button.danger.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #ff7591 0%, #ff476c 90%); }
     .button.danger:hover, .button.danger.active {
       background-color: #ff0537; }
     .button.danger:active {
@@ -960,6 +1015,13 @@ html, body {
   .button.red {
     color: #fff;
     background-color: #F44336; }
+    .button.red.gradient {
+      background-image: linear-gradient(180deg, #F44336 0%, #f66c62 90%); }
+      .button.red.gradient:hover {
+        background-image: linear-gradient(180deg, #f55145 0%, #f77970 90%); }
+      .button.red.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #f77970 0%, #f55145 90%); }
     .button.red:hover, .button.red.active {
       background-color: #ea1c0d; }
     .button.red:active {
@@ -1004,6 +1066,13 @@ html, body {
   .button.pink {
     color: #fff;
     background-color: #E91E63; }
+    .button.pink.gradient {
+      background-image: linear-gradient(180deg, #E91E63 0%, #ed4880 90%); }
+      .button.pink.gradient:hover {
+        background-image: linear-gradient(180deg, #ea2c6d 0%, #ee568a 90%); }
+      .button.pink.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #ee568a 0%, #ea2c6d 90%); }
     .button.pink:hover, .button.pink.active {
       background-color: #c1134e; }
     .button.pink:active {
@@ -1048,6 +1117,13 @@ html, body {
   .button.purple {
     color: #fff;
     background-color: #9C27B0; }
+    .button.purple.gradient {
+      background-image: linear-gradient(180deg, #9C27B0 0%, #bb33d2 90%); }
+      .button.purple.gradient:hover {
+        background-image: linear-gradient(180deg, #a72abd 0%, #bf40d5 90%); }
+      .button.purple.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #bf40d5 0%, #a72abd 90%); }
     .button.purple:hover, .button.purple.active {
       background-color: #771e86; }
     .button.purple:active {
@@ -1092,6 +1168,13 @@ html, body {
   .button.deep-purple {
     color: #fff;
     background-color: #673AB7; }
+    .button.deep-purple.gradient {
+      background-image: linear-gradient(180deg, #673AB7 0%, #7f56c9 90%); }
+      .button.deep-purple.gradient:hover {
+        background-image: linear-gradient(180deg, #6e3ec2 0%, #8861cd 90%); }
+      .button.deep-purple.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #8861cd 0%, #6e3ec2 90%); }
     .button.deep-purple:hover, .button.deep-purple.active {
       background-color: #512e90; }
     .button.deep-purple:active {
@@ -1136,6 +1219,13 @@ html, body {
   .button.indigo {
     color: #fff;
     background-color: #3F51B5; }
+    .button.indigo.gradient {
+      background-image: linear-gradient(180deg, #3F51B5 0%, #5c6cc6 90%); }
+      .button.indigo.gradient:hover {
+        background-image: linear-gradient(180deg, #4558be 0%, #6776ca 90%); }
+      .button.indigo.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #6776ca 0%, #4558be 90%); }
     .button.indigo:hover, .button.indigo.active {
       background-color: #32408f; }
     .button.indigo:active {
@@ -1180,6 +1270,13 @@ html, body {
   .button.blue {
     color: #fff;
     background-color: #2196F3; }
+    .button.blue.gradient {
+      background-image: linear-gradient(180deg, #2196F3 0%, #4dabf5 90%); }
+      .button.blue.gradient:hover {
+        background-image: linear-gradient(180deg, #309df4 0%, #5bb1f6 90%); }
+      .button.blue.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #5bb1f6 0%, #309df4 90%); }
     .button.blue:hover, .button.blue.active {
       background-color: #0c7cd5; }
     .button.blue:active {
@@ -1224,6 +1321,13 @@ html, body {
   .button.light-blue {
     color: #fff;
     background-color: #03A9F4; }
+    .button.light-blue.gradient {
+      background-image: linear-gradient(180deg, #03A9F4 0%, #29bafc 90%); }
+      .button.light-blue.gradient:hover {
+        background-image: linear-gradient(180deg, #0ab1fc 0%, #38bffd 90%); }
+      .button.light-blue.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #38bffd 0%, #0ab1fc 90%); }
     .button.light-blue:hover, .button.light-blue.active {
       background-color: #0286c2; }
     .button.light-blue:active {
@@ -1268,6 +1372,13 @@ html, body {
   .button.cyan {
     color: #fff;
     background-color: #00BCD4; }
+    .button.cyan.gradient {
+      background-image: linear-gradient(180deg, #00BCD4 0%, #03e2ff 90%); }
+      .button.cyan.gradient:hover {
+        background-image: linear-gradient(180deg, #00cae3 0%, #12e4ff 90%); }
+      .button.cyan.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #12e4ff 0%, #00cae3 90%); }
     .button.cyan:hover, .button.cyan.active {
       background-color: #008fa1; }
     .button.cyan:active {
@@ -1312,6 +1423,13 @@ html, body {
   .button.teal {
     color: #fff;
     background-color: #009688; }
+    .button.teal.gradient {
+      background-image: linear-gradient(180deg, #009688 0%, #00c4b2 90%); }
+      .button.teal.gradient:hover {
+        background-image: linear-gradient(180deg, #00a596 0%, #00d3bf 90%); }
+      .button.teal.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #00d3bf 0%, #00a596 90%); }
     .button.teal:hover, .button.teal.active {
       background-color: #00635a; }
     .button.teal:active {
@@ -1356,6 +1474,13 @@ html, body {
   .button.green {
     color: #fff;
     background-color: #4CAF50; }
+    .button.green.gradient {
+      background-image: linear-gradient(180deg, #4CAF50 0%, #6abe6e 90%); }
+      .button.green.gradient:hover {
+        background-image: linear-gradient(180deg, #55b559 0%, #75c378 90%); }
+      .button.green.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #75c378 0%, #55b559 90%); }
     .button.green:hover, .button.green.active {
       background-color: #3d8b40; }
     .button.green:active {
@@ -1400,6 +1525,13 @@ html, body {
   .button.light-green {
     color: #fff;
     background-color: #8BC34A; }
+    .button.light-green.gradient {
+      background-image: linear-gradient(180deg, #8BC34A 0%, #a1ce6c 90%); }
+      .button.light-green.gradient:hover {
+        background-image: linear-gradient(180deg, #92c755 0%, #a8d278 90%); }
+      .button.light-green.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #a8d278 0%, #92c755 90%); }
     .button.light-green:hover, .button.light-green.active {
       background-color: #71a436; }
     .button.light-green:active {
@@ -1444,6 +1576,13 @@ html, body {
   .button.lime {
     color: rgba(0, 0, 0, 0.7);
     background-color: #CDDC39; }
+    .button.lime.gradient {
+      background-image: linear-gradient(180deg, #CDDC39 0%, #d7e360 90%); }
+      .button.lime.gradient:hover {
+        background-image: linear-gradient(180deg, #d0de46 0%, #dae56d 90%); }
+      .button.lime.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #dae56d 0%, #d0de46 90%); }
     .button.lime:hover, .button.lime.active {
       background-color: #b2c022; }
     .button.lime:active {
@@ -1488,6 +1627,13 @@ html, body {
   .button.yellow {
     color: rgba(0, 0, 0, 0.7);
     background-color: #FFEB3B; }
+    .button.yellow.gradient {
+      background-image: linear-gradient(180deg, #FFEB3B 0%, #fff069 90%); }
+      .button.yellow.gradient:hover {
+        background-image: linear-gradient(180deg, #ffed4a 0%, #fff178 90%); }
+      .button.yellow.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #fff178 0%, #ffed4a 90%); }
     .button.yellow:hover, .button.yellow.active {
       background-color: #ffe608; }
     .button.yellow:active {
@@ -1532,6 +1678,13 @@ html, body {
   .button.amber {
     color: rgba(0, 0, 0, 0.7);
     background-color: #FFC107; }
+    .button.amber.gradient {
+      background-image: linear-gradient(180deg, #FFC107 0%, #ffcc35 90%); }
+      .button.amber.gradient:hover {
+        background-image: linear-gradient(180deg, #ffc516 0%, #ffd044 90%); }
+      .button.amber.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #ffd044 0%, #ffc516 90%); }
     .button.amber:hover, .button.amber.active {
       background-color: #d39e00; }
     .button.amber:active {
@@ -1576,6 +1729,13 @@ html, body {
   .button.orange {
     color: #fff;
     background-color: #FF9800; }
+    .button.orange.gradient {
+      background-image: linear-gradient(180deg, #FF9800 0%, #ffab2e 90%); }
+      .button.orange.gradient:hover {
+        background-image: linear-gradient(180deg, #ff9e0f 0%, #ffb13d 90%); }
+      .button.orange.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #ffb13d 0%, #ff9e0f 90%); }
     .button.orange:hover, .button.orange.active {
       background-color: #cc7a00; }
     .button.orange:active {
@@ -1620,6 +1780,13 @@ html, body {
   .button.deep-orange {
     color: #fff;
     background-color: #FF5722; }
+    .button.deep-orange.gradient {
+      background-image: linear-gradient(180deg, #FF5722 0%, #ff7a50 90%); }
+      .button.deep-orange.gradient:hover {
+        background-image: linear-gradient(180deg, #ff6331 0%, #ff865f 90%); }
+      .button.deep-orange.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #ff865f 0%, #ff6331 90%); }
     .button.deep-orange:hover, .button.deep-orange.active {
       background-color: #ee3900; }
     .button.deep-orange:active {
@@ -1664,6 +1831,13 @@ html, body {
   .button.brown {
     color: #fff;
     background-color: #795548; }
+    .button.brown.gradient {
+      background-image: linear-gradient(180deg, #795548 0%, #966959 90%); }
+      .button.brown.gradient:hover {
+        background-image: linear-gradient(180deg, #835c4e 0%, #9f705f 90%); }
+      .button.brown.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #9f705f 0%, #835c4e 90%); }
     .button.brown:hover, .button.brown.active {
       background-color: #593f35; }
     .button.brown:active {
@@ -1708,6 +1882,13 @@ html, body {
   .button.grey {
     color: #fff;
     background-color: #9E9E9E; }
+    .button.grey.gradient {
+      background-image: linear-gradient(180deg, #9E9E9E 0%, #b5b5b5 90%); }
+      .button.grey.gradient:hover {
+        background-image: linear-gradient(180deg, #a6a6a6 0%, #bdbdbd 90%); }
+      .button.grey.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #bdbdbd 0%, #a6a6a6 90%); }
     .button.grey:hover, .button.grey.active {
       background-color: #858585; }
     .button.grey:active {
@@ -1752,6 +1933,13 @@ html, body {
   .button.blue-grey {
     color: #fff;
     background-color: #607D8B; }
+    .button.blue-grey.gradient {
+      background-image: linear-gradient(180deg, #607D8B 0%, #7794a1 90%); }
+      .button.blue-grey.gradient:hover {
+        background-image: linear-gradient(180deg, #668594 0%, #819ba8 90%); }
+      .button.blue-grey.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #819ba8 0%, #668594 90%); }
     .button.blue-grey:hover, .button.blue-grey.active {
       background-color: #4b626d; }
     .button.blue-grey:active {
@@ -1796,6 +1984,13 @@ html, body {
   .button.black {
     color: #fff;
     background-color: #000000; }
+    .button.black.gradient {
+      background-image: linear-gradient(180deg, #000000 0%, #171717 90%); }
+      .button.black.gradient:hover {
+        background-image: linear-gradient(180deg, #080808 0%, #1f1f1f 90%); }
+      .button.black.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, #1f1f1f 0%, #080808 90%); }
     .button.black:hover, .button.black.active {
       background-color: black; }
     .button.black:active {
@@ -1840,6 +2035,13 @@ html, body {
   .button.white {
     color: rgba(0, 0, 0, 0.7);
     background-color: #ffffff; }
+    .button.white.gradient {
+      background-image: linear-gradient(180deg, #ffffff 0%, white 90%); }
+      .button.white.gradient:hover {
+        background-image: linear-gradient(180deg, white 0%, white 90%); }
+      .button.white.gradient:active {
+        box-shadow: none;
+        background-image: linear-gradient(180deg, white 0%, white 90%); }
     .button.white:hover, .button.white.active {
       background-color: #e6e6e6; }
     .button.white:active {
@@ -1964,29 +2166,46 @@ html, body {
     padding: .67857143em 1em;
     background: #fff;
     border: 1px solid #dedede;
-    color: rgba(0, 0, 0, 0.87);
+    color: #666;
     border-radius: .28571429rem;
-    transition: .1s all ease;
-    box-shadow: none; }
-    .input input:not(:first-child) {
-      padding-left: 2.7em; }
-    .input input:first-child {
-      padding-right: 2.7em; }
+    transition: .2s all;
+    box-shadow: none;
+    font-size: 0.8em; }
     .input input:hover {
-      border-color: #c5c5c5; }
+      border-color: #c5c5c5;
+      color: #1a1a1a; }
+      .input input:hover + .icon {
+        color: #787878; }
     .input input:focus {
-      border-color: #929292; }
+      border-color: #929292;
+      color: black; }
+      .input input:focus + .icon {
+        color: #2c2c2c; }
+  .input.icon-left input {
+    padding-left: 2.7em; }
+  .input.icon-left .icon {
+    left: 0; }
+  .input.icon-right input {
+    padding-right: 2.7em; }
+  .input.icon-right .icon {
+    right: 0; }
   .input .icon {
     position: absolute;
     margin: 0 !important;
     width: 2.67142857em;
     height: 100%;
-    color: #dedede; }
-    .input .icon:first-child {
-      left: 0; }
-    .input .icon:last-child {
-      right: 0; }
-  .input:hover .icon {
-    color: #c5c5c5; }
-  .input input:focus .icon {
-    color: #929292; }
+    color: #ababab; }
+  .input.mini {
+    font-size: 0.78571rem; }
+  .input.tiny {
+    font-size: 0.85714rem; }
+  .input.small {
+    font-size: 0.92857rem; }
+  .input.medium {
+    font-size: 1rem; }
+  .input.large {
+    font-size: 1.14286rem; }
+  .input.big {
+    font-size: 1.28571rem; }
+  .input.huge {
+    font-size: 1.42857rem; }
