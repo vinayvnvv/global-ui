@@ -32,25 +32,26 @@ $input-huge : 1.42857143rem
       transition: .2s all
       box-shadow: none
       font-size: 0.8em
+      vertical-align: top
       &:hover
       	border-color: darken($input-border-color, 10%)
       	color: darken($input-text-color, 30%)
-      	& + .icon
+      	& ~ .icon
       		color: darken($input-border-color, 40%)
       &:focus
       	border-color: darken($input-border-color, 30%)
       	color: darken($input-text-color, 60%)
-      	& + .icon
+      	& ~ .icon
       		color: darken($input-border-color, 70%)
 
   &.icon-left
   	& input
-  		padding-left: 2.7em
-  	& .icon
+  		padding-left: 2.7em!important
+  	& .icon:not(.right)
   		left: 0
   &.icon-right
   	& input
-  		padding-right: 2.7em
+  		padding-right: 2.7em!important
   	& .icon
   		right: 0
   & .icon
@@ -59,7 +60,14 @@ $input-huge : 1.42857143rem
    	  width: 2.67142857em
    	  height: 100%
       color: darken($input-border-color, 20%)
-
+  &.loading .icon
+    &:before
+      +loading
+      border-color: lighten($input-text-color, 10%) lighten($input-text-color, 50%) lighten($input-text-color, 50%) lighten($input-text-color, 50%) !important
+      width: 0.8em
+      height: 0.8em
+      left: 50%
+      top: 50%
   &.mini
     font-size: $input-mini
   &.tiny
@@ -74,3 +82,50 @@ $input-huge : 1.42857143rem
     font-size: $input-big
   &.huge
     font-size: $input-huge
+
+
+
+
+  //colors
+  @each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name} 
+      & input
+        color: darken($color, 20%)
+        border-color: $color
+        &:hover
+          border-color: darken($color, 10%)
+          color: darken($color, 30%)
+          & ~ .icon
+            color: darken($color, 10%)
+        &:focus
+          border-color: darken($color, 15%)
+          color: darken($color, 20%)
+          & ~ .icon
+            color: darken($color, 20%)
+      & .icon 
+        color: lighten($color, 9%)
+      &.md
+        & input
+          background: $input-background-color no-repeat
+          background-image: linear-gradient(to bottom, darken($color, 10%),   darken($color, 10%)), linear-gradient(to bottom, lighten($color, 5%), lighten($color, 5%))
+          background-size: 0 2px, 100% 1px
+          background-position: 50% 100%, 50% 100%
+
+
+  //material
+  &.md
+    & input
+      border: transparent
+      background: $input-background-color no-repeat
+      background-image: linear-gradient(to bottom, darken($input-border-color, 50%),   darken($input-border-color, 50%)), linear-gradient(to bottom, $input-border-color, $input-border-color)
+      background-size: 0 2px, 100% 1px
+      background-position: 50% 100%, 50% 100%
+      transition: background-size 0.3s cubic-bezier(0, 0.97, 0.56, 1.16)
+      padding-right: 0.5em
+      padding-left: 0.5em
+      &:focus
+        background-size: 100% 2px, 100% 1px;
+        outline: none;
+

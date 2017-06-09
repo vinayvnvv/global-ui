@@ -2170,23 +2170,24 @@ html, body {
     border-radius: .28571429rem;
     transition: .2s all;
     box-shadow: none;
-    font-size: 0.8em; }
+    font-size: 0.8em;
+    vertical-align: top; }
     .input input:hover {
       border-color: #c5c5c5;
       color: #1a1a1a; }
-      .input input:hover + .icon {
+      .input input:hover ~ .icon {
         color: #787878; }
     .input input:focus {
       border-color: #929292;
       color: black; }
-      .input input:focus + .icon {
+      .input input:focus ~ .icon {
         color: #2c2c2c; }
   .input.icon-left input {
-    padding-left: 2.7em; }
-  .input.icon-left .icon {
+    padding-left: 2.7em !important; }
+  .input.icon-left .icon:not(.right) {
     left: 0; }
   .input.icon-right input {
-    padding-right: 2.7em; }
+    padding-right: 2.7em !important; }
   .input.icon-right .icon {
     right: 0; }
   .input .icon {
@@ -2195,6 +2196,28 @@ html, body {
     width: 2.67142857em;
     height: 100%;
     color: #ababab; }
+  .input.loading .icon:before {
+    position: absolute;
+    content: '';
+    top: 47%;
+    left: 49%;
+    margin: -.64285714em 0 0 -.64285714em;
+    width: 1em;
+    height: 1em;
+    -webkit-animation: button-spinner .6s linear;
+    animation: button-spinner .6s linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    border-radius: 500rem;
+    border-color: transparent transparent transparent transparent;
+    border-style: solid;
+    border-width: .2em;
+    box-shadow: 0 0 0 1px transparent;
+    border-color: gray #e6e6e6 #e6e6e6 #e6e6e6 !important;
+    width: 0.8em;
+    height: 0.8em;
+    left: 50%;
+    top: 50%; }
   .input.mini {
     font-size: 0.78571rem; }
   .input.tiny {
@@ -2209,3 +2232,575 @@ html, body {
     font-size: 1.28571rem; }
   .input.huge {
     font-size: 1.42857rem; }
+  .input.light input {
+    color: #c2c2c2;
+    border-color: whitesmoke; }
+    .input.light input:hover {
+      border-color: #dbdbdb;
+      color: #a8a8a8; }
+      .input.light input:hover ~ .icon {
+        color: #dbdbdb; }
+    .input.light input:focus {
+      border-color: #cfcfcf;
+      color: #c2c2c2; }
+      .input.light input:focus ~ .icon {
+        color: #c2c2c2; }
+  .input.light .icon {
+    color: white; }
+  .input.light.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #dbdbdb, #dbdbdb), linear-gradient(to bottom, white, white);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.dark input {
+    color: #030303;
+    border-color: #363636; }
+    .input.dark input:hover {
+      border-color: #1c1c1c;
+      color: black; }
+      .input.dark input:hover ~ .icon {
+        color: #1c1c1c; }
+    .input.dark input:focus {
+      border-color: #0f0f0f;
+      color: #030303; }
+      .input.dark input:focus ~ .icon {
+        color: #030303; }
+  .input.dark .icon {
+    color: #4d4d4d; }
+  .input.dark.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #1c1c1c, #1c1c1c), linear-gradient(to bottom, #424242, #424242);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.primary input {
+    color: #006b5b;
+    border-color: #00d1b2; }
+    .input.primary input:hover {
+      border-color: #009e86;
+      color: #003830; }
+      .input.primary input:hover ~ .icon {
+        color: #009e86; }
+    .input.primary input:focus {
+      border-color: #008571;
+      color: #006b5b; }
+      .input.primary input:focus ~ .icon {
+        color: #006b5b; }
+  .input.primary .icon {
+    color: #00ffd9; }
+  .input.primary.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #009e86, #009e86), linear-gradient(to bottom, #00ebc7, #00ebc7);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.info input {
+    color: #184690;
+    border-color: #3273dc; }
+    .input.info input:hover {
+      border-color: #205bbc;
+      color: #113164; }
+      .input.info input:hover ~ .icon {
+        color: #205bbc; }
+    .input.info input:focus {
+      border-color: #1c51a6;
+      color: #184690; }
+      .input.info input:focus ~ .icon {
+        color: #184690; }
+  .input.info .icon {
+    color: #598ee3; }
+  .input.info.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #205bbc, #205bbc), linear-gradient(to bottom, #4882e0, #4882e0);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.success input {
+    color: #157a38;
+    border-color: #23d160; }
+    .input.success input:hover {
+      border-color: #1ca64c;
+      color: #0d4e24; }
+      .input.success input:hover ~ .icon {
+        color: #1ca64c; }
+    .input.success input:focus {
+      border-color: #189042;
+      color: #157a38; }
+      .input.success input:focus ~ .icon {
+        color: #157a38; }
+  .input.success .icon {
+    color: #43df7a; }
+  .input.success.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #1ca64c, #1ca64c), linear-gradient(to bottom, #32dc6e, #32dc6e);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.warning input {
+    color: #f0c000;
+    border-color: #ffdd57; }
+    .input.warning input:hover {
+      border-color: #ffd324;
+      color: #bd9700; }
+      .input.warning input:hover ~ .icon {
+        color: #ffd324; }
+    .input.warning input:focus {
+      border-color: #ffce0a;
+      color: #f0c000; }
+      .input.warning input:focus ~ .icon {
+        color: #f0c000; }
+  .input.warning .icon {
+    color: #ffe785; }
+  .input.warning.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #ffd324, #ffd324), linear-gradient(to bottom, #ffe270, #ffe270);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.danger input {
+    color: #d1002a;
+    border-color: #ff3860; }
+    .input.danger input:hover {
+      border-color: #ff0537;
+      color: #9e0020; }
+      .input.danger input:hover ~ .icon {
+        color: #ff0537; }
+    .input.danger input:focus {
+      border-color: #eb002f;
+      color: #d1002a; }
+      .input.danger input:focus ~ .icon {
+        color: #d1002a; }
+  .input.danger .icon {
+    color: #ff6685; }
+  .input.danger.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #ff0537, #ff0537), linear-gradient(to bottom, #ff5274, #ff5274);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.red input {
+    color: #ba160a;
+    border-color: #F44336; }
+    .input.red input:hover {
+      border-color: #ea1c0d;
+      color: #891008; }
+      .input.red input:hover ~ .icon {
+        color: #ea1c0d; }
+    .input.red input:focus {
+      border-color: #d2190b;
+      color: #ba160a; }
+      .input.red input:focus ~ .icon {
+        color: #ba160a; }
+  .input.red .icon {
+    color: #f66c62; }
+  .input.red.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #ea1c0d, #ea1c0d), linear-gradient(to bottom, #f55a4e, #f55a4e);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.pink input {
+    color: #930e3b;
+    border-color: #E91E63; }
+    .input.pink input:hover {
+      border-color: #c1134e;
+      color: #640a29; }
+      .input.pink input:hover ~ .icon {
+        color: #c1134e; }
+    .input.pink input:focus {
+      border-color: #aa1145;
+      color: #930e3b; }
+      .input.pink input:focus ~ .icon {
+        color: #930e3b; }
+  .input.pink .icon {
+    color: #ed4880; }
+  .input.pink.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #c1134e, #c1134e), linear-gradient(to bottom, #eb3573, #eb3573);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.purple input {
+    color: #52145d;
+    border-color: #9C27B0; }
+    .input.purple input:hover {
+      border-color: #771e86;
+      color: #2d0b33; }
+      .input.purple input:hover ~ .icon {
+        color: #771e86; }
+    .input.purple input:focus {
+      border-color: #641971;
+      color: #52145d; }
+      .input.purple input:focus ~ .icon {
+        color: #52145d; }
+  .input.purple .icon {
+    color: #bb33d2; }
+  .input.purple.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #771e86, #771e86), linear-gradient(to bottom, #af2cc5, #af2cc5);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.deep-purple input {
+    color: #3b216a;
+    border-color: #673AB7; }
+    .input.deep-purple input:hover {
+      border-color: #512e90;
+      color: #261543; }
+      .input.deep-purple input:hover ~ .icon {
+        color: #512e90; }
+    .input.deep-purple input:focus {
+      border-color: #46287d;
+      color: #3b216a; }
+      .input.deep-purple input:focus ~ .icon {
+        color: #3b216a; }
+  .input.deep-purple .icon {
+    color: #7f56c9; }
+  .input.deep-purple.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #512e90, #512e90), linear-gradient(to bottom, #7446c4, #7446c4);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.indigo input {
+    color: #252f69;
+    border-color: #3F51B5; }
+    .input.indigo input:hover {
+      border-color: #32408f;
+      color: #171e44; }
+      .input.indigo input:hover ~ .icon {
+        color: #32408f; }
+    .input.indigo input:focus {
+      border-color: #2b387c;
+      color: #252f69; }
+      .input.indigo input:focus ~ .icon {
+        color: #252f69; }
+  .input.indigo .icon {
+    color: #5c6cc6; }
+  .input.indigo.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #32408f, #32408f), linear-gradient(to bottom, #4d5ec1, #4d5ec1);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.blue input {
+    color: #0960a5;
+    border-color: #2196F3; }
+    .input.blue input:hover {
+      border-color: #0c7cd5;
+      color: #064475; }
+      .input.blue input:hover ~ .icon {
+        color: #0c7cd5; }
+    .input.blue input:focus {
+      border-color: #0a6ebd;
+      color: #0960a5; }
+      .input.blue input:focus ~ .icon {
+        color: #0960a5; }
+  .input.blue .icon {
+    color: #4dabf5; }
+  .input.blue.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #0c7cd5, #0c7cd5), linear-gradient(to bottom, #39a1f4, #39a1f4);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.light-blue input {
+    color: #02638f;
+    border-color: #03A9F4; }
+    .input.light-blue input:hover {
+      border-color: #0286c2;
+      color: #01405d; }
+      .input.light-blue input:hover ~ .icon {
+        color: #0286c2; }
+    .input.light-blue input:focus {
+      border-color: #0275a8;
+      color: #02638f; }
+      .input.light-blue input:focus ~ .icon {
+        color: #02638f; }
+  .input.light-blue .icon {
+    color: #29bafc; }
+  .input.light-blue.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #0286c2, #0286c2), linear-gradient(to bottom, #14b4fc, #14b4fc);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.cyan input {
+    color: #00626e;
+    border-color: #00BCD4; }
+    .input.cyan input:hover {
+      border-color: #008fa1;
+      color: #00343b; }
+      .input.cyan input:hover ~ .icon {
+        color: #008fa1; }
+    .input.cyan input:focus {
+      border-color: #007888;
+      color: #00626e; }
+      .input.cyan input:focus ~ .icon {
+        color: #00626e; }
+  .input.cyan .icon {
+    color: #03e2ff; }
+  .input.cyan.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #008fa1, #008fa1), linear-gradient(to bottom, #00d3ee, #00d3ee);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.teal input {
+    color: #00302c;
+    border-color: #009688; }
+    .input.teal input:hover {
+      border-color: #00635a;
+      color: black; }
+      .input.teal input:hover ~ .icon {
+        color: #00635a; }
+    .input.teal input:focus {
+      border-color: #004a43;
+      color: #00302c; }
+      .input.teal input:focus ~ .icon {
+        color: #00302c; }
+  .input.teal .icon {
+    color: #00c4b2; }
+  .input.teal.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #00635a, #00635a), linear-gradient(to bottom, #00b09f, #00b09f);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.green input {
+    color: #2d682f;
+    border-color: #4CAF50; }
+    .input.green input:hover {
+      border-color: #3d8b40;
+      color: #1e441f; }
+      .input.green input:hover ~ .icon {
+        color: #3d8b40; }
+    .input.green input:focus {
+      border-color: #357a38;
+      color: #2d682f; }
+      .input.green input:focus ~ .icon {
+        color: #2d682f; }
+  .input.green .icon {
+    color: #6abe6e; }
+  .input.green.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #3d8b40, #3d8b40), linear-gradient(to bottom, #5cb860, #5cb860);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.light-green input {
+    color: #577d2a;
+    border-color: #8BC34A; }
+    .input.light-green input:hover {
+      border-color: #71a436;
+      color: #3c571d; }
+      .input.light-green input:hover ~ .icon {
+        color: #71a436; }
+    .input.light-green input:focus {
+      border-color: #649130;
+      color: #577d2a; }
+      .input.light-green input:focus ~ .icon {
+        color: #577d2a; }
+  .input.light-green .icon {
+    color: #a1ce6c; }
+  .input.light-green.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #71a436, #71a436), linear-gradient(to bottom, #97c95d, #97c95d);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.lime input {
+    color: #89951a;
+    border-color: #CDDC39; }
+    .input.lime input:hover {
+      border-color: #b2c022;
+      color: #616913; }
+      .input.lime input:hover ~ .icon {
+        color: #b2c022; }
+    .input.lime input:focus {
+      border-color: #9daa1e;
+      color: #89951a; }
+      .input.lime input:focus ~ .icon {
+        color: #89951a; }
+  .input.lime .icon {
+    color: #d7e360; }
+  .input.lime.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #b2c022, #b2c022), linear-gradient(to bottom, #d2e04f, #d2e04f);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.yellow input {
+    color: #d4be00;
+    border-color: #FFEB3B; }
+    .input.yellow input:hover {
+      border-color: #ffe608;
+      color: #a19100; }
+      .input.yellow input:hover ~ .icon {
+        color: #ffe608; }
+    .input.yellow input:focus {
+      border-color: #eed500;
+      color: #d4be00; }
+      .input.yellow input:focus ~ .icon {
+        color: #d4be00; }
+  .input.yellow .icon {
+    color: #fff069; }
+  .input.yellow.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #ffe608, #ffe608), linear-gradient(to bottom, #ffee55, #ffee55);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.amber input {
+    color: #a07800;
+    border-color: #FFC107; }
+    .input.amber input:hover {
+      border-color: #d39e00;
+      color: #6d5200; }
+      .input.amber input:hover ~ .icon {
+        color: #d39e00; }
+    .input.amber input:focus {
+      border-color: #ba8b00;
+      color: #a07800; }
+      .input.amber input:focus ~ .icon {
+        color: #a07800; }
+  .input.amber .icon {
+    color: #ffcc35; }
+  .input.amber.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #d39e00, #d39e00), linear-gradient(to bottom, #ffc721, #ffc721);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.orange input {
+    color: #995b00;
+    border-color: #FF9800; }
+    .input.orange input:hover {
+      border-color: #cc7a00;
+      color: #663d00; }
+      .input.orange input:hover ~ .icon {
+        color: #cc7a00; }
+    .input.orange input:focus {
+      border-color: #b36a00;
+      color: #995b00; }
+      .input.orange input:focus ~ .icon {
+        color: #995b00; }
+  .input.orange .icon {
+    color: #ffab2e; }
+  .input.orange.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #cc7a00, #cc7a00), linear-gradient(to bottom, #ffa21a, #ffa21a);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.deep-orange input {
+    color: #bb2d00;
+    border-color: #FF5722; }
+    .input.deep-orange input:hover {
+      border-color: #ee3900;
+      color: #882100; }
+      .input.deep-orange input:hover ~ .icon {
+        color: #ee3900; }
+    .input.deep-orange input:focus {
+      border-color: #d53300;
+      color: #bb2d00; }
+      .input.deep-orange input:focus ~ .icon {
+        color: #bb2d00; }
+  .input.deep-orange .icon {
+    color: #ff7a50; }
+  .input.deep-orange.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #ee3900, #ee3900), linear-gradient(to bottom, #ff6a3c, #ff6a3c);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.brown input {
+    color: #392822;
+    border-color: #795548; }
+    .input.brown input:hover {
+      border-color: #593f35;
+      color: #19120f; }
+      .input.brown input:hover ~ .icon {
+        color: #593f35; }
+    .input.brown input:focus {
+      border-color: #49332b;
+      color: #392822; }
+      .input.brown input:focus ~ .icon {
+        color: #392822; }
+  .input.brown .icon {
+    color: #966959; }
+  .input.brown.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #593f35, #593f35), linear-gradient(to bottom, #896052, #896052);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.grey input {
+    color: #6b6b6b;
+    border-color: #9E9E9E; }
+    .input.grey input:hover {
+      border-color: #858585;
+      color: #525252; }
+      .input.grey input:hover ~ .icon {
+        color: #858585; }
+    .input.grey input:focus {
+      border-color: #787878;
+      color: #6b6b6b; }
+      .input.grey input:focus ~ .icon {
+        color: #6b6b6b; }
+  .input.grey .icon {
+    color: #b5b5b5; }
+  .input.grey.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #858585, #858585), linear-gradient(to bottom, #ababab, #ababab);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.blue-grey input {
+    color: #36474f;
+    border-color: #607D8B; }
+    .input.blue-grey input:hover {
+      border-color: #4b626d;
+      color: #212c31; }
+      .input.blue-grey input:hover ~ .icon {
+        color: #4b626d; }
+    .input.blue-grey input:focus {
+      border-color: #41545e;
+      color: #36474f; }
+      .input.blue-grey input:focus ~ .icon {
+        color: #36474f; }
+  .input.blue-grey .icon {
+    color: #7794a1; }
+  .input.blue-grey.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #4b626d, #4b626d), linear-gradient(to bottom, #6b8a99, #6b8a99);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.black input {
+    color: black;
+    border-color: #000000; }
+    .input.black input:hover {
+      border-color: black;
+      color: black; }
+      .input.black input:hover ~ .icon {
+        color: black; }
+    .input.black input:focus {
+      border-color: black;
+      color: black; }
+      .input.black input:focus ~ .icon {
+        color: black; }
+  .input.black .icon {
+    color: #171717; }
+  .input.black.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, black, black), linear-gradient(to bottom, #0d0d0d, #0d0d0d);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.white input {
+    color: #cccccc;
+    border-color: #ffffff; }
+    .input.white input:hover {
+      border-color: #e6e6e6;
+      color: #b3b3b3; }
+      .input.white input:hover ~ .icon {
+        color: #e6e6e6; }
+    .input.white input:focus {
+      border-color: #d9d9d9;
+      color: #cccccc; }
+      .input.white input:focus ~ .icon {
+        color: #cccccc; }
+  .input.white .icon {
+    color: white; }
+  .input.white.md input {
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #e6e6e6, #e6e6e6), linear-gradient(to bottom, white, white);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%; }
+  .input.md input {
+    border: transparent;
+    background: #fff no-repeat;
+    background-image: linear-gradient(to bottom, #5f5f5f, #5f5f5f), linear-gradient(to bottom, #dedede, #dedede);
+    background-size: 0 2px, 100% 1px;
+    background-position: 50% 100%, 50% 100%;
+    transition: background-size 0.3s cubic-bezier(0, 0.97, 0.56, 1.16);
+    padding-right: 0.5em;
+    padding-left: 0.5em; }
+    .input.md input:focus {
+      background-size: 100% 2px, 100% 1px;
+      outline: none; }
