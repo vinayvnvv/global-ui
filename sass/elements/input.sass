@@ -1,6 +1,6 @@
 //vars 
 $input-text-color: #666
-$input-border-color: #dedede
+$input-border-color: #e4e3e3
 $input-background-color: #fff
 
 //sizes
@@ -29,9 +29,9 @@ $input-huge : 1.42857143rem
       border: 1px solid $input-border-color
       color: $input-text-color
       border-radius: .28571429rem
-      transition: .2s all
+      transition: .1s ease all
       box-shadow: none
-      font-size: 0.8em
+      font-size: 0.8333em
       vertical-align: top
       &:hover
       	border-color: darken($input-border-color, 10%)
@@ -43,6 +43,12 @@ $input-huge : 1.42857143rem
       	color: darken($input-text-color, 60%)
       	& ~ .icon
       		color: darken($input-border-color, 70%)
+  &.square
+    & input
+      border-radius: 0px
+  &.circle
+    & input
+      border-radius: 50em
 
   &.icon-left
   	& input
@@ -93,17 +99,17 @@ $input-huge : 1.42857143rem
     &.#{$name} 
       & input
         color: darken($color, 20%)
-        border-color: $color
+        border-color: lighten($color, 10%)
         &:hover
-          border-color: darken($color, 10%)
+          border-color: darken($color, 7%)
           color: darken($color, 30%)
           & ~ .icon
-            color: darken($color, 10%)
+            color: darken($color, 5%)
         &:focus
-          border-color: darken($color, 15%)
+          border-color: darken($color, 12%)
           color: darken($color, 20%)
           & ~ .icon
-            color: darken($color, 20%)
+            color: darken($color, 15%)
       & .icon 
         color: lighten($color, 9%)
       &.md

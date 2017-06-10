@@ -2165,23 +2165,27 @@ html, body {
     line-height: 1.21428571em;
     padding: .67857143em 1em;
     background: #fff;
-    border: 1px solid #dedede;
+    border: 1px solid #e4e3e3;
     color: #666;
     border-radius: .28571429rem;
-    transition: .2s all;
+    transition: .1s ease all;
     box-shadow: none;
-    font-size: 0.8em;
+    font-size: 0.8333em;
     vertical-align: top; }
     .input input:hover {
-      border-color: #c5c5c5;
+      border-color: #cbc9c9;
       color: #1a1a1a; }
       .input input:hover ~ .icon {
-        color: #787878; }
+        color: #807b7b; }
     .input input:focus {
-      border-color: #929292;
+      border-color: #999595;
       color: black; }
       .input input:focus ~ .icon {
-        color: #2c2c2c; }
+        color: #323030; }
+  .input.square input {
+    border-radius: 0px; }
+  .input.circle input {
+    border-radius: 50em; }
   .input.icon-left input {
     padding-left: 2.7em !important; }
   .input.icon-left .icon:not(.right) {
@@ -2195,7 +2199,7 @@ html, body {
     margin: 0 !important;
     width: 2.67142857em;
     height: 100%;
-    color: #ababab; }
+    color: #b2afaf; }
   .input.loading .icon:before {
     position: absolute;
     content: '';
@@ -2234,17 +2238,17 @@ html, body {
     font-size: 1.42857rem; }
   .input.light input {
     color: #c2c2c2;
-    border-color: whitesmoke; }
+    border-color: white; }
     .input.light input:hover {
-      border-color: #dbdbdb;
+      border-color: #e3e3e3;
       color: #a8a8a8; }
       .input.light input:hover ~ .icon {
-        color: #dbdbdb; }
+        color: #e8e8e8; }
     .input.light input:focus {
-      border-color: #cfcfcf;
+      border-color: #d6d6d6;
       color: #c2c2c2; }
       .input.light input:focus ~ .icon {
-        color: #c2c2c2; }
+        color: #cfcfcf; }
   .input.light .icon {
     color: white; }
   .input.light.md input {
@@ -2254,17 +2258,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.dark input {
     color: #030303;
-    border-color: #363636; }
+    border-color: #4f4f4f; }
     .input.dark input:hover {
-      border-color: #1c1c1c;
+      border-color: #242424;
       color: black; }
       .input.dark input:hover ~ .icon {
-        color: #1c1c1c; }
+        color: #292929; }
     .input.dark input:focus {
-      border-color: #0f0f0f;
+      border-color: #171717;
       color: #030303; }
       .input.dark input:focus ~ .icon {
-        color: #030303; }
+        color: #0f0f0f; }
   .input.dark .icon {
     color: #4d4d4d; }
   .input.dark.md input {
@@ -2274,17 +2278,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.primary input {
     color: #006b5b;
-    border-color: #00d1b2; }
+    border-color: #05ffda; }
     .input.primary input:hover {
-      border-color: #009e86;
+      border-color: #00ad93;
       color: #003830; }
       .input.primary input:hover ~ .icon {
-        color: #009e86; }
+        color: #00b89c; }
     .input.primary input:focus {
-      border-color: #008571;
+      border-color: #00947e;
       color: #006b5b; }
       .input.primary input:focus ~ .icon {
-        color: #006b5b; }
+        color: #008571; }
   .input.primary .icon {
     color: #00ffd9; }
   .input.primary.md input {
@@ -2294,17 +2298,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.info input {
     color: #184690;
-    border-color: #3273dc; }
+    border-color: #5e91e4; }
     .input.info input:hover {
-      border-color: #205bbc;
+      border-color: #2262c9;
       color: #113164; }
       .input.info input:hover ~ .icon {
-        color: #205bbc; }
+        color: #2366d1; }
     .input.info input:focus {
-      border-color: #1c51a6;
+      border-color: #1e57b3;
       color: #184690; }
       .input.info input:focus ~ .icon {
-        color: #184690; }
+        color: #1c51a6; }
   .input.info .icon {
     color: #598ee3; }
   .input.info.md input {
@@ -2314,17 +2318,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.success input {
     color: #157a38;
-    border-color: #23d160; }
+    border-color: #48e07d; }
     .input.success input:hover {
-      border-color: #1ca64c;
+      border-color: #1eb352;
       color: #0d4e24; }
       .input.success input:hover ~ .icon {
-        color: #1ca64c; }
+        color: #20bc56; }
     .input.success input:focus {
-      border-color: #189042;
+      border-color: #1b9d48;
       color: #157a38; }
       .input.success input:focus ~ .icon {
-        color: #157a38; }
+        color: #189042; }
   .input.success .icon {
     color: #43df7a; }
   .input.success.md input {
@@ -2334,17 +2338,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.warning input {
     color: #f0c000;
-    border-color: #ffdd57; }
+    border-color: #ffe88a; }
     .input.warning input:hover {
-      border-color: #ffd324;
+      border-color: #ffd633;
       color: #bd9700; }
       .input.warning input:hover ~ .icon {
-        color: #ffd324; }
+        color: #ffd83d; }
     .input.warning input:focus {
-      border-color: #ffce0a;
+      border-color: #ffd11a;
       color: #f0c000; }
       .input.warning input:focus ~ .icon {
-        color: #f0c000; }
+        color: #ffce0a; }
   .input.warning .icon {
     color: #ffe785; }
   .input.warning.md input {
@@ -2354,17 +2358,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.danger input {
     color: #d1002a;
-    border-color: #ff3860; }
+    border-color: #ff6b89; }
     .input.danger input:hover {
-      border-color: #ff0537;
+      border-color: #ff1443;
       color: #9e0020; }
       .input.danger input:hover ~ .icon {
-        color: #ff0537; }
+        color: #ff1f4b; }
     .input.danger input:focus {
-      border-color: #eb002f;
+      border-color: #fa0032;
       color: #d1002a; }
       .input.danger input:focus ~ .icon {
-        color: #d1002a; }
+        color: #eb002f; }
   .input.danger .icon {
     color: #ff6685; }
   .input.danger.md input {
@@ -2374,17 +2378,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.red input {
     color: #ba160a;
-    border-color: #F44336; }
+    border-color: #f77066; }
     .input.red input:hover {
-      border-color: #ea1c0d;
+      border-color: #f22314;
       color: #891008; }
       .input.red input:hover ~ .icon {
-        color: #ea1c0d; }
+        color: #f32c1e; }
     .input.red input:focus {
-      border-color: #d2190b;
+      border-color: #e11b0c;
       color: #ba160a; }
       .input.red input:focus ~ .icon {
-        color: #ba160a; }
+        color: #d2190b; }
   .input.red .icon {
     color: #f66c62; }
   .input.red.md input {
@@ -2394,17 +2398,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.pink input {
     color: #930e3b;
-    border-color: #E91E63; }
+    border-color: #ee4c83; }
     .input.pink input:hover {
-      border-color: #c1134e;
+      border-color: #cf1454;
       color: #640a29; }
       .input.pink input:hover ~ .icon {
-        color: #c1134e; }
+        color: #d81558; }
     .input.pink input:focus {
-      border-color: #aa1145;
+      border-color: #b8124a;
       color: #930e3b; }
       .input.pink input:focus ~ .icon {
-        color: #930e3b; }
+        color: #aa1145; }
   .input.pink .icon {
     color: #ed4880; }
   .input.pink.md input {
@@ -2414,17 +2418,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.purple input {
     color: #52145d;
-    border-color: #9C27B0; }
+    border-color: #bc37d3; }
     .input.purple input:hover {
-      border-color: #771e86;
+      border-color: #822193;
       color: #2d0b33; }
       .input.purple input:hover ~ .icon {
-        color: #771e86; }
+        color: #89229b; }
     .input.purple input:focus {
-      border-color: #641971;
+      border-color: #701c7e;
       color: #52145d; }
       .input.purple input:focus ~ .icon {
-        color: #52145d; }
+        color: #641971; }
   .input.purple .icon {
     color: #bb33d2; }
   .input.purple.md input {
@@ -2434,17 +2438,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.deep-purple input {
     color: #3b216a;
-    border-color: #673AB7; }
+    border-color: #8259cb; }
     .input.deep-purple input:hover {
-      border-color: #512e90;
+      border-color: #58319c;
       color: #261543; }
       .input.deep-purple input:hover ~ .icon {
-        color: #512e90; }
+        color: #5c34a4; }
     .input.deep-purple input:focus {
-      border-color: #46287d;
+      border-color: #4d2b89;
       color: #3b216a; }
       .input.deep-purple input:focus ~ .icon {
-        color: #3b216a; }
+        color: #46287d; }
   .input.deep-purple .icon {
     color: #7f56c9; }
   .input.deep-purple.md input {
@@ -2454,17 +2458,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.indigo input {
     color: #252f69;
-    border-color: #3F51B5; }
+    border-color: #606fc7; }
     .input.indigo input:hover {
-      border-color: #32408f;
+      border-color: #36459b;
       color: #171e44; }
       .input.indigo input:hover ~ .icon {
-        color: #32408f; }
+        color: #3849a2; }
     .input.indigo input:focus {
-      border-color: #2b387c;
+      border-color: #2f3d88;
       color: #252f69; }
       .input.indigo input:focus ~ .icon {
-        color: #252f69; }
+        color: #2b387c; }
   .input.indigo .icon {
     color: #5c6cc6; }
   .input.indigo.md input {
@@ -2474,17 +2478,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.blue input {
     color: #0960a5;
-    border-color: #2196F3; }
+    border-color: #51adf6; }
     .input.blue input:hover {
-      border-color: #0c7cd5;
+      border-color: #0c84e4;
       color: #064475; }
       .input.blue input:hover ~ .icon {
-        color: #0c7cd5; }
+        color: #0d8aee; }
     .input.blue input:focus {
-      border-color: #0a6ebd;
+      border-color: #0b76cc;
       color: #0960a5; }
       .input.blue input:focus ~ .icon {
-        color: #0960a5; }
+        color: #0a6ebd; }
   .input.blue .icon {
     color: #4dabf5; }
   .input.blue.md input {
@@ -2494,17 +2498,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.light-blue input {
     color: #02638f;
-    border-color: #03A9F4; }
+    border-color: #2ebcfc; }
     .input.light-blue input:hover {
-      border-color: #0286c2;
+      border-color: #0391d1;
       color: #01405d; }
       .input.light-blue input:hover ~ .icon {
-        color: #0286c2; }
+        color: #0398db; }
     .input.light-blue input:focus {
-      border-color: #0275a8;
+      border-color: #027fb8;
       color: #02638f; }
       .input.light-blue input:focus ~ .icon {
-        color: #02638f; }
+        color: #0275a8; }
   .input.light-blue .icon {
     color: #29bafc; }
   .input.light-blue.md input {
@@ -2514,17 +2518,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.cyan input {
     color: #00626e;
-    border-color: #00BCD4; }
+    border-color: #08e3ff; }
     .input.cyan input:hover {
-      border-color: #008fa1;
+      border-color: #009cb0;
       color: #00343b; }
       .input.cyan input:hover ~ .icon {
-        color: #008fa1; }
+        color: #00a5bb; }
     .input.cyan input:focus {
-      border-color: #007888;
+      border-color: #008697;
       color: #00626e; }
       .input.cyan input:focus ~ .icon {
-        color: #00626e; }
+        color: #007888; }
   .input.cyan .icon {
     color: #03e2ff; }
   .input.cyan.md input {
@@ -2534,17 +2538,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.teal input {
     color: #00302c;
-    border-color: #009688; }
+    border-color: #00c9b6; }
     .input.teal input:hover {
-      border-color: #00635a;
+      border-color: #007268;
       color: black; }
       .input.teal input:hover ~ .icon {
-        color: #00635a; }
+        color: #007d71; }
     .input.teal input:focus {
-      border-color: #004a43;
+      border-color: #005951;
       color: #00302c; }
       .input.teal input:focus ~ .icon {
-        color: #00302c; }
+        color: #004a43; }
   .input.teal .icon {
     color: #00c4b2; }
   .input.teal.md input {
@@ -2554,17 +2558,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.green input {
     color: #2d682f;
-    border-color: #4CAF50; }
+    border-color: #6ec071; }
     .input.green input:hover {
-      border-color: #3d8b40;
+      border-color: #419645;
       color: #1e441f; }
       .input.green input:hover ~ .icon {
-        color: #3d8b40; }
+        color: #449d48; }
     .input.green input:focus {
-      border-color: #357a38;
+      border-color: #39843c;
       color: #2d682f; }
       .input.green input:focus ~ .icon {
-        color: #2d682f; }
+        color: #357a38; }
   .input.green .icon {
     color: #6abe6e; }
   .input.green.md input {
@@ -2574,17 +2578,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.light-green input {
     color: #577d2a;
-    border-color: #8BC34A; }
+    border-color: #a4d070; }
     .input.light-green input:hover {
-      border-color: #71a436;
+      border-color: #79af3a;
       color: #3c571d; }
       .input.light-green input:hover ~ .icon {
-        color: #71a436; }
+        color: #7eb73d; }
     .input.light-green input:focus {
-      border-color: #649130;
+      border-color: #6c9c34;
       color: #577d2a; }
       .input.light-green input:focus ~ .icon {
-        color: #577d2a; }
+        color: #649130; }
   .input.light-green .icon {
     color: #a1ce6c; }
   .input.light-green.md input {
@@ -2594,17 +2598,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.lime input {
     color: #89951a;
-    border-color: #CDDC39; }
+    border-color: #d8e464; }
     .input.lime input:hover {
-      border-color: #b2c022;
+      border-color: #becd24;
       color: #616913; }
       .input.lime input:hover ~ .icon {
-        color: #b2c022; }
+        color: #c6d626; }
     .input.lime input:focus {
-      border-color: #9daa1e;
+      border-color: #a9b720;
       color: #89951a; }
       .input.lime input:focus ~ .icon {
-        color: #89951a; }
+        color: #9daa1e; }
   .input.lime .icon {
     color: #d7e360; }
   .input.lime.md input {
@@ -2614,17 +2618,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.yellow input {
     color: #d4be00;
-    border-color: #FFEB3B; }
+    border-color: #fff06e; }
     .input.yellow input:hover {
-      border-color: #ffe608;
+      border-color: #ffe717;
       color: #a19100; }
       .input.yellow input:hover ~ .icon {
-        color: #ffe608; }
+        color: #ffe822; }
     .input.yellow input:focus {
-      border-color: #eed500;
+      border-color: #fde300;
       color: #d4be00; }
       .input.yellow input:focus ~ .icon {
-        color: #d4be00; }
+        color: #eed500; }
   .input.yellow .icon {
     color: #fff069; }
   .input.yellow.md input {
@@ -2634,17 +2638,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.amber input {
     color: #a07800;
-    border-color: #FFC107; }
+    border-color: #ffce3a; }
     .input.amber input:hover {
-      border-color: #d39e00;
+      border-color: #e2aa00;
       color: #6d5200; }
       .input.amber input:hover ~ .icon {
-        color: #d39e00; }
+        color: #edb100; }
     .input.amber input:focus {
-      border-color: #ba8b00;
+      border-color: #c99700;
       color: #a07800; }
       .input.amber input:focus ~ .icon {
-        color: #a07800; }
+        color: #ba8b00; }
   .input.amber .icon {
     color: #ffcc35; }
   .input.amber.md input {
@@ -2654,17 +2658,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.orange input {
     color: #995b00;
-    border-color: #FF9800; }
+    border-color: #ffad33; }
     .input.orange input:hover {
-      border-color: #cc7a00;
+      border-color: #db8300;
       color: #663d00; }
       .input.orange input:hover ~ .icon {
-        color: #cc7a00; }
+        color: #e68900; }
     .input.orange input:focus {
-      border-color: #b36a00;
+      border-color: #c27400;
       color: #995b00; }
       .input.orange input:focus ~ .icon {
-        color: #995b00; }
+        color: #b36a00; }
   .input.orange .icon {
     color: #ffab2e; }
   .input.orange.md input {
@@ -2674,17 +2678,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.deep-orange input {
     color: #bb2d00;
-    border-color: #FF5722; }
+    border-color: #ff7e55; }
     .input.deep-orange input:hover {
-      border-color: #ee3900;
+      border-color: #fd3d00;
       color: #882100; }
       .input.deep-orange input:hover ~ .icon {
-        color: #ee3900; }
+        color: #ff4409; }
     .input.deep-orange input:focus {
-      border-color: #d53300;
+      border-color: #e43700;
       color: #bb2d00; }
       .input.deep-orange input:focus ~ .icon {
-        color: #bb2d00; }
+        color: #d53300; }
   .input.deep-orange .icon {
     color: #ff7a50; }
   .input.deep-orange.md input {
@@ -2694,17 +2698,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.brown input {
     color: #392822;
-    border-color: #795548; }
+    border-color: #996b5b; }
     .input.brown input:hover {
-      border-color: #593f35;
+      border-color: #63453b;
       color: #19120f; }
       .input.brown input:hover ~ .icon {
-        color: #593f35; }
+        color: #694a3e; }
     .input.brown input:focus {
-      border-color: #49332b;
+      border-color: #533a31;
       color: #392822; }
       .input.brown input:focus ~ .icon {
-        color: #392822; }
+        color: #49332b; }
   .input.brown .icon {
     color: #966959; }
   .input.brown.md input {
@@ -2714,17 +2718,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.grey input {
     color: #6b6b6b;
-    border-color: #9E9E9E; }
+    border-color: #b8b8b8; }
     .input.grey input:hover {
-      border-color: #858585;
+      border-color: #8c8c8c;
       color: #525252; }
       .input.grey input:hover ~ .icon {
-        color: #858585; }
+        color: #919191; }
     .input.grey input:focus {
-      border-color: #787878;
+      border-color: #7f7f7f;
       color: #6b6b6b; }
       .input.grey input:focus ~ .icon {
-        color: #6b6b6b; }
+        color: #787878; }
   .input.grey .icon {
     color: #b5b5b5; }
   .input.grey.md input {
@@ -2734,17 +2738,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.blue-grey input {
     color: #36474f;
-    border-color: #607D8B; }
+    border-color: #7b96a3; }
     .input.blue-grey input:hover {
-      border-color: #4b626d;
+      border-color: #516a76;
       color: #212c31; }
       .input.blue-grey input:hover ~ .icon {
-        color: #4b626d; }
+        color: #566f7c; }
     .input.blue-grey input:focus {
-      border-color: #41545e;
+      border-color: #475c67;
       color: #36474f; }
       .input.blue-grey input:focus ~ .icon {
-        color: #36474f; }
+        color: #41545e; }
   .input.blue-grey .icon {
     color: #7794a1; }
   .input.blue-grey.md input {
@@ -2754,7 +2758,7 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.black input {
     color: black;
-    border-color: #000000; }
+    border-color: #1a1a1a; }
     .input.black input:hover {
       border-color: black;
       color: black; }
@@ -2774,17 +2778,17 @@ html, body {
     background-position: 50% 100%, 50% 100%; }
   .input.white input {
     color: #cccccc;
-    border-color: #ffffff; }
+    border-color: white; }
     .input.white input:hover {
-      border-color: #e6e6e6;
+      border-color: #ededed;
       color: #b3b3b3; }
       .input.white input:hover ~ .icon {
-        color: #e6e6e6; }
+        color: #f2f2f2; }
     .input.white input:focus {
-      border-color: #d9d9d9;
+      border-color: #e0e0e0;
       color: #cccccc; }
       .input.white input:focus ~ .icon {
-        color: #cccccc; }
+        color: #d9d9d9; }
   .input.white .icon {
     color: white; }
   .input.white.md input {
@@ -2795,7 +2799,7 @@ html, body {
   .input.md input {
     border: transparent;
     background: #fff no-repeat;
-    background-image: linear-gradient(to bottom, #5f5f5f, #5f5f5f), linear-gradient(to bottom, #dedede, #dedede);
+    background-image: linear-gradient(to bottom, #666262, #666262), linear-gradient(to bottom, #e4e3e3, #e4e3e3);
     background-size: 0 2px, 100% 1px;
     background-position: 50% 100%, 50% 100%;
     transition: background-size 0.3s cubic-bezier(0, 0.97, 0.56, 1.16);
