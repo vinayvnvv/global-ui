@@ -499,7 +499,7 @@ html, body {
       .button.label label.loading:after {
         position: absolute;
         content: '';
-        top: 47%;
+        top: 50%;
         left: 49%;
         margin: -.64285714em 0 0 -.64285714em;
         width: 1em;
@@ -511,7 +511,7 @@ html, body {
         border-radius: 500rem;
         border-color: transparent transparent transparent transparent;
         border-style: solid;
-        border-width: .2em;
+        border-width: .12777em;
         box-shadow: 0 0 0 1px transparent;
         position: relative !important;
         top: 12%;
@@ -555,7 +555,7 @@ html, body {
     .button.loading:after {
       position: absolute;
       content: '';
-      top: 47%;
+      top: 50%;
       left: 49%;
       margin: -.64285714em 0 0 -.64285714em;
       width: 1em;
@@ -567,7 +567,7 @@ html, body {
       border-radius: 500rem;
       border-color: transparent transparent transparent transparent;
       border-style: solid;
-      border-width: .2em;
+      border-width: .12777em;
       box-shadow: 0 0 0 1px transparent;
       border-color: rgba(5, 5, 5, 0.95) rgba(204, 204, 204, 0.95) rgba(204, 204, 204, 0.95) rgba(204, 204, 204, 0.95) !important; }
   .button.label.loading:after {
@@ -2157,7 +2157,7 @@ html, body {
   font-style: normal;
   display: inline-flex;
   align-items: center; }
-  .input input {
+  .input input, .input select {
     max-width: 100%;
     flex: 1 0 auto;
     outline: 0;
@@ -2172,15 +2172,15 @@ html, body {
     box-shadow: none;
     font-size: 0.8em;
     vertical-align: top; }
-    .input input:hover {
+    .input input:hover, .input select:hover {
       border-color: #c5c5c5;
       color: #1a1a1a; }
-      .input input:hover ~ .icon {
+      .input input:hover ~ .icon, .input select:hover ~ .icon {
         color: #787878; }
-    .input input:focus {
+    .input input:focus, .input select:focus {
       border-color: #929292;
       color: black; }
-      .input input:focus ~ .icon {
+      .input input:focus ~ .icon, .input select:focus ~ .icon {
         color: #2c2c2c; }
   .input.icon-left input {
     padding-left: 2.7em !important; }
@@ -2199,7 +2199,7 @@ html, body {
   .input.loading .icon:before {
     position: absolute;
     content: '';
-    top: 47%;
+    top: 50%;
     left: 49%;
     margin: -.64285714em 0 0 -.64285714em;
     width: 1em;
@@ -2211,13 +2211,18 @@ html, body {
     border-radius: 500rem;
     border-color: transparent transparent transparent transparent;
     border-style: solid;
-    border-width: .2em;
+    border-width: .12777em;
     box-shadow: 0 0 0 1px transparent;
     border-color: gray #e6e6e6 #e6e6e6 #e6e6e6 !important;
     width: 0.8em;
     height: 0.8em;
     left: 50%;
-    top: 50%; }
+    top: 55%; }
+  .input.disabled input, .input input[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: #ebebeb; }
   .input.mini {
     font-size: 0.78571rem; }
   .input.tiny {
@@ -2804,3 +2809,30 @@ html, body {
     .input.md input:focus {
       background-size: 100% 2px, 100% 1px;
       outline: none; }
+
+.input .select {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center; }
+  .input .select select {
+    max-width: auto; }
+  .input .select .icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    right: -2.5em;
+    z-index: 3; }
+
+.input.icon-left .select select {
+  padding-left: 2em; }
+
+.input.icon-left .select .icon.left {
+  right: -2.5em;
+  left: initial; }
+
+.input.icon-right .select select {
+  padding-right: 2em; }
+
+.input.icon-right .select .icon.right {
+  left: -2.5em; }
