@@ -1,6 +1,6 @@
 //vars 
 $input-text-color: #666
-$input-border-color: #dedede
+$input-border-color: #e4e3e3
 $input-background-color: #fff
 
 //sizes
@@ -17,7 +17,7 @@ $input-huge : 1.42857143rem
   font-style: normal
   display: inline-flex
   align-items: center
-
+  vertical-align: top
   & input, select
       max-width: 100%
       flex: 1 0 auto
@@ -29,9 +29,9 @@ $input-huge : 1.42857143rem
       border: 1px solid $input-border-color
       color: $input-text-color
       border-radius: .28571429rem
-      transition: .2s all
+      transition: .1s ease all
       box-shadow: none
-      font-size: 0.8em
+      font-size: 0.8333em
       vertical-align: top
       &:hover
       	border-color: darken($input-border-color, 10%)
@@ -43,6 +43,12 @@ $input-huge : 1.42857143rem
       	color: darken($input-text-color, 60%)
       	& ~ .icon
       		color: darken($input-border-color, 70%)
+  &.square
+    & input, select
+      border-radius: 0px
+  &.circle
+    & input, select
+      border-radius: 50em
 
   &.icon-left
   	& input
@@ -60,6 +66,7 @@ $input-huge : 1.42857143rem
    	  width: 2.67142857em
    	  height: 100%
       color: darken($input-border-color, 20%)
+      transition: .1s ease all
   &.loading .icon
     &:before
       +loading
@@ -68,7 +75,7 @@ $input-huge : 1.42857143rem
       height: 0.8em
       left: 50%
       top: 55%
-  &.disabled input, input[disabled]
+  &.disabled input, input[disabled], &.disabled select, select[disabled]
     opacity: 0.5
     cursor: not-allowed
     pointer-events: none
@@ -97,19 +104,19 @@ $input-huge : 1.42857143rem
     $color: nth($pair, 1)
     $color-invert: nth($pair, 2)
     &.#{$name} 
-      & input
+      & input, select
         color: darken($color, 20%)
-        border-color: $color
+        border-color: lighten($color, 10%)
         &:hover
-          border-color: darken($color, 10%)
+          border-color: darken($color, 7%)
           color: darken($color, 30%)
           & ~ .icon
-            color: darken($color, 10%)
+            color: darken($color, 5%)
         &:focus
-          border-color: darken($color, 15%)
+          border-color: darken($color, 12%)
           color: darken($color, 20%)
           & ~ .icon
-            color: darken($color, 20%)
+            color: darken($color, 15%)
       & .icon 
         color: lighten($color, 9%)
       &.md
@@ -143,8 +150,34 @@ $input-huge : 1.42857143rem
     display: inline-flex
     flex-direction: row
     align-items: center
+    height: 2.3em
+    &::after
+        border: 1px solid darken($input-border-color, 13%)
+        border-right: 0
+        border-top: 0
+        content: " "
+        display: block
+        height: 0.5em
+        pointer-events: none
+        position: absolute
+        -webkit-transform: rotate(-45deg)
+        transform: rotate(-45deg)
+        width: 0.5em
+        margin-top: -0.375em
+        right: 1.125em
+        top: 50%
+    &:hover
+      &::after
+        border-color: darken($input-border-color, 50%)
+      & .icon
+        color: darken($input-border-color, 40%)      
     & select 
       max-width: auto
+      width: 100%
+      -webkit-appearance: none
+      padding-right: 2.5em
+      z-index: 4
+      background-color: transparent
     & .icon
       position: relative
       display: inline-flex
@@ -152,17 +185,29 @@ $input-huge : 1.42857143rem
       justify-content: center
       right: -2.5em
       z-index: 3
+  &.loading
+    & .select
+      &::after
+        +loading
+        right: 0.45em
+        border-color: darken($input-border-color, 50%) lighten($input-border-color, 3%) lighten($input-border-color, 3%) lighten($input-border-color, 3%)
+        left: initial
+
   &.icon-left
     & .select
       select
-        padding-left: 2em
+        padding-left: 2.7em
       & .icon.left
-        right: -2.5em
+        right: initial
         left: initial
+        position: absolute
   &.icon-right
     & .select
       select
-        padding-right: 2em
+        padding-right: 4.3em
       & .icon.right
-          left: -2.5em
+          right: 1.3em
+          left: initial
+          position: absolute
+
 
