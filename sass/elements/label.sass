@@ -1,0 +1,81 @@
+//default vars
+$label-color: #494949
+$label-background-color: $grey-lighter
+
+$label-hover-darkness: 10%
+$label-active-darkness: 20%
+$label-outline-hover-border-darkness: 30%
+
+$label-focus-darkness: $label-hover-darkness
+
+//lbl height
+$lbl-height :  2.25em
+$lbl-width: 3.25em
+//sizes
+$lbl-mini : .68571429rem
+$lbl-tiny : .79714286rem
+$lbl-small : .92857143rem
+$lbl-medium : 1rem
+$lbl-large : 1.14285714rem
+$lbl-big : 1.28571429rem
+$lbl-huge : 1.42857143rem
+
+
+.label
+	background-color: $label-background-color
+	position: relative
+	color: $label-color
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	height: 1.7em
+	padding: 0 0.733em
+	flex-direction: row
+	line-height: 1
+	border-radius: .28571429rem
+	vertical-align: top
+	border: 1px solid transparent
+	outline: none
+	font-size: 0.88em
+
+
+	@each $name, $pair in $colors
+    	$color: nth($pair, 1)
+    	$color-invert: nth($pair, 2)
+    	&.#{$name}
+    		background-color: $color
+    		color: $color-invert
+
+	
+	&.round
+		border-radius: 50em
+	&.square
+		border-radius: 0
+	&.mini
+		font-size: $lbl-mini
+	&.tiny
+    	font-size: $lbl-tiny
+	&.small
+	    font-size: $lbl-small
+	&.medium
+	    font-size: $lbl-medium
+	&.large
+	    font-size: $lbl-large
+	&.big
+	    font-size: $lbl-big
+	&.huge
+	    font-size: $lbl-huge
+	&.outline
+		border-color: $label-background-color
+		background-color: transparent
+	&.pointing-top
+    	&:before
+          +pointing
+          border-width: 1px 0 0 1px
+          -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg)
+          transform: translateX(-50%) translateY(-50%) rotate(45deg)
+          top: 0
+          left: 50%
+          border-color: $label-background-color
+
+    

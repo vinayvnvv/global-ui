@@ -32,7 +32,17 @@
 
 //responsiveness
 
-
+=pointing
+  position: absolute
+  content: ''
+  -webkit-transform: rotate(45deg)
+  transform: rotate(45deg)
+  background-image: none
+  z-index: 2
+  width: .6666em
+  height: .6666em
+  -webkit-transition: background .1s ease
+  transition: background .1s ease
 
 =from($device)
   @media screen and (min-width: $device)

@@ -491,7 +491,7 @@ html, body {
       top: 0;
       left: 0;
       pointer-events: none;
-      background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+      background-image: radial-gradient(circle, rgba(0, 0, 0, 0.95) 10%, transparent 10.01%);
       background-repeat: no-repeat;
       background-position: 50%;
       transform: scale(10, 10);
@@ -501,8 +501,6 @@ html, body {
       transform: scale(0, 0);
       opacity: .5;
       transition: 0s; }
-  .button.ripple:not(.outline):not(.white):after {
-    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
   .button.raised {
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
     .button.raised:active {
@@ -690,6 +688,8 @@ html, body {
       .button.light.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, white 0%, #fcfcfc 90%); }
+    .button.light.ripple:after {
+      background-image: radial-gradient(circle, #363636 10%, transparent 10.01%); }
     .button.light:hover, .button.light.active {
       background-color: #dbdbdb; }
     .button.light:active {
@@ -741,6 +741,8 @@ html, body {
       .button.dark.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #545454 0%, #3d3d3d 90%); }
+    .button.dark.ripple:after {
+      background-image: radial-gradient(circle, whitesmoke 10%, transparent 10.01%); }
     .button.dark:hover, .button.dark.active {
       background-color: #1c1c1c; }
     .button.dark:active {
@@ -792,6 +794,8 @@ html, body {
       .button.primary.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #0fffdb 0%, #00e0bf 90%); }
+    .button.primary.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.primary:hover, .button.primary.active {
       background-color: #009e86; }
     .button.primary:active {
@@ -843,6 +847,8 @@ html, body {
       .button.info.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #6697e5 0%, #3f7cde 90%); }
+    .button.info.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.info:hover, .button.info.active {
       background-color: #205bbc; }
     .button.info:active {
@@ -894,6 +900,8 @@ html, body {
       .button.success.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #51e183 0%, #29db67 90%); }
+    .button.success.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.success:hover, .button.success.active {
       background-color: #1ca64c; }
     .button.success:active {
@@ -945,6 +953,8 @@ html, body {
       .button.warning.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #ffea94 0%, #ffe066 90%); }
+    .button.warning.ripple:after {
+      background-image: radial-gradient(circle, rgba(0, 0, 0, 0.7) 10%, transparent 10.01%); }
     .button.warning:hover, .button.warning.active {
       background-color: #ffd324; }
     .button.warning:active {
@@ -996,6 +1006,8 @@ html, body {
       .button.danger.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #ff7591 0%, #ff476c 90%); }
+    .button.danger.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.danger:hover, .button.danger.active {
       background-color: #ff0537; }
     .button.danger:active {
@@ -1047,6 +1059,8 @@ html, body {
       .button.red.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #f77970 0%, #f55145 90%); }
+    .button.red.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.red:hover, .button.red.active {
       background-color: #ea1c0d; }
     .button.red:active {
@@ -1098,6 +1112,8 @@ html, body {
       .button.pink.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #ee568a 0%, #ea2c6d 90%); }
+    .button.pink.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.pink:hover, .button.pink.active {
       background-color: #c1134e; }
     .button.pink:active {
@@ -1149,6 +1165,8 @@ html, body {
       .button.purple.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #bf40d5 0%, #a72abd 90%); }
+    .button.purple.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.purple:hover, .button.purple.active {
       background-color: #771e86; }
     .button.purple:active {
@@ -1200,6 +1218,8 @@ html, body {
       .button.deep-purple.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #8861cd 0%, #6e3ec2 90%); }
+    .button.deep-purple.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.deep-purple:hover, .button.deep-purple.active {
       background-color: #512e90; }
     .button.deep-purple:active {
@@ -1251,6 +1271,8 @@ html, body {
       .button.indigo.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #6776ca 0%, #4558be 90%); }
+    .button.indigo.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.indigo:hover, .button.indigo.active {
       background-color: #32408f; }
     .button.indigo:active {
@@ -1302,6 +1324,8 @@ html, body {
       .button.blue.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #5bb1f6 0%, #309df4 90%); }
+    .button.blue.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.blue:hover, .button.blue.active {
       background-color: #0c7cd5; }
     .button.blue:active {
@@ -1353,6 +1377,8 @@ html, body {
       .button.light-blue.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #38bffd 0%, #0ab1fc 90%); }
+    .button.light-blue.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.light-blue:hover, .button.light-blue.active {
       background-color: #0286c2; }
     .button.light-blue:active {
@@ -1404,6 +1430,8 @@ html, body {
       .button.cyan.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #12e4ff 0%, #00cae3 90%); }
+    .button.cyan.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.cyan:hover, .button.cyan.active {
       background-color: #008fa1; }
     .button.cyan:active {
@@ -1455,6 +1483,8 @@ html, body {
       .button.teal.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #00d3bf 0%, #00a596 90%); }
+    .button.teal.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.teal:hover, .button.teal.active {
       background-color: #00635a; }
     .button.teal:active {
@@ -1506,6 +1536,8 @@ html, body {
       .button.green.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #75c378 0%, #55b559 90%); }
+    .button.green.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.green:hover, .button.green.active {
       background-color: #3d8b40; }
     .button.green:active {
@@ -1557,6 +1589,8 @@ html, body {
       .button.light-green.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #a8d278 0%, #92c755 90%); }
+    .button.light-green.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.light-green:hover, .button.light-green.active {
       background-color: #71a436; }
     .button.light-green:active {
@@ -1608,6 +1642,8 @@ html, body {
       .button.lime.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #dae56d 0%, #d0de46 90%); }
+    .button.lime.ripple:after {
+      background-image: radial-gradient(circle, rgba(0, 0, 0, 0.7) 10%, transparent 10.01%); }
     .button.lime:hover, .button.lime.active {
       background-color: #b2c022; }
     .button.lime:active {
@@ -1659,6 +1695,8 @@ html, body {
       .button.yellow.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #fff178 0%, #ffed4a 90%); }
+    .button.yellow.ripple:after {
+      background-image: radial-gradient(circle, rgba(0, 0, 0, 0.7) 10%, transparent 10.01%); }
     .button.yellow:hover, .button.yellow.active {
       background-color: #ffe608; }
     .button.yellow:active {
@@ -1710,6 +1748,8 @@ html, body {
       .button.amber.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #ffd044 0%, #ffc516 90%); }
+    .button.amber.ripple:after {
+      background-image: radial-gradient(circle, rgba(0, 0, 0, 0.7) 10%, transparent 10.01%); }
     .button.amber:hover, .button.amber.active {
       background-color: #d39e00; }
     .button.amber:active {
@@ -1761,6 +1801,8 @@ html, body {
       .button.orange.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #ffb13d 0%, #ff9e0f 90%); }
+    .button.orange.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.orange:hover, .button.orange.active {
       background-color: #cc7a00; }
     .button.orange:active {
@@ -1812,6 +1854,8 @@ html, body {
       .button.deep-orange.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #ff865f 0%, #ff6331 90%); }
+    .button.deep-orange.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.deep-orange:hover, .button.deep-orange.active {
       background-color: #ee3900; }
     .button.deep-orange:active {
@@ -1863,6 +1907,8 @@ html, body {
       .button.brown.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #9f705f 0%, #835c4e 90%); }
+    .button.brown.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.brown:hover, .button.brown.active {
       background-color: #593f35; }
     .button.brown:active {
@@ -1914,6 +1960,8 @@ html, body {
       .button.grey.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #bdbdbd 0%, #a6a6a6 90%); }
+    .button.grey.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.grey:hover, .button.grey.active {
       background-color: #858585; }
     .button.grey:active {
@@ -1965,6 +2013,8 @@ html, body {
       .button.blue-grey.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #819ba8 0%, #668594 90%); }
+    .button.blue-grey.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.blue-grey:hover, .button.blue-grey.active {
       background-color: #4b626d; }
     .button.blue-grey:active {
@@ -2016,6 +2066,8 @@ html, body {
       .button.black.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, #1f1f1f 0%, #080808 90%); }
+    .button.black.ripple:after {
+      background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
     .button.black:hover, .button.black.active {
       background-color: black; }
     .button.black:active {
@@ -2067,6 +2119,8 @@ html, body {
       .button.white.gradient:active {
         box-shadow: none;
         background-image: linear-gradient(180deg, white 0%, white 90%); }
+    .button.white.ripple:after {
+      background-image: radial-gradient(circle, rgba(0, 0, 0, 0.7) 10%, transparent 10.01%); }
     .button.white:hover, .button.white.active {
       background-color: #e6e6e6; }
     .button.white:active {
@@ -2161,7 +2215,7 @@ html, body {
       margin-left: -.89285714em;
       width: 1.78571429em;
       height: 1.78571429em;
-      line-height: 1.55571429em;
+      line-height: 1.65571429em;
       color: rgba(0, 0, 0, 0.4);
       font-style: normal;
       font-weight: 700;
@@ -2177,6 +2231,145 @@ html, body {
     .button-or .button:last-child {
       border-top-left-radius: 0px !important;
       border-bottom-left-radius: 0px !important; }
+
+.label {
+  background-color: #dbdbdb;
+  position: relative;
+  color: #494949;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.7em;
+  padding: 0 0.733em;
+  flex-direction: row;
+  line-height: 1;
+  border-radius: .28571429rem;
+  vertical-align: top;
+  border: 1px solid transparent;
+  outline: none;
+  font-size: 0.88em; }
+  .label.light {
+    background-color: whitesmoke;
+    color: #363636; }
+  .label.dark {
+    background-color: #363636;
+    color: whitesmoke; }
+  .label.primary {
+    background-color: #00d1b2;
+    color: #fff; }
+  .label.info {
+    background-color: #3273dc;
+    color: #fff; }
+  .label.success {
+    background-color: #23d160;
+    color: #fff; }
+  .label.warning {
+    background-color: #ffdd57;
+    color: rgba(0, 0, 0, 0.7); }
+  .label.danger {
+    background-color: #ff3860;
+    color: #fff; }
+  .label.red {
+    background-color: #F44336;
+    color: #fff; }
+  .label.pink {
+    background-color: #E91E63;
+    color: #fff; }
+  .label.purple {
+    background-color: #9C27B0;
+    color: #fff; }
+  .label.deep-purple {
+    background-color: #673AB7;
+    color: #fff; }
+  .label.indigo {
+    background-color: #3F51B5;
+    color: #fff; }
+  .label.blue {
+    background-color: #2196F3;
+    color: #fff; }
+  .label.light-blue {
+    background-color: #03A9F4;
+    color: #fff; }
+  .label.cyan {
+    background-color: #00BCD4;
+    color: #fff; }
+  .label.teal {
+    background-color: #009688;
+    color: #fff; }
+  .label.green {
+    background-color: #4CAF50;
+    color: #fff; }
+  .label.light-green {
+    background-color: #8BC34A;
+    color: #fff; }
+  .label.lime {
+    background-color: #CDDC39;
+    color: rgba(0, 0, 0, 0.7); }
+  .label.yellow {
+    background-color: #FFEB3B;
+    color: rgba(0, 0, 0, 0.7); }
+  .label.amber {
+    background-color: #FFC107;
+    color: rgba(0, 0, 0, 0.7); }
+  .label.orange {
+    background-color: #FF9800;
+    color: #fff; }
+  .label.deep-orange {
+    background-color: #FF5722;
+    color: #fff; }
+  .label.brown {
+    background-color: #795548;
+    color: #fff; }
+  .label.grey {
+    background-color: #9E9E9E;
+    color: #fff; }
+  .label.blue-grey {
+    background-color: #607D8B;
+    color: #fff; }
+  .label.black {
+    background-color: #000000;
+    color: #fff; }
+  .label.white {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.7); }
+  .label.round {
+    border-radius: 50em; }
+  .label.square {
+    border-radius: 0; }
+  .label.mini {
+    font-size: 0.68571rem; }
+  .label.tiny {
+    font-size: 0.79714rem; }
+  .label.small {
+    font-size: 0.92857rem; }
+  .label.medium {
+    font-size: 1rem; }
+  .label.large {
+    font-size: 1.14286rem; }
+  .label.big {
+    font-size: 1.28571rem; }
+  .label.huge {
+    font-size: 1.42857rem; }
+  .label.outline {
+    border-color: #dbdbdb;
+    background-color: transparent; }
+  .label.pointing-top:before {
+    position: absolute;
+    content: '';
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-image: none;
+    z-index: 2;
+    width: .6666em;
+    height: .6666em;
+    -webkit-transition: background .1s ease;
+    transition: background .1s ease;
+    border-width: 1px 0 0 1px;
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    top: 0;
+    left: 50%;
+    border-color: #dbdbdb; }
 
 .input {
   position: relative;
