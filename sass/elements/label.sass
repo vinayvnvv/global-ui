@@ -68,8 +68,13 @@ $lbl-huge : 1.42857143rem
 	&.outline
 		border-color: $label-background-color
 		background-color: transparent
-	&.pointing-top
-    	&:before
+	&.pointing
+        &:not(.outline):after
+          background-color: $label-background-color
+        &.outline:after
+          border-color: $label-background-color
+          background-color: #fff
+        &:after
           +pointing
           border-width: 1px 0 0 1px
           -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg)
@@ -77,5 +82,11 @@ $lbl-huge : 1.42857143rem
           top: 0
           left: 50%
           border-color: $label-background-color
+          border-style: solid
+        &.point-left:after
+       	  top: 50%
+       	  left: 0
+
+        
 
     

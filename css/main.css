@@ -2353,7 +2353,12 @@ html, body {
   .label.outline {
     border-color: #dbdbdb;
     background-color: transparent; }
-  .label.pointing-top:before {
+  .label.pointing:not(.outline):after {
+    background-color: #dbdbdb; }
+  .label.pointing.outline:after {
+    border-color: #dbdbdb;
+    background-color: #fff; }
+  .label.pointing:after {
     position: absolute;
     content: '';
     -webkit-transform: rotate(45deg);
@@ -2369,7 +2374,11 @@ html, body {
     transform: translateX(-50%) translateY(-50%) rotate(45deg);
     top: 0;
     left: 50%;
-    border-color: #dbdbdb; }
+    border-color: #dbdbdb;
+    border-style: solid; }
+  .label.pointing.point-left:after {
+    top: 50%;
+    left: 0; }
 
 .input {
   position: relative;
