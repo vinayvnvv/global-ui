@@ -5,7 +5,7 @@
     transform: rotate(359deg); } }
 
 html, body {
-  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: Lato, "Helvetica Neue", "Open Sans", Arial, Helvetica, sans-serif;
   margin: 0 auto; }
 
 .column {
@@ -478,6 +478,11 @@ html, body {
     border-radius: 0px; }
   .button.circle {
     border-radius: 10em; }
+  .button.vip {
+    text-transform: uppercase;
+    letter-spacing: .0798em;
+    font-weight: 600;
+    color: rgba(64, 64, 64, 0.95); }
   .button.ripple {
     position: relative;
     overflow: hidden;
@@ -690,6 +695,8 @@ html, body {
         background-image: linear-gradient(180deg, white 0%, #fcfcfc 90%); }
     .button.light.ripple:after {
       background-image: radial-gradient(circle, #363636 10%, transparent 10.01%); }
+    .button.light.vip {
+      color: dimgray; }
     .button.light:hover, .button.light.active {
       background-color: #dbdbdb; }
     .button.light:active {
@@ -743,6 +750,8 @@ html, body {
         background-image: linear-gradient(180deg, #545454 0%, #3d3d3d 90%); }
     .button.dark.ripple:after {
       background-image: radial-gradient(circle, whitesmoke 10%, transparent 10.01%); }
+    .button.dark.vip {
+      color: white; }
     .button.dark:hover, .button.dark.active {
       background-color: #1c1c1c; }
     .button.dark:active {
@@ -796,6 +805,8 @@ html, body {
         background-image: linear-gradient(180deg, #0fffdb 0%, #00e0bf 90%); }
     .button.primary.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.primary.vip {
+      color: white; }
     .button.primary:hover, .button.primary.active {
       background-color: #009e86; }
     .button.primary:active {
@@ -849,6 +860,8 @@ html, body {
         background-image: linear-gradient(180deg, #6697e5 0%, #3f7cde 90%); }
     .button.info.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.info.vip {
+      color: white; }
     .button.info:hover, .button.info.active {
       background-color: #205bbc; }
     .button.info:active {
@@ -902,6 +915,8 @@ html, body {
         background-image: linear-gradient(180deg, #51e183 0%, #29db67 90%); }
     .button.success.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.success.vip {
+      color: white; }
     .button.success:hover, .button.success.active {
       background-color: #1ca64c; }
     .button.success:active {
@@ -955,6 +970,8 @@ html, body {
         background-image: linear-gradient(180deg, #ffea94 0%, #ffe066 90%); }
     .button.warning.ripple:after {
       background-image: radial-gradient(circle, rgba(0, 0, 0, 0.7) 10%, transparent 10.01%); }
+    .button.warning.vip {
+      color: rgba(51, 51, 51, 0.7); }
     .button.warning:hover, .button.warning.active {
       background-color: #ffd324; }
     .button.warning:active {
@@ -1008,6 +1025,8 @@ html, body {
         background-image: linear-gradient(180deg, #ff7591 0%, #ff476c 90%); }
     .button.danger.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.danger.vip {
+      color: white; }
     .button.danger:hover, .button.danger.active {
       background-color: #ff0537; }
     .button.danger:active {
@@ -1061,6 +1080,8 @@ html, body {
         background-image: linear-gradient(180deg, #f77970 0%, #f55145 90%); }
     .button.red.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.red.vip {
+      color: white; }
     .button.red:hover, .button.red.active {
       background-color: #ea1c0d; }
     .button.red:active {
@@ -1114,6 +1135,8 @@ html, body {
         background-image: linear-gradient(180deg, #ee568a 0%, #ea2c6d 90%); }
     .button.pink.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.pink.vip {
+      color: white; }
     .button.pink:hover, .button.pink.active {
       background-color: #c1134e; }
     .button.pink:active {
@@ -1167,6 +1190,8 @@ html, body {
         background-image: linear-gradient(180deg, #bf40d5 0%, #a72abd 90%); }
     .button.purple.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.purple.vip {
+      color: white; }
     .button.purple:hover, .button.purple.active {
       background-color: #771e86; }
     .button.purple:active {
@@ -1220,6 +1245,8 @@ html, body {
         background-image: linear-gradient(180deg, #8861cd 0%, #6e3ec2 90%); }
     .button.deep-purple.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.deep-purple.vip {
+      color: white; }
     .button.deep-purple:hover, .button.deep-purple.active {
       background-color: #512e90; }
     .button.deep-purple:active {
@@ -1273,6 +1300,8 @@ html, body {
         background-image: linear-gradient(180deg, #6776ca 0%, #4558be 90%); }
     .button.indigo.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.indigo.vip {
+      color: white; }
     .button.indigo:hover, .button.indigo.active {
       background-color: #32408f; }
     .button.indigo:active {
@@ -1326,6 +1355,8 @@ html, body {
         background-image: linear-gradient(180deg, #5bb1f6 0%, #309df4 90%); }
     .button.blue.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.blue.vip {
+      color: white; }
     .button.blue:hover, .button.blue.active {
       background-color: #0c7cd5; }
     .button.blue:active {
@@ -1379,6 +1410,8 @@ html, body {
         background-image: linear-gradient(180deg, #38bffd 0%, #0ab1fc 90%); }
     .button.light-blue.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.light-blue.vip {
+      color: white; }
     .button.light-blue:hover, .button.light-blue.active {
       background-color: #0286c2; }
     .button.light-blue:active {
@@ -1432,6 +1465,8 @@ html, body {
         background-image: linear-gradient(180deg, #12e4ff 0%, #00cae3 90%); }
     .button.cyan.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.cyan.vip {
+      color: white; }
     .button.cyan:hover, .button.cyan.active {
       background-color: #008fa1; }
     .button.cyan:active {
@@ -1485,6 +1520,8 @@ html, body {
         background-image: linear-gradient(180deg, #00d3bf 0%, #00a596 90%); }
     .button.teal.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.teal.vip {
+      color: white; }
     .button.teal:hover, .button.teal.active {
       background-color: #00635a; }
     .button.teal:active {
@@ -1538,6 +1575,8 @@ html, body {
         background-image: linear-gradient(180deg, #75c378 0%, #55b559 90%); }
     .button.green.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.green.vip {
+      color: white; }
     .button.green:hover, .button.green.active {
       background-color: #3d8b40; }
     .button.green:active {
@@ -1591,6 +1630,8 @@ html, body {
         background-image: linear-gradient(180deg, #a8d278 0%, #92c755 90%); }
     .button.light-green.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.light-green.vip {
+      color: white; }
     .button.light-green:hover, .button.light-green.active {
       background-color: #71a436; }
     .button.light-green:active {
@@ -1644,6 +1685,8 @@ html, body {
         background-image: linear-gradient(180deg, #dae56d 0%, #d0de46 90%); }
     .button.lime.ripple:after {
       background-image: radial-gradient(circle, rgba(0, 0, 0, 0.7) 10%, transparent 10.01%); }
+    .button.lime.vip {
+      color: rgba(51, 51, 51, 0.7); }
     .button.lime:hover, .button.lime.active {
       background-color: #b2c022; }
     .button.lime:active {
@@ -1697,6 +1740,8 @@ html, body {
         background-image: linear-gradient(180deg, #fff178 0%, #ffed4a 90%); }
     .button.yellow.ripple:after {
       background-image: radial-gradient(circle, rgba(0, 0, 0, 0.7) 10%, transparent 10.01%); }
+    .button.yellow.vip {
+      color: rgba(51, 51, 51, 0.7); }
     .button.yellow:hover, .button.yellow.active {
       background-color: #ffe608; }
     .button.yellow:active {
@@ -1750,6 +1795,8 @@ html, body {
         background-image: linear-gradient(180deg, #ffd044 0%, #ffc516 90%); }
     .button.amber.ripple:after {
       background-image: radial-gradient(circle, rgba(0, 0, 0, 0.7) 10%, transparent 10.01%); }
+    .button.amber.vip {
+      color: rgba(51, 51, 51, 0.7); }
     .button.amber:hover, .button.amber.active {
       background-color: #d39e00; }
     .button.amber:active {
@@ -1803,6 +1850,8 @@ html, body {
         background-image: linear-gradient(180deg, #ffb13d 0%, #ff9e0f 90%); }
     .button.orange.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.orange.vip {
+      color: white; }
     .button.orange:hover, .button.orange.active {
       background-color: #cc7a00; }
     .button.orange:active {
@@ -1856,6 +1905,8 @@ html, body {
         background-image: linear-gradient(180deg, #ff865f 0%, #ff6331 90%); }
     .button.deep-orange.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.deep-orange.vip {
+      color: white; }
     .button.deep-orange:hover, .button.deep-orange.active {
       background-color: #ee3900; }
     .button.deep-orange:active {
@@ -1909,6 +1960,8 @@ html, body {
         background-image: linear-gradient(180deg, #9f705f 0%, #835c4e 90%); }
     .button.brown.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.brown.vip {
+      color: white; }
     .button.brown:hover, .button.brown.active {
       background-color: #593f35; }
     .button.brown:active {
@@ -1962,6 +2015,8 @@ html, body {
         background-image: linear-gradient(180deg, #bdbdbd 0%, #a6a6a6 90%); }
     .button.grey.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.grey.vip {
+      color: white; }
     .button.grey:hover, .button.grey.active {
       background-color: #858585; }
     .button.grey:active {
@@ -2015,6 +2070,8 @@ html, body {
         background-image: linear-gradient(180deg, #819ba8 0%, #668594 90%); }
     .button.blue-grey.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.blue-grey.vip {
+      color: white; }
     .button.blue-grey:hover, .button.blue-grey.active {
       background-color: #4b626d; }
     .button.blue-grey:active {
@@ -2068,6 +2125,8 @@ html, body {
         background-image: linear-gradient(180deg, #1f1f1f 0%, #080808 90%); }
     .button.black.ripple:after {
       background-image: radial-gradient(circle, #fff 10%, transparent 10.01%); }
+    .button.black.vip {
+      color: white; }
     .button.black:hover, .button.black.active {
       background-color: black; }
     .button.black:active {
@@ -2121,6 +2180,8 @@ html, body {
         background-image: linear-gradient(180deg, white 0%, white 90%); }
     .button.white.ripple:after {
       background-image: radial-gradient(circle, rgba(0, 0, 0, 0.7) 10%, transparent 10.01%); }
+    .button.white.vip {
+      color: rgba(51, 51, 51, 0.7); }
     .button.white:hover, .button.white.active {
       background-color: #e6e6e6; }
     .button.white:active {
@@ -2257,6 +2318,9 @@ html, body {
       color: whitesmoke; }
     .label.light .detail {
       color: #030303; }
+      .label.light .detail.fill {
+        color: whitesmoke;
+        background-color: #363636; }
     .label.light.pointing:not(.outline):after {
       background-color: whitesmoke;
       border-color: whitesmoke; }
@@ -2271,6 +2335,9 @@ html, body {
       color: #363636; }
     .label.dark .detail {
       color: #c2c2c2; }
+      .label.dark .detail.fill {
+        color: #363636;
+        background-color: whitesmoke; }
     .label.dark.pointing:not(.outline):after {
       background-color: #363636;
       border-color: #363636; }
@@ -2285,6 +2352,9 @@ html, body {
       color: #00d1b2; }
     .label.primary .detail {
       color: #cccccc; }
+      .label.primary .detail.fill {
+        color: #00d1b2;
+        background-color: #fff; }
     .label.primary.pointing:not(.outline):after {
       background-color: #00d1b2;
       border-color: #00d1b2; }
@@ -2299,6 +2369,9 @@ html, body {
       color: #3273dc; }
     .label.info .detail {
       color: #cccccc; }
+      .label.info .detail.fill {
+        color: #3273dc;
+        background-color: #fff; }
     .label.info.pointing:not(.outline):after {
       background-color: #3273dc;
       border-color: #3273dc; }
@@ -2313,6 +2386,9 @@ html, body {
       color: #23d160; }
     .label.success .detail {
       color: #cccccc; }
+      .label.success .detail.fill {
+        color: #23d160;
+        background-color: #fff; }
     .label.success.pointing:not(.outline):after {
       background-color: #23d160;
       border-color: #23d160; }
@@ -2327,6 +2403,9 @@ html, body {
       color: #ffdd57; }
     .label.warning .detail {
       color: rgba(0, 0, 0, 0.7); }
+      .label.warning .detail.fill {
+        color: #ffdd57;
+        background-color: rgba(0, 0, 0, 0.7); }
     .label.warning.pointing:not(.outline):after {
       background-color: #ffdd57;
       border-color: #ffdd57; }
@@ -2341,6 +2420,9 @@ html, body {
       color: #ff3860; }
     .label.danger .detail {
       color: #cccccc; }
+      .label.danger .detail.fill {
+        color: #ff3860;
+        background-color: #fff; }
     .label.danger.pointing:not(.outline):after {
       background-color: #ff3860;
       border-color: #ff3860; }
@@ -2355,6 +2437,9 @@ html, body {
       color: #F44336; }
     .label.red .detail {
       color: #cccccc; }
+      .label.red .detail.fill {
+        color: #F44336;
+        background-color: #fff; }
     .label.red.pointing:not(.outline):after {
       background-color: #F44336;
       border-color: #F44336; }
@@ -2369,6 +2454,9 @@ html, body {
       color: #E91E63; }
     .label.pink .detail {
       color: #cccccc; }
+      .label.pink .detail.fill {
+        color: #E91E63;
+        background-color: #fff; }
     .label.pink.pointing:not(.outline):after {
       background-color: #E91E63;
       border-color: #E91E63; }
@@ -2383,6 +2471,9 @@ html, body {
       color: #9C27B0; }
     .label.purple .detail {
       color: #cccccc; }
+      .label.purple .detail.fill {
+        color: #9C27B0;
+        background-color: #fff; }
     .label.purple.pointing:not(.outline):after {
       background-color: #9C27B0;
       border-color: #9C27B0; }
@@ -2397,6 +2488,9 @@ html, body {
       color: #673AB7; }
     .label.deep-purple .detail {
       color: #cccccc; }
+      .label.deep-purple .detail.fill {
+        color: #673AB7;
+        background-color: #fff; }
     .label.deep-purple.pointing:not(.outline):after {
       background-color: #673AB7;
       border-color: #673AB7; }
@@ -2411,6 +2505,9 @@ html, body {
       color: #3F51B5; }
     .label.indigo .detail {
       color: #cccccc; }
+      .label.indigo .detail.fill {
+        color: #3F51B5;
+        background-color: #fff; }
     .label.indigo.pointing:not(.outline):after {
       background-color: #3F51B5;
       border-color: #3F51B5; }
@@ -2425,6 +2522,9 @@ html, body {
       color: #2196F3; }
     .label.blue .detail {
       color: #cccccc; }
+      .label.blue .detail.fill {
+        color: #2196F3;
+        background-color: #fff; }
     .label.blue.pointing:not(.outline):after {
       background-color: #2196F3;
       border-color: #2196F3; }
@@ -2439,6 +2539,9 @@ html, body {
       color: #03A9F4; }
     .label.light-blue .detail {
       color: #cccccc; }
+      .label.light-blue .detail.fill {
+        color: #03A9F4;
+        background-color: #fff; }
     .label.light-blue.pointing:not(.outline):after {
       background-color: #03A9F4;
       border-color: #03A9F4; }
@@ -2453,6 +2556,9 @@ html, body {
       color: #00BCD4; }
     .label.cyan .detail {
       color: #cccccc; }
+      .label.cyan .detail.fill {
+        color: #00BCD4;
+        background-color: #fff; }
     .label.cyan.pointing:not(.outline):after {
       background-color: #00BCD4;
       border-color: #00BCD4; }
@@ -2467,6 +2573,9 @@ html, body {
       color: #009688; }
     .label.teal .detail {
       color: #cccccc; }
+      .label.teal .detail.fill {
+        color: #009688;
+        background-color: #fff; }
     .label.teal.pointing:not(.outline):after {
       background-color: #009688;
       border-color: #009688; }
@@ -2481,6 +2590,9 @@ html, body {
       color: #4CAF50; }
     .label.green .detail {
       color: #cccccc; }
+      .label.green .detail.fill {
+        color: #4CAF50;
+        background-color: #fff; }
     .label.green.pointing:not(.outline):after {
       background-color: #4CAF50;
       border-color: #4CAF50; }
@@ -2495,6 +2607,9 @@ html, body {
       color: #8BC34A; }
     .label.light-green .detail {
       color: #cccccc; }
+      .label.light-green .detail.fill {
+        color: #8BC34A;
+        background-color: #fff; }
     .label.light-green.pointing:not(.outline):after {
       background-color: #8BC34A;
       border-color: #8BC34A; }
@@ -2509,6 +2624,9 @@ html, body {
       color: #CDDC39; }
     .label.lime .detail {
       color: rgba(0, 0, 0, 0.7); }
+      .label.lime .detail.fill {
+        color: #CDDC39;
+        background-color: rgba(0, 0, 0, 0.7); }
     .label.lime.pointing:not(.outline):after {
       background-color: #CDDC39;
       border-color: #CDDC39; }
@@ -2523,6 +2641,9 @@ html, body {
       color: #FFEB3B; }
     .label.yellow .detail {
       color: rgba(0, 0, 0, 0.7); }
+      .label.yellow .detail.fill {
+        color: #FFEB3B;
+        background-color: rgba(0, 0, 0, 0.7); }
     .label.yellow.pointing:not(.outline):after {
       background-color: #FFEB3B;
       border-color: #FFEB3B; }
@@ -2537,6 +2658,9 @@ html, body {
       color: #FFC107; }
     .label.amber .detail {
       color: rgba(0, 0, 0, 0.7); }
+      .label.amber .detail.fill {
+        color: #FFC107;
+        background-color: rgba(0, 0, 0, 0.7); }
     .label.amber.pointing:not(.outline):after {
       background-color: #FFC107;
       border-color: #FFC107; }
@@ -2551,6 +2675,9 @@ html, body {
       color: #FF9800; }
     .label.orange .detail {
       color: #cccccc; }
+      .label.orange .detail.fill {
+        color: #FF9800;
+        background-color: #fff; }
     .label.orange.pointing:not(.outline):after {
       background-color: #FF9800;
       border-color: #FF9800; }
@@ -2565,6 +2692,9 @@ html, body {
       color: #FF5722; }
     .label.deep-orange .detail {
       color: #cccccc; }
+      .label.deep-orange .detail.fill {
+        color: #FF5722;
+        background-color: #fff; }
     .label.deep-orange.pointing:not(.outline):after {
       background-color: #FF5722;
       border-color: #FF5722; }
@@ -2579,6 +2709,9 @@ html, body {
       color: #795548; }
     .label.brown .detail {
       color: #cccccc; }
+      .label.brown .detail.fill {
+        color: #795548;
+        background-color: #fff; }
     .label.brown.pointing:not(.outline):after {
       background-color: #795548;
       border-color: #795548; }
@@ -2593,6 +2726,9 @@ html, body {
       color: #9E9E9E; }
     .label.grey .detail {
       color: #cccccc; }
+      .label.grey .detail.fill {
+        color: #9E9E9E;
+        background-color: #fff; }
     .label.grey.pointing:not(.outline):after {
       background-color: #9E9E9E;
       border-color: #9E9E9E; }
@@ -2607,6 +2743,9 @@ html, body {
       color: #607D8B; }
     .label.blue-grey .detail {
       color: #cccccc; }
+      .label.blue-grey .detail.fill {
+        color: #607D8B;
+        background-color: #fff; }
     .label.blue-grey.pointing:not(.outline):after {
       background-color: #607D8B;
       border-color: #607D8B; }
@@ -2621,6 +2760,9 @@ html, body {
       color: #000000; }
     .label.black .detail {
       color: #cccccc; }
+      .label.black .detail.fill {
+        color: #000000;
+        background-color: #fff; }
     .label.black.pointing:not(.outline):after {
       background-color: #000000;
       border-color: #000000; }
@@ -2635,6 +2777,9 @@ html, body {
       color: #ffffff; }
     .label.white .detail {
       color: rgba(0, 0, 0, 0.7); }
+      .label.white .detail.fill {
+        color: #ffffff;
+        background-color: rgba(0, 0, 0, 0.7); }
     .label.white.pointing:not(.outline):after {
       background-color: #ffffff;
       border-color: #ffffff; }
@@ -2701,9 +2846,6 @@ html, body {
     left: 50%;
     margin-top: 1px;
     border-width: 0px 1px 1px 0px; }
-  .label .detail {
-    color: #636363;
-    margin-left: 0.5em; }
   .label.tag-left {
     border-radius: 50em 0 0 50em;
     padding-left: 1.5em; }
@@ -2730,6 +2872,15 @@ html, body {
       box-shadow: 0px 0px 1px 1px #fff; }
   .label.raised {
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+  .label .detail {
+    color: #636363;
+    margin-left: 0.5em; }
+    .label .detail.fill {
+      color: #dbdbdb;
+      background-color: #494949;
+      padding: 0.2em 0.4em;
+      border-radius: 10em;
+      margin-right: -0.5em; }
 
 .input {
   position: relative;

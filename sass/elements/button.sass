@@ -64,6 +64,11 @@ $btn-huge : 1.42857143rem
    border-radius: 0px
   &.circle
     border-radius: 10em
+  &.vip
+  	text-transform: uppercase
+  	letter-spacing: .0798em
+  	font-weight: 600
+  	color: lighten($button-color, 25%)
   &.ripple
     position: relative
     overflow: hidden
@@ -206,6 +211,8 @@ $btn-huge : 1.42857143rem
       &.ripple
         &:after
           background-image: radial-gradient(circle, $color-invert 10%, transparent 10.01%)
+      &.vip
+      	color: lighten($color-invert, 20%)
       &:hover, &.active
        background-color: darken($color, $button-hover-darkness)
       &:active
