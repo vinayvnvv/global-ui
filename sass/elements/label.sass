@@ -45,6 +45,16 @@ $lbl-huge : 1.42857143rem
     	&.#{$name}
     		background-color: $color
     		color: $color-invert
+    		&.outline
+    			background-color: #fff
+    			border-color: $color
+    			color: $color
+    		&.pointing
+	        	&:not(.outline):after
+	          		background-color: $color
+	          		border-color: $color
+	        	&.outline:after
+	          		border-color: $color
 
 	
 	&.round
@@ -79,13 +89,27 @@ $lbl-huge : 1.42857143rem
           border-width: 1px 0 0 1px
           -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg)
           transform: translateX(-50%) translateY(-50%) rotate(45deg)
-          top: 0
-          left: 50%
           border-color: $label-background-color
           border-style: solid
+        &.point-top:after
+          top: 0
+          left: 50%
         &.point-left:after
        	  top: 50%
        	  left: 0
+       	  border-width: 0px 0px 1px 1px
+       	&.point-right:after
+       	  top: 50%
+       	  left: 100%
+       	  border-width: 1px 1px 0px 0px
+       	  margin-left: 1px
+       	  width: .5666em
+       	  height: .5666em
+       	&.point-bottom:after
+       	  top: 100%
+       	  left: 50%
+       	  border-width: 0px 1px 1px 0px
+          margin-top: 1px
 
         
 
