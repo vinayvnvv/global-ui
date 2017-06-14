@@ -22,95 +22,120 @@ $lbl-huge : 1.42857143rem
 
 
 .label
-	background-color: $label-background-color
-	position: relative
-	color: $label-color
-	display: inline-flex
-	align-items: center
-	justify-content: center
-	height: 1.7em
-	padding: 0 0.733em
-	flex-direction: row
-	line-height: 1
-	border-radius: .28571429rem
-	vertical-align: top
-	border: 1px solid transparent
-	outline: none
-	font-size: 0.88em
+  background-color: $label-background-color
+  position: relative
+  color: $label-color
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  height: 1.7em
+  padding: 0 0.733em
+  flex-direction: row 
+  line-height: 1
+  border-radius: .28571429rem
+  vertical-align: top
+  border: 1px solid transparent
+  outline: none
+  font-size: 0.88em
 
-
-	@each $name, $pair in $colors
-    	$color: nth($pair, 1)
-    	$color-invert: nth($pair, 2)
-    	&.#{$name}
-    		background-color: $color
-    		color: $color-invert
-    		&.outline
-    			background-color: #fff
+  @each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}
+    	background-color: $color
+    	color: $color-invert
+    	&.outline
+    		background-color: #fff
+    		border-color: $color
+    		color: $color
+    	& .detail
+  	  	color: darken($color-invert, 20%)
+  	  &.pointing
+    		&:not(.outline):after
+    			background-color: $color
     			border-color: $color
-    			color: $color
-    		&.pointing
-	        	&:not(.outline):after
-	          		background-color: $color
-	          		border-color: $color
-	        	&.outline:after
-	          		border-color: $color
+    		&.outline:after
+    			border-color: $color
 
-	
-	&.round
-		border-radius: 50em
-	&.square
-		border-radius: 0
-	&.mini
-		font-size: $lbl-mini
-	&.tiny
-    	font-size: $lbl-tiny
-	&.small
-	    font-size: $lbl-small
-	&.medium
-	    font-size: $lbl-medium
-	&.large
-	    font-size: $lbl-large
-	&.big
-	    font-size: $lbl-big
-	&.huge
-	    font-size: $lbl-huge
-	&.outline
-		border-color: $label-background-color
-		background-color: transparent
-	&.pointing
-        &:not(.outline):after
-          background-color: $label-background-color
-        &.outline:after
-          border-color: $label-background-color
-          background-color: #fff
-        &:after
-          +pointing
-          border-width: 1px 0 0 1px
-          -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg)
-          transform: translateX(-50%) translateY(-50%) rotate(45deg)
-          border-color: $label-background-color
-          border-style: solid
-        &.point-top:after
-          top: 0
-          left: 50%
-        &.point-left:after
-       	  top: 50%
-       	  left: 0
-       	  border-width: 0px 0px 1px 1px
-       	&.point-right:after
-       	  top: 50%
-       	  left: 100%
-       	  border-width: 1px 1px 0px 0px
-       	  margin-left: 1px
-       	  width: .5666em
-       	  height: .5666em
-       	&.point-bottom:after
-       	  top: 100%
-       	  left: 50%
-       	  border-width: 0px 1px 1px 0px
-          margin-top: 1px
-
-        
-
-    
+  &.round
+  	border-radius: 50em
+  &.square
+  	border-radius: 0
+  &.mini
+  	font-size: $lbl-mini
+  &.tiny
+    font-size: $lbl-tiny
+  &.small
+  	font-size: $lbl-small
+  &.medium
+    font-size: $lbl-medium
+  &.large
+	  font-size: $lbl-large
+  &.big
+	  font-size: $lbl-big
+  &.huge
+  	font-size: $lbl-huge 
+  &.outline
+  	border-color: $label-background-color
+  	background-color: transparent
+  &.pointing
+	  &:not(.outline):after
+	    background-color: $label-background-color
+	  &.outline:after
+	    border-color: $label-background-color
+	    background-color: #fff
+	  &:after
+	    +pointing
+	    border-width: 1px 0 0 1px
+	    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg)
+	    transform: translateX(-50%) translateY(-50%) rotate(45deg)
+	    border-color: $label-background-color
+	    border-style: solid
+	  &.point-top:after
+	    top: 0
+	    left: 50%
+	  &.point-left:after
+	 	  top: 50%
+	 	  left: 0
+	 	  border-width: 0px 0px 1px 1px
+	 	&.point-right:after
+	 	  top: 50%
+	 	  left: 100%
+	 	  border-width: 1px 1px 0px 0px
+	 	  margin-left: 1px
+	 	  width: .5666em
+	 	  height: .5666em
+	 	&.point-bottom:after
+	 		top: 100%
+	 		left: 50%
+	 		margin-top: 1px
+	 		border-width: 0px 1px 1px 0px
+  & .detail
+  	color: lighten($label-color, 10%)
+  	margin-left: 0.5em
+  &.tag-left
+  	border-radius: 50em 0 0 50em
+  	padding-left: 1.5em
+  	&:before
+  		content: ''
+  		width: 0.3em
+  		height: 0.3em
+  		border: 1px solid $label-color
+  		border-radius: 50em
+  		position: absolute
+  		left: 0.6em
+  		box-shadow: 0px 0px 1px 1px #fff
+  &.tag-right
+  	border-radius: 0 50em 50em 0
+  	padding-right: 1.5em
+  	&:before
+  		content: ''
+  		width: 0.3em
+  		height: 0.3em
+  		border: 1px solid $label-color
+  		border-radius: 50em
+  		position: absolute
+  		right: 0.6em
+  		box-shadow: 0px 0px 1px 1px #fff
+  &.raised
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)
