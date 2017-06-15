@@ -14,6 +14,7 @@ var gulpActivity = function(app, http) {
 	               'sass/base/*',
 	               'sass/utitlities/*',
 	               'sass/elements/*',
+	               'sass/components/*',
 	               'sass/test/*',
 	               'sass/grids/*'
 	               ];
