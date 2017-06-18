@@ -4,6 +4,18 @@
   to {
     transform: rotate(359deg); } }
 
+.block {
+  width: 100%; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-center {
+  text-align: center; }
+
 html, body {
   font-family: Lato, "Helvetica Neue", "Open Sans", Arial, Helvetica, sans-serif;
   margin: 0 auto; }
@@ -3622,3 +3634,60 @@ html, body {
   right: 1.3em;
   left: initial;
   position: absolute; }
+
+.tabel {
+  border: 1px solid #dbdbdb;
+  border-collapse: separate;
+  border-radius: 0.28571rem;
+  border-spacing: 0;
+  font-size: 1em;
+  text-align: left; }
+  .tabel thead tr {
+    border: 1px solid #dbdbdb; }
+    .tabel thead tr th {
+      background-color: #f0f0f0;
+      color: #222222;
+      padding: 0.544em;
+      font-weight: 600;
+      border-bottom: 1px solid #dbdbdb;
+      border-left: 1px solid #dbdbdb; }
+      .tabel thead tr th:first-child {
+        border-left: none; }
+  .tabel tbody tr {
+    border: 1px solid #dbdbdb; }
+    .tabel tbody tr:first-child td {
+      border-top: none; }
+    .tabel tbody tr td {
+      padding: 0.544em;
+      color: #555555;
+      border-top: 1px solid #dbdbdb;
+      border-left: 1px solid #dbdbdb; }
+      .tabel tbody tr td:first-child {
+        border-left: none; }
+  .tabel.defination thead tr:first-child th:first-child {
+    background-color: transparent;
+    box-shadow: -1px -1px 0 1px #fff;
+    pointer-events: none; }
+  .tabel.no-outline {
+    border: none; }
+  .tabel.horizontal-divider thead th, .tabel.horizontal-divider thead td, .tabel.horizontal-divider tbody th, .tabel.horizontal-divider tbody td {
+    border-left: none; }
+  .tabel.vertical-divider thead th, .tabel.vertical-divider thead td, .tabel.vertical-divider tbody th, .tabel.vertical-divider tbody td {
+    border-top: none;
+    border-bottom: none; }
+  .tabel.striped tbody tr:nth-child(even) {
+    background-color: whitesmoke; }
+  .tabel.structured {
+    border-collapse: collapse; }
+    .tabel.structured tbody tr td {
+      border: 1px solid #dbdbdb; }
+    .tabel.structured thead tr th {
+      border: 1px solid #dbdbdb; }
+  .tabel.hovered tbody tr:hover {
+    background-color: #ebebeb; }
+  .tabel tbody tr.active {
+    background-color: #dedede; }
+    .tabel tbody tr.active td:not(:first-child) {
+      border-left-color: #c9c9c9; }
+  .tabel tbody td.active {
+    background-color: #dedede; }
