@@ -1,0 +1,91 @@
+//vars
+$tabel-border-color: $grey-lighter
+$th-color: #222222
+$th-background-color: lighten($grey-lighter, 8%)
+$td-color: #555555
+$border-radius: .28571429rem
+$font-size: 1em
+$tabel-padding: 0.544em
+
+
+.tabel
+	border: 1px solid $tabel-border-color
+	border-collapse: separate
+	border-radius: $border-radius
+	border-spacing: 0
+	font-size: $font-size
+	text-align: left
+	thead
+		tr
+			border: 1px solid $tabel-border-color
+			th
+				background-color: $th-background-color
+				color: $th-color
+				padding: $tabel-padding
+				font-weight: 600
+				border-bottom: 1px solid $tabel-border-color
+				border-left: 1px solid $tabel-border-color
+				&:first-child
+					border-left: none
+	tbody
+		tr
+			border: 1px solid $tabel-border-color
+			&:first-child td
+					border-top: none
+			td
+				padding: $tabel-padding
+				color: $td-color
+				border-top: 1px solid $tabel-border-color
+				border-left: 1px solid $tabel-border-color
+				&:first-child
+					border-left: none
+
+
+	&.defination 
+		thead 
+			tr:first-child 
+				th:first-child
+					background-color: transparent
+					box-shadow: -1px -1px 0 1px #fff
+					pointer-events: none
+	&.no-outline
+		border: none
+	&.horizontal-divider
+		thead, tbody
+			th, td
+				border-left: none
+	&.vertical-divider
+		thead, tbody
+			th, td
+				border-top: none
+				border-bottom: none
+	&.striped
+		tbody
+			tr:nth-child(even)
+				background-color: lighten($th-background-color, 2%)
+	&.structured
+		border-collapse: collapse
+		tbody
+			tr
+				td
+					border: 1px solid $tabel-border-color
+		thead
+			tr
+				th
+					border: 1px solid $tabel-border-color	
+	&.hovered
+		tbody
+		 tr:hover
+		 	background-color: darken($th-background-color, 2%)
+	&
+		tbody
+		 tr.active
+		 	background-color: darken($th-background-color, 7%	)
+		 	& td:not(:first-child)
+		 		border-left-color: darken($tabel-border-color, 7%)
+			tr
+			& td
+				&.active
+					background-color: darken($th-background-color, 7%	)
+
+
