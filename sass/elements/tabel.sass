@@ -87,5 +87,30 @@ $tabel-padding: 0.544em
 			& td
 				&.active
 					background-color: darken($th-background-color, 7%	)
+	//colors
+	@each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}
+    	border-color: $color
+    	& thead
+    		& tr
+    			& th
+    				background-color: $color
+    				color: $color-invert
+    				border-color: darken($color, 5%)
+    	& tbody
+    		& tr.active
+    			background-color: lighten($color, 19%)
+    			& td:not(:first-child)
+		 				border-left-color: darken($color, 7%)
+		 		& tr
+		 			& td
+		 			 &.active
+		 			 	background-color: lighten($color, 19%)
+	&.square
+		border-radius: 0
+
+
 
 
