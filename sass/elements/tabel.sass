@@ -6,6 +6,17 @@ $td-color: #555555
 $border-radius: .28571429rem
 $font-size: 1em
 $tabel-padding: 0.544em
+$tabel-padding-more: 0.8444em
+$tabel-padding-less: 0.3444em
+
+//sizes
+$tabel-mini : .68571429rem
+$tabel-tiny : .79714286rem
+$tabel-small : .92857143rem
+$tabel-medium : 1rem
+$tabel-large : 1.14285714rem
+$tabel-big : 1.28571429rem
+$tabel-huge : 1.42857143rem
 
 
 .tabel
@@ -15,6 +26,7 @@ $tabel-padding: 0.544em
 	border-spacing: 0
 	font-size: $font-size
 	text-align: left
+	width: 100%
 	thead
 		tr
 			border: 1px solid $tabel-border-color
@@ -39,7 +51,18 @@ $tabel-padding: 0.544em
 				border-left: 1px solid $tabel-border-color
 				&:first-child
 					border-left: none
-
+	tfoot
+		tr
+			border: 1px solid $tabel-border-color
+			th
+				background-color: $th-background-color
+				color: lighten($th-color, 4%)
+				padding: $tabel-padding
+				font-weight: 400
+				border-top: 1px solid $tabel-border-color
+				border-left: 1px solid $tabel-border-color
+				&:first-child
+					border-left: none
 
 	&.defination 
 		thead 
@@ -48,14 +71,20 @@ $tabel-padding: 0.544em
 					background-color: transparent
 					box-shadow: -1px -1px 0 1px #fff
 					pointer-events: none
+		tfoot	 
+			tr:first-child 
+				th:first-child
+					background-color: transparent
+					box-shadow: -1px 1px 0 1px #fff
+					pointer-events: none
 	&.no-outline
 		border: none
 	&.horizontal-divider
-		thead, tbody
+		thead, tbody, tfoot
 			th, td
 				border-left: none
 	&.vertical-divider
-		thead, tbody
+		thead, tbody, tfoot
 			th, td
 				border-top: none
 				border-bottom: none
@@ -70,6 +99,10 @@ $tabel-padding: 0.544em
 				td
 					border: 1px solid $tabel-border-color
 		thead
+			tr
+				th
+					border: 1px solid $tabel-border-color
+		tfoot
 			tr
 				th
 					border: 1px solid $tabel-border-color	
@@ -99,15 +132,36 @@ $tabel-padding: 0.544em
     				background-color: $color
     				color: $color-invert
     				border-color: darken($color, 5%)
-    	& tbody
+    	& tfoot
+		 		& tr
+		 			& th
+		 				background-color: $color
+		 				color: lighten($color-invert, 3%)
+		 				border-color: darken($color, 5%)
+		 	& tbody
     		& tr.active
     			background-color: lighten($color, 19%)
     			& td:not(:first-child)
-		 				border-left-color: darken($color, 7%)
-		 		& tr
+    				border-left-color: darken($color, 7%)
+    		& tr
 		 			& td
 		 			 &.active
 		 			 	background-color: lighten($color, 19%)
+
+	&.mini
+		font-size: $tabel-mini
+	&.tiny
+		font-size: $tabel-tiny
+  &.small
+  	font-size: $tabel-small
+  &.medium
+ 		font-size: $tabel-medium
+  &.large
+  	font-size: $tabel-large
+	&.big
+  	font-size: $tabel-big
+	&.huge
+		font-size: $tabel-huge
 	&.square
 		border-radius: 0
 	//alignments
@@ -115,8 +169,17 @@ $tabel-padding: 0.544em
 		vertical-align: top
 	& .valign-bottom
 		vertical-align: bottom
-
-
+	&.padding-more
+		thead tr th, tbody tr td
+			padding: $tabel-padding-more
+	&.padding-less
+		thead tr th, tbody tr td
+			padding: $tabel-padding-less
+	& tfoot.action
+		& tr
+			& th
+				border-left: none
+				width: 100%
 
 
 
