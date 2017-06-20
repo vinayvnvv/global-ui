@@ -10,9 +10,17 @@ $menu-bg-hovered-color: darken($menu-bg-color, 5%)
 $menu-header-font-size: 0.8em
 $menu-header-text-color: #555555
 
-
+//sizes
+$menu-mini : .78571429rem
+$menu-tiny : .85714286rem
+$menu-small : .92857143rem
+$menu-medium : 1rem
+$menu-large : 1.14285714rem
+$menu-big : 1.28571429rem
+$menu-huge : 1.42857143rem
 
 .menu
+	position: relative
 	box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.08), 1px 2px 1px 0 rgba(0, 0, 0, 0.07), -1px 4px 1px -1px rgba(0, 0, 0, 0.02)
 	display: inline-flex
 	flex-direction: column
@@ -27,7 +35,10 @@ $menu-header-text-color: #555555
 		flex-direction: row
 		cursor: pointer
 		font-weight: 400
+		z-index: 3
 		color: $menu-text-color
+		transition: .1333s all
+		align-items: center
 		& .icon:first-child
 			margin-right: 0.62788em!important
 		& .icon:last-child
@@ -37,6 +48,19 @@ $menu-header-text-color: #555555
 			justify-content: flex-end
 		&:hover
 			background-color: $menu-bg-hovered-color
+		&:active
+			background-color: darken($menu-bg-hovered-color, 5%)
+		&.disabled
+			opacity: 0.5
+			pointer-events: none
+		&.detailed
+			span:not(.icon):not(.details)
+				margin-right: 40px
+			& .details
+				margin-left: auto
+				font-size: 0.8em
+				float: right
+				color: lighten($menu-text-color, 29%)
 	& .header
 		padding: $menu-padding-vrtcl $menu-padding-hrztl
 		display: inline-flex
@@ -53,3 +77,97 @@ $menu-header-text-color: #555555
 		min-height: 1px
 		margin: .233em 0
 		background-color: darken($menu-bg-color, 10%)
+	&.wide-small
+		min-width: 96px
+	&.wide-medium
+		min-width: 256px
+	&.wide-large
+		min-width: 384px
+	&.simple
+		box-shadow: none
+	&.mini
+		font-size: $menu-mini
+	&.tiny
+		font-size: $menu-tiny
+	&.small
+		font-size: $menu-small
+	&.medium
+		font-size: $menu-medium
+	&.large
+		font-size: $menu-large
+	&.big
+		font-size: $menu-big
+	&.huge
+		font-size: $menu-huge
+	&.pointing
+		&:after
+			+pointing
+			background-color: $menu-bg-color
+			border-width: 1px 0 0 1px
+			border-color: $menu-border-color
+			border-style: solid
+			-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg)
+			transform: translateX(-50%) translateY(-50%) rotate(45deg)
+		&.point-top-center:after
+			left: 50%
+			top: 0
+		&.point-top-start:after
+			top: 0
+			left: 15px
+		&.point-top-end:after
+			top: 0
+			right: 15px
+		&.point-left-start:after
+			top: 15px
+			left: 0
+			border-width: 0px 0px 1px 1px
+		&.point-left-center:after
+			top: 50%
+			left: 0
+			border-width: 0px 0px 1px 1px
+		&.point-left-end:after
+			bottom: 11px
+			left: 0
+			border-width: 0px 0px 1px 1px
+		&.point-right-start:after
+			left: 100%
+			top: 15px
+			border-width: 1px 1px 0px 0px
+			margin-left: 1px
+		&.point-right-center:after
+			left: 100%
+			top: 50%
+			border-width: 1px 1px 0px 0px
+			margin-left: 1px
+		&.point-right-end:after
+			left: 100%
+			bottom: 11px
+			border-width: 1px 1px 0px 0px
+			margin-left: 1px
+		&.point-bottom-start:after
+			top: 100%
+			left: 15px
+			margin-top: 1px
+			border-width: 0px 1px 1px 0px
+		&.point-bottom-center:after
+			top: 100%
+			left: 50%
+			margin-top: 1px
+			border-width: 0px 1px 1px 0px
+		&.point-bottom-end:after
+			top: 100%
+			right: 15px
+			margin-top: 1px
+			border-width: 0px 1px 1px 0px
+	&.style-1
+		box-shadow: rgba(0,0,0,.05) 0 2px 12px 5px, rgba(0,0,0,.1) 0 0 0 1px
+		& .item
+			padding: 0.313em 1.1em
+			font-weight: 300
+		& .header
+			padding: 0.533em 1.1em
+			font-size: 0.7em
+			color: lighten($menu-text-color, 47%)
+
+			
+
