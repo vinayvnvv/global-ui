@@ -77,6 +77,12 @@ $tabel-huge : 1.42857143rem
 					background-color: transparent
 					box-shadow: -1px 1px 0 1px #fff
 					pointer-events: none
+		tbody
+			tr
+				td:first-child
+					background-color: $th-background-color
+					color: $th-color
+					font-weight: 600
 	&.no-outline
 		border: none
 	&.horizontal-divider
@@ -120,33 +126,7 @@ $tabel-huge : 1.42857143rem
 			& td
 				&.active
 					background-color: darken($th-background-color, 7%	)
-	//colors
-	@each $name, $pair in $colors
-    $color: nth($pair, 1)
-    $color-invert: nth($pair, 2)
-    &.#{$name}
-    	border-color: $color
-    	& thead
-    		& tr
-    			& th
-    				background-color: $color
-    				color: $color-invert
-    				border-color: darken($color, 5%)
-    	& tfoot
-		 		& tr
-		 			& th
-		 				background-color: $color
-		 				color: lighten($color-invert, 3%)
-		 				border-color: darken($color, 5%)
-		 	& tbody
-    		& tr.active
-    			background-color: lighten($color, 19%)
-    			& td:not(:first-child)
-    				border-left-color: darken($color, 7%)
-    		& tr
-		 			& td
-		 			 &.active
-		 			 	background-color: lighten($color, 19%)
+
 
 	&.mini
 		font-size: $tabel-mini
@@ -182,4 +162,38 @@ $tabel-huge : 1.42857143rem
 				width: 100%
 
 
-
+	//colors
+	@each $name, $pair in $colors
+		$color: nth($pair, 1)
+		$color-invert: nth($pair, 2)
+		&.#{$name}
+			border-color: $color
+			& thead
+				& tr
+					& th
+						background-color: $color
+						color: $color-invert
+						border-color: darken($color, 5%)
+			& tfoot
+				& tr
+					& th
+						background-color: $color
+						color: lighten($color-invert, 3%)
+						border-color: darken($color, 5%)
+			& tbody
+				& tr
+					&.active
+						background-color: lighten($color, 19%)
+						& td:not(:first-child)
+						border-left-color: darken($color, 7%)
+				& tr
+					& td
+						&.active
+							background-color: lighten($color, 19%)
+			&.defination
+				tbody
+					tr
+						td:first-child
+							background-color: $color
+							color: $color-invert
+							border-color: darken($color, 5%)
