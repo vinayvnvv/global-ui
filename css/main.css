@@ -4342,7 +4342,8 @@ html, body {
     letter-spacing: .04em; }
   .menu.square {
     border-radius: 0; }
-  .menu.divider {
+  .menu .divider {
     height: 1px;
     min-height: 1px;
-    margin: .233em 0; }
+    margin: .233em 0;
+    background-color: #e6e6e6; }
