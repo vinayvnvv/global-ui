@@ -28,6 +28,7 @@ $menu-huge : 1.42857143rem
 	padding: .273em 0
 	border-radius: $menu-border-radius
 	border: 1px solid $menu-border-color
+	background-color: $menu-bg-color
 	z-index: 100
 	& .item
 		padding: $menu-padding-vrtcl $menu-padding-hrztl
@@ -72,6 +73,20 @@ $menu-huge : 1.42857143rem
 		letter-spacing: .04em
 	&.square
 		border-radius: 0
+	&.ripple
+		& .item
+			position: relative
+			overflow: hidden
+			transform: translate3d(0, 0, 0)
+			&:after
+				+ripple-after
+				background-image: radial-gradient(circle, rgba(0, 0, 0, 0.95) 30%, transparent 20.01%)
+				transition-duration: 1.3s
+				border-radius: 50em
+			&:active:after
+	      transform: scale(0, 0)
+	      opacity: .5
+	      transition: 0s
 	& .divider
 		height: 1px
 		min-height: 1px
@@ -111,24 +126,30 @@ $menu-huge : 1.42857143rem
 		&.point-top-center:after
 			left: 50%
 			top: 0
+			margin-top: -1px
 		&.point-top-start:after
 			top: 0
 			left: 15px
+			margin-top: -1px
 		&.point-top-end:after
 			top: 0
 			right: 15px
+			margin-top: -1px
 		&.point-left-start:after
 			top: 15px
 			left: 0
 			border-width: 0px 0px 1px 1px
+			margin-left: -1px
 		&.point-left-center:after
 			top: 50%
 			left: 0
 			border-width: 0px 0px 1px 1px
+			margin-left: -1px
 		&.point-left-end:after
 			bottom: 11px
 			left: 0
 			border-width: 0px 0px 1px 1px
+			margin-left: -1px
 		&.point-right-start:after
 			left: 100%
 			top: 15px
@@ -169,5 +190,44 @@ $menu-huge : 1.42857143rem
 			font-size: 0.7em
 			color: lighten($menu-text-color, 47%)
 
-			
+
+	@each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}:not(.outline)
+    	border-color: $color
+    	background-color: $color
+    	& .item
+    		color: $color-invert
+    		&:hover
+    			background-color: lighten($color, 9%)
+    		&:active
+    			background-color: lighten($color, 19%)
+    		&.detailed
+    			& .details
+    				color: lighten($color, 29%)
+    	& .divider
+    		background-color: darken($color, 10%)
+    	& .header
+    		color: lighten($color, 30%)
+    	&.pointing:after
+    		background-color: $color
+    		border-color: $color
+    &.#{$name}.outline
+    	border-color: $color
+    	& .item
+    		&:hover
+    			background-color: $color
+    			color: $color-invert
+    			& .details
+    				color: darken($color-invert, 9%)
+    		&:active
+    			background-color: darken($color, 19%)
+    	&.pointing:after
+    		border-color: $color
+    &.#{$name}
+    	&.ripple
+    		& .item
+    			&:after
+    				background-image: radial-gradient(circle, $color-invert 30%, transparent 20.01%)
 

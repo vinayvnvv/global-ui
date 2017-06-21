@@ -1,0 +1,52 @@
+//sizes
+$mini: 35px
+$tiny: 80px
+$small: 150px
+$medium: 300px
+$large: 450px
+$big: 600px
+$huge: 800px
+
+.image
+	max-width: 100%
+	position: relative
+	display: inline-block
+	border-radius: .277em
+	&.mini
+		width: $mini
+		&.circle
+			height: $mini
+	&.tiny
+		width: $tiny
+		&.circle
+			height: $tiny
+	&.small
+		width: $small
+		&.circle
+			height: $small
+	&.medium
+		width: $medium
+		&.circle
+			height: $medium
+	&.large
+		width: $large
+		&.circle
+			height: $large
+	&.big
+		width: $big
+		&.circle
+			height: $big
+	&.huge
+		width: $huge
+		&.circle
+			height: $huge
+	&.square
+		border-radius: 0
+	&.circle
+		border-radius: 500em
+		height: auto
+		overflow: hidden
+	&.spaced
+		margin-left: 0.377em
+		margin-right: 0.377em
+
