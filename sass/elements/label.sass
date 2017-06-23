@@ -2,6 +2,13 @@
 $label-color: #494949
 $label-background-color: $grey-lighter
 
+$label-padding: 0 0.733em
+$label-height: 1.677em
+$label-padding-more: 0 0.8444em
+$label-padding-more-height: 1.9em
+$label-padding-less: 0 0.3444em
+$label-padding-less-height: 1.3em
+
 
 //lbl height
 $lbl-height :  2.25em
@@ -23,8 +30,8 @@ $lbl-huge : 1.42857143rem
   display: inline-flex
   align-items: center
   justify-content: center
-  height: 1.7em
-  padding: 0 0.733em
+  height: $label-height
+  padding: $label-padding
   flex-direction: row 
   line-height: 1
   border-radius: .28571429rem
@@ -142,6 +149,12 @@ $lbl-huge : 1.42857143rem
      &.fill
        color: $label-background-color
        background-color: $label-color
-       padding: 0.2em 0.4em
+       padding: 0.277em 0.4em
        border-radius: 7px
        margin-right: -0.5em
+  &.padding-more
+    padding: $label-padding-more
+    height: $label-padding-more-height
+  &.padding-less
+    padding: $label-padding-less
+    height: $label-padding-less-height
