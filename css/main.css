@@ -4403,9 +4403,9 @@ html, body {
   .menu .divider {
     height: 1px;
     min-height: 1px;
-    margin: .233em 0;
-    background-color: #e6e6e6;
-    border: none; }
+    margin: 0.233em 0 !important;
+    background-color: #e6e6e6 !important;
+    border: none !important; }
   .menu.wide-small {
     min-width: 96px; }
   .menu.wide-medium {
@@ -4523,7 +4523,7 @@ html, body {
       .menu.light:not(.outline) .item.detailed .details {
         color: white; }
     .menu.light:not(.outline) .divider {
-      background-color: #dbdbdb; }
+      background-color: #dbdbdb !important; }
     .menu.light:not(.outline) .header {
       color: white; }
     .menu.light:not(.outline).pointing:after {
@@ -4554,7 +4554,7 @@ html, body {
       .menu.dark:not(.outline) .item.detailed .details {
         color: gray; }
     .menu.dark:not(.outline) .divider {
-      background-color: #1c1c1c; }
+      background-color: #1c1c1c !important; }
     .menu.dark:not(.outline) .header {
       color: #828282; }
     .menu.dark:not(.outline).pointing:after {
@@ -4585,7 +4585,7 @@ html, body {
       .menu.primary:not(.outline) .item.detailed .details {
         color: #66ffe8; }
     .menu.primary:not(.outline) .divider {
-      background-color: #009e86; }
+      background-color: #009e86 !important; }
     .menu.primary:not(.outline) .header {
       color: #6bffe9; }
     .menu.primary:not(.outline).pointing:after {
@@ -4616,7 +4616,7 @@ html, body {
       .menu.info:not(.outline) .item.detailed .details {
         color: #b1c9f2; }
     .menu.info:not(.outline) .divider {
-      background-color: #205bbc; }
+      background-color: #205bbc !important; }
     .menu.info:not(.outline) .header {
       color: #b5ccf2; }
     .menu.info:not(.outline).pointing:after {
@@ -4647,7 +4647,7 @@ html, body {
       .menu.success:not(.outline) .item.detailed .details {
         color: #9beeb8; }
     .menu.success:not(.outline) .divider {
-      background-color: #1ca64c; }
+      background-color: #1ca64c !important; }
     .menu.success:not(.outline) .header {
       color: #9fefbb; }
     .menu.success:not(.outline).pointing:after {
@@ -4678,7 +4678,7 @@ html, body {
       .menu.warning:not(.outline) .item.detailed .details {
         color: #fffbeb; }
     .menu.warning:not(.outline) .divider {
-      background-color: #ffd324; }
+      background-color: #ffd324 !important; }
     .menu.warning:not(.outline) .header {
       color: #fffcf0; }
     .menu.warning:not(.outline).pointing:after {
@@ -4709,7 +4709,7 @@ html, body {
       .menu.danger:not(.outline) .item.detailed .details {
         color: #ffccd6; }
     .menu.danger:not(.outline) .divider {
-      background-color: #ff0537; }
+      background-color: #ff0537 !important; }
     .menu.danger:not(.outline) .header {
       color: #ffd1da; }
     .menu.danger:not(.outline).pointing:after {
@@ -4740,7 +4740,7 @@ html, body {
       .menu.red:not(.outline) .item.detailed .details {
         color: #fcc6c2; }
     .menu.red:not(.outline) .divider {
-      background-color: #ea1c0d; }
+      background-color: #ea1c0d !important; }
     .menu.red:not(.outline) .header {
       color: #fccbc7; }
     .menu.red:not(.outline).pointing:after {
@@ -4771,7 +4771,7 @@ html, body {
       .menu.pink:not(.outline) .item.detailed .details {
         color: #f6a5c0; }
     .menu.pink:not(.outline) .divider {
-      background-color: #c1134e; }
+      background-color: #c1134e !important; }
     .menu.pink:not(.outline) .header {
       color: #f7a9c4; }
     .menu.pink:not(.outline).pointing:after {
@@ -4802,7 +4802,7 @@ html, body {
       .menu.purple:not(.outline) .item.detailed .details {
         color: #d787e4; }
     .menu.purple:not(.outline) .divider {
-      background-color: #771e86; }
+      background-color: #771e86 !important; }
     .menu.purple:not(.outline) .header {
       color: #d88be5; }
     .menu.purple:not(.outline).pointing:after {
@@ -4833,7 +4833,7 @@ html, body {
       .menu.deep-purple:not(.outline) .item.detailed .details {
         color: #baa3e2; }
     .menu.deep-purple:not(.outline) .divider {
-      background-color: #512e90; }
+      background-color: #512e90 !important; }
     .menu.deep-purple:not(.outline) .header {
       color: #bda7e3; }
     .menu.deep-purple:not(.outline).pointing:after {
@@ -4864,7 +4864,7 @@ html, body {
       .menu.indigo:not(.outline) .item.detailed .details {
         color: #a7b0e1; }
     .menu.indigo:not(.outline) .divider {
-      background-color: #32408f; }
+      background-color: #32408f !important; }
     .menu.indigo:not(.outline) .header {
       color: #abb4e2; }
     .menu.indigo:not(.outline).pointing:after {
@@ -4895,7 +4895,7 @@ html, body {
       .menu.blue:not(.outline) .item.detailed .details {
         color: #add8fb; }
     .menu.blue:not(.outline) .divider {
-      background-color: #0c7cd5; }
+      background-color: #0c7cd5 !important; }
     .menu.blue:not(.outline) .header {
       color: #b2dbfb; }
     .menu.blue:not(.outline).pointing:after {
@@ -4926,7 +4926,7 @@ html, body {
       .menu.light-blue .item.detailed .details {
         color: #8ddbfe; }
     .menu.light-blue .divider {
-      background-color: #0286c2; }
+      background-color: #0286c2 !important; }
     .menu.light-blue .header {
       color: #92dcfe; }
     .menu.light-blue.pointing:after {
@@ -4957,7 +4957,7 @@ html, body {
       .menu.cyan:not(.outline) .item.detailed .details {
         color: #69eeff; }
     .menu.cyan:not(.outline) .divider {
-      background-color: #008fa1; }
+      background-color: #008fa1 !important; }
     .menu.cyan:not(.outline) .header {
       color: #6eefff; }
     .menu.cyan:not(.outline).pointing:after {
@@ -4988,7 +4988,7 @@ html, body {
       .menu.teal:not(.outline) .item.detailed .details {
         color: #2bffeb; }
     .menu.teal:not(.outline) .divider {
-      background-color: #00635a; }
+      background-color: #00635a !important; }
     .menu.teal:not(.outline) .header {
       color: #30ffec; }
     .menu.teal:not(.outline).pointing:after {
@@ -5019,7 +5019,7 @@ html, body {
       .menu.green:not(.outline) .item.detailed .details {
         color: #b2ddb3; }
     .menu.green:not(.outline) .divider {
-      background-color: #3d8b40; }
+      background-color: #3d8b40 !important; }
     .menu.green:not(.outline) .header {
       color: #b5dfb7; }
     .menu.green:not(.outline).pointing:after {
@@ -5050,7 +5050,7 @@ html, body {
       .menu.light-green:not(.outline) .item.detailed .details {
         color: #d2e8b9; }
     .menu.light-green:not(.outline) .divider {
-      background-color: #71a436; }
+      background-color: #71a436 !important; }
     .menu.light-green:not(.outline) .header {
       color: #d5e9bd; }
     .menu.light-green:not(.outline).pointing:after {
@@ -5081,7 +5081,7 @@ html, body {
       .menu.lime:not(.outline) .item.detailed .details {
         color: #edf2b7; }
     .menu.lime:not(.outline) .divider {
-      background-color: #b2c022; }
+      background-color: #b2c022 !important; }
     .menu.lime:not(.outline) .header {
       color: #eef3bb; }
     .menu.lime:not(.outline).pointing:after {
@@ -5112,7 +5112,7 @@ html, body {
       .menu.yellow:not(.outline) .item.detailed .details {
         color: #fffacf; }
     .menu.yellow:not(.outline) .divider {
-      background-color: #ffe608; }
+      background-color: #ffe608 !important; }
     .menu.yellow:not(.outline) .header {
       color: #fffbd4; }
     .menu.yellow:not(.outline).pointing:after {
@@ -5143,7 +5143,7 @@ html, body {
       .menu.amber:not(.outline) .item.detailed .details {
         color: #ffe69b; }
     .menu.amber:not(.outline) .divider {
-      background-color: #d39e00; }
+      background-color: #d39e00 !important; }
     .menu.amber:not(.outline) .header {
       color: #ffe7a0; }
     .menu.amber:not(.outline).pointing:after {
@@ -5174,7 +5174,7 @@ html, body {
       .menu.orange:not(.outline) .item.detailed .details {
         color: #ffd494; }
     .menu.orange:not(.outline) .divider {
-      background-color: #cc7a00; }
+      background-color: #cc7a00 !important; }
     .menu.orange:not(.outline) .header {
       color: #ffd699; }
     .menu.orange:not(.outline).pointing:after {
@@ -5205,7 +5205,7 @@ html, body {
       .menu.deep-orange:not(.outline) .item.detailed .details {
         color: #ffc7b6; }
     .menu.deep-orange:not(.outline) .divider {
-      background-color: #ee3900; }
+      background-color: #ee3900 !important; }
     .menu.deep-orange:not(.outline) .header {
       color: #ffcbbb; }
     .menu.deep-orange:not(.outline).pointing:after {
@@ -5236,7 +5236,7 @@ html, body {
       .menu.brown:not(.outline) .item.detailed .details {
         color: #c0a095; }
     .menu.brown:not(.outline) .divider {
-      background-color: #593f35; }
+      background-color: #593f35 !important; }
     .menu.brown:not(.outline) .header {
       color: #c2a398; }
     .menu.brown:not(.outline).pointing:after {
@@ -5267,7 +5267,7 @@ html, body {
       .menu.grey:not(.outline) .item.detailed .details {
         color: #e8e8e8; }
     .menu.grey:not(.outline) .divider {
-      background-color: #858585; }
+      background-color: #858585 !important; }
     .menu.grey:not(.outline) .header {
       color: #ebebeb; }
     .menu.grey:not(.outline).pointing:after {
@@ -5298,7 +5298,7 @@ html, body {
       .menu.blue-grey:not(.outline) .item.detailed .details {
         color: #b4c4cb; }
     .menu.blue-grey:not(.outline) .divider {
-      background-color: #4b626d; }
+      background-color: #4b626d !important; }
     .menu.blue-grey:not(.outline) .header {
       color: #b7c6cd; }
     .menu.blue-grey:not(.outline).pointing:after {
@@ -5329,7 +5329,7 @@ html, body {
       .menu.black:not(.outline) .item.detailed .details {
         color: #4a4a4a; }
     .menu.black:not(.outline) .divider {
-      background-color: black; }
+      background-color: black !important; }
     .menu.black:not(.outline) .header {
       color: #4d4d4d; }
     .menu.black:not(.outline).pointing:after {
@@ -5360,7 +5360,7 @@ html, body {
       .menu.white:not(.outline) .item.detailed .details {
         color: white; }
     .menu.white:not(.outline) .divider {
-      background-color: #e6e6e6; }
+      background-color: #e6e6e6 !important; }
     .menu.white:not(.outline) .header {
       color: white; }
     .menu.white:not(.outline).pointing:after {
@@ -5423,22 +5423,22 @@ html, body {
     margin-left: 0.377em;
     margin-right: 0.377em; }
 
-.divider {
+.divider:not(.button-group) {
   display: block;
   width: 100%;
   border-top: 1px solid rgba(0, 0, 0, 0.145);
   margin: 0; }
-  .divider.strong {
+  .divider:not(.button-group).strong {
     border-width: 3px; }
-  .divider.extra-strong {
+  .divider:not(.button-group).extra-strong {
     border-width: 6px; }
-  .divider.margin {
+  .divider:not(.button-group).margin {
     margin: 3px 0; }
-  .divider.extra-margin {
+  .divider:not(.button-group).extra-margin {
     margin: 7px 0; }
-  .divider.cleared {
+  .divider:not(.button-group).cleared {
     clear: both; }
-  .divider.detailed {
+  .divider:not(.button-group).detailed {
     text-align: center;
     border-top: 0;
     display: flex;
@@ -5451,223 +5451,223 @@ html, body {
     white-space: nowrap;
     text-overflow: hidden;
     overflow: hidden; }
-    .divider.detailed:before {
+    .divider:not(.button-group).detailed:before {
       content: '';
       width: calc(50% - 11px);
       background: rgba(0, 0, 0, 0.145);
       margin-right: 11px;
       height: 1px; }
-    .divider.detailed:after {
+    .divider:not(.button-group).detailed:after {
       content: '';
       width: calc(50% - 11px);
       background: rgba(0, 0, 0, 0.145);
       margin-left: 11px;
       height: 1px; }
-    .divider.detailed .icon {
+    .divider:not(.button-group).detailed .icon {
       width: 2.999em;
       position: relative;
       top: -.05em; }
-    .divider.detailed.details-left:before {
+    .divider:not(.button-group).detailed.details-left:before {
       width: calc(15% - 11px); }
-    .divider.detailed.details-left:after {
+    .divider:not(.button-group).detailed.details-left:after {
       width: calc(85% - 11px); }
-    .divider.detailed.details-right:before {
+    .divider:not(.button-group).detailed.details-right:before {
       width: calc(85% - 11px); }
-    .divider.detailed.details-right:after {
+    .divider:not(.button-group).detailed.details-right:after {
       width: calc(15% - 11px); }
-  .divider.light {
+  .divider:not(.button-group).light {
     border-color: whitesmoke;
     color: whitesmoke; }
-    .divider.light.detailed:before {
+    .divider:not(.button-group).light.detailed:before {
       background-color: whitesmoke; }
-    .divider.light.detailed:after {
+    .divider:not(.button-group).light.detailed:after {
       background-color: whitesmoke; }
-  .divider.dark {
+  .divider:not(.button-group).dark {
     border-color: #363636;
     color: #363636; }
-    .divider.dark.detailed:before {
+    .divider:not(.button-group).dark.detailed:before {
       background-color: #363636; }
-    .divider.dark.detailed:after {
+    .divider:not(.button-group).dark.detailed:after {
       background-color: #363636; }
-  .divider.primary {
+  .divider:not(.button-group).primary {
     border-color: #00d1b2;
     color: #00d1b2; }
-    .divider.primary.detailed:before {
+    .divider:not(.button-group).primary.detailed:before {
       background-color: #00d1b2; }
-    .divider.primary.detailed:after {
+    .divider:not(.button-group).primary.detailed:after {
       background-color: #00d1b2; }
-  .divider.info {
+  .divider:not(.button-group).info {
     border-color: #3273dc;
     color: #3273dc; }
-    .divider.info.detailed:before {
+    .divider:not(.button-group).info.detailed:before {
       background-color: #3273dc; }
-    .divider.info.detailed:after {
+    .divider:not(.button-group).info.detailed:after {
       background-color: #3273dc; }
-  .divider.success {
+  .divider:not(.button-group).success {
     border-color: #23d160;
     color: #23d160; }
-    .divider.success.detailed:before {
+    .divider:not(.button-group).success.detailed:before {
       background-color: #23d160; }
-    .divider.success.detailed:after {
+    .divider:not(.button-group).success.detailed:after {
       background-color: #23d160; }
-  .divider.warning {
+  .divider:not(.button-group).warning {
     border-color: #ffdd57;
     color: #ffdd57; }
-    .divider.warning.detailed:before {
+    .divider:not(.button-group).warning.detailed:before {
       background-color: #ffdd57; }
-    .divider.warning.detailed:after {
+    .divider:not(.button-group).warning.detailed:after {
       background-color: #ffdd57; }
-  .divider.danger {
+  .divider:not(.button-group).danger {
     border-color: #ff3860;
     color: #ff3860; }
-    .divider.danger.detailed:before {
+    .divider:not(.button-group).danger.detailed:before {
       background-color: #ff3860; }
-    .divider.danger.detailed:after {
+    .divider:not(.button-group).danger.detailed:after {
       background-color: #ff3860; }
-  .divider.red {
+  .divider:not(.button-group).red {
     border-color: #F44336;
     color: #F44336; }
-    .divider.red.detailed:before {
+    .divider:not(.button-group).red.detailed:before {
       background-color: #F44336; }
-    .divider.red.detailed:after {
+    .divider:not(.button-group).red.detailed:after {
       background-color: #F44336; }
-  .divider.pink {
+  .divider:not(.button-group).pink {
     border-color: #E91E63;
     color: #E91E63; }
-    .divider.pink.detailed:before {
+    .divider:not(.button-group).pink.detailed:before {
       background-color: #E91E63; }
-    .divider.pink.detailed:after {
+    .divider:not(.button-group).pink.detailed:after {
       background-color: #E91E63; }
-  .divider.purple {
+  .divider:not(.button-group).purple {
     border-color: #9C27B0;
     color: #9C27B0; }
-    .divider.purple.detailed:before {
+    .divider:not(.button-group).purple.detailed:before {
       background-color: #9C27B0; }
-    .divider.purple.detailed:after {
+    .divider:not(.button-group).purple.detailed:after {
       background-color: #9C27B0; }
-  .divider.deep-purple {
+  .divider:not(.button-group).deep-purple {
     border-color: #673AB7;
     color: #673AB7; }
-    .divider.deep-purple.detailed:before {
+    .divider:not(.button-group).deep-purple.detailed:before {
       background-color: #673AB7; }
-    .divider.deep-purple.detailed:after {
+    .divider:not(.button-group).deep-purple.detailed:after {
       background-color: #673AB7; }
-  .divider.indigo {
+  .divider:not(.button-group).indigo {
     border-color: #3F51B5;
     color: #3F51B5; }
-    .divider.indigo.detailed:before {
+    .divider:not(.button-group).indigo.detailed:before {
       background-color: #3F51B5; }
-    .divider.indigo.detailed:after {
+    .divider:not(.button-group).indigo.detailed:after {
       background-color: #3F51B5; }
-  .divider.blue {
+  .divider:not(.button-group).blue {
     border-color: #2196F3;
     color: #2196F3; }
-    .divider.blue.detailed:before {
+    .divider:not(.button-group).blue.detailed:before {
       background-color: #2196F3; }
-    .divider.blue.detailed:after {
+    .divider:not(.button-group).blue.detailed:after {
       background-color: #2196F3; }
-  .divider.light-blue {
+  .divider:not(.button-group).light-blue {
     border-color: #03A9F4;
     color: #03A9F4; }
-    .divider.light-blue.detailed:before {
+    .divider:not(.button-group).light-blue.detailed:before {
       background-color: #03A9F4; }
-    .divider.light-blue.detailed:after {
+    .divider:not(.button-group).light-blue.detailed:after {
       background-color: #03A9F4; }
-  .divider.cyan {
+  .divider:not(.button-group).cyan {
     border-color: #00BCD4;
     color: #00BCD4; }
-    .divider.cyan.detailed:before {
+    .divider:not(.button-group).cyan.detailed:before {
       background-color: #00BCD4; }
-    .divider.cyan.detailed:after {
+    .divider:not(.button-group).cyan.detailed:after {
       background-color: #00BCD4; }
-  .divider.teal {
+  .divider:not(.button-group).teal {
     border-color: #009688;
     color: #009688; }
-    .divider.teal.detailed:before {
+    .divider:not(.button-group).teal.detailed:before {
       background-color: #009688; }
-    .divider.teal.detailed:after {
+    .divider:not(.button-group).teal.detailed:after {
       background-color: #009688; }
-  .divider.green {
+  .divider:not(.button-group).green {
     border-color: #4CAF50;
     color: #4CAF50; }
-    .divider.green.detailed:before {
+    .divider:not(.button-group).green.detailed:before {
       background-color: #4CAF50; }
-    .divider.green.detailed:after {
+    .divider:not(.button-group).green.detailed:after {
       background-color: #4CAF50; }
-  .divider.light-green {
+  .divider:not(.button-group).light-green {
     border-color: #8BC34A;
     color: #8BC34A; }
-    .divider.light-green.detailed:before {
+    .divider:not(.button-group).light-green.detailed:before {
       background-color: #8BC34A; }
-    .divider.light-green.detailed:after {
+    .divider:not(.button-group).light-green.detailed:after {
       background-color: #8BC34A; }
-  .divider.lime {
+  .divider:not(.button-group).lime {
     border-color: #CDDC39;
     color: #CDDC39; }
-    .divider.lime.detailed:before {
+    .divider:not(.button-group).lime.detailed:before {
       background-color: #CDDC39; }
-    .divider.lime.detailed:after {
+    .divider:not(.button-group).lime.detailed:after {
       background-color: #CDDC39; }
-  .divider.yellow {
+  .divider:not(.button-group).yellow {
     border-color: #FFEB3B;
     color: #FFEB3B; }
-    .divider.yellow.detailed:before {
+    .divider:not(.button-group).yellow.detailed:before {
       background-color: #FFEB3B; }
-    .divider.yellow.detailed:after {
+    .divider:not(.button-group).yellow.detailed:after {
       background-color: #FFEB3B; }
-  .divider.amber {
+  .divider:not(.button-group).amber {
     border-color: #FFC107;
     color: #FFC107; }
-    .divider.amber.detailed:before {
+    .divider:not(.button-group).amber.detailed:before {
       background-color: #FFC107; }
-    .divider.amber.detailed:after {
+    .divider:not(.button-group).amber.detailed:after {
       background-color: #FFC107; }
-  .divider.orange {
+  .divider:not(.button-group).orange {
     border-color: #FF9800;
     color: #FF9800; }
-    .divider.orange.detailed:before {
+    .divider:not(.button-group).orange.detailed:before {
       background-color: #FF9800; }
-    .divider.orange.detailed:after {
+    .divider:not(.button-group).orange.detailed:after {
       background-color: #FF9800; }
-  .divider.deep-orange {
+  .divider:not(.button-group).deep-orange {
     border-color: #FF5722;
     color: #FF5722; }
-    .divider.deep-orange.detailed:before {
+    .divider:not(.button-group).deep-orange.detailed:before {
       background-color: #FF5722; }
-    .divider.deep-orange.detailed:after {
+    .divider:not(.button-group).deep-orange.detailed:after {
       background-color: #FF5722; }
-  .divider.brown {
+  .divider:not(.button-group).brown {
     border-color: #795548;
     color: #795548; }
-    .divider.brown.detailed:before {
+    .divider:not(.button-group).brown.detailed:before {
       background-color: #795548; }
-    .divider.brown.detailed:after {
+    .divider:not(.button-group).brown.detailed:after {
       background-color: #795548; }
-  .divider.grey {
+  .divider:not(.button-group).grey {
     border-color: #9E9E9E;
     color: #9E9E9E; }
-    .divider.grey.detailed:before {
+    .divider:not(.button-group).grey.detailed:before {
       background-color: #9E9E9E; }
-    .divider.grey.detailed:after {
+    .divider:not(.button-group).grey.detailed:after {
       background-color: #9E9E9E; }
-  .divider.blue-grey {
+  .divider:not(.button-group).blue-grey {
     border-color: #607D8B;
     color: #607D8B; }
-    .divider.blue-grey.detailed:before {
+    .divider:not(.button-group).blue-grey.detailed:before {
       background-color: #607D8B; }
-    .divider.blue-grey.detailed:after {
+    .divider:not(.button-group).blue-grey.detailed:after {
       background-color: #607D8B; }
-  .divider.black {
+  .divider:not(.button-group).black {
     border-color: #000000;
     color: #000000; }
-    .divider.black.detailed:before {
+    .divider:not(.button-group).black.detailed:before {
       background-color: #000000; }
-    .divider.black.detailed:after {
+    .divider:not(.button-group).black.detailed:after {
       background-color: #000000; }
-  .divider.white {
+  .divider:not(.button-group).white {
     border-color: #ffffff;
     color: #ffffff; }
-    .divider.white.detailed:before {
+    .divider:not(.button-group).white.detailed:before {
       background-color: #ffffff; }
-    .divider.white.detailed:after {
+    .divider:not(.button-group).white.detailed:after {
       background-color: #ffffff; }
