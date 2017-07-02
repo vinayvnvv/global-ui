@@ -20,6 +20,14 @@
       margin: 0px calc(-0.375em - 1px) 0px calc(-0.375em - 1px)
 
 
+.icon
+	@each $name, $pair in $colors
+		$color: nth($pair, 1)
+		$color-invert: nth($pair, 2)
+		&.#{$name}
+			color: $color
+
+
 
 
 

@@ -1,0 +1,34 @@
+$list-padding: .133em 0
+$list-text-color: #000000
+
+.list
+	padding: 0
+	list-style-type: none
+	color: $list-text-color
+	&>.item, li
+		list-style-type: none
+		display: flex
+		padding: $list-padding
+		align-items: center
+		& .icon
+		& .content
+			flex-grow: 1
+			margin: 0 .223em
+			display: flex
+			flex-direction: column
+			& .title
+				font-weight: 600
+			& .desc
+				font-size: 0.834em
+				color: lighten($list-text-color, 39%)
+				margin-top: -0.2em
+				margin-bottom: 0.2em
+		&.nowrap
+			& .content, & .content .title, & .content .desc
+				white-space: nowrap
+				overflow: hidden
+				text-overflow: ellipsis
+		& .actions
+			text-align: right
+			display: flex
+

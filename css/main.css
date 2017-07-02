@@ -28,6 +28,26 @@
 .valign-bottom {
   vertical-align: bottom; }
 
+.space-x-1 {
+  margin-right: 1px;
+  margin-left: 1px; }
+
+.space-x-2 {
+  margin-right: 2px;
+  margin-left: 2px; }
+
+.space-x-3 {
+  margin-right: 3px;
+  margin-left: 3px; }
+
+.space-x-4 {
+  margin-right: 4px;
+  margin-left: 4px; }
+
+.space-x-5 {
+  margin-right: 5px;
+  margin-left: 5px; }
+
 html, body {
   font-family: Lato, "Helvetica Neue", "Open Sans", Arial, Helvetica, sans-serif;
   margin: 0 auto; }
@@ -464,6 +484,90 @@ html, body {
 .icon:not(.button):first-child:last-child {
   margin: 0px calc(-0.375em - 1px) 0px calc(-0.375em - 1px); }
 
+.icon.light {
+  color: whitesmoke; }
+
+.icon.dark {
+  color: #363636; }
+
+.icon.primary {
+  color: #00d1b2; }
+
+.icon.info {
+  color: #3273dc; }
+
+.icon.success {
+  color: #23d160; }
+
+.icon.warning {
+  color: #ffdd57; }
+
+.icon.danger {
+  color: #ff3860; }
+
+.icon.red {
+  color: #F44336; }
+
+.icon.pink {
+  color: #E91E63; }
+
+.icon.purple {
+  color: #9C27B0; }
+
+.icon.deep-purple {
+  color: #673AB7; }
+
+.icon.indigo {
+  color: #3F51B5; }
+
+.icon.blue {
+  color: #2196F3; }
+
+.icon.light-blue {
+  color: #03A9F4; }
+
+.icon.cyan {
+  color: #00BCD4; }
+
+.icon.teal {
+  color: #009688; }
+
+.icon.green {
+  color: #4CAF50; }
+
+.icon.light-green {
+  color: #8BC34A; }
+
+.icon.lime {
+  color: #CDDC39; }
+
+.icon.yellow {
+  color: #FFEB3B; }
+
+.icon.amber {
+  color: #FFC107; }
+
+.icon.orange {
+  color: #FF9800; }
+
+.icon.deep-orange {
+  color: #FF5722; }
+
+.icon.brown {
+  color: #795548; }
+
+.icon.grey {
+  color: #9E9E9E; }
+
+.icon.blue-grey {
+  color: #607D8B; }
+
+.icon.black {
+  color: #000000; }
+
+.icon.white {
+  color: #ffffff; }
+
 .whiteframe-1 {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12) !important; }
 
@@ -521,6 +625,9 @@ html, body {
   vertical-align: top; }
   .button:not(.icon) {
     height: 2.25em; }
+  .button.block {
+    display: flex;
+    width: initial; }
   .button.gradient {
     background-image: linear-gradient(180deg, #dbdbdb 0%, #ededed 90%); }
     .button.gradient:hover {
@@ -2942,6 +3049,35 @@ html, body {
   .label.padding-less {
     padding: 0 0.3444em;
     height: 1.3em; }
+
+.list {
+  padding: 0;
+  list-style-type: none;
+  color: #000000; }
+  .list > .item, .list li {
+    list-style-type: none;
+    display: flex;
+    padding: 0.133em 0;
+    align-items: center; }
+    .list > .item .content, .list li .content {
+      flex-grow: 1;
+      margin: 0 .223em;
+      display: flex;
+      flex-direction: column; }
+      .list > .item .content .title, .list li .content .title {
+        font-weight: 600; }
+      .list > .item .content .desc, .list li .content .desc {
+        font-size: 0.834em;
+        color: #636363;
+        margin-top: -0.2em;
+        margin-bottom: 0.2em; }
+    .list > .item.nowrap .content, .list > .item.nowrap .content .title, .list > .item.nowrap .content .desc, .list li.nowrap .content, .list li.nowrap .content .title, .list li.nowrap .content .desc {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .list > .item .actions, .list li .actions {
+      text-align: right;
+      display: flex; }
 
 .input {
   position: relative;
