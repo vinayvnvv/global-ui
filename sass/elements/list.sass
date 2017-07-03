@@ -1,4 +1,6 @@
-$list-padding: .133em 0
+$list-padding: .133em
+$list-padding-more: .573em
+$list-padding-less: .0111em
 $list-text-color: #000000
 
 .list
@@ -8,9 +10,17 @@ $list-text-color: #000000
 	&>.item, li
 		list-style-type: none
 		display: flex
-		padding: $list-padding
+		padding: $list-padding 0
 		align-items: center
-		& .icon
+		&>.icon
+			margin: 0!important
+			&.valign-top
+				align-self: flex-start
+		& .avtar
+			width: 2em
+			height: 2em
+			&:first-child
+				margin-right: 0.4em
 		& .content
 			flex-grow: 1
 			margin: 0 .223em
@@ -23,6 +33,8 @@ $list-text-color: #000000
 				color: lighten($list-text-color, 39%)
 				margin-top: -0.2em
 				margin-bottom: 0.2em
+		&.active
+			background-color: rgba(0, 0, 0, 0.07)
 		&.nowrap
 			& .content, & .content .title, & .content .desc
 				white-space: nowrap
@@ -31,4 +43,33 @@ $list-text-color: #000000
 		& .actions
 			text-align: right
 			display: flex
+	&.unordered
+		li
+			display: list-item
+			list-style-type: disc
+	&.ordered
+		li
+			display: list-item
+			list-style-type: decimal
+	&.hovered
+		&>.item, li
+			&:hover
+				background-color: rgba(0,0,0,.03)
+				cursor: pointer
+	&.padding-more
+		&>.item, li
+			padding: $list-padding-more 0
+	&.padding-less
+		&>.item, li
+			padding: $list-padding-less 0
+	&.horizontal
+		display: flex
+		&>.item, li
+			flex-grow: 1
+			padding: $list-padding $list-padding
+		& .divider
+				border-top: 0
+				border-left-width: 1px
+				border-left-style: solid
+				width: initial
 

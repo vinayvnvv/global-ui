@@ -3059,6 +3059,15 @@ html, body {
     display: flex;
     padding: 0.133em 0;
     align-items: center; }
+    .list > .item > .icon, .list li > .icon {
+      margin: 0 !important; }
+      .list > .item > .icon.valign-top, .list li > .icon.valign-top {
+        align-self: flex-start; }
+    .list > .item .avtar, .list li .avtar {
+      width: 2em;
+      height: 2em; }
+      .list > .item .avtar:first-child, .list li .avtar:first-child {
+        margin-right: 0.4em; }
     .list > .item .content, .list li .content {
       flex-grow: 1;
       margin: 0 .223em;
@@ -3071,6 +3080,8 @@ html, body {
         color: #636363;
         margin-top: -0.2em;
         margin-bottom: 0.2em; }
+    .list > .item.active, .list li.active {
+      background-color: rgba(0, 0, 0, 0.07); }
     .list > .item.nowrap .content, .list > .item.nowrap .content .title, .list > .item.nowrap .content .desc, .list li.nowrap .content, .list li.nowrap .content .title, .list li.nowrap .content .desc {
       white-space: nowrap;
       overflow: hidden;
@@ -3078,6 +3089,29 @@ html, body {
     .list > .item .actions, .list li .actions {
       text-align: right;
       display: flex; }
+  .list.unordered li {
+    display: list-item;
+    list-style-type: disc; }
+  .list.ordered li {
+    display: list-item;
+    list-style-type: decimal; }
+  .list.hovered > .item:hover, .list.hovered li:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    cursor: pointer; }
+  .list.padding-more > .item, .list.padding-more li {
+    padding: 0.573em 0; }
+  .list.padding-less > .item, .list.padding-less li {
+    padding: 0.0111em 0; }
+  .list.horizontal {
+    display: flex; }
+    .list.horizontal > .item, .list.horizontal li {
+      flex-grow: 1;
+      padding: 0.133em 0.133em; }
+    .list.horizontal .divider {
+      border-top: 0;
+      border-left-width: 1px;
+      border-left-style: solid;
+      width: initial; }
 
 .input {
   position: relative;
@@ -5563,7 +5597,8 @@ html, body {
   display: block;
   width: 100%;
   border-top: 1px solid rgba(0, 0, 0, 0.145);
-  margin: 0; }
+  margin: 0;
+  border-color: rgba(0, 0, 0, 0.145); }
   .divider:not(.button-group).strong {
     border-width: 3px; }
   .divider:not(.button-group).extra-strong {
