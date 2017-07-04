@@ -1,0 +1,102 @@
+$toast-background-color: lighten($blue-grey, 43%)
+$toast-text-color: findColorInvert($toast-background-color)
+$toast-padding: 0.976em
+$toast-margin-from-screen: 1.7em
+
+.toast
+	background-color: $toast-background-color
+	color: $toast-text-color
+	padding: $toast-padding
+	font-weight: 600
+	position: fixed
+	display: block
+	bottom: 0
+	z-index: 102
+	display: flex
+	align-items: center
+	& .text
+		flex-grow: 1
+	& .actions
+		margin-top: -$toast-padding
+		margin-bottom: -$toast-padding
+		margin-left: $toast-padding
+	& .toast-close
+			position: absolute
+			width: 25px
+			height: 25px
+			background-color: $toast-background-color
+			color: $toast-text-color
+			display: flex
+			justify-content: center
+			align-items: center
+			border-radius: 50em
+			cursor: pointer
+			transition: 0.3s all
+
+//responsiveness
++mobile
+	.toast
+		width: 100%
+		& .actions
+			margin-right: $toast-padding
+		& .toast-close
+			left: 46%
+			top: -$toast-padding
++tablet-only
+	.toast
+		width: 100%
+		& .actions
+			margin-right: $toast-padding
++desktop
+	.toast
+		right: $toast-margin-from-screen
+		bottom: $toast-margin-from-screen
+		max-width: 400px
+		border-radius: .17em
+		&.top-left
+			top: $toast-margin-from-screen
+			left: $toast-margin-from-screen
+			right: initial
+			bottom: initial
+		&.top-right
+			top: $toast-margin-from-screen
+			right: $toast-margin-from-screen
+			left: initial
+			bottom: initial
+		&.bottom-left
+			bottom: $toast-margin-from-screen
+			left: $toast-margin-from-screen
+			top: initial
+			right: initial
+		&.circle
+			border-radius: 50em
+			& .toast-close
+				right: -.5em
+				top: -.5em
+		&.square
+			border-radius: 0
+		& .toast-close
+			right: -$toast-padding
+			top: -$toast-padding
+			&:hover
+				background-color: darken($toast-background-color, 10%)
+			&:active
+				background-color: darken($toast-background-color, 19%)
+				transition: 0.1s
+
+.toast
+	@each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}
+    	background-color: $color
+    	color: $color-invert
+    	& .toast-close
+    		background-color: $color
+    		color: $color-invert
+    		&:hover
+    			background-color: darken($color, 10%)
+    		&:active
+    			background-color: darken($color, 2%)
+
+

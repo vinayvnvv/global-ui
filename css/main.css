@@ -28,6 +28,11 @@
 .valign-bottom {
   vertical-align: bottom; }
 
+.nowrap {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
 .space-x-1 {
   margin-right: 1px;
   margin-left: 1px; }
@@ -642,8 +647,12 @@ html, body {
   .button.vip {
     text-transform: uppercase;
     letter-spacing: .0798em;
-    font-weight: 600;
+    font-weight: 800;
     color: rgba(64, 64, 64, 0.95); }
+  .button.standard {
+    text-transform: uppercase;
+    letter-spacing: .0298em;
+    font-weight: 600; }
   .button.ripple {
     position: relative;
     overflow: hidden;
@@ -5842,3 +5851,393 @@ html, body {
       background-color: #ffffff; }
     .divider:not(.button-group).white.detailed:after {
       background-color: #ffffff; }
+
+.toast {
+  background-color: #dee5e8;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 0.976em;
+  font-weight: 600;
+  position: fixed;
+  display: block;
+  bottom: 0;
+  z-index: 102;
+  display: flex;
+  align-items: center; }
+  .toast .text {
+    flex-grow: 1; }
+  .toast .actions {
+    margin-top: -0.976em;
+    margin-bottom: -0.976em;
+    margin-left: 0.976em; }
+  .toast .toast-close {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #dee5e8;
+    color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50em;
+    cursor: pointer;
+    transition: 0.3s all; }
+
+@media screen and (max-width: 768px) {
+  .toast {
+    width: 100%; }
+    .toast .actions {
+      margin-right: 0.976em; }
+    .toast .toast-close {
+      left: 46%;
+      top: -0.976em; } }
+
+@media screen and (min-width: 769px) and (max-width: 999px) {
+  .toast {
+    width: 100%; }
+    .toast .actions {
+      margin-right: 0.976em; } }
+
+@media screen and (min-width: 1000px) {
+  .toast {
+    right: 1.7em;
+    bottom: 1.7em;
+    max-width: 400px;
+    border-radius: .17em; }
+    .toast.top-left {
+      top: 1.7em;
+      left: 1.7em;
+      right: initial;
+      bottom: initial; }
+    .toast.top-right {
+      top: 1.7em;
+      right: 1.7em;
+      left: initial;
+      bottom: initial; }
+    .toast.bottom-left {
+      bottom: 1.7em;
+      left: 1.7em;
+      top: initial;
+      right: initial; }
+    .toast.circle {
+      border-radius: 50em; }
+      .toast.circle .toast-close {
+        right: -.5em;
+        top: -.5em; }
+    .toast.square {
+      border-radius: 0; }
+    .toast .toast-close {
+      right: -0.976em;
+      top: -0.976em; }
+      .toast .toast-close:hover {
+        background-color: #c0cdd3; }
+      .toast .toast-close:active {
+        background-color: #a5b8c1;
+        transition: 0.1s; } }
+
+.toast.light {
+  background-color: whitesmoke;
+  color: #363636; }
+  .toast.light .toast-close {
+    background-color: whitesmoke;
+    color: #363636; }
+    .toast.light .toast-close:hover {
+      background-color: #dbdbdb; }
+    .toast.light .toast-close:active {
+      background-color: #f0f0f0; }
+
+.toast.dark {
+  background-color: #363636;
+  color: whitesmoke; }
+  .toast.dark .toast-close {
+    background-color: #363636;
+    color: whitesmoke; }
+    .toast.dark .toast-close:hover {
+      background-color: #1c1c1c; }
+    .toast.dark .toast-close:active {
+      background-color: #303030; }
+
+.toast.primary {
+  background-color: #00d1b2;
+  color: #fff; }
+  .toast.primary .toast-close {
+    background-color: #00d1b2;
+    color: #fff; }
+    .toast.primary .toast-close:hover {
+      background-color: #009e86; }
+    .toast.primary .toast-close:active {
+      background-color: #00c7a9; }
+
+.toast.info {
+  background-color: #3273dc;
+  color: #fff; }
+  .toast.info .toast-close {
+    background-color: #3273dc;
+    color: #fff; }
+    .toast.info .toast-close:hover {
+      background-color: #205bbc; }
+    .toast.info .toast-close:active {
+      background-color: #296ddb; }
+
+.toast.success {
+  background-color: #23d160;
+  color: #fff; }
+  .toast.success .toast-close {
+    background-color: #23d160;
+    color: #fff; }
+    .toast.success .toast-close:hover {
+      background-color: #1ca64c; }
+    .toast.success .toast-close:active {
+      background-color: #22c95c; }
+
+.toast.warning {
+  background-color: #ffdd57;
+  color: rgba(0, 0, 0, 0.7); }
+  .toast.warning .toast-close {
+    background-color: #ffdd57;
+    color: rgba(0, 0, 0, 0.7); }
+    .toast.warning .toast-close:hover {
+      background-color: #ffd324; }
+    .toast.warning .toast-close:active {
+      background-color: #ffdb4d; }
+
+.toast.danger {
+  background-color: #ff3860;
+  color: #fff; }
+  .toast.danger .toast-close {
+    background-color: #ff3860;
+    color: #fff; }
+    .toast.danger .toast-close:hover {
+      background-color: #ff0537; }
+    .toast.danger .toast-close:active {
+      background-color: #ff2e58; }
+
+.toast.red {
+  background-color: #F44336;
+  color: #fff; }
+  .toast.red .toast-close {
+    background-color: #F44336;
+    color: #fff; }
+    .toast.red .toast-close:hover {
+      background-color: #ea1c0d; }
+    .toast.red .toast-close:active {
+      background-color: #f33a2c; }
+
+.toast.pink {
+  background-color: #E91E63;
+  color: #fff; }
+  .toast.pink .toast-close {
+    background-color: #E91E63;
+    color: #fff; }
+    .toast.pink .toast-close:hover {
+      background-color: #c1134e; }
+    .toast.pink .toast-close:active {
+      background-color: #e6175d; }
+
+.toast.purple {
+  background-color: #9C27B0;
+  color: #fff; }
+  .toast.purple .toast-close {
+    background-color: #9C27B0;
+    color: #fff; }
+    .toast.purple .toast-close:hover {
+      background-color: #771e86; }
+    .toast.purple .toast-close:active {
+      background-color: #9525a8; }
+
+.toast.deep-purple {
+  background-color: #673AB7;
+  color: #fff; }
+  .toast.deep-purple .toast-close {
+    background-color: #673AB7;
+    color: #fff; }
+    .toast.deep-purple .toast-close:hover {
+      background-color: #512e90; }
+    .toast.deep-purple .toast-close:active {
+      background-color: #6338af; }
+
+.toast.indigo {
+  background-color: #3F51B5;
+  color: #fff; }
+  .toast.indigo .toast-close {
+    background-color: #3F51B5;
+    color: #fff; }
+    .toast.indigo .toast-close:hover {
+      background-color: #32408f; }
+    .toast.indigo .toast-close:active {
+      background-color: #3c4ead; }
+
+.toast.blue {
+  background-color: #2196F3;
+  color: #fff; }
+  .toast.blue .toast-close {
+    background-color: #2196F3;
+    color: #fff; }
+    .toast.blue .toast-close:hover {
+      background-color: #0c7cd5; }
+    .toast.blue .toast-close:active {
+      background-color: #1791f2; }
+
+.toast.light-blue {
+  background-color: #03A9F4;
+  color: #fff; }
+  .toast.light-blue .toast-close {
+    background-color: #03A9F4;
+    color: #fff; }
+    .toast.light-blue .toast-close:hover {
+      background-color: #0286c2; }
+    .toast.light-blue .toast-close:active {
+      background-color: #03a2ea; }
+
+.toast.cyan {
+  background-color: #00BCD4;
+  color: #fff; }
+  .toast.cyan .toast-close {
+    background-color: #00BCD4;
+    color: #fff; }
+    .toast.cyan .toast-close:hover {
+      background-color: #008fa1; }
+    .toast.cyan .toast-close:active {
+      background-color: #00b3ca; }
+
+.toast.teal {
+  background-color: #009688;
+  color: #fff; }
+  .toast.teal .toast-close {
+    background-color: #009688;
+    color: #fff; }
+    .toast.teal .toast-close:hover {
+      background-color: #00635a; }
+    .toast.teal .toast-close:active {
+      background-color: #008c7f; }
+
+.toast.green {
+  background-color: #4CAF50;
+  color: #fff; }
+  .toast.green .toast-close {
+    background-color: #4CAF50;
+    color: #fff; }
+    .toast.green .toast-close:hover {
+      background-color: #3d8b40; }
+    .toast.green .toast-close:active {
+      background-color: #49a84d; }
+
+.toast.light-green {
+  background-color: #8BC34A;
+  color: #fff; }
+  .toast.light-green .toast-close {
+    background-color: #8BC34A;
+    color: #fff; }
+    .toast.light-green .toast-close:hover {
+      background-color: #71a436; }
+    .toast.light-green .toast-close:active {
+      background-color: #86c042; }
+
+.toast.lime {
+  background-color: #CDDC39;
+  color: rgba(0, 0, 0, 0.7); }
+  .toast.lime .toast-close {
+    background-color: #CDDC39;
+    color: rgba(0, 0, 0, 0.7); }
+    .toast.lime .toast-close:hover {
+      background-color: #b2c022; }
+    .toast.lime .toast-close:active {
+      background-color: #cbda30; }
+
+.toast.yellow {
+  background-color: #FFEB3B;
+  color: rgba(0, 0, 0, 0.7); }
+  .toast.yellow .toast-close {
+    background-color: #FFEB3B;
+    color: rgba(0, 0, 0, 0.7); }
+    .toast.yellow .toast-close:hover {
+      background-color: #ffe608; }
+    .toast.yellow .toast-close:active {
+      background-color: #ffea31; }
+
+.toast.amber {
+  background-color: #FFC107;
+  color: rgba(0, 0, 0, 0.7); }
+  .toast.amber .toast-close {
+    background-color: #FFC107;
+    color: rgba(0, 0, 0, 0.7); }
+    .toast.amber .toast-close:hover {
+      background-color: #d39e00; }
+    .toast.amber .toast-close:active {
+      background-color: #fcbd00; }
+
+.toast.orange {
+  background-color: #FF9800;
+  color: #fff; }
+  .toast.orange .toast-close {
+    background-color: #FF9800;
+    color: #fff; }
+    .toast.orange .toast-close:hover {
+      background-color: #cc7a00; }
+    .toast.orange .toast-close:active {
+      background-color: #f59200; }
+
+.toast.deep-orange {
+  background-color: #FF5722;
+  color: #fff; }
+  .toast.deep-orange .toast-close {
+    background-color: #FF5722;
+    color: #fff; }
+    .toast.deep-orange .toast-close:hover {
+      background-color: #ee3900; }
+    .toast.deep-orange .toast-close:active {
+      background-color: #ff4f18; }
+
+.toast.brown {
+  background-color: #795548;
+  color: #fff; }
+  .toast.brown .toast-close {
+    background-color: #795548;
+    color: #fff; }
+    .toast.brown .toast-close:hover {
+      background-color: #593f35; }
+    .toast.brown .toast-close:active {
+      background-color: #735144; }
+
+.toast.grey {
+  background-color: #9E9E9E;
+  color: #fff; }
+  .toast.grey .toast-close {
+    background-color: #9E9E9E;
+    color: #fff; }
+    .toast.grey .toast-close:hover {
+      background-color: #858585; }
+    .toast.grey .toast-close:active {
+      background-color: #999999; }
+
+.toast.blue-grey {
+  background-color: #607D8B;
+  color: #fff; }
+  .toast.blue-grey .toast-close {
+    background-color: #607D8B;
+    color: #fff; }
+    .toast.blue-grey .toast-close:hover {
+      background-color: #4b626d; }
+    .toast.blue-grey .toast-close:active {
+      background-color: #5c7885; }
+
+.toast.black {
+  background-color: #000000;
+  color: #fff; }
+  .toast.black .toast-close {
+    background-color: #000000;
+    color: #fff; }
+    .toast.black .toast-close:hover {
+      background-color: black; }
+    .toast.black .toast-close:active {
+      background-color: black; }
+
+.toast.white {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.7); }
+  .toast.white .toast-close {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.7); }
+    .toast.white .toast-close:hover {
+      background-color: #e6e6e6; }
+    .toast.white .toast-close:active {
+      background-color: #fafafa; }
