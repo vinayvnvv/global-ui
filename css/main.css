@@ -5895,7 +5895,10 @@ html, body {
   .toast {
     width: 100%; }
     .toast .actions {
-      margin-right: 0.976em; } }
+      margin-right: 0.976em; }
+    .toast .toast-close {
+      left: 46%;
+      top: -0.976em; } }
 
 @media screen and (min-width: 1000px) {
   .toast {
