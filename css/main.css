@@ -6244,3 +6244,222 @@ html, body {
       background-color: #e6e6e6; }
     .toast.white .toast-close:active {
       background-color: #fafafa; }
+
+.message {
+  display: flex;
+  color: #353535;
+  background-color: rgba(158, 158, 158, 0.112);
+  padding: 0.8em;
+  border-radius: 0.3em;
+  font-size: 1em;
+  font-weight: 400; }
+  .message.square {
+    border-radius: 0em; }
+  .message.circle {
+    border-radius: 50em; }
+  .message.outline {
+    border: 1px solid;
+    border-color: rgba(107, 107, 107, 0.112);
+    background-color: rgba(158, 158, 158, 0.042); }
+  .message.transparent {
+    background-color: transparent; }
+  .message.padding-more {
+    padding: 1.4em; }
+  .message.padding-less {
+    padding: 0.3em; }
+  .message.light {
+    color: #e3e3e3;
+    background-color: rgba(245, 245, 245, 0.12); }
+    .message.light.outline {
+      border-color: white; }
+    .message.light.transparent {
+      background-color: transparent; }
+  .message.dark {
+    color: #242424;
+    background-color: rgba(54, 54, 54, 0.12); }
+    .message.dark.outline {
+      border-color: #616161; }
+    .message.dark.transparent {
+      background-color: transparent; }
+  .message.primary {
+    color: #00ad93;
+    background-color: rgba(0, 209, 178, 0.12); }
+    .message.primary.outline {
+      border-color: #29ffdf; }
+    .message.primary.transparent {
+      background-color: transparent; }
+  .message.info {
+    color: #2262c9;
+    background-color: rgba(50, 115, 220, 0.12); }
+    .message.info.outline {
+      border-color: #7ca6e9; }
+    .message.info.transparent {
+      background-color: transparent; }
+  .message.success {
+    color: #1eb352;
+    background-color: rgba(35, 209, 96, 0.12); }
+    .message.success.outline {
+      border-color: #66e593; }
+    .message.success.transparent {
+      background-color: transparent; }
+  .message.warning {
+    color: #ffd633;
+    background-color: rgba(255, 221, 87, 0.12); }
+    .message.warning.outline {
+      border-color: #ffefad; }
+    .message.warning.transparent {
+      background-color: transparent; }
+  .message.danger {
+    color: #ff1443;
+    background-color: rgba(255, 56, 96, 0.12); }
+    .message.danger.outline {
+      border-color: #ff8fa5; }
+    .message.danger.transparent {
+      background-color: transparent; }
+  .message.red {
+    color: #f22314;
+    background-color: rgba(244, 67, 54, 0.12); }
+    .message.red.outline {
+      border-color: #f89088; }
+    .message.red.transparent {
+      background-color: transparent; }
+  .message.pink {
+    color: #cf1454;
+    background-color: rgba(233, 30, 99, 0.12); }
+    .message.pink.outline {
+      border-color: #f16d9a; }
+    .message.pink.transparent {
+      background-color: transparent; }
+  .message.purple {
+    color: #822193;
+    background-color: rgba(156, 39, 176, 0.12); }
+    .message.purple.outline {
+      border-color: #c654d9; }
+    .message.purple.transparent {
+      background-color: transparent; }
+  .message.deep-purple {
+    color: #58319c;
+    background-color: rgba(103, 58, 183, 0.12); }
+    .message.deep-purple.outline {
+      border-color: #9775d3; }
+    .message.deep-purple.transparent {
+      background-color: transparent; }
+  .message.indigo {
+    color: #36459b;
+    background-color: rgba(63, 81, 181, 0.12); }
+    .message.indigo.outline {
+      border-color: #7a87d1; }
+    .message.indigo.transparent {
+      background-color: transparent; }
+  .message.blue {
+    color: #0c84e4;
+    background-color: rgba(33, 150, 243, 0.12); }
+    .message.blue.outline {
+      border-color: #73bdf7; }
+    .message.blue.transparent {
+      background-color: transparent; }
+  .message.light-blue {
+    color: #0391d1;
+    background-color: rgba(3, 169, 244, 0.12); }
+    .message.light-blue.outline {
+      border-color: #51c7fd; }
+    .message.light-blue.transparent {
+      background-color: transparent; }
+  .message.cyan {
+    color: #009cb0;
+    background-color: rgba(0, 188, 212, 0.12); }
+    .message.cyan.outline {
+      border-color: #2ce7ff; }
+    .message.cyan.transparent {
+      background-color: transparent; }
+  .message.teal {
+    color: #007268;
+    background-color: rgba(0, 150, 136, 0.12); }
+    .message.teal.outline {
+      border-color: #00edd7; }
+    .message.teal.transparent {
+      background-color: transparent; }
+  .message.green {
+    color: #419645;
+    background-color: rgba(76, 175, 80, 0.12); }
+    .message.green.outline {
+      border-color: #87cb8a; }
+    .message.green.transparent {
+      background-color: transparent; }
+  .message.light-green {
+    color: #79af3a;
+    background-color: rgba(139, 195, 74, 0.12); }
+    .message.light-green.outline {
+      border-color: #b5d98b; }
+    .message.light-green.transparent {
+      background-color: transparent; }
+  .message.lime {
+    color: #becd24;
+    background-color: rgba(205, 220, 57, 0.12); }
+    .message.lime.outline {
+      border-color: #e0e983; }
+    .message.lime.transparent {
+      background-color: transparent; }
+  .message.yellow {
+    color: #ffe717;
+    background-color: rgba(255, 235, 59, 0.12); }
+    .message.yellow.outline {
+      border-color: #fff492; }
+    .message.yellow.transparent {
+      background-color: transparent; }
+  .message.amber {
+    color: #e2aa00;
+    background-color: rgba(255, 193, 7, 0.12); }
+    .message.amber.outline {
+      border-color: #ffd75e; }
+    .message.amber.transparent {
+      background-color: transparent; }
+  .message.orange {
+    color: #db8300;
+    background-color: rgba(255, 152, 0, 0.12); }
+    .message.orange.outline {
+      border-color: #ffbb57; }
+    .message.orange.transparent {
+      background-color: transparent; }
+  .message.deep-orange {
+    color: #fd3d00;
+    background-color: rgba(255, 87, 34, 0.12); }
+    .message.deep-orange.outline {
+      border-color: #ff9979; }
+    .message.deep-orange.transparent {
+      background-color: transparent; }
+  .message.brown {
+    color: #63453b;
+    background-color: rgba(121, 85, 72, 0.12); }
+    .message.brown.outline {
+      border-color: #a97e6f; }
+    .message.brown.transparent {
+      background-color: transparent; }
+  .message.grey {
+    color: #8c8c8c;
+    background-color: rgba(158, 158, 158, 0.12); }
+    .message.grey.outline {
+      border-color: #c9c9c9; }
+    .message.grey.transparent {
+      background-color: transparent; }
+  .message.blue-grey {
+    color: #516a76;
+    background-color: rgba(96, 125, 139, 0.12); }
+    .message.blue-grey.outline {
+      border-color: #90a7b2; }
+    .message.blue-grey.transparent {
+      background-color: transparent; }
+  .message.black {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.12); }
+    .message.black.outline {
+      border-color: #2b2b2b; }
+    .message.black.transparent {
+      background-color: transparent; }
+  .message.white {
+    color: #ededed;
+    background-color: rgba(255, 255, 255, 0.12); }
+    .message.white.outline {
+      border-color: white; }
+    .message.white.transparent {
+      background-color: transparent; }

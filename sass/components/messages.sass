@@ -1,0 +1,40 @@
+$msg-background-color: transparentize($grey, 0.888)
+$msg-color: darken($grey, 41%)
+$msg-border-color: darken($msg-background-color, 20%)
+$msg-padding: .8em
+$msg-padding-less: .3em
+$msg-padding-more: 1.4em
+
+.message
+	display: flex
+	color: $msg-color
+	background-color: $msg-background-color
+	padding: $msg-padding
+	border-radius: 0.3em
+	font-size: 1em
+	font-weight: 400
+	&.square
+		border-radius: 0em
+	&.circle
+		border-radius: 50em
+	&.outline
+		border: 1px solid
+		border-color: $msg-border-color
+		background-color: transparentize($msg-background-color, 0.07)
+	&.transparent
+		background-color: transparent
+	&.padding-more
+		padding: $msg-padding-more
+	&.padding-less
+		padding: $msg-padding-less
+
+	@each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}
+    	color: darken($color, 7%)
+    	background-color: transparentize($color, 0.88)
+    	&.outline
+    		border-color: lighten($color, 17%)
+    	&.transparent
+    		background-color: transparent
