@@ -12,6 +12,7 @@ $button-focus-darkness: $button-hover-darkness
 $btn-height :  2.25em
 $btn-width: 3.25em
 //sizes
+$btn-extra-mini: .477em
 $btn-mini : .78571429rem
 $btn-tiny : .85714286rem
 $btn-small : .92857143rem
@@ -56,6 +57,8 @@ $btn-huge : 1.42857143rem
   &.block
     display: flex
     width: initial
+  &.button-space
+    margin: 0 .25em 0 0
   &.gradient
     background-image: linear-gradient(180deg, $button-background-color 0%, lighten($button-background-color, 7%) 90%)
     &:hover
@@ -177,6 +180,8 @@ $btn-huge : 1.42857143rem
     pointer-events: none!important
     cursor: not-allowed!important
 
+  &.extra-mini
+    font-size: $btn-extra-mini
   &.mini
     font-size: $btn-mini
   &.tiny

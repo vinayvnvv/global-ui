@@ -1,4 +1,4 @@
-.icon:not(.button)
+span.icon:not(.button)
 	display: inline-flex
 	width: 1.18em
 	height: 1em
@@ -10,17 +10,17 @@
 	align-items: center
 	justify-content: center
 
-.icon:not(.button):first-child:not(:last-child)
+span.icon:not(.button):first-child:not(:last-child)
       margin: 0px 0.1875em 0px calc(-0.375em - 1px) 
 
-.icon:not(.button):last-child:not(:first-child)
+span.icon:not(.button):last-child:not(:first-child)
       margin: 0px 0.1875em 0px 0.375em
 
-.icon:not(.button):first-child:last-child
+span.icon:not(.button):first-child:last-child
       margin: 0px calc(-0.375em - 1px) 0px calc(-0.375em - 1px)
 
 
-.icon
+span.icon
 	@each $name, $pair in $colors
 		$color: nth($pair, 1)
 		$color-invert: nth($pair, 2)

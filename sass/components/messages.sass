@@ -2,17 +2,46 @@ $msg-background-color: transparentize($grey, 0.888)
 $msg-color: darken($grey, 41%)
 $msg-border-color: darken($msg-background-color, 20%)
 $msg-padding: .8em
+$msg-padding-right: 1.5em
 $msg-padding-less: .3em
+$msg-padding-less-right: 0.83em
 $msg-padding-more: 1.4em
+$msg-padding-more-right: 1.93em
+
+//sizes
+$msg-mini : .78571429rem
+$msg-tiny : .85714286rem
+$msg-small : .92857143rem
+$msg-medium : 1rem
+$msg-large : 1.14285714rem
+$msg-big : 1.28571429rem
+$msg-huge : 1.42857143rem
 
 .message
 	display: flex
 	color: $msg-color
 	background-color: $msg-background-color
-	padding: $msg-padding
+	padding: $msg-padding $msg-padding-right $msg-padding $msg-padding
 	border-radius: 0.3em
 	font-size: 1em
 	font-weight: 400
+	flex-wrap: wrap
+	align-items: center
+	position: relative
+	&.mini
+		font-size: $msg-mini
+	&.tiny
+		font-size: $msg-tiny
+	&.small
+		font-size: $msg-small
+	&.medium
+		font-size: $msg-medium
+	&.large
+		font-size: $msg-large
+	&.big
+		font-size: $msg-big
+	&.huge
+		font-size: $msg-huge
 	&.square
 		border-radius: 0em
 	&.circle
@@ -24,9 +53,33 @@ $msg-padding-more: 1.4em
 	&.transparent
 		background-color: transparent
 	&.padding-more
-		padding: $msg-padding-more
+		padding: $msg-padding-more $msg-padding-more-right $msg-padding-more $msg-padding-more
 	&.padding-less
-		padding: $msg-padding-less
+		padding: $msg-padding-less $msg-padding-less-right $msg-padding-less $msg-padding-less
+	& .header
+		width: 100%
+		font-weight: 600
+	& .content
+		font-size: .9em
+		color: lighten($msg-color, 30%)
+	&>	.icon
+		padding-right: 0.7em!important
+		padding-left: 0.7em!important
+	& .close
+		position: absolute
+		right: 0.7em
+		vertical-align: top
+		opacity: 0.6
+		cursor: pointer
+		&:hover
+			opacity: 1
+	& .actions
+		width: 100%
+		display: flex
+		text-align: right
+		justify-content: flex-end
+		position: relative
+		right: -1em
 
 	@each $name, $pair in $colors
     $color: nth($pair, 1)
@@ -38,3 +91,10 @@ $msg-padding-more: 1.4em
     		border-color: lighten($color, 17%)
     	&.transparent
     		background-color: transparent
+    	& .content
+    		color: lighten($color, 3%)
+    	&.dark-colored
+    		color: $color-invert
+    		background-color: $color
+    		& .content
+    			color: lighten($color-invert, 10%)

@@ -2,6 +2,7 @@ $toast-background-color: lighten($blue-grey, 43%)
 $toast-text-color: findColorInvert($toast-background-color)
 $toast-padding: 0.976em
 $toast-margin-from-screen: 1.7em
+$toast-loading-padding-left: 1.72em
 
 .toast
 	background-color: $toast-background-color
@@ -32,24 +33,51 @@ $toast-margin-from-screen: 1.7em
 			border-radius: 50em
 			cursor: pointer
 			transition: 0.3s all
-
+	&.loading
+		padding-left: $toast-padding + $toast-loading-padding-left
+		&:before
+			+loading
+			left: 1.52em
+			border-color: lighten($button-color, 2%) lighten($button-color, 80%) lighten($button-color, 80%) lighten($button-color, 80%) !important
 //responsiveness
 +mobile
 	.toast
 		width: 100%
 		& .actions
-			margin-right: $toast-padding
+			margin-right: $toast-padding + $toast-padding
+		&.loading .actions
+			margin-right: $toast-padding + $toast-padding + $toast-loading-padding-left
 		& .toast-close
-			left: 46%
+			left: 47%
 			top: -$toast-padding
+		&.loading
+			& .toast-close
+				margin-left: -($toast-loading-padding-left/2)
+		&.top-left, &.top-right
+			top: 0
+			bottom: initial
+			& .toast-close
+					top: initial
+					bottom: -$toast-padding
 +tablet-only
 	.toast
 		width: 100%
 		& .actions
-			margin-right: $toast-padding
+			margin-right: $toast-padding + $toast-padding
+		&.loading .actions
+			margin-right: $toast-padding + $toast-padding + $toast-loading-padding-left
 		& .toast-close
-			left: 46%
+			left: 47%
 			top: -$toast-padding
+		&.loading
+			& .toast-close
+				margin-left: -($toast-loading-padding-left/2)
+		&.top-left, &.top-right
+			top: 0
+			bottom: initial
+			& .toast-close
+					top: initial
+					bottom: -$toast-padding
 +desktop
 	.toast
 		right: $toast-margin-from-screen
@@ -101,5 +129,8 @@ $toast-margin-from-screen: 1.7em
     			background-color: darken($color, 10%)
     		&:active
     			background-color: darken($color, 2%)
+    	&.loading
+    		&:before
+    			border-color: lighten($color, 90%) lighten($color, 5%) lighten($color, 5%) lighten($color, 5%) !important
 
 
