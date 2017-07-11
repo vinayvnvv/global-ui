@@ -1,0 +1,100 @@
+$pnl-color: darken($grey, 21%)
+$pnl-header-color: lighten(invert($pnl-color), 37%)
+$pnl-header-bg-color: $pnl-color
+$pnl-body-color: darken($pnl-color, 12%)
+$pnl-body-bg-color: lighten($pnl-color, 53%)
+$pnl-header-padding: 0.43em
+$pnl-header-padding-less: 0.13em
+$pnl-header-padding-more: 0.83em
+$pnl-body-padding: 0.73em
+$pnl-body-padding-less: 0.43em
+$pnl-body-padding-more: 1.13em
+
+//sizes
+$pnl-mini : .78571429rem
+$pnl-tiny : .85714286rem
+$pnl-small : .92857143rem
+$pnl-medium : 1rem
+$pnl-large : 1.14285714rem
+$pnl-big : 1.28571429rem
+$pnl-huge : 1.42857143rem
+
+.panel
+	display: flex
+	flex-direction: column
+	& .panel-header
+		color: $pnl-header-color
+		background-color: $pnl-header-bg-color
+		display: flex
+		font-weight: 700
+		padding: $pnl-header-padding
+		font-size: 1.05em
+		letter-spacing: 0.02em
+		border-radius: 0.3em 0.3em 0 0
+		align-items: center
+		justify-content: space-between
+	& .panel-body
+		color: $pnl-body-color
+		background-color: $pnl-body-bg-color
+		padding: $pnl-body-padding
+		border-radius: 0 0 0.3em 0.3em
+	&.square
+		.panel-header
+			border-radius: 0
+		.panel-body
+			border-radius: 0
+	&.cicle
+		.panel-header
+			border-radius: 2em 2em 0 0
+			padding-left: $pnl-header-padding * 3.2
+			padding-right: $pnl-header-padding * 3.2
+		.panel-body
+			border-radius: 0 0 2em 2em
+			padding-left: $pnl-body-padding * 2.5
+			padding-right: $pnl-body-padding * 2.5
+	&.outline
+		& .panel-body
+			border: 1px solid $pnl-header-bg-color
+	&.transparent
+		& .panel-body
+			background-color: transparent
+	&.padding-less
+		& .panel-header
+			padding: $pnl-header-padding-less
+		& .panel-body
+			padding: $pnl-body-padding-less
+	&.padding-more
+		& .panel-header
+			padding: $pnl-header-padding-more
+		& .panel-body
+			padding: $pnl-body-padding-more
+	&.mini
+		font-size: $pnl-mini
+	&.tiny
+		font-size: $pnl-tiny
+	&.small
+		font-size: $pnl-small
+	&.medium
+		font-size: $pnl-medium
+	&.large
+		font-size: $pnl-large
+	&.big
+		font-size: $pnl-big
+	&.huge
+		font-size: $pnl-huge
+
+
+	@each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}
+    	& .panel-header
+    		color: $color-invert
+    		background-color: $color
+    	& .panel-body
+    		background-color: transparentize($color, 0.899)
+    		color: darken($color, 27%)
+    	&.outline
+    		& .panel-body
+    			border-color: $color 
+

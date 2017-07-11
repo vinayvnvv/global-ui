@@ -80,6 +80,17 @@ $msg-huge : 1.42857143rem
 		justify-content: flex-end
 		position: relative
 		right: -1em
+		margin-bottom: -0.5em
+		margin-top: 0.25em
+		position: relative
+		right: -1.5em
+	&.modern
+		border-left: 5px solid lighten($msg-color, 27%)
+		border-right-width: 0!important
+		border-top-width: 0!important
+		border-bottom-width: 0!important
+		&.circle
+			border-width: 7px
 
 	@each $name, $pair in $colors
     $color: nth($pair, 1)
@@ -98,3 +109,5 @@ $msg-huge : 1.42857143rem
     		background-color: $color
     		& .content
     			color: lighten($color-invert, 10%)
+    	&.modern
+    		border-color: lighten($color, 7%)
