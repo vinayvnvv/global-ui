@@ -3,30 +3,52 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
 
-<div class="navbar whiteframe-2">
+<div class="navbar whiteframe-2" toggle-class-id="menu">
+
 	
 
-	<div class="nav-left">Left</div>
+	<div class="nav-brand">
+		<span class="mobile-toggle-menu" toggle-class-id="menu" toggle-class='{"for":"menu","class":"active"}'>
+			<span></span>
+			<span></span>
+			<span></span>
+		</span>	
+		<a class="nav-item logo"><i>LOGO</i></a>
+	</div>
 
-	<div class="nav-center">
-		<a >Item</a>
-		<a >Item</a>
-		<a >Item</a>
-		<a >Item</a>
-		<a >Item</a>
+
+	<div class="nav-left">
+		<a class="nav-item hovered"><i>Nav Item</i></a>
+	</div>
+
+	<div class="nav-center row">
+		<a class="nav-item hovered nav-dropdown">menu
+			<div class="menu wide-medium">
+			 	<div class="header">Account</div>
+				<div class="item">Menu 1</div>
+				<div class="item">Menu 2</div>
+			 	<div class="divider"></div>
+			 	<div class="header">Extra</div>
+				<div class="item">Menu 1</div>
+				<div class="item">Menu 2</div>
+			</div>
+		</a>
+		<a class="nav-item hovered">Item</a>
+		<a class="nav-item hovered">Item</a>
+
 	</div>
 
 	<div class="nav-right">
-	<a >Item</a>
-	<a >Item</a>
-	<a >Item</a>
-	<a >Item</a>
-	<a >Item</a>
-	<a >Item</a>
-	<a >Item</a>
-	<a >Item</a>
-	<a >Item</a>
+		<a class="nav-item hovered">Item</a>
+		<a class="nav-item hovered">Item</a>
+		<a class="nav-item hovered">Item</a>
 	</div>
 
 
 </div>
+
+
+
+
+
+<script type="text/javascript" src="assets/toggle-class.js"></script>

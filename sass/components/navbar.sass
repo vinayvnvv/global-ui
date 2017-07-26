@@ -1,16 +1,121 @@
 $nav-bg-color: #fff
 $nav-color: #222
+$nav-height: 62px
 
 
 .navbar
 	background-color: $nav-bg-color
 	color: $nav-color
 	display: flex
-	height: 52px
-	align-items: center
+	height: $nav-height
 	& .nav-left
 		flex-grow: 1
+		flex-basis: 0
+		display: flex
 	& .nav-center
 		flex-grow: 1
+		flex-basis: 0
+		justify-content: center
+		display: flex
 	& .nav-right
 		flex-grow: 1
+		flex-basis: 0
+		display: flex
+		justify-content: flex-end
+	& .nav-brand
+		display: flex;
+	& .nav-item
+		display: flex
+		align-items: center
+		padding: 0 1.5rem
+		&.hovered
+			cursor: pointer
+			&:hover
+				background-color: darken($nav-bg-color, 5%)
+	& .nav-dropdown
+		position: relative
+		& .menu
+			display: none;
+			position: absolute
+			left: 0
+			top: 100%
+			border-top-left-radius: 0
+			border-top-right-radius: 0
+		&:hover
+			& .menu
+				display: inline-flex
+
+
++until-tablet
+	.navbar
+		& .nav-brand
+			padding: 0
+
+		& .mobile-toggle-menu
+		 	min-width: 42px
+		 	width: 42px
+		 	max-width: 42px
+		 	display: flex
+		 	align-items: center
+		 	justify-content: center
+		 	position: relative
+		 	padding: 0 .6rem
+		 	cursor: pointer
+		 	
+		 	& span:first-child
+		 		position: absolute
+		 		top: 40%
+		 	& span:nth-child(2)
+		 		position: absolute
+		 		top: 50%
+		 	& span:last-child
+		 		position: absolute
+		 		top: 60%
+		 	& span
+		 		background-color: #777
+		 		width: 18px
+		 		height: 2px
+		 		transition: .3s all
+		 	&:hover
+		 		background-color: darken($nav-bg-color, 5%)
+		 	&.active
+		 		background-color: darken($nav-bg-color, 5%)
+		 		cursor: pointer
+		 		& span:first-child
+		 			transform: rotate(-45deg)
+		 			top: 50%
+		 		& span:nth-child(2)
+		 			display: none
+			 	& span:last-child
+			 		transform: rotate(45deg)
+			 		top: 50%
+		& .nav-left, & .nav-center, & .nav-right
+			display: none;
+		&.active
+			display: block
+			height: auto
+			& .nav-brand
+				height: $nav-height
+			& .nav-left
+				display: flex;
+				flex-direction: column
+				&.row
+					flex-direction: row
+					justify-content: flex-start
+					border: 0
+			& .nav-center
+				display: flex;
+				flex-direction: column
+				&.row
+					flex-direction: row
+					border: 0
+					justify-content: flex-start
+			& .nav-right
+				display: flex;
+				flex-direction: column
+				&.row
+					flex-direction: row
+					justify-content: flex-start
+					border: 0
+			& .nav-item
+				padding: 0.7rem 1.1rem
