@@ -28,6 +28,7 @@ $nav-height: 62px
 		display: flex
 		align-items: center
 		padding: 0 1.5rem
+		transition: .1s all
 		&.hovered
 			cursor: pointer
 			&:hover
@@ -44,13 +45,29 @@ $nav-height: 62px
 		&:hover
 			& .menu
 				display: inline-flex
+	@each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}
+      background-color: $color
+      color: $color-invert
+     	& .mobile-toggle-menu span
+     		background-color: $color-invert !important
+     	& .mobile-toggle-menu:hover
+     		background-color: lighten($color, 7%)!important
+     	& .mobile-toggle-menu.active
+     		background-color: lighten($color, 7%)!important
+     	& .nav-item
+	      &.hovered
+	      	&:hover
+	      		background-color: lighten($color, 7%)
+
 
 
 +until-tablet
 	.navbar
 		& .nav-brand
 			padding: 0
-
 		& .mobile-toggle-menu
 		 	min-width: 42px
 		 	width: 42px
