@@ -8,6 +8,8 @@ $nav-height: 62px
 	color: $nav-color
 	display: flex
 	height: $nav-height
+	max-width: 100%
+	position: relative
 	& .nav-left
 		flex-grow: 1
 		flex-basis: 0
@@ -32,6 +34,8 @@ $nav-height: 62px
 			cursor: pointer
 			&:hover
 				background-color: darken($nav-bg-color, 5%)
+		&.active
+			background-color: darken($nav-bg-color, 5%)
 	& .nav-dropdown
 		position: relative
 		& .menu
@@ -41,10 +45,29 @@ $nav-height: 62px
 			top: 100%
 			border-top-left-radius: 0
 			border-top-right-radius: 0
+			box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.03), 0 3px 14px 2px rgba(0, 0, 0, 0.08), 0 5px 5px -3px rgba(0, 0, 0, 0.19)
+	& .nav-right
+		& .nav-dropdown
+			& .menu
+				right: 0
+				left: initial
+	& .nav-dropdown
 		&:hover
 			& .menu
 				display: inline-flex
-
+	&.style-1
+		& .nav-item
+			opacity: 0.8
+			&.hovered
+				&:hover
+					opacity: 1
+					background-color: transparent
+			&.active
+				opacity: 1
+				background-color: transparent
+	& .button-link
+		padding-left: 0.21em
+		padding-right: 0.21em
 
 +until-tablet
 	.navbar
@@ -82,18 +105,24 @@ $nav-height: 62px
 		 		background-color: darken($nav-bg-color, 5%)
 		 		cursor: pointer
 		 		& span:first-child
-		 			transform: rotate(-45deg)
+		 			animation-name: navbar_toggle_menu_bar_start
+		 			animation-duration: 0.2s
 		 			top: 50%
+		 			transform: rotate(-45deg)
 		 		& span:nth-child(2)
 		 			display: none
 			 	& span:last-child
 			 		transform: rotate(45deg)
+			 		animation-name: navbar_toggle_menu_bar_end
+		 			animation-duration: 0.2s
 			 		top: 50%
 		& .nav-left, & .nav-center, & .nav-right
-			display: none;
+			display: none
 		&.active
 			display: block
 			height: auto
+			& .nav-item.logo
+				padding: 0 1.5rem
 			& .nav-brand
 				height: $nav-height
 			& .nav-left
@@ -119,3 +148,22 @@ $nav-height: 62px
 					border: 0
 			& .nav-item
 				padding: 0.7rem 1.1rem
+
+.navbar
+	@each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}
+    	color: $color-invert
+    	background-color: $color
+    	& .nav-item
+    		&.hovered
+    			&:hover
+    				background-color: lighten($color, 5%)
+    		&.active
+    			background-color: lighten($color, 5%)
+    	& .mobile-toggle-menu
+    		& span
+    			background-color: $color-invert
+    		&:hover, &.active
+    			background-color: lighten($color, 5%)
