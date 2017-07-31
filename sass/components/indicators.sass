@@ -1,0 +1,52 @@
+$loader-bg-color: #e9e9e9
+$loader-color: #222222
+
+//sizes
+$ldr-mini : .69571429rem
+$ldr-tiny : .9714286rem
+$ldr-small : 1.162857143rem
+$ldr-medium : 1.4344rem
+$ldr-large : 1.74285714rem
+$ldr-big : 2.08571429rem
+$ldr-huge : 2.42857143rem
+
+
+.loader
+	width: 1em
+	height: 1em
+	margin: auto 0.3em
+	display: inline-block
+	font-size: 1em
+	-webkit-animation: button-spinner .6s linear
+	animation: button-spinner .6s linear
+	-webkit-animation-iteration-count: infinite
+	animation-iteration-count: infinite
+	border-radius: 500rem
+	border-color: $loader-bg-color $loader-bg-color $loader-bg-color $loader-color
+	border-style: solid
+	border-width: .12777em
+	box-shadow: 0 0 0 1px transparent
+
+	&.mini
+		font-size: $ldr-mini
+	&.tiny
+		font-size: $ldr-tiny
+	&.small
+		font-size: $ldr-small
+	&.medium
+		font-size: $ldr-medium
+	&.large
+		font-size: $ldr-large
+	&.big
+		font-size: $ldr-big
+	&.huge
+		font-size: $ldr-huge
+
+	&.center
+		position: absolute
+		margin: 0
+		top: 50%
+		left: 50%
+		display: block
+		transform: translateX(-50%) translateY(-50%)
+		-webkit-transform: translateX(-50%) translateY(-50%)

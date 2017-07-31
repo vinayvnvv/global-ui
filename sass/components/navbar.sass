@@ -1,6 +1,7 @@
 $nav-bg-color: #fff
 $nav-color: #222
 $nav-height: 62px
+$nav-item-padding: 1.5rem
 
 
 .navbar
@@ -10,6 +11,10 @@ $nav-height: 62px
 	height: $nav-height
 	max-width: 100%
 	position: relative
+	margin: 0 auto
+	& .container
+		display: flex
+		position: relative
 	& .nav-left
 		flex-grow: 1
 		flex-basis: 0
@@ -29,7 +34,7 @@ $nav-height: 62px
 	& .nav-item
 		display: flex
 		align-items: center
-		padding: 0 1.5rem
+		padding: 0 $nav-item-padding
 		&.hovered
 			cursor: pointer
 			&:hover
@@ -46,25 +51,57 @@ $nav-height: 62px
 			border-top-left-radius: 0
 			border-top-right-radius: 0
 			box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.03), 0 3px 14px 2px rgba(0, 0, 0, 0.08), 0 5px 5px -3px rgba(0, 0, 0, 0.19)
+			&.active
+				display: inline-flex
+				animation-name: nav_bar_menu_slide_down
+				animation-duration: 0.1s
 	& .nav-right
 		& .nav-dropdown
 			& .menu
 				right: 0
 				left: initial
-	& .nav-dropdown
+	& .nav-dropdown:not(.no-hovered-active)
 		&:hover
 			& .menu
 				display: inline-flex
+				animation-name: nav_bar_menu_slide_down
+				animation-duration: .1s
+
+		&.no-hovered-active
+			&:hover
+				& .menu
+					display: none!important
 	&.style-1
 		& .nav-item
-			opacity: 0.8
 			&.hovered
+				opacity: 0.8
 				&:hover
 					opacity: 1
 					background-color: transparent
 			&.active
 				opacity: 1
 				background-color: transparent
+	&.style-2
+		& .nav-item
+			&.hovered
+				position: relative
+				&.active
+					background-color: transparent!important
+					&:before
+						background-color: darken($nav-bg-color, 60%)
+				&:before
+					position: absolute
+					content: ""
+					width: 100%
+					height: 3px
+					background-color: transparent
+					left: 0
+					bottom: 0
+				&:hover
+					background-color: transparent!important
+					&:before
+						background-color: darken($nav-bg-color, 80%)
+						
 	& .button-link
 		padding-left: 0.21em
 		padding-right: 0.21em
@@ -73,6 +110,8 @@ $nav-height: 62px
 	.navbar
 		& .nav-brand
 			padding: 0
+		& .container
+			margin: initial
 
 		& .mobile-toggle-menu
 		 	min-width: 42px
@@ -97,7 +136,7 @@ $nav-height: 62px
 		 	& span
 		 		background-color: #777
 		 		width: 18px
-		 		height: 2px
+		 		height: 1px
 		 		transition: .3s all
 		 	&:hover
 		 		background-color: darken($nav-bg-color, 5%)
@@ -121,6 +160,8 @@ $nav-height: 62px
 		&.active
 			display: block
 			height: auto
+			& .container
+		 			display: block
 			& .nav-item.logo
 				padding: 0 1.5rem
 			& .nav-brand
@@ -149,6 +190,12 @@ $nav-height: 62px
 			& .nav-item
 				padding: 0.7rem 1.1rem
 
++desktop
+	.navbar
+		& .nav-brand
+			margin-left: -$nav-item-padding
+		& .nav-right
+			margin-right: -$nav-item-padding
 .navbar
 	@each $name, $pair in $colors
     $color: nth($pair, 1)
@@ -167,3 +214,12 @@ $nav-height: 62px
     			background-color: $color-invert
     		&:hover, &.active
     			background-color: lighten($color, 5%)
+    	&.style-2
+    		& .nav-item
+    			&.hovered
+    				&.active
+    					&:before
+    						background-color: lighten($color, 19%)
+    				&:hover
+    					&:before
+    						background-color: lighten($color, 25%)

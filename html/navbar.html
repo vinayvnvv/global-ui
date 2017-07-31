@@ -2,9 +2,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
-
-<div class="navbar whiteframe-2 style-2 container" toggle-class-id="menu">
-
+<div class="navbar style-2 container whiteframe-3" toggle-class-id="menu" id="demo">
 
 	
 
@@ -21,7 +19,21 @@
 	<div class="nav-left">
 		<a class="nav-item hovered active">Home</a>
 		<a class="nav-item hovered">Blog</a>
-		<a class="nav-item hovered">Products</a>
+		<a class="nav-item hovered nav-dropdown no-hovered-active" toggle-class='{"for":"drop_down_menu_1","class":"active"}'>
+			<span>Products</span><span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+			<div class="menu wide-large" toggle-class-id="drop_down_menu_1">
+				<div class="item detailed">
+					<span class="icon"><i class="fa fa-circle" aria-hidden="true"></i></span> 
+					<span>Menu 1</span>
+					<span class="details">Menu 1 details</span>
+				</div>
+				<div class="item detailed">
+					<span class="icon"><i class="fa fa-circle" aria-hidden="true"></i></span> 
+					<span>Menu 2</span>
+					<span class="details">Menu 2 details long</span>
+				</div>
+			</div>
+		</a>
 	</div>
 
 	<div class="nav-center row">
@@ -44,7 +56,7 @@
 		</span>
 		<a class="nav-item hovered nav-dropdown">
 			<span>Acount</span><span class="icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-			<div class="menu wide-medium pointing point-top-end">
+			<div class="menu wide-medium pointing point-top-end square">
 				<div class="item">
 					<span class="icon"><i class="fa fa-circle" aria-hidden="true"></i></span> 
 					<span>Account</span>
@@ -70,10 +82,37 @@
 		</a>
 		<a class="nav-item hovered"><i class="fa fa-power-off" aria-hidden="true"></i></a>
 	</div>
+</div>
+
+
+<div class="container">
+
+<br/>
+
+Container
 
 </div>
 
 
 
 
+<script>
+function myFunction() {
+	var colors = ["red", "pink", "purple", "deep-purple", "indigo", "blue", "light-blue", "cyan", "teal", "green", "light-green", "lime", "yellow", "amber", "orange", "deep-orange", "brown", "grey", "blue-grey"];
+    var ele = document.getElementById("demo");
+    ele.style.transition = "3.5s all";
+    var index = 0;
+    setInterval(function() { 
+    	var cls = ele.className.split(" ");
+    	var array1 = cls.filter(val => !colors.includes(val));
+    	cls = array1.join(" ")
+    	if(index == colors.length) index = 0;
+    	ele.className = cls + " " + colors[index];
+    	index++;
+    }, 1500);
+    
+}
+
+myFunction();
+</script>
 <script type="text/javascript" src="assets/toggle-class.js"></script>
