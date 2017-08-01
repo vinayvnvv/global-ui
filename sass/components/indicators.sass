@@ -1,5 +1,8 @@
 $loader-bg-color: #e9e9e9
 $loader-color: #222222
+$loader-bg-color-transparent: 0.9
+
+$loading-bar-height: 3px
 
 //sizes
 $ldr-mini : .69571429rem
@@ -17,15 +20,25 @@ $ldr-huge : 2.42857143rem
 	margin: auto 0.3em
 	display: inline-block
 	font-size: 1em
-	-webkit-animation: button-spinner .6s linear
-	animation: button-spinner .6s linear
-	-webkit-animation-iteration-count: infinite
-	animation-iteration-count: infinite
-	border-radius: 500rem
-	border-color: $loader-bg-color $loader-bg-color $loader-bg-color $loader-color
-	border-style: solid
-	border-width: .12777em
-	box-shadow: 0 0 0 1px transparent
+	position: relative
+	&:before
+		content: " "
+		-webkit-animation: button-spinner  linear
+		animation: button-spinner  linear
+		animation-duration: 0.6s
+		-webkit-animation-duration: 0.6s
+		-webkit-animation-iteration-count: infinite
+		animation-iteration-count: infinite
+		border-radius: 500rem
+		border-color: $loader-bg-color $loader-bg-color $loader-bg-color $loader-color
+		border-style: solid
+		border-width: .12777em
+		box-shadow: 0 0 0 1px transparent
+		left: 0
+		top: -0.08em
+		position: absolute
+		width: 100%																																	
+		height: 100%																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														
 
 	&.mini
 		font-size: $ldr-mini
@@ -42,6 +55,24 @@ $ldr-huge : 2.42857143rem
 	&.huge
 		font-size: $ldr-huge
 
+	&.speed-1:before
+		animation-duration: 2s
+	&.speed-2:before
+		animation-duration: 1.5s
+	&.speed-3:before
+		animation-duration: 1.2s
+	&.speed-4:before
+		animation-duration: 0.7s
+	&.speed-5:before
+		animation-duration: 0.3s
+
+	&.style-1
+		&:before
+			border-color: $loader-bg-color $loader-color $loader-bg-color $loader-color
+	&.style-2
+		&:before
+			border-color: $loader-bg-color $loader-color $loader-color $loader-color
+
 	&.center
 		position: absolute
 		margin: 0
@@ -50,3 +81,72 @@ $ldr-huge : 2.42857143rem
 		display: block
 		transform: translateX(-50%) translateY(-50%)
 		-webkit-transform: translateX(-50%) translateY(-50%)
+
+	@each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}
+    	&:before
+    		border-color: transparentize($color, $loader-bg-color-transparent) transparentize($color, $loader-bg-color-transparent) transparentize($color, $loader-bg-color-transparent) $color
+    	&.style-1
+    		&:before
+    			border-color: transparentize($color, $loader-bg-color-transparent) $color transparentize($color, $loader-bg-color-transparent) $color
+    	&.style-2
+    		&:before
+    			border-color: transparentize($color, $loader-bg-color-transparent) $color $color $color
+
+
+.loader-container
+	position: relative
+
+
+.loading-bar
+	position: relative
+	height: $loading-bar-height
+	overflow: hidden
+	& .line
+		position: absolute
+		background-color: $loader-color
+		height: 100%
+		width: 100%
+	& .break
+		position: absolute
+		background-color: darken($loader-bg-color, 23%)
+		width: 10%
+		height: 100%
+		&.dot-1
+			animation: loading_bar 2s infinite
+		&.dot-2
+			animation: loading_bar 2s 0.5s infinite
+		&.dot-3
+			animation: loading_bar 2s 1s infinite
+	&.top
+		position: absolute
+		top: -1px
+	&.bottom
+		position: absolute
+		bottom: -1px
+	&.center
+		position: absolute
+		top: calc(50% - 1px)
+	&.bold-1
+		height: 1px
+	&.bold-2
+		height: 2px
+	&.bold-3
+		height: 4px
+	&.bold-4
+		height: 7px
+	&.bold-5
+		height: 10px
+
+	@each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}
+    	& .line
+    		background-color: $color
+    	& .break
+    		background-color: lighten($color, 29%)
+
+

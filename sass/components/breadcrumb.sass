@@ -1,0 +1,61 @@
+$brdcrmb-border-color: #d9d9d9
+$brdcrmb-active-border-color: #333
+$brdcrmb-outline-padding: 0.577em
+$brdcrmb-icon-color: #333
+$brdcrmb-seperator-margin: 0.366em
+$brdcrmb-icon-margin: 0.43em
+
+//sizes
+$brdcrmb-mini : .78571429rem
+$brdcrmb-tiny : .85714286rem
+$brdcrmb-small : .92857143rem
+$brdcrmb-medium : 1rem
+$brdcrmb-large : 1.14285714rem
+$brdcrmb-big : 1.28571429rem
+$brdcrmb-huge : 1.42857143rem
+
+
+.breadcrumb
+	display: inline-block
+	position: relative
+	font-size: 1em
+	text-align: left
+	& .item
+		display: inline-block
+		&.active
+			font-weight: 600
+			border-bottom: 2px solid $brdcrmb-active-border-color
+		& .icon
+			color: $brdcrmb-icon-color
+			margin: 0 $brdcrmb-icon-margin!important
+			margin-left: ($brdcrmb-icon-margin - $brdcrmb-seperator-margin)!important
+			&:first-child:last-child
+				margin-right: $brdcrmb-icon-margin - 0.4em
+	& .seperator
+		display: inline-flex
+		opacity: 0.6
+		margin: 0 $brdcrmb-seperator-margin
+		align-items: center
+		justify-content: center
+		font-size: 0.91em
+	&.outline
+		border: 1px solid $brdcrmb-border-color
+		padding: $brdcrmb-outline-padding
+	&.circle
+		border-radius: 20em
+		padding: $brdcrmb-outline-padding $brdcrmb-outline-padding+0.5
+
+	&.mini
+		font-size: $brdcrmb-mini
+	&.tiny
+		font-size: $brdcrmb-tiny
+	&.small
+		font-size: $brdcrmb-small
+	&.medium
+		font-size: $brdcrmb-medium
+	&.large
+		font-size: $brdcrmb-large
+	&.big
+		font-size: $brdcrmb-big
+	&.huge
+		font-size: $brdcrmb-huge
