@@ -1,0 +1,179 @@
+$tb-border-color: #d9d9d9
+$tb-item-padding: .6em 1.288em
+$tb-active-color: #333333
+$tb-style-1-active-bg-color: #ffffff
+$tb-style-2-active-bg-color: transparentize($tb-active-color, 0.09)
+
+.tab
+	display: flex
+	border-bottom: 1px solid $tb-border-color
+	&.scrollable
+		overflow-x: auto
+		overflow-y: hidden
+		white-space: nowrap
+	& .item
+		padding: $tb-item-padding
+		position: relative
+		cursor: pointer
+		letter-spacing: 0.04em
+		text-align: center
+		align-items: center
+		justify-content: center
+		transition: .16s all
+		z-index: 2
+		&:after
+			content: ""
+			position: absolute
+			width: 100%
+			background-color: transparent
+			height: 2px
+			bottom: -1px
+			left: 0
+			transition: 0.16s all
+		&:hover
+			&:after
+				background-color: lighten($tb-active-color, 29%)
+		&.active
+			font-weight: bold
+			cursor: default
+			&:after
+				background-color: $tb-active-color
+			@each $name, $pair in $colors
+		    $color: nth($pair, 1)
+		    $color-invert: nth($pair, 2)
+		    &.#{$name}
+		    	color: $color
+		    	&:after
+		    		background-color: $color
+	&.stretch-items
+		align-items: space-between
+		& .item
+			flex-grow: 1
+	&.items-center
+		justify-content: center
+	&.items-right
+		justify-content: flex-end
+	&.style-1
+		& .item
+			z-index: 2
+			border-width: 1px
+			border-style: solid
+			border-radius: 3px 3px 0 0
+			border-color: transparent
+			&:hover
+				background-color: transparentize($tb-border-color, 0.756)
+			&:active
+				background-color: transparentize($tb-border-color, 0.356)
+			&.active
+				border-color: $tb-border-color
+				background-color: $tb-style-1-active-bg-color
+				bottom: -1px
+				border-bottom-color: $tb-style-1-active-bg-color
+				&:hover
+					background-color: $tb-style-1-active-bg-color
+			&:after
+				display: none
+		&.square
+			& .item
+				border-radius: 0px
+	&.style-2
+		border: 1px solid $tb-border-color
+		border-radius: 4px
+		& .item
+			border-right: 1px solid $tb-border-color
+			&:last-child
+				border-right: none
+			&:after
+				display: none
+			&:hover
+				background-color: transparentize($tb-border-color, 0.756)
+			&:active
+				background-color: transparentize($tb-border-color, 0.356)
+			&.active
+				background-color: $tb-style-2-active-bg-color
+				color: findColorInvert($tb-active-color)
+				margin: -1px
+				@each $name, $pair in $colors
+			    $color: nth($pair, 1)
+			    $color-invert: nth($pair, 2)
+			    &.#{$name}
+			    	background-color: $color
+			    	color: $color-invert
+		&.square
+			border-radius: 0px
+	&.vertical
+		flex-direction: column
+		border-right: 1px solid $tb-border-color
+		border-bottom: none
+		display: inline-flex
+		& .item
+			text-align: right
+			&:after
+				left: initial
+				bottom: initial
+				right: -2px
+				top: 0
+				height: 100%
+				width: 2px
+		&.style-1
+			& .item
+				border-radius: 3px 0 0 3px
+				&.active
+					bottom: initial
+					right: -1px
+					border-color: $tb-border-color
+					border-right-color: $tb-style-1-active-bg-color
+		&.style-2
+			& .item
+				border-bottom: 1px solid $tb-border-color
+				border-right: none
+				&:last-child
+					border-right: none
+	@each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    $border-outline: transparentize($color, 0.6)
+    &.#{$name}
+    	border-bottom-color: $border-outline
+    	color: $color
+    	& .item
+    		&.active
+    			&:after
+    				background-color: $color
+    		&:hover
+    			&:after
+    				background-color: transparentize($color, 0.455)
+    	&.style-1
+    		& .item
+    			&:hover:not(.active)
+    				background-color: transparentize($color, 0.856)
+    			&:active:not(.active)
+    				background-color: transparentize($color, 0.356)
+    			&.active
+    				border-color: $border-outline
+    				border-bottom-color: $tb-style-1-active-bg-color
+    	&.style-2
+    		border-color: $color
+    		& .item
+    			border-right-color: $color
+    			&:hover:not(.active)
+    				background-color: transparentize($color, 0.856)
+    			&:active:not(.active)
+    				background-color: transparentize($color, 0.556)
+    			&.active
+    				color: findColorInvert($color)
+    				background-color: $color
+    	&.vertical
+    		border-color: $border-outline
+    		&.style-1
+    			& .item
+    				&.active
+		    			border-color: $border-outline
+		    			border-right-color: $tb-style-1-active-bg-color
+		    &.style-2
+		    	& .item
+		    		border-bottom-color: $border-outline
+
+
+
+
