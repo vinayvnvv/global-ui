@@ -8387,6 +8387,9 @@ span.icon.white {
     justify-content: center;
     transition: .16s all;
     z-index: 2; }
+    .tab .item.disabled {
+      opacity: 0.5 !important;
+      pointer-events: none; }
     .tab .item:after {
       content: "";
       position: absolute;

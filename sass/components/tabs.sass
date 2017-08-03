@@ -21,6 +21,9 @@ $tb-style-2-active-bg-color: transparentize($tb-active-color, 0.09)
 		justify-content: center
 		transition: .16s all
 		z-index: 2
+		&.disabled
+			opacity: 0.5!important
+			pointer-events: none
 		&:after
 			content: ""
 			position: absolute
