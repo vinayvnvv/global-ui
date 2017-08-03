@@ -1,3 +1,6 @@
 ////z-indexes
 menu : 100
 toast : 102
+modal : 999
+	modal-bg: 300
+	modal-content: 600

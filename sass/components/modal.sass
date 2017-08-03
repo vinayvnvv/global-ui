@@ -1,0 +1,140 @@
+$mdl-until-tablet-margin: 5%
+$mdl-desktop-margin: 24px
+$mdl-desktop-width: 640px
+$mdl-content-bg-color: #fff
+$mdl-stcrd-padding: 0.8em 0.93em
+$mdl-alert-padding: 0.7em 0.8em
+$mdl-alert-min-width: 350px
+
+
+.modal
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	overflow: hidden
+	z-index: 999
+	align-items: center
+	justify-content: center
+	-webkit-flex: 1 1 auto
+	flex-direction: column
+	display: none
+	& .modal-bg
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 600
+	&.active
+		display: flex
+	&:before
+		content: ""
+		position: absolute
+		left: 0
+		top: 0
+		height: 100%
+		width: 100%
+		background-color: #000000
+		opacity: 0.5
+		z-index: 500
+	& .modal-content
+		z-index: 700
+		background-color: $mdl-content-bg-color
+		position: relative
+		overflow-y: auto
+		border-radius: 3px
+
+	&.structured
+		& .modal-content
+			display: flex
+			flex-direction: column
+			overflow: hidden
+			& .modal-header
+				padding: $mdl-stcrd-padding
+				background-color: #f0f0f0
+				font-weight: 600
+				font-size: 1.2em
+				position: relative
+				padding-right: 40px
+				& .modal-close
+					position: absolute
+					right: 9px
+					top: 50%
+					transform: translateY(-50%)
+					opacity: 0.8
+					& .button
+						height: 15px
+						width: 15px
+						min-height: 15px
+						min-width: 15px
+						padding: 5px
+					&:hover
+						opacity: 1
+
+			& .modal-body
+				padding: $mdl-stcrd-padding
+				overflow-x: auto
+			& .modal-footer
+				padding: $mdl-stcrd-padding
+				text-align: right
+				position: relative
+				&:after
+					content: ""
+					position: absolute
+					top: 0
+					height: 1px
+					width: 94%
+					left: 3%
+					background-color: #d9d9d9
+	&.alert
+		& .modal-content
+			& .modal-alert-title
+				padding: $mdl-alert-padding
+				font-size: 1.3em
+				font-weight: 500
+			& .modal-alert-desc
+				padding: $mdl-alert-padding
+				opacity: 0.7
+			& .modal-alert-action
+				padding: $mdl-alert-padding
+				text-align: right
+
+
+
+
+
+// responsive
++until-tablet
+	.modal
+		& .modal-content
+			width: 90%
+			margin: $mdl-until-tablet-margin
+		&.alert
+			.modal-content
+				width: initial
+				max-width: 90%
+				min-width: 240px
++desktop
+	.modal
+		& .modal-content
+			width: $mdl-desktop-width
+			margin: $mdl-desktop-margin auto
+		&.alert
+			.modal-content
+				width: initial
+				min-width: $mdl-alert-min-width
+				max-width: $mdl-desktop-width
+
+//colors
+.modal
+	@each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}
+    	&.structured
+    		& .modal-content
+    			& .modal-header
+    				background-color: $color
+    				color: $color-invert

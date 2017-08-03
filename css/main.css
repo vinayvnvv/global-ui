@@ -5614,7 +5614,7 @@ span.icon.white {
 .container {
   margin: 0 auto; }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 999px) {
   .container {
     max-width: 100%; } }
 
@@ -7350,7 +7350,7 @@ span.icon.white {
     padding-left: 0.21em;
     padding-right: 0.21em; }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 999px) {
   .navbar .nav-brand {
     padding: 0; }
   .navbar .container {
@@ -9572,6 +9572,225 @@ span.icon.white {
         border-right-color: #ffffff; }
       .tab.white.vertical.style-2 .item {
         border-bottom-color: rgba(255, 255, 255, 0.4); }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  -webkit-flex: 1 1 auto;
+  flex-direction: column;
+  display: none; }
+  .modal .modal-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 600; }
+  .modal.active {
+    display: flex; }
+  .modal:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    opacity: 0.5;
+    z-index: 500; }
+  .modal .modal-content {
+    z-index: 700;
+    background-color: #fff;
+    position: relative;
+    overflow-y: auto;
+    border-radius: 3px; }
+  .modal.structured .modal-content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; }
+    .modal.structured .modal-content .modal-header {
+      padding: 0.8em 0.93em;
+      background-color: #f0f0f0;
+      font-weight: 600;
+      font-size: 1.2em;
+      position: relative;
+      padding-right: 40px; }
+      .modal.structured .modal-content .modal-header .modal-close {
+        position: absolute;
+        right: 9px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.8; }
+        .modal.structured .modal-content .modal-header .modal-close .button {
+          height: 15px;
+          width: 15px;
+          min-height: 15px;
+          min-width: 15px;
+          padding: 5px; }
+        .modal.structured .modal-content .modal-header .modal-close:hover {
+          opacity: 1; }
+    .modal.structured .modal-content .modal-body {
+      padding: 0.8em 0.93em;
+      overflow-x: auto; }
+    .modal.structured .modal-content .modal-footer {
+      padding: 0.8em 0.93em;
+      text-align: right;
+      position: relative; }
+      .modal.structured .modal-content .modal-footer:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 1px;
+        width: 94%;
+        left: 3%;
+        background-color: #d9d9d9; }
+  .modal.alert .modal-content .modal-alert-title {
+    padding: 0.7em 0.8em;
+    font-size: 1.3em;
+    font-weight: 500; }
+  .modal.alert .modal-content .modal-alert-desc {
+    padding: 0.7em 0.8em;
+    opacity: 0.7; }
+  .modal.alert .modal-content .modal-alert-action {
+    padding: 0.7em 0.8em;
+    text-align: right; }
+
+@media screen and (max-width: 999px) {
+  .modal .modal-content {
+    width: 90%;
+    margin: 5%; }
+  .modal.alert .modal-content {
+    width: initial;
+    max-width: 90%;
+    min-width: 240px; } }
+
+@media screen and (min-width: 1000px) {
+  .modal .modal-content {
+    width: 640px;
+    margin: 24px auto; }
+  .modal.alert .modal-content {
+    width: initial;
+    min-width: 350px;
+    max-width: 640px; } }
+
+.modal.light.structured .modal-content .modal-header {
+  background-color: whitesmoke;
+  color: #363636; }
+
+.modal.dark.structured .modal-content .modal-header {
+  background-color: #363636;
+  color: whitesmoke; }
+
+.modal.primary.structured .modal-content .modal-header {
+  background-color: #0483a9;
+  color: #fff; }
+
+.modal.info.structured .modal-content .modal-header {
+  background-color: #3273dc;
+  color: #fff; }
+
+.modal.success.structured .modal-content .modal-header {
+  background-color: #23d160;
+  color: #fff; }
+
+.modal.warning.structured .modal-content .modal-header {
+  background-color: #ffdd57;
+  color: rgba(0, 0, 0, 0.7); }
+
+.modal.danger.structured .modal-content .modal-header {
+  background-color: #ff3860;
+  color: #fff; }
+
+.modal.red.structured .modal-content .modal-header {
+  background-color: #F44336;
+  color: #fff; }
+
+.modal.pink.structured .modal-content .modal-header {
+  background-color: #E91E63;
+  color: #fff; }
+
+.modal.purple.structured .modal-content .modal-header {
+  background-color: #9C27B0;
+  color: #fff; }
+
+.modal.deep-purple.structured .modal-content .modal-header {
+  background-color: #673AB7;
+  color: #fff; }
+
+.modal.indigo.structured .modal-content .modal-header {
+  background-color: #3F51B5;
+  color: #fff; }
+
+.modal.blue.structured .modal-content .modal-header {
+  background-color: #2196F3;
+  color: #fff; }
+
+.modal.light-blue.structured .modal-content .modal-header {
+  background-color: #03A9F4;
+  color: #fff; }
+
+.modal.cyan.structured .modal-content .modal-header {
+  background-color: #00BCD4;
+  color: #fff; }
+
+.modal.teal.structured .modal-content .modal-header {
+  background-color: #009688;
+  color: #fff; }
+
+.modal.green.structured .modal-content .modal-header {
+  background-color: #4CAF50;
+  color: #fff; }
+
+.modal.light-green.structured .modal-content .modal-header {
+  background-color: #8BC34A;
+  color: #fff; }
+
+.modal.lime.structured .modal-content .modal-header {
+  background-color: #CDDC39;
+  color: rgba(0, 0, 0, 0.7); }
+
+.modal.yellow.structured .modal-content .modal-header {
+  background-color: #FFEB3B;
+  color: rgba(0, 0, 0, 0.7); }
+
+.modal.amber.structured .modal-content .modal-header {
+  background-color: #FFC107;
+  color: rgba(0, 0, 0, 0.7); }
+
+.modal.orange.structured .modal-content .modal-header {
+  background-color: #FF9800;
+  color: #fff; }
+
+.modal.deep-orange.structured .modal-content .modal-header {
+  background-color: #FF5722;
+  color: #fff; }
+
+.modal.brown.structured .modal-content .modal-header {
+  background-color: #795548;
+  color: #fff; }
+
+.modal.grey.structured .modal-content .modal-header {
+  background-color: #9E9E9E;
+  color: #fff; }
+
+.modal.blue-grey.structured .modal-content .modal-header {
+  background-color: #607D8B;
+  color: #fff; }
+
+.modal.black.structured .modal-content .modal-header {
+  background-color: #000000;
+  color: #fff; }
+
+.modal.white.structured .modal-content .modal-header {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.7); }
 
 @keyframes navbar_toggle_menu_bar_start {
   from {

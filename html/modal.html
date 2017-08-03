@@ -1,0 +1,112 @@
+<link rel="stylesheet" href="css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+<br/>
+<br/>
+<center>
+	
+	<span class="button" add-class='{"for":"modal_1","class":"active"}' >Sample Modal</span>
+	<span class="button" add-class='{"for":"modal_2","class":"active"}' >Structured Modal</span>
+	<span class="button" add-class='{"for":"modal_3","class":"active"}' >Structured Color Modal</span>
+	<span class="button" add-class='{"for":"modal_4","class":"active"}' >Alert Modal</span>
+	<span class="button" add-class='{"for":"modal_5","class":"active"}' >Alert With MultiAction Modal</span>
+	<span class="button" add-class='{"for":"modal_6","class":"active"}' >Modal with whiteframes</span>
+
+</center>
+
+
+<!-- sample modal -->
+<div class="modal" add-class-id="modal_1" remove-class-id="modal_1">
+	<div class="modal-bg" remove-class='{"for":"modal_1","class":"active"}'></div>
+	<div class="modal-content">
+		<center>
+			This is sample modal<br/>
+			<span class="button mini" remove-class='{"for":"modal_1","class":"active"}'>Close</span>
+		</center>
+	</div>
+</div>
+
+<!-- sample structred modal -->
+<div class="modal structured" add-class-id="modal_2" remove-class-id="modal_2">
+	<div class="modal-bg" remove-class='{"for":"modal_2","class":"active"}'></div>
+	<div class="modal-content">
+		<div class="modal-header">
+			This is Header
+			<span class="modal-close">
+				<span class="button circle ripple" remove-class='{"for":"modal_2","class":"active"}'><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+			</span>
+		</div>
+		<div class="modal-body">
+			This is modal content and scrollable on height exceeds.
+			<div style="height: 999px"></div>
+		</div>
+		<div class="modal-footer">
+			<span class="button small primary">Save</span>
+			<span class="button small" remove-class='{"for":"modal_3","class":"active"}'>Close</span>
+		</div>
+	</div>
+</div>
+
+<!-- sample structred modal with color-->
+<div class="modal structured primary" add-class-id="modal_3" remove-class-id="modal_3">
+	<div class="modal-bg" remove-class='{"for":"modal_3","class":"active"}'></div>
+	<div class="modal-content">
+		<div class="modal-header">
+			This is Header
+			<span class="modal-close">
+				<span class="button circle ripple primary" remove-class='{"for":"modal_3","class":"active"}'><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+			</span>
+		</div>
+		<div class="modal-body">
+			This is modal content and scrollable on height exceeds.
+			<div style="height: 999px"></div>
+		</div>
+		<div class="modal-footer">
+			<span class="button small primary">Save</span>
+			<span class="button small" remove-class='{"for":"modal_3","class":"active"}'>Close</span>
+		</div>
+	</div>
+</div>
+
+<!-- alert modal -->
+<div class="modal alert" add-class-id="modal_4" remove-class-id="modal_4">
+	<div class="modal-bg" remove-class='{"for":"modal_4","class":"active"}'></div>
+	<div class="modal-content">
+		<div class="modal-alert-title">Alert Title</div>
+		<div class="modal-alert-desc">Alert Text</div>
+		<div class="modal-alert-action">
+			<span class="button small border-0 ripple outline standard">Got It!</span>
+		</div>
+	</div>
+</div>
+
+<!-- alert with multi-action modal -->
+<div class="modal alert" add-class-id="modal_5" remove-class-id="modal_5">
+	<div class="modal-bg" remove-class='{"for":"modal_5","class":"active"}'></div>
+	<div class="modal-content">
+		<div class="modal-alert-title">Confirm Delete?</div>
+		<div class="modal-alert-desc">Items will no longer available after delete!</div>
+		<div class="modal-alert-action">
+			<span class="button primary small border-0 outline standard ripple">Okay</span>
+			<span class="button danger small border-0 outline standard ripple">Cancel</span>
+		</div>
+	</div>
+</div>
+
+<!-- alert modal -->
+<div class="modal alert" add-class-id="modal_6" remove-class-id="modal_6">
+	<div class="modal-bg" remove-class='{"for":"modal_6","class":"active"}'></div>
+	<div class="modal-content whiteframe-10">
+		<div class="modal-alert-title">Whiteframe Modal</div>
+		<div class="modal-alert-desc">This modal content is with shadow</div>
+		<div class="modal-alert-action">
+			<span class="button small border-0 ripple outline standard">Got It!</span>
+		</div>
+	</div>
+</div>
+
+<br/><br/>
+
+
+<script type="text/javascript" src="assets/toggle-class.js"></script>
