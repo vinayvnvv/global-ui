@@ -23,10 +23,13 @@ $mdl-light-dim-border-color: #d9d9d9
 	-webkit-flex: 1 1 auto
 	flex-direction: column
 	display: none
+	&.square
+		& .modal-content
+			border-radius: 0px
 	&.light-bg
 		&:before
 			background-color: $mdl-light-dim-bg-color!important
-			opacity: 0.6!important
+			opacity: $modal-light-bg-opacity!important
 		& .modal-content
 			border: 1px solid $mdl-light-dim-border-color
 	& .modal-bg
@@ -41,7 +44,10 @@ $mdl-light-dim-border-color: #d9d9d9
 	&.animated
 		&:before
 			animation-duration: 0.4s
-			animation-name: fadeIn
+			animation-name: modalDarkBgfadeIn
+		&.light-bg
+			&:before
+				animation-name: modalLightBgfadeIn
 		& .modal-content
 			animation-name: zoomIn
 			animation-duration: 0.2s
@@ -53,7 +59,7 @@ $mdl-light-dim-border-color: #d9d9d9
 		height: 100%
 		width: 100%
 		background-color: #000000
-		opacity: 0.5
+		opacity: $modal-dark-bg-opacity
 		z-index: 500
 	& .modal-content
 		z-index: 700
