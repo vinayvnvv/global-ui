@@ -9600,6 +9600,12 @@ span.icon.white {
     z-index: 600; }
   .modal.active {
     display: flex; }
+  .modal.animated:before {
+    animation-duration: 0.4s;
+    animation-name: fadeIn; }
+  .modal.animated .modal-content {
+    animation-name: zoomIn;
+    animation-duration: 0.2s; }
   .modal:before {
     content: "";
     position: absolute;
@@ -9830,3 +9836,16 @@ span.icon.white {
     left: 0; }
   to {
     left: 100%; } }
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3); }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 0.5; } }

@@ -38,6 +38,13 @@ $mdl-light-dim-border-color: #d9d9d9
 		z-index: 600
 	&.active
 		display: flex
+	&.animated
+		&:before
+			animation-duration: 0.4s
+			animation-name: fadeIn
+		& .modal-content
+			animation-name: zoomIn
+			animation-duration: 0.2s
 	&:before
 		content: ""
 		position: absolute
