@@ -12,6 +12,9 @@
 	<span class="button" add-class='{"for":"modal_4","class":"active"}' >Alert Modal</span>
 	<span class="button" add-class='{"for":"modal_5","class":"active"}' >Alert With MultiAction Modal</span>
 	<span class="button" add-class='{"for":"modal_6","class":"active"}' >Modal with whiteframes</span>
+	<span class="button" add-class='{"for":"modal_7","class":"active"}' >Modal Fullcreen in Mobile</span>
+	<span class="button" add-class='{"for":"modal_8","class":"active"}' >Modal Fullcreen in Desktop</span>
+	<span class="button" add-class='{"for":"modal_9","class":"active"}' >Modal with Light Dim background</span>
 
 </center>
 
@@ -106,7 +109,63 @@
 	</div>
 </div>
 
+
+<!-- sample structred modal with mobile-fullscreen -->
+<div class="modal structured fullscreen-mobile" add-class-id="modal_7" remove-class-id="modal_7">
+	<div class="modal-bg" remove-class='{"for":"modal_7","class":"active"}'></div>
+	<div class="modal-content">
+		<div class="modal-header">
+			This is Header
+			<span class="modal-close">
+				<span class="button circle ripple" remove-class='{"for":"modal_7","class":"active"}'><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+			</span>
+		</div>
+		<div class="modal-body">
+			This is modal content and scrollable on height exceeds.
+			<div style="height: 999px"></div>
+		</div>
+		<div class="modal-footer">
+			<span class="button small primary">Save</span>
+			<span class="button small" remove-class='{"for":"modal_7","class":"active"}'>Close</span>
+		</div>
+	</div>
+</div>
+
+<!-- sample structred modal with desktop-fullscreen -->
+<div class="modal structured fullscreen-desktop" add-class-id="modal_8" remove-class-id="modal_8">
+	<div class="modal-bg" remove-class='{"for":"modal_8","class":"active"}'></div>
+	<div class="modal-content">
+		<div class="modal-header">
+			This is Header
+			<span class="modal-close">
+				<span class="button circle ripple" remove-class='{"for":"modal_8","class":"active"}'><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+			</span>
+		</div>
+		<div class="modal-body">
+			This is modal content and scrollable on height exceeds.
+			<div style="height: 999px"></div>
+		</div>
+		<div class="modal-footer">
+			<span class="button small primary">Save</span>
+			<span class="button small" remove-class='{"for":"modal_8","class":"active"}'>Close</span>
+		</div>
+	</div>
+</div>
+
+<!-- Light dim bg modal -->
+<div class="modal alert light-bg" add-class-id="modal_9" remove-class-id="modal_9">
+	<div class="modal-bg" remove-class='{"for":"modal_9","class":"active"}'></div>
+	<div class="modal-content">
+		<div class="modal-alert-title">Alert Title</div>
+		<div class="modal-alert-desc">Alert Text</div>
+		<div class="modal-alert-action">
+			<span class="button small border-0 ripple outline standard">Got It!</span>
+		</div>
+	</div>
+</div>
+
 <br/><br/>
+
 
 
 <script type="text/javascript" src="assets/toggle-class.js"></script>

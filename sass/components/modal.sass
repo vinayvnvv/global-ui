@@ -5,6 +5,9 @@ $mdl-content-bg-color: #fff
 $mdl-stcrd-padding: 0.8em 0.93em
 $mdl-alert-padding: 0.7em 0.8em
 $mdl-alert-min-width: 350px
+$mdl-light-dim-bg-color: #f5f5f5
+$mdl-light-dim-border-color: #d9d9d9
+
 
 
 .modal
@@ -20,6 +23,12 @@ $mdl-alert-min-width: 350px
 	-webkit-flex: 1 1 auto
 	flex-direction: column
 	display: none
+	&.light-bg
+		&:before
+			background-color: $mdl-light-dim-bg-color!important
+			opacity: 0.6!important
+		& .modal-content
+			border: 1px solid $mdl-light-dim-border-color
 	& .modal-bg
 		position: absolute
 		top: 0
@@ -116,6 +125,11 @@ $mdl-alert-min-width: 350px
 				width: initial
 				max-width: 90%
 				min-width: 240px
+		&.fullscreen-mobile
+			& .modal-content
+				width: 100%!important
+				height: 100%!important
+				margin: 0!important
 +desktop
 	.modal
 		& .modal-content
@@ -126,6 +140,11 @@ $mdl-alert-min-width: 350px
 				width: initial
 				min-width: $mdl-alert-min-width
 				max-width: $mdl-desktop-width
+		&.fullscreen-desktop
+			& .modal-content
+				width: 100%!important
+				height: 100%!important
+				margin: 0!important
 
 //colors
 .modal
