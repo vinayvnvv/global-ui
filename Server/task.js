@@ -12,7 +12,7 @@ var gulpActivity = function(app, http) {
 	var sass_files  = [
 	               'sass/*',
 	               'sass/base/*',
-	               'sass/utitlities/*',
+	               'sass/utilities/*',
 	               'sass/elements/*',
 	               'sass/components/*',
 	               'sass/test/*',

@@ -23,7 +23,11 @@
 		left: 0
 	to
 		left: 100%
-
+@keyframes progress_indicator
+	0%
+		width: 0
+	100%
+		width: 100%
 
 @keyframes zoomIn
 	from
@@ -43,4 +47,9 @@
 		opacity: 0
 	to
 		opacity: $modal-light-bg-opacity
+@keyframes modalFlashBgfadeIn
+	from
+		opacity: 0
+	to
+		opacity: $modal-flash-bg-opacity
 

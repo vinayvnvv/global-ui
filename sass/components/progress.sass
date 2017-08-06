@@ -1,0 +1,98 @@
+$pgrs-bg-color: #666666
+$pgrs-bar-text-color: #fff
+$pgrs-border-radius: 3px
+$pgrs-bar-height: 15px
+
+.progress
+	display: inline-flex
+	width: 100%
+	border-radius: $pgrs-border-radius
+	flex-direction: column
+	position: relative
+	&	.progress-bar
+		height: $pgrs-bar-height
+		background-color: $pgrs-bg-color
+		border-radius: $pgrs-border-radius
+		transition: 0.3s
+		display: flex
+		align-items: center
+		font-weight: bold
+		color: $pgrs-bar-text-color
+		justify-content: center
+		z-index: 3
+		&.text-left
+			justify-content: flex-start
+		&.text-right
+			justify-content: flex-end
+	&.shaded, &.outline
+		&:after
+			position: absolute
+			content: ""
+			width: 100%
+			height: $pgrs-bar-height
+			left: 0
+			top: 0
+			background-color: transparentize($pgrs-bg-color, 0.7)
+			border-radius: $pgrs-border-radius
+			z-index: 1
+		& .progress-bar
+			border-radius: $pgrs-border-radius 0 0 $pgrs-border-radius
+	&.outline
+		&:after
+			border: 2px solid $pgrs-bg-color
+			background-color: transparent
+			height: $pgrs-bar-height - 2
+		& .progress-bar
+			border-radius: $pgrs-border-radius 0 0 $pgrs-border-radius
+			&:before
+				height: ($pgrs-bar-height + 3)!important
+	& .progress-info
+		position: relative
+		width: 100%
+		text-align: center
+		margin-top: 2px
+	&.indicating
+		& .progress-bar
+			position: relative
+			z-index: 2
+			&:before
+				content: ""
+				position: absolute
+				height: 100%
+				left: 0
+				background: linear-gradient(to right, transparent, transparentize(#fff, 0.7));
+				animation-duration: 1.7s
+				animation-name: progress_indicator
+				animation-iteration-count: infinite
+				z-index: 1
+				animation-timing-function: ease
+				border-radius: $pgrs-border-radius
+	&.square
+		border-radius: 0!important
+		&:after
+			border-radius: 0!important
+		& .progress-bar
+			border-radius: 0!important
+			&:before
+				border-radius: 0!important
+	&.circle
+		border-radius: 50em!important
+		&:after
+			border-radius: 50em!important
+		& .progress-bar
+			border-radius: 50em!important
+			&:before
+				border-radius: 50em!important
+	@each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}
+    	border-color: $color
+    	&:after
+    		background-color: transparentize($color, 0.7)
+    		border-color: $color
+    	& .progress-bar
+    		background-color: $color
+    		color: $color-invert
+    	& .progress-info
+    		color: $color
