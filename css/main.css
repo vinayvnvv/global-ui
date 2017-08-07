@@ -53,6 +53,30 @@
   margin-right: 5px;
   margin-left: 5px; }
 
+.ripple {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0); }
+  .ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s; }
+  .ripple:active:after {
+    transform: scale(0, 0);
+    opacity: .5;
+    transition: 0s; }
+
 html, body {
   font-family: Lato, "Helvetica Neue", "Open Sans", Arial, Helvetica, sans-serif;
   margin: 0 auto; }
@@ -10201,19 +10225,744 @@ span.icon.white {
   .pagination .pagination-prev, .pagination .pagination-next {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    flex-grow: 1; }
+    justify-content: center; }
   .pagination .pagination-prev .link, .pagination .pagination-next .link, .pagination .pagination-list .link {
     padding: 0.36em 0.8em;
-    border: 1px solid #d9d9d9;
     border-radius: 3px;
     margin: 0 0.234em;
-    color: #555555; }
+    color: #666666;
+    background-color: #e9e9e9;
+    transition: 0.2s all; }
+    .pagination .pagination-prev .link:hover, .pagination .pagination-next .link:hover, .pagination .pagination-list .link:hover {
+      background-color: #d7d7d7; }
+    .pagination .pagination-prev .link:active, .pagination .pagination-next .link:active, .pagination .pagination-list .link:active {
+      background-color: #c3c3c3; }
     .pagination .pagination-prev .link.ellipsis, .pagination .pagination-next .link.ellipsis, .pagination .pagination-list .link.ellipsis {
-      border: none;
+      border: none !important;
       pointer-events: none;
       color: #777;
-      opacity: 0.4; }
+      opacity: 0.4;
+      background-color: transparent !important; }
+    .pagination .pagination-prev .link span.icon:first-child, .pagination .pagination-next .link span.icon:first-child, .pagination .pagination-list .link span.icon:first-child {
+      margin-left: -0.13em; }
+    .pagination .pagination-prev .link.disabled, .pagination .pagination-next .link.disabled, .pagination .pagination-list .link.disabled {
+      opacity: 0.3;
+      pointer-events: none; }
+    .pagination .pagination-prev .link.active, .pagination .pagination-next .link.active, .pagination .pagination-list .link.active {
+      background-color: #8b8b8b;
+      color: white; }
+  .pagination.pagination-left .pagination-list {
+    justify-content: flex-start; }
+  .pagination.pagination-right .pagination-list {
+    justify-content: flex-end; }
+  .pagination.close-by:not(.pagination-right):not(.pagination-left) {
+    justify-content: center; }
+    .pagination.close-by:not(.pagination-right):not(.pagination-left) .pagination-list {
+      flex-grow: initial; }
+  .pagination.close-by.pagination-right .pagination-list {
+    justify-content: flex-start; }
+  .pagination.close-by.pagination-left .pagination-list {
+    justify-content: flex-end; }
+  .pagination.padding-less .pagination-prev .link, .pagination.padding-less .pagination-next .link, .pagination.padding-less .pagination-list .link {
+    padding: 0.2em 0.47em; }
+  .pagination.padding-more .pagination-prev .link, .pagination.padding-more .pagination-next .link, .pagination.padding-more .pagination-list .link {
+    padding: 0.52em 1.13em; }
+  .pagination.outline .pagination-prev .link, .pagination.outline .pagination-next .link, .pagination.outline .pagination-list .link {
+    background-color: transparent;
+    border: 1px solid #d9d9d9; }
+    .pagination.outline .pagination-prev .link:hover, .pagination.outline .pagination-next .link:hover, .pagination.outline .pagination-list .link:hover {
+      background-color: #e4e4e4; }
+    .pagination.outline .pagination-prev .link:active, .pagination.outline .pagination-next .link:active, .pagination.outline .pagination-list .link:active {
+      background-color: #c3c3c3; }
+    .pagination.outline .pagination-prev .link.active, .pagination.outline .pagination-next .link.active, .pagination.outline .pagination-list .link.active {
+      background-color: #8b8b8b;
+      color: white; }
+  .pagination.mini {
+    font-size: 0.68571rem; }
+  .pagination.tiny {
+    font-size: 0.79714rem; }
+  .pagination.small {
+    font-size: 0.92857rem; }
+  .pagination.medium {
+    font-size: 1rem; }
+  .pagination.large {
+    font-size: 1.14286rem; }
+  .pagination.big {
+    font-size: 1.28571rem; }
+  .pagination.huge {
+    font-size: 1.42857rem; }
+  .pagination.light .pagination-prev .link, .pagination.light .pagination-next .link, .pagination.light .pagination-list .link {
+    background-color: whitesmoke;
+    color: #363636; }
+    .pagination.light .pagination-prev .link.ellipsis, .pagination.light .pagination-next .link.ellipsis, .pagination.light .pagination-list .link.ellipsis {
+      color: whitesmoke; }
+    .pagination.light .pagination-prev .link:hover, .pagination.light .pagination-next .link:hover, .pagination.light .pagination-list .link:hover {
+      background-color: rgba(245, 245, 245, 0.8); }
+    .pagination.light .pagination-prev .link:active, .pagination.light .pagination-next .link:active, .pagination.light .pagination-list .link:active {
+      background-color: rgba(245, 245, 245, 0.5); }
+    .pagination.light .pagination-prev .link.active, .pagination.light .pagination-next .link.active, .pagination.light .pagination-list .link.active {
+      background-color: #c4c4c4; }
+  .pagination.light.outline .pagination-prev .link, .pagination.light.outline .pagination-next .link, .pagination.light.outline .pagination-list .link {
+    border-color: whitesmoke;
+    color: whitesmoke;
+    background-color: transparent; }
+    .pagination.light.outline .pagination-prev .link:hover, .pagination.light.outline .pagination-next .link:hover, .pagination.light.outline .pagination-list .link:hover {
+      background-color: #fafafa;
+      color: #363636; }
+    .pagination.light.outline .pagination-prev .link:active, .pagination.light.outline .pagination-next .link:active, .pagination.light.outline .pagination-list .link:active {
+      background-color: #d9d9d9;
+      color: #363636; }
+    .pagination.light.outline .pagination-prev .link.active, .pagination.light.outline .pagination-next .link.active, .pagination.light.outline .pagination-list .link.active {
+      background-color: #e6e6e6;
+      color: #363636; }
+  .pagination.dark .pagination-prev .link, .pagination.dark .pagination-next .link, .pagination.dark .pagination-list .link {
+    background-color: #363636;
+    color: whitesmoke; }
+    .pagination.dark .pagination-prev .link.ellipsis, .pagination.dark .pagination-next .link.ellipsis, .pagination.dark .pagination-list .link.ellipsis {
+      color: #363636; }
+    .pagination.dark .pagination-prev .link:hover, .pagination.dark .pagination-next .link:hover, .pagination.dark .pagination-list .link:hover {
+      background-color: rgba(54, 54, 54, 0.8); }
+    .pagination.dark .pagination-prev .link:active, .pagination.dark .pagination-next .link:active, .pagination.dark .pagination-list .link:active {
+      background-color: rgba(54, 54, 54, 0.5); }
+    .pagination.dark .pagination-prev .link.active, .pagination.dark .pagination-next .link.active, .pagination.dark .pagination-list .link.active {
+      background-color: #050505; }
+  .pagination.dark.outline .pagination-prev .link, .pagination.dark.outline .pagination-next .link, .pagination.dark.outline .pagination-list .link {
+    border-color: #363636;
+    color: #363636;
+    background-color: transparent; }
+    .pagination.dark.outline .pagination-prev .link:hover, .pagination.dark.outline .pagination-next .link:hover, .pagination.dark.outline .pagination-list .link:hover {
+      background-color: #3b3b3b;
+      color: whitesmoke; }
+    .pagination.dark.outline .pagination-prev .link:active, .pagination.dark.outline .pagination-next .link:active, .pagination.dark.outline .pagination-list .link:active {
+      background-color: #1a1a1a;
+      color: whitesmoke; }
+    .pagination.dark.outline .pagination-prev .link.active, .pagination.dark.outline .pagination-next .link.active, .pagination.dark.outline .pagination-list .link.active {
+      background-color: #262626;
+      color: whitesmoke; }
+  .pagination.primary .pagination-prev .link, .pagination.primary .pagination-next .link, .pagination.primary .pagination-list .link {
+    background-color: #0483a9;
+    color: #fff; }
+    .pagination.primary .pagination-prev .link.ellipsis, .pagination.primary .pagination-next .link.ellipsis, .pagination.primary .pagination-list .link.ellipsis {
+      color: #0483a9; }
+    .pagination.primary .pagination-prev .link:hover, .pagination.primary .pagination-next .link:hover, .pagination.primary .pagination-list .link:hover {
+      background-color: rgba(4, 131, 169, 0.8); }
+    .pagination.primary .pagination-prev .link:active, .pagination.primary .pagination-next .link:active, .pagination.primary .pagination-list .link:active {
+      background-color: rgba(4, 131, 169, 0.5); }
+    .pagination.primary .pagination-prev .link.active, .pagination.primary .pagination-next .link.active, .pagination.primary .pagination-list .link.active {
+      background-color: #023a4a; }
+  .pagination.primary.outline .pagination-prev .link, .pagination.primary.outline .pagination-next .link, .pagination.primary.outline .pagination-list .link {
+    border-color: #0483a9;
+    color: #0483a9;
+    background-color: transparent; }
+    .pagination.primary.outline .pagination-prev .link:hover, .pagination.primary.outline .pagination-next .link:hover, .pagination.primary.outline .pagination-list .link:hover {
+      background-color: #048bb3;
+      color: #fff; }
+    .pagination.primary.outline .pagination-prev .link:active, .pagination.primary.outline .pagination-next .link:active, .pagination.primary.outline .pagination-list .link:active {
+      background-color: #035972;
+      color: #fff; }
+    .pagination.primary.outline .pagination-prev .link.active, .pagination.primary.outline .pagination-next .link.active, .pagination.primary.outline .pagination-list .link.active {
+      background-color: #036c8b;
+      color: #fff; }
+  .pagination.info .pagination-prev .link, .pagination.info .pagination-next .link, .pagination.info .pagination-list .link {
+    background-color: #3273dc;
+    color: #fff; }
+    .pagination.info .pagination-prev .link.ellipsis, .pagination.info .pagination-next .link.ellipsis, .pagination.info .pagination-list .link.ellipsis {
+      color: #3273dc; }
+    .pagination.info .pagination-prev .link:hover, .pagination.info .pagination-next .link:hover, .pagination.info .pagination-list .link:hover {
+      background-color: rgba(50, 115, 220, 0.8); }
+    .pagination.info .pagination-prev .link:active, .pagination.info .pagination-next .link:active, .pagination.info .pagination-list .link:active {
+      background-color: rgba(50, 115, 220, 0.5); }
+    .pagination.info .pagination-prev .link.active, .pagination.info .pagination-next .link.active, .pagination.info .pagination-list .link.active {
+      background-color: #194894; }
+  .pagination.info.outline .pagination-prev .link, .pagination.info.outline .pagination-next .link, .pagination.info.outline .pagination-list .link {
+    border-color: #3273dc;
+    color: #3273dc;
+    background-color: transparent; }
+    .pagination.info.outline .pagination-prev .link:hover, .pagination.info.outline .pagination-next .link:hover, .pagination.info.outline .pagination-list .link:hover {
+      background-color: #3b79de;
+      color: #fff; }
+    .pagination.info.outline .pagination-prev .link:active, .pagination.info.outline .pagination-next .link:active, .pagination.info.outline .pagination-list .link:active {
+      background-color: #1f59b7;
+      color: #fff; }
+    .pagination.info.outline .pagination-prev .link.active, .pagination.info.outline .pagination-next .link.active, .pagination.info.outline .pagination-list .link.active {
+      background-color: #2364cd;
+      color: #fff; }
+  .pagination.success .pagination-prev .link, .pagination.success .pagination-next .link, .pagination.success .pagination-list .link {
+    background-color: #23d160;
+    color: #fff; }
+    .pagination.success .pagination-prev .link.ellipsis, .pagination.success .pagination-next .link.ellipsis, .pagination.success .pagination-list .link.ellipsis {
+      color: #23d160; }
+    .pagination.success .pagination-prev .link:hover, .pagination.success .pagination-next .link:hover, .pagination.success .pagination-list .link:hover {
+      background-color: rgba(35, 209, 96, 0.8); }
+    .pagination.success .pagination-prev .link:active, .pagination.success .pagination-next .link:active, .pagination.success .pagination-list .link:active {
+      background-color: rgba(35, 209, 96, 0.5); }
+    .pagination.success .pagination-prev .link.active, .pagination.success .pagination-next .link.active, .pagination.success .pagination-list .link.active {
+      background-color: #157e3a; }
+  .pagination.success.outline .pagination-prev .link, .pagination.success.outline .pagination-next .link, .pagination.success.outline .pagination-list .link {
+    border-color: #23d160;
+    color: #23d160;
+    background-color: transparent; }
+    .pagination.success.outline .pagination-prev .link:hover, .pagination.success.outline .pagination-next .link:hover, .pagination.success.outline .pagination-list .link:hover {
+      background-color: #25da64;
+      color: #fff; }
+    .pagination.success.outline .pagination-prev .link:active, .pagination.success.outline .pagination-next .link:active, .pagination.success.outline .pagination-list .link:active {
+      background-color: #1ba14a;
+      color: #fff; }
+    .pagination.success.outline .pagination-prev .link.active, .pagination.success.outline .pagination-next .link.active, .pagination.success.outline .pagination-list .link.active {
+      background-color: #1fb754;
+      color: #fff; }
+  .pagination.warning .pagination-prev .link, .pagination.warning .pagination-next .link, .pagination.warning .pagination-list .link {
+    background-color: #ffdd57;
+    color: rgba(0, 0, 0, 0.7); }
+    .pagination.warning .pagination-prev .link.ellipsis, .pagination.warning .pagination-next .link.ellipsis, .pagination.warning .pagination-list .link.ellipsis {
+      color: #ffdd57; }
+    .pagination.warning .pagination-prev .link:hover, .pagination.warning .pagination-next .link:hover, .pagination.warning .pagination-list .link:hover {
+      background-color: rgba(255, 221, 87, 0.8); }
+    .pagination.warning .pagination-prev .link:active, .pagination.warning .pagination-next .link:active, .pagination.warning .pagination-list .link:active {
+      background-color: rgba(255, 221, 87, 0.5); }
+    .pagination.warning .pagination-prev .link.active, .pagination.warning .pagination-next .link.active, .pagination.warning .pagination-list .link.active {
+      background-color: #f5c400; }
+  .pagination.warning.outline .pagination-prev .link, .pagination.warning.outline .pagination-next .link, .pagination.warning.outline .pagination-list .link {
+    border-color: #ffdd57;
+    color: #ffdd57;
+    background-color: transparent; }
+    .pagination.warning.outline .pagination-prev .link:hover, .pagination.warning.outline .pagination-next .link:hover, .pagination.warning.outline .pagination-list .link:hover {
+      background-color: #ffdf61;
+      color: rgba(0, 0, 0, 0.7); }
+    .pagination.warning.outline .pagination-prev .link:active, .pagination.warning.outline .pagination-next .link:active, .pagination.warning.outline .pagination-list .link:active {
+      background-color: #ffd21f;
+      color: rgba(0, 0, 0, 0.7); }
+    .pagination.warning.outline .pagination-prev .link.active, .pagination.warning.outline .pagination-next .link.active, .pagination.warning.outline .pagination-list .link.active {
+      background-color: #ffd738;
+      color: rgba(0, 0, 0, 0.7); }
+  .pagination.danger .pagination-prev .link, .pagination.danger .pagination-next .link, .pagination.danger .pagination-list .link {
+    background-color: #ff3860;
+    color: #fff; }
+    .pagination.danger .pagination-prev .link.ellipsis, .pagination.danger .pagination-next .link.ellipsis, .pagination.danger .pagination-list .link.ellipsis {
+      color: #ff3860; }
+    .pagination.danger .pagination-prev .link:hover, .pagination.danger .pagination-next .link:hover, .pagination.danger .pagination-list .link:hover {
+      background-color: rgba(255, 56, 96, 0.8); }
+    .pagination.danger .pagination-prev .link:active, .pagination.danger .pagination-next .link:active, .pagination.danger .pagination-list .link:active {
+      background-color: rgba(255, 56, 96, 0.5); }
+    .pagination.danger .pagination-prev .link.active, .pagination.danger .pagination-next .link.active, .pagination.danger .pagination-list .link.active {
+      background-color: #d6002b; }
+  .pagination.danger.outline .pagination-prev .link, .pagination.danger.outline .pagination-next .link, .pagination.danger.outline .pagination-list .link {
+    border-color: #ff3860;
+    color: #ff3860;
+    background-color: transparent; }
+    .pagination.danger.outline .pagination-prev .link:hover, .pagination.danger.outline .pagination-next .link:hover, .pagination.danger.outline .pagination-list .link:hover {
+      background-color: #ff4268;
+      color: #fff; }
+    .pagination.danger.outline .pagination-prev .link:active, .pagination.danger.outline .pagination-next .link:active, .pagination.danger.outline .pagination-list .link:active {
+      background-color: #ff0033;
+      color: #fff; }
+    .pagination.danger.outline .pagination-prev .link.active, .pagination.danger.outline .pagination-next .link.active, .pagination.danger.outline .pagination-list .link.active {
+      background-color: #ff1a47;
+      color: #fff; }
+  .pagination.red .pagination-prev .link, .pagination.red .pagination-next .link, .pagination.red .pagination-list .link {
+    background-color: #F44336;
+    color: #fff; }
+    .pagination.red .pagination-prev .link.ellipsis, .pagination.red .pagination-next .link.ellipsis, .pagination.red .pagination-list .link.ellipsis {
+      color: #F44336; }
+    .pagination.red .pagination-prev .link:hover, .pagination.red .pagination-next .link:hover, .pagination.red .pagination-list .link:hover {
+      background-color: rgba(244, 67, 54, 0.8); }
+    .pagination.red .pagination-prev .link:active, .pagination.red .pagination-next .link:active, .pagination.red .pagination-list .link:active {
+      background-color: rgba(244, 67, 54, 0.5); }
+    .pagination.red .pagination-prev .link.active, .pagination.red .pagination-next .link.active, .pagination.red .pagination-list .link.active {
+      background-color: #bf170a; }
+  .pagination.red.outline .pagination-prev .link, .pagination.red.outline .pagination-next .link, .pagination.red.outline .pagination-list .link {
+    border-color: #F44336;
+    color: #F44336;
+    background-color: transparent; }
+    .pagination.red.outline .pagination-prev .link:hover, .pagination.red.outline .pagination-next .link:hover, .pagination.red.outline .pagination-list .link:hover {
+      background-color: #f54c40;
+      color: #fff; }
+    .pagination.red.outline .pagination-prev .link:active, .pagination.red.outline .pagination-next .link:active, .pagination.red.outline .pagination-list .link:active {
+      background-color: #e51b0d;
+      color: #fff; }
+    .pagination.red.outline .pagination-prev .link.active, .pagination.red.outline .pagination-next .link.active, .pagination.red.outline .pagination-list .link.active {
+      background-color: #f22819;
+      color: #fff; }
+  .pagination.pink .pagination-prev .link, .pagination.pink .pagination-next .link, .pagination.pink .pagination-list .link {
+    background-color: #E91E63;
+    color: #fff; }
+    .pagination.pink .pagination-prev .link.ellipsis, .pagination.pink .pagination-next .link.ellipsis, .pagination.pink .pagination-list .link.ellipsis {
+      color: #E91E63; }
+    .pagination.pink .pagination-prev .link:hover, .pagination.pink .pagination-next .link:hover, .pagination.pink .pagination-list .link:hover {
+      background-color: rgba(233, 30, 99, 0.8); }
+    .pagination.pink .pagination-prev .link:active, .pagination.pink .pagination-next .link:active, .pagination.pink .pagination-list .link:active {
+      background-color: rgba(233, 30, 99, 0.5); }
+    .pagination.pink .pagination-prev .link.active, .pagination.pink .pagination-next .link.active, .pagination.pink .pagination-list .link.active {
+      background-color: #970f3d; }
+  .pagination.pink.outline .pagination-prev .link, .pagination.pink.outline .pagination-next .link, .pagination.pink.outline .pagination-list .link {
+    border-color: #E91E63;
+    color: #E91E63;
+    background-color: transparent; }
+    .pagination.pink.outline .pagination-prev .link:hover, .pagination.pink.outline .pagination-next .link:hover, .pagination.pink.outline .pagination-list .link:hover {
+      background-color: #ea2769;
+      color: #fff; }
+    .pagination.pink.outline .pagination-prev .link:active, .pagination.pink.outline .pagination-next .link:active, .pagination.pink.outline .pagination-list .link:active {
+      background-color: #bc124c;
+      color: #fff; }
+    .pagination.pink.outline .pagination-prev .link.active, .pagination.pink.outline .pagination-next .link.active, .pagination.pink.outline .pagination-list .link.active {
+      background-color: #d41556;
+      color: #fff; }
+  .pagination.purple .pagination-prev .link, .pagination.purple .pagination-next .link, .pagination.purple .pagination-list .link {
+    background-color: #9C27B0;
+    color: #fff; }
+    .pagination.purple .pagination-prev .link.ellipsis, .pagination.purple .pagination-next .link.ellipsis, .pagination.purple .pagination-list .link.ellipsis {
+      color: #9C27B0; }
+    .pagination.purple .pagination-prev .link:hover, .pagination.purple .pagination-next .link:hover, .pagination.purple .pagination-list .link:hover {
+      background-color: rgba(156, 39, 176, 0.8); }
+    .pagination.purple .pagination-prev .link:active, .pagination.purple .pagination-next .link:active, .pagination.purple .pagination-list .link:active {
+      background-color: rgba(156, 39, 176, 0.5); }
+    .pagination.purple .pagination-prev .link.active, .pagination.purple .pagination-next .link.active, .pagination.purple .pagination-list .link.active {
+      background-color: #561561; }
+  .pagination.purple.outline .pagination-prev .link, .pagination.purple.outline .pagination-next .link, .pagination.purple.outline .pagination-list .link {
+    border-color: #9C27B0;
+    color: #9C27B0;
+    background-color: transparent; }
+    .pagination.purple.outline .pagination-prev .link:hover, .pagination.purple.outline .pagination-next .link:hover, .pagination.purple.outline .pagination-list .link:hover {
+      background-color: #a329b8;
+      color: #fff; }
+    .pagination.purple.outline .pagination-prev .link:active, .pagination.purple.outline .pagination-next .link:active, .pagination.purple.outline .pagination-list .link:active {
+      background-color: #731d82;
+      color: #fff; }
+    .pagination.purple.outline .pagination-prev .link.active, .pagination.purple.outline .pagination-next .link.active, .pagination.purple.outline .pagination-list .link.active {
+      background-color: #862197;
+      color: #fff; }
+  .pagination.deep-purple .pagination-prev .link, .pagination.deep-purple .pagination-next .link, .pagination.deep-purple .pagination-list .link {
+    background-color: #673AB7;
+    color: #fff; }
+    .pagination.deep-purple .pagination-prev .link.ellipsis, .pagination.deep-purple .pagination-next .link.ellipsis, .pagination.deep-purple .pagination-list .link.ellipsis {
+      color: #673AB7; }
+    .pagination.deep-purple .pagination-prev .link:hover, .pagination.deep-purple .pagination-next .link:hover, .pagination.deep-purple .pagination-list .link:hover {
+      background-color: rgba(103, 58, 183, 0.8); }
+    .pagination.deep-purple .pagination-prev .link:active, .pagination.deep-purple .pagination-next .link:active, .pagination.deep-purple .pagination-list .link:active {
+      background-color: rgba(103, 58, 183, 0.5); }
+    .pagination.deep-purple .pagination-prev .link.active, .pagination.deep-purple .pagination-next .link.active, .pagination.deep-purple .pagination-list .link.active {
+      background-color: #3e236d; }
+  .pagination.deep-purple.outline .pagination-prev .link, .pagination.deep-purple.outline .pagination-next .link, .pagination.deep-purple.outline .pagination-list .link {
+    border-color: #673AB7;
+    color: #673AB7;
+    background-color: transparent; }
+    .pagination.deep-purple.outline .pagination-prev .link:hover, .pagination.deep-purple.outline .pagination-next .link:hover, .pagination.deep-purple.outline .pagination-list .link:hover {
+      background-color: #6b3cbf;
+      color: #fff; }
+    .pagination.deep-purple.outline .pagination-prev .link:active, .pagination.deep-purple.outline .pagination-next .link:active, .pagination.deep-purple.outline .pagination-list .link:active {
+      background-color: #4f2c8c;
+      color: #fff; }
+    .pagination.deep-purple.outline .pagination-prev .link.active, .pagination.deep-purple.outline .pagination-next .link.active, .pagination.deep-purple.outline .pagination-list .link.active {
+      background-color: #5a33a0;
+      color: #fff; }
+  .pagination.indigo .pagination-prev .link, .pagination.indigo .pagination-next .link, .pagination.indigo .pagination-list .link {
+    background-color: #3F51B5;
+    color: #fff; }
+    .pagination.indigo .pagination-prev .link.ellipsis, .pagination.indigo .pagination-next .link.ellipsis, .pagination.indigo .pagination-list .link.ellipsis {
+      color: #3F51B5; }
+    .pagination.indigo .pagination-prev .link:hover, .pagination.indigo .pagination-next .link:hover, .pagination.indigo .pagination-list .link:hover {
+      background-color: rgba(63, 81, 181, 0.8); }
+    .pagination.indigo .pagination-prev .link:active, .pagination.indigo .pagination-next .link:active, .pagination.indigo .pagination-list .link:active {
+      background-color: rgba(63, 81, 181, 0.5); }
+    .pagination.indigo .pagination-prev .link.active, .pagination.indigo .pagination-next .link.active, .pagination.indigo .pagination-list .link.active {
+      background-color: #26316d; }
+  .pagination.indigo.outline .pagination-prev .link, .pagination.indigo.outline .pagination-next .link, .pagination.indigo.outline .pagination-list .link {
+    border-color: #3F51B5;
+    color: #3F51B5;
+    background-color: transparent; }
+    .pagination.indigo.outline .pagination-prev .link:hover, .pagination.indigo.outline .pagination-next .link:hover, .pagination.indigo.outline .pagination-list .link:hover {
+      background-color: #4254bd;
+      color: #fff; }
+    .pagination.indigo.outline .pagination-prev .link:active, .pagination.indigo.outline .pagination-next .link:active, .pagination.indigo.outline .pagination-list .link:active {
+      background-color: #313e8b;
+      color: #fff; }
+    .pagination.indigo.outline .pagination-prev .link.active, .pagination.indigo.outline .pagination-next .link.active, .pagination.indigo.outline .pagination-list .link.active {
+      background-color: #37479e;
+      color: #fff; }
+  .pagination.blue .pagination-prev .link, .pagination.blue .pagination-next .link, .pagination.blue .pagination-list .link {
+    background-color: #2196F3;
+    color: #fff; }
+    .pagination.blue .pagination-prev .link.ellipsis, .pagination.blue .pagination-next .link.ellipsis, .pagination.blue .pagination-list .link.ellipsis {
+      color: #2196F3; }
+    .pagination.blue .pagination-prev .link:hover, .pagination.blue .pagination-next .link:hover, .pagination.blue .pagination-list .link:hover {
+      background-color: rgba(33, 150, 243, 0.8); }
+    .pagination.blue .pagination-prev .link:active, .pagination.blue .pagination-next .link:active, .pagination.blue .pagination-list .link:active {
+      background-color: rgba(33, 150, 243, 0.5); }
+    .pagination.blue .pagination-prev .link.active, .pagination.blue .pagination-next .link.active, .pagination.blue .pagination-list .link.active {
+      background-color: #0963aa; }
+  .pagination.blue.outline .pagination-prev .link, .pagination.blue.outline .pagination-next .link, .pagination.blue.outline .pagination-list .link {
+    border-color: #2196F3;
+    color: #2196F3;
+    background-color: transparent; }
+    .pagination.blue.outline .pagination-prev .link:hover, .pagination.blue.outline .pagination-next .link:hover, .pagination.blue.outline .pagination-list .link:hover {
+      background-color: #2b9bf4;
+      color: #fff; }
+    .pagination.blue.outline .pagination-prev .link:active, .pagination.blue.outline .pagination-next .link:active, .pagination.blue.outline .pagination-list .link:active {
+      background-color: #0b79d1;
+      color: #fff; }
+    .pagination.blue.outline .pagination-prev .link.active, .pagination.blue.outline .pagination-next .link.active, .pagination.blue.outline .pagination-list .link.active {
+      background-color: #0d87e9;
+      color: #fff; }
+  .pagination.light-blue .pagination-prev .link, .pagination.light-blue .pagination-next .link, .pagination.light-blue .pagination-list .link {
+    background-color: #03A9F4;
+    color: #fff; }
+    .pagination.light-blue .pagination-prev .link.ellipsis, .pagination.light-blue .pagination-next .link.ellipsis, .pagination.light-blue .pagination-list .link.ellipsis {
+      color: #03A9F4; }
+    .pagination.light-blue .pagination-prev .link:hover, .pagination.light-blue .pagination-next .link:hover, .pagination.light-blue .pagination-list .link:hover {
+      background-color: rgba(3, 169, 244, 0.8); }
+    .pagination.light-blue .pagination-prev .link:active, .pagination.light-blue .pagination-next .link:active, .pagination.light-blue .pagination-list .link:active {
+      background-color: rgba(3, 169, 244, 0.5); }
+    .pagination.light-blue .pagination-prev .link.active, .pagination.light-blue .pagination-next .link.active, .pagination.light-blue .pagination-list .link.active {
+      background-color: #026794; }
+  .pagination.light-blue.outline .pagination-prev .link, .pagination.light-blue.outline .pagination-next .link, .pagination.light-blue.outline .pagination-list .link {
+    border-color: #03A9F4;
+    color: #03A9F4;
+    background-color: transparent; }
+    .pagination.light-blue.outline .pagination-prev .link:hover, .pagination.light-blue.outline .pagination-next .link:hover, .pagination.light-blue.outline .pagination-list .link:hover {
+      background-color: #05affc;
+      color: #fff; }
+    .pagination.light-blue.outline .pagination-prev .link:active, .pagination.light-blue.outline .pagination-next .link:active, .pagination.light-blue.outline .pagination-list .link:active {
+      background-color: #0283bd;
+      color: #fff; }
+    .pagination.light-blue.outline .pagination-prev .link.active, .pagination.light-blue.outline .pagination-next .link.active, .pagination.light-blue.outline .pagination-list .link.active {
+      background-color: #0394d6;
+      color: #fff; }
+  .pagination.cyan .pagination-prev .link, .pagination.cyan .pagination-next .link, .pagination.cyan .pagination-list .link {
+    background-color: #00BCD4;
+    color: #fff; }
+    .pagination.cyan .pagination-prev .link.ellipsis, .pagination.cyan .pagination-next .link.ellipsis, .pagination.cyan .pagination-list .link.ellipsis {
+      color: #00BCD4; }
+    .pagination.cyan .pagination-prev .link:hover, .pagination.cyan .pagination-next .link:hover, .pagination.cyan .pagination-list .link:hover {
+      background-color: rgba(0, 188, 212, 0.8); }
+    .pagination.cyan .pagination-prev .link:active, .pagination.cyan .pagination-next .link:active, .pagination.cyan .pagination-list .link:active {
+      background-color: rgba(0, 188, 212, 0.5); }
+    .pagination.cyan .pagination-prev .link.active, .pagination.cyan .pagination-next .link.active, .pagination.cyan .pagination-list .link.active {
+      background-color: #006673; }
+  .pagination.cyan.outline .pagination-prev .link, .pagination.cyan.outline .pagination-next .link, .pagination.cyan.outline .pagination-list .link {
+    border-color: #00BCD4;
+    color: #00BCD4;
+    background-color: transparent; }
+    .pagination.cyan.outline .pagination-prev .link:hover, .pagination.cyan.outline .pagination-next .link:hover, .pagination.cyan.outline .pagination-list .link:hover {
+      background-color: #00c5de;
+      color: #fff; }
+    .pagination.cyan.outline .pagination-prev .link:active, .pagination.cyan.outline .pagination-next .link:active, .pagination.cyan.outline .pagination-list .link:active {
+      background-color: #008a9c;
+      color: #fff; }
+    .pagination.cyan.outline .pagination-prev .link.active, .pagination.cyan.outline .pagination-next .link.active, .pagination.cyan.outline .pagination-list .link.active {
+      background-color: #00a1b5;
+      color: #fff; }
+  .pagination.teal .pagination-prev .link, .pagination.teal .pagination-next .link, .pagination.teal .pagination-list .link {
+    background-color: #009688;
+    color: #fff; }
+    .pagination.teal .pagination-prev .link.ellipsis, .pagination.teal .pagination-next .link.ellipsis, .pagination.teal .pagination-list .link.ellipsis {
+      color: #009688; }
+    .pagination.teal .pagination-prev .link:hover, .pagination.teal .pagination-next .link:hover, .pagination.teal .pagination-list .link:hover {
+      background-color: rgba(0, 150, 136, 0.8); }
+    .pagination.teal .pagination-prev .link:active, .pagination.teal .pagination-next .link:active, .pagination.teal .pagination-list .link:active {
+      background-color: rgba(0, 150, 136, 0.5); }
+    .pagination.teal .pagination-prev .link.active, .pagination.teal .pagination-next .link.active, .pagination.teal .pagination-list .link.active {
+      background-color: #003530; }
+  .pagination.teal.outline .pagination-prev .link, .pagination.teal.outline .pagination-next .link, .pagination.teal.outline .pagination-list .link {
+    border-color: #009688;
+    color: #009688;
+    background-color: transparent; }
+    .pagination.teal.outline .pagination-prev .link:hover, .pagination.teal.outline .pagination-next .link:hover, .pagination.teal.outline .pagination-list .link:hover {
+      background-color: #00a091;
+      color: #fff; }
+    .pagination.teal.outline .pagination-prev .link:active, .pagination.teal.outline .pagination-next .link:active, .pagination.teal.outline .pagination-list .link:active {
+      background-color: #005e55;
+      color: #fff; }
+    .pagination.teal.outline .pagination-prev .link.active, .pagination.teal.outline .pagination-next .link.active, .pagination.teal.outline .pagination-list .link.active {
+      background-color: #00776c;
+      color: #fff; }
+  .pagination.green .pagination-prev .link, .pagination.green .pagination-next .link, .pagination.green .pagination-list .link {
+    background-color: #4CAF50;
+    color: #fff; }
+    .pagination.green .pagination-prev .link.ellipsis, .pagination.green .pagination-next .link.ellipsis, .pagination.green .pagination-list .link.ellipsis {
+      color: #4CAF50; }
+    .pagination.green .pagination-prev .link:hover, .pagination.green .pagination-next .link:hover, .pagination.green .pagination-list .link:hover {
+      background-color: rgba(76, 175, 80, 0.8); }
+    .pagination.green .pagination-prev .link:active, .pagination.green .pagination-next .link:active, .pagination.green .pagination-list .link:active {
+      background-color: rgba(76, 175, 80, 0.5); }
+    .pagination.green .pagination-prev .link.active, .pagination.green .pagination-next .link.active, .pagination.green .pagination-list .link.active {
+      background-color: #2f6b31; }
+  .pagination.green.outline .pagination-prev .link, .pagination.green.outline .pagination-next .link, .pagination.green.outline .pagination-list .link {
+    border-color: #4CAF50;
+    color: #4CAF50;
+    background-color: transparent; }
+    .pagination.green.outline .pagination-prev .link:hover, .pagination.green.outline .pagination-next .link:hover, .pagination.green.outline .pagination-list .link:hover {
+      background-color: #52b455;
+      color: #fff; }
+    .pagination.green.outline .pagination-prev .link:active, .pagination.green.outline .pagination-next .link:active, .pagination.green.outline .pagination-list .link:active {
+      background-color: #3b883e;
+      color: #fff; }
+    .pagination.green.outline .pagination-prev .link.active, .pagination.green.outline .pagination-next .link.active, .pagination.green.outline .pagination-list .link.active {
+      background-color: #439a46;
+      color: #fff; }
+  .pagination.light-green .pagination-prev .link, .pagination.light-green .pagination-next .link, .pagination.light-green .pagination-list .link {
+    background-color: #8BC34A;
+    color: #fff; }
+    .pagination.light-green .pagination-prev .link.ellipsis, .pagination.light-green .pagination-next .link.ellipsis, .pagination.light-green .pagination-list .link.ellipsis {
+      color: #8BC34A; }
+    .pagination.light-green .pagination-prev .link:hover, .pagination.light-green .pagination-next .link:hover, .pagination.light-green .pagination-list .link:hover {
+      background-color: rgba(139, 195, 74, 0.8); }
+    .pagination.light-green .pagination-prev .link:active, .pagination.light-green .pagination-next .link:active, .pagination.light-green .pagination-list .link:active {
+      background-color: rgba(139, 195, 74, 0.5); }
+    .pagination.light-green .pagination-prev .link.active, .pagination.light-green .pagination-next .link.active, .pagination.light-green .pagination-list .link.active {
+      background-color: #59812b; }
+  .pagination.light-green.outline .pagination-prev .link, .pagination.light-green.outline .pagination-next .link, .pagination.light-green.outline .pagination-list .link {
+    border-color: #8BC34A;
+    color: #8BC34A;
+    background-color: transparent; }
+    .pagination.light-green.outline .pagination-prev .link:hover, .pagination.light-green.outline .pagination-next .link:hover, .pagination.light-green.outline .pagination-list .link:hover {
+      background-color: #90c652;
+      color: #fff; }
+    .pagination.light-green.outline .pagination-prev .link:active, .pagination.light-green.outline .pagination-next .link:active, .pagination.light-green.outline .pagination-list .link:active {
+      background-color: #6ea035;
+      color: #fff; }
+    .pagination.light-green.outline .pagination-prev .link.active, .pagination.light-green.outline .pagination-next .link.active, .pagination.light-green.outline .pagination-list .link.active {
+      background-color: #7cb33b;
+      color: #fff; }
+  .pagination.lime .pagination-prev .link, .pagination.lime .pagination-next .link, .pagination.lime .pagination-list .link {
+    background-color: #CDDC39;
+    color: rgba(0, 0, 0, 0.7); }
+    .pagination.lime .pagination-prev .link.ellipsis, .pagination.lime .pagination-next .link.ellipsis, .pagination.lime .pagination-list .link.ellipsis {
+      color: #CDDC39; }
+    .pagination.lime .pagination-prev .link:hover, .pagination.lime .pagination-next .link:hover, .pagination.lime .pagination-list .link:hover {
+      background-color: rgba(205, 220, 57, 0.8); }
+    .pagination.lime .pagination-prev .link:active, .pagination.lime .pagination-next .link:active, .pagination.lime .pagination-list .link:active {
+      background-color: rgba(205, 220, 57, 0.5); }
+    .pagination.lime .pagination-prev .link.active, .pagination.lime .pagination-next .link.active, .pagination.lime .pagination-list .link.active {
+      background-color: #8d991b; }
+  .pagination.lime.outline .pagination-prev .link, .pagination.lime.outline .pagination-next .link, .pagination.lime.outline .pagination-list .link {
+    border-color: #CDDC39;
+    color: #CDDC39;
+    background-color: transparent; }
+    .pagination.lime.outline .pagination-prev .link:hover, .pagination.lime.outline .pagination-next .link:hover, .pagination.lime.outline .pagination-list .link:hover {
+      background-color: #cfde42;
+      color: rgba(0, 0, 0, 0.7); }
+    .pagination.lime.outline .pagination-prev .link:active, .pagination.lime.outline .pagination-next .link:active, .pagination.lime.outline .pagination-list .link:active {
+      background-color: #adbc21;
+      color: rgba(0, 0, 0, 0.7); }
+    .pagination.lime.outline .pagination-prev .link.active, .pagination.lime.outline .pagination-next .link.active, .pagination.lime.outline .pagination-list .link.active {
+      background-color: #c2d125;
+      color: rgba(0, 0, 0, 0.7); }
+  .pagination.yellow .pagination-prev .link, .pagination.yellow .pagination-next .link, .pagination.yellow .pagination-list .link {
+    background-color: #FFEB3B;
+    color: rgba(0, 0, 0, 0.7); }
+    .pagination.yellow .pagination-prev .link.ellipsis, .pagination.yellow .pagination-next .link.ellipsis, .pagination.yellow .pagination-list .link.ellipsis {
+      color: #FFEB3B; }
+    .pagination.yellow .pagination-prev .link:hover, .pagination.yellow .pagination-next .link:hover, .pagination.yellow .pagination-list .link:hover {
+      background-color: rgba(255, 235, 59, 0.8); }
+    .pagination.yellow .pagination-prev .link:active, .pagination.yellow .pagination-next .link:active, .pagination.yellow .pagination-list .link:active {
+      background-color: rgba(255, 235, 59, 0.5); }
+    .pagination.yellow .pagination-prev .link.active, .pagination.yellow .pagination-next .link.active, .pagination.yellow .pagination-list .link.active {
+      background-color: #d9c300; }
+  .pagination.yellow.outline .pagination-prev .link, .pagination.yellow.outline .pagination-next .link, .pagination.yellow.outline .pagination-list .link {
+    border-color: #FFEB3B;
+    color: #FFEB3B;
+    background-color: transparent; }
+    .pagination.yellow.outline .pagination-prev .link:hover, .pagination.yellow.outline .pagination-next .link:hover, .pagination.yellow.outline .pagination-list .link:hover {
+      background-color: #ffec45;
+      color: rgba(0, 0, 0, 0.7); }
+    .pagination.yellow.outline .pagination-prev .link:active, .pagination.yellow.outline .pagination-next .link:active, .pagination.yellow.outline .pagination-list .link:active {
+      background-color: #ffe503;
+      color: rgba(0, 0, 0, 0.7); }
+    .pagination.yellow.outline .pagination-prev .link.active, .pagination.yellow.outline .pagination-next .link.active, .pagination.yellow.outline .pagination-list .link.active {
+      background-color: #ffe81c;
+      color: rgba(0, 0, 0, 0.7); }
+  .pagination.amber .pagination-prev .link, .pagination.amber .pagination-next .link, .pagination.amber .pagination-list .link {
+    background-color: #FFC107;
+    color: rgba(0, 0, 0, 0.7); }
+    .pagination.amber .pagination-prev .link.ellipsis, .pagination.amber .pagination-next .link.ellipsis, .pagination.amber .pagination-list .link.ellipsis {
+      color: #FFC107; }
+    .pagination.amber .pagination-prev .link:hover, .pagination.amber .pagination-next .link:hover, .pagination.amber .pagination-list .link:hover {
+      background-color: rgba(255, 193, 7, 0.8); }
+    .pagination.amber .pagination-prev .link:active, .pagination.amber .pagination-next .link:active, .pagination.amber .pagination-list .link:active {
+      background-color: rgba(255, 193, 7, 0.5); }
+    .pagination.amber .pagination-prev .link.active, .pagination.amber .pagination-next .link.active, .pagination.amber .pagination-list .link.active {
+      background-color: #a57c00; }
+  .pagination.amber.outline .pagination-prev .link, .pagination.amber.outline .pagination-next .link, .pagination.amber.outline .pagination-list .link {
+    border-color: #FFC107;
+    color: #FFC107;
+    background-color: transparent; }
+    .pagination.amber.outline .pagination-prev .link:hover, .pagination.amber.outline .pagination-next .link:hover, .pagination.amber.outline .pagination-list .link:hover {
+      background-color: #ffc411;
+      color: rgba(0, 0, 0, 0.7); }
+    .pagination.amber.outline .pagination-prev .link:active, .pagination.amber.outline .pagination-next .link:active, .pagination.amber.outline .pagination-list .link:active {
+      background-color: #ce9a00;
+      color: rgba(0, 0, 0, 0.7); }
+    .pagination.amber.outline .pagination-prev .link.active, .pagination.amber.outline .pagination-next .link.active, .pagination.amber.outline .pagination-list .link.active {
+      background-color: #e7ae00;
+      color: rgba(0, 0, 0, 0.7); }
+  .pagination.orange .pagination-prev .link, .pagination.orange .pagination-next .link, .pagination.orange .pagination-list .link {
+    background-color: #FF9800;
+    color: #fff; }
+    .pagination.orange .pagination-prev .link.ellipsis, .pagination.orange .pagination-next .link.ellipsis, .pagination.orange .pagination-list .link.ellipsis {
+      color: #FF9800; }
+    .pagination.orange .pagination-prev .link:hover, .pagination.orange .pagination-next .link:hover, .pagination.orange .pagination-list .link:hover {
+      background-color: rgba(255, 152, 0, 0.8); }
+    .pagination.orange .pagination-prev .link:active, .pagination.orange .pagination-next .link:active, .pagination.orange .pagination-list .link:active {
+      background-color: rgba(255, 152, 0, 0.5); }
+    .pagination.orange .pagination-prev .link.active, .pagination.orange .pagination-next .link.active, .pagination.orange .pagination-list .link.active {
+      background-color: #9e5e00; }
+  .pagination.orange.outline .pagination-prev .link, .pagination.orange.outline .pagination-next .link, .pagination.orange.outline .pagination-list .link {
+    border-color: #FF9800;
+    color: #FF9800;
+    background-color: transparent; }
+    .pagination.orange.outline .pagination-prev .link:hover, .pagination.orange.outline .pagination-next .link:hover, .pagination.orange.outline .pagination-list .link:hover {
+      background-color: #ff9c0a;
+      color: #fff; }
+    .pagination.orange.outline .pagination-prev .link:active, .pagination.orange.outline .pagination-next .link:active, .pagination.orange.outline .pagination-list .link:active {
+      background-color: #c77700;
+      color: #fff; }
+    .pagination.orange.outline .pagination-prev .link.active, .pagination.orange.outline .pagination-next .link.active, .pagination.orange.outline .pagination-list .link.active {
+      background-color: #e08600;
+      color: #fff; }
+  .pagination.deep-orange .pagination-prev .link, .pagination.deep-orange .pagination-next .link, .pagination.deep-orange .pagination-list .link {
+    background-color: #FF5722;
+    color: #fff; }
+    .pagination.deep-orange .pagination-prev .link.ellipsis, .pagination.deep-orange .pagination-next .link.ellipsis, .pagination.deep-orange .pagination-list .link.ellipsis {
+      color: #FF5722; }
+    .pagination.deep-orange .pagination-prev .link:hover, .pagination.deep-orange .pagination-next .link:hover, .pagination.deep-orange .pagination-list .link:hover {
+      background-color: rgba(255, 87, 34, 0.8); }
+    .pagination.deep-orange .pagination-prev .link:active, .pagination.deep-orange .pagination-next .link:active, .pagination.deep-orange .pagination-list .link:active {
+      background-color: rgba(255, 87, 34, 0.5); }
+    .pagination.deep-orange .pagination-prev .link.active, .pagination.deep-orange .pagination-next .link.active, .pagination.deep-orange .pagination-list .link.active {
+      background-color: #c02e00; }
+  .pagination.deep-orange.outline .pagination-prev .link, .pagination.deep-orange.outline .pagination-next .link, .pagination.deep-orange.outline .pagination-list .link {
+    border-color: #FF5722;
+    color: #FF5722;
+    background-color: transparent; }
+    .pagination.deep-orange.outline .pagination-prev .link:hover, .pagination.deep-orange.outline .pagination-next .link:hover, .pagination.deep-orange.outline .pagination-list .link:hover {
+      background-color: #ff5f2c;
+      color: #fff; }
+    .pagination.deep-orange.outline .pagination-prev .link:active, .pagination.deep-orange.outline .pagination-next .link:active, .pagination.deep-orange.outline .pagination-list .link:active {
+      background-color: #e93800;
+      color: #fff; }
+    .pagination.deep-orange.outline .pagination-prev .link.active, .pagination.deep-orange.outline .pagination-next .link.active, .pagination.deep-orange.outline .pagination-list .link.active {
+      background-color: #ff4003;
+      color: #fff; }
+  .pagination.brown .pagination-prev .link, .pagination.brown .pagination-next .link, .pagination.brown .pagination-list .link {
+    background-color: #795548;
+    color: #fff; }
+    .pagination.brown .pagination-prev .link.ellipsis, .pagination.brown .pagination-next .link.ellipsis, .pagination.brown .pagination-list .link.ellipsis {
+      color: #795548; }
+    .pagination.brown .pagination-prev .link:hover, .pagination.brown .pagination-next .link:hover, .pagination.brown .pagination-list .link:hover {
+      background-color: rgba(121, 85, 72, 0.8); }
+    .pagination.brown .pagination-prev .link:active, .pagination.brown .pagination-next .link:active, .pagination.brown .pagination-list .link:active {
+      background-color: rgba(121, 85, 72, 0.5); }
+    .pagination.brown .pagination-prev .link.active, .pagination.brown .pagination-next .link.active, .pagination.brown .pagination-list .link.active {
+      background-color: #3c2a24; }
+  .pagination.brown.outline .pagination-prev .link, .pagination.brown.outline .pagination-next .link, .pagination.brown.outline .pagination-list .link {
+    border-color: #795548;
+    color: #795548;
+    background-color: transparent; }
+    .pagination.brown.outline .pagination-prev .link:hover, .pagination.brown.outline .pagination-next .link:hover, .pagination.brown.outline .pagination-list .link:hover {
+      background-color: #7f594c;
+      color: #fff; }
+    .pagination.brown.outline .pagination-prev .link:active, .pagination.brown.outline .pagination-next .link:active, .pagination.brown.outline .pagination-list .link:active {
+      background-color: #563c33;
+      color: #fff; }
+    .pagination.brown.outline .pagination-prev .link.active, .pagination.brown.outline .pagination-next .link.active, .pagination.brown.outline .pagination-list .link.active {
+      background-color: #66483d;
+      color: #fff; }
+  .pagination.grey .pagination-prev .link, .pagination.grey .pagination-next .link, .pagination.grey .pagination-list .link {
+    background-color: #9E9E9E;
+    color: #fff; }
+    .pagination.grey .pagination-prev .link.ellipsis, .pagination.grey .pagination-next .link.ellipsis, .pagination.grey .pagination-list .link.ellipsis {
+      color: #9E9E9E; }
+    .pagination.grey .pagination-prev .link:hover, .pagination.grey .pagination-next .link:hover, .pagination.grey .pagination-list .link:hover {
+      background-color: rgba(158, 158, 158, 0.8); }
+    .pagination.grey .pagination-prev .link:active, .pagination.grey .pagination-next .link:active, .pagination.grey .pagination-list .link:active {
+      background-color: rgba(158, 158, 158, 0.5); }
+    .pagination.grey .pagination-prev .link.active, .pagination.grey .pagination-next .link.active, .pagination.grey .pagination-list .link.active {
+      background-color: #6e6e6e; }
+  .pagination.grey.outline .pagination-prev .link, .pagination.grey.outline .pagination-next .link, .pagination.grey.outline .pagination-list .link {
+    border-color: #9E9E9E;
+    color: #9E9E9E;
+    background-color: transparent; }
+    .pagination.grey.outline .pagination-prev .link:hover, .pagination.grey.outline .pagination-next .link:hover, .pagination.grey.outline .pagination-list .link:hover {
+      background-color: #a3a3a3;
+      color: #fff; }
+    .pagination.grey.outline .pagination-prev .link:active, .pagination.grey.outline .pagination-next .link:active, .pagination.grey.outline .pagination-list .link:active {
+      background-color: #828282;
+      color: #fff; }
+    .pagination.grey.outline .pagination-prev .link.active, .pagination.grey.outline .pagination-next .link.active, .pagination.grey.outline .pagination-list .link.active {
+      background-color: #8f8f8f;
+      color: #fff; }
+  .pagination.blue-grey .pagination-prev .link, .pagination.blue-grey .pagination-next .link, .pagination.blue-grey .pagination-list .link {
+    background-color: #607D8B;
+    color: #fff; }
+    .pagination.blue-grey .pagination-prev .link.ellipsis, .pagination.blue-grey .pagination-next .link.ellipsis, .pagination.blue-grey .pagination-list .link.ellipsis {
+      color: #607D8B; }
+    .pagination.blue-grey .pagination-prev .link:hover, .pagination.blue-grey .pagination-next .link:hover, .pagination.blue-grey .pagination-list .link:hover {
+      background-color: rgba(96, 125, 139, 0.8); }
+    .pagination.blue-grey .pagination-prev .link:active, .pagination.blue-grey .pagination-next .link:active, .pagination.blue-grey .pagination-list .link:active {
+      background-color: rgba(96, 125, 139, 0.5); }
+    .pagination.blue-grey .pagination-prev .link.active, .pagination.blue-grey .pagination-next .link.active, .pagination.blue-grey .pagination-list .link.active {
+      background-color: #384952; }
+  .pagination.blue-grey.outline .pagination-prev .link, .pagination.blue-grey.outline .pagination-next .link, .pagination.blue-grey.outline .pagination-list .link {
+    border-color: #607D8B;
+    color: #607D8B;
+    background-color: transparent; }
+    .pagination.blue-grey.outline .pagination-prev .link:hover, .pagination.blue-grey.outline .pagination-next .link:hover, .pagination.blue-grey.outline .pagination-list .link:hover {
+      background-color: #648291;
+      color: #fff; }
+    .pagination.blue-grey.outline .pagination-prev .link:active, .pagination.blue-grey.outline .pagination-next .link:active, .pagination.blue-grey.outline .pagination-list .link:active {
+      background-color: #495f6a;
+      color: #fff; }
+    .pagination.blue-grey.outline .pagination-prev .link.active, .pagination.blue-grey.outline .pagination-next .link.active, .pagination.blue-grey.outline .pagination-list .link.active {
+      background-color: #536d79;
+      color: #fff; }
+  .pagination.black .pagination-prev .link, .pagination.black .pagination-next .link, .pagination.black .pagination-list .link {
+    background-color: #000000;
+    color: #fff; }
+    .pagination.black .pagination-prev .link.ellipsis, .pagination.black .pagination-next .link.ellipsis, .pagination.black .pagination-list .link.ellipsis {
+      color: #000000; }
+    .pagination.black .pagination-prev .link:hover, .pagination.black .pagination-next .link:hover, .pagination.black .pagination-list .link:hover {
+      background-color: rgba(0, 0, 0, 0.8); }
+    .pagination.black .pagination-prev .link:active, .pagination.black .pagination-next .link:active, .pagination.black .pagination-list .link:active {
+      background-color: rgba(0, 0, 0, 0.5); }
+    .pagination.black .pagination-prev .link.active, .pagination.black .pagination-next .link.active, .pagination.black .pagination-list .link.active {
+      background-color: black; }
+  .pagination.black.outline .pagination-prev .link, .pagination.black.outline .pagination-next .link, .pagination.black.outline .pagination-list .link {
+    border-color: #000000;
+    color: #000000;
+    background-color: transparent; }
+    .pagination.black.outline .pagination-prev .link:hover, .pagination.black.outline .pagination-next .link:hover, .pagination.black.outline .pagination-list .link:hover {
+      background-color: #050505;
+      color: #fff; }
+    .pagination.black.outline .pagination-prev .link:active, .pagination.black.outline .pagination-next .link:active, .pagination.black.outline .pagination-list .link:active {
+      background-color: black;
+      color: #fff; }
+    .pagination.black.outline .pagination-prev .link.active, .pagination.black.outline .pagination-next .link.active, .pagination.black.outline .pagination-list .link.active {
+      background-color: black;
+      color: #fff; }
+  .pagination.white .pagination-prev .link, .pagination.white .pagination-next .link, .pagination.white .pagination-list .link {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.7); }
+    .pagination.white .pagination-prev .link.ellipsis, .pagination.white .pagination-next .link.ellipsis, .pagination.white .pagination-list .link.ellipsis {
+      color: #ffffff; }
+    .pagination.white .pagination-prev .link:hover, .pagination.white .pagination-next .link:hover, .pagination.white .pagination-list .link:hover {
+      background-color: rgba(255, 255, 255, 0.8); }
+    .pagination.white .pagination-prev .link:active, .pagination.white .pagination-next .link:active, .pagination.white .pagination-list .link:active {
+      background-color: rgba(255, 255, 255, 0.5); }
+    .pagination.white .pagination-prev .link.active, .pagination.white .pagination-next .link.active, .pagination.white .pagination-list .link.active {
+      background-color: #cfcfcf; }
+  .pagination.white.outline .pagination-prev .link, .pagination.white.outline .pagination-next .link, .pagination.white.outline .pagination-list .link {
+    border-color: #ffffff;
+    color: #ffffff;
+    background-color: transparent; }
+    .pagination.white.outline .pagination-prev .link:hover, .pagination.white.outline .pagination-next .link:hover, .pagination.white.outline .pagination-list .link:hover {
+      background-color: white;
+      color: rgba(0, 0, 0, 0.7); }
+    .pagination.white.outline .pagination-prev .link:active, .pagination.white.outline .pagination-next .link:active, .pagination.white.outline .pagination-list .link:active {
+      background-color: #e3e3e3;
+      color: rgba(0, 0, 0, 0.7); }
+    .pagination.white.outline .pagination-prev .link.active, .pagination.white.outline .pagination-next .link.active, .pagination.white.outline .pagination-list .link.active {
+      background-color: #f0f0f0;
+      color: rgba(0, 0, 0, 0.7); }
 
 @keyframes navbar_toggle_menu_bar_start {
   from {

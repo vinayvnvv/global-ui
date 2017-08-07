@@ -4,8 +4,19 @@ $pgntn-link-padding-y: 0.36em
 $pgntn-link-padding-x: 0.8em
 $pgntn-link-margin-x: .234em
 $pgntn-link-ellipsis-color: #777
-$pgntn-link-color: #555555
+$pgntn-link-color: #666666
 $pgntn-list-margin: 3px
+$pgntn-link-bg-color: #e9e9e9
+
+// sizes
+//sizes
+$pgntn-mini : .68571429rem
+$pgntn-tiny : .79714286rem
+$pgntn-small : .92857143rem
+$pgntn-medium : 1rem
+$pgntn-large : 1.14285714rem
+$pgntn-big : 1.28571429rem
+$pgntn-huge : 1.42857143rem
 
 .pagination
 	display: flex
@@ -23,16 +34,115 @@ $pgntn-list-margin: 3px
 		display: inline-flex
 		align-items: center
 		justify-content: center
-		flex-grow: 1
 	& .pagination-prev, & .pagination-next, & .pagination-list
 		& .link
 			padding: $pgntn-link-padding-y $pgntn-link-padding-x
-			border: 1px solid $pgntn-link-border-color
 			border-radius: $pgntn-link-border-radius
 			margin: 0 $pgntn-link-margin-x
 			color: $pgntn-link-color
+			background-color: $pgntn-link-bg-color
+			transition: 0.2s all	
+			&:hover
+				background-color: darken($pgntn-link-bg-color, 7%)
+			&:active
+				background-color: darken($pgntn-link-bg-color, 15%)
 			&.ellipsis
-				border: none
+				border: none!important
 				pointer-events: none
 				color: $pgntn-link-ellipsis-color
 				opacity: 0.4
+				background-color: transparent!important
+			& span.icon:first-child
+				margin-left: -0.13em
+			&.disabled
+				opacity: 0.3
+				pointer-events: none
+			&.active
+				background-color: darken($pgntn-link-bg-color, 37%)
+				color: lighten($pgntn-link-bg-color, 37%)
+	&.pagination-left
+		& .pagination-list
+			justify-content: flex-start
+	&.pagination-right
+		& .pagination-list
+			justify-content: flex-end
+	&.close-by
+		&:not(.pagination-right):not(.pagination-left)
+			justify-content: center
+			& .pagination-list
+				flex-grow: initial	
+		&.pagination-right
+			& .pagination-list
+				justify-content: flex-start
+		&.pagination-left
+			& .pagination-list
+				justify-content: flex-end
+	&.padding-less
+		& .pagination-prev, & .pagination-next, & .pagination-list
+			& .link
+				padding: ($pgntn-link-padding-y - 0.16) ($pgntn-link-padding-x - 0.33)
+	&.padding-more
+		& .pagination-prev, & .pagination-next, & .pagination-list
+			& .link
+				padding: ($pgntn-link-padding-y + 0.16) ($pgntn-link-padding-x + 0.33)
+	&.outline
+		& .pagination-prev, & .pagination-next, & .pagination-list
+			& .link
+				background-color: transparent
+				border: 1px solid $pgntn-link-border-color
+				&:hover
+					background-color: darken($pgntn-link-bg-color, 2%)
+				&:active
+					background-color: darken($pgntn-link-bg-color, 15%)
+				&.active
+					background-color: darken($pgntn-link-bg-color, 37%)
+					color: lighten($pgntn-link-bg-color, 37%)
+	&.mini
+		font-size: $pgntn-mini
+	&.tiny
+		font-size: $pgntn-tiny
+	&.small
+		font-size: $pgntn-small
+	&.medium
+		font-size: $pgntn-medium
+	&.large
+		font-size: $pgntn-large
+	&.big
+		font-size: $pgntn-big
+	&.huge
+		font-size: $pgntn-huge
+	@each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}
+    	& .pagination-prev, & .pagination-next, & .pagination-list
+    		& .link
+    			background-color: $color
+    			color: $color-invert
+    			&.ellipsis
+    				color: $color
+    			&:hover
+    				background-color: transparentize($color, 0.2)
+    			&:active
+    				background-color: transparentize($color, 0.5)
+    			&.active
+    				background-color: darken($color, 19%)
+    	&.outline
+    		& .pagination-prev, & .pagination-next, & .pagination-list
+    			& .link
+    				border-color: $color
+    				color: $color
+    				background-color: transparent
+    				&:hover
+    					background-color: lighten($color, 2%)
+    					color: $color-invert
+    				&:active
+    					background-color: darken($color, 11%)
+    					color: $color-invert
+    				&.active
+    					background-color: darken($color, 6%)
+    					color: $color-invert
+
+
+
+
