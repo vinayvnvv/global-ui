@@ -10186,6 +10186,35 @@ span.icon.white {
     .progress.white .progress-info {
       color: #ffffff; }
 
+.pagination {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap; }
+  .pagination .pagination-list {
+    flex-grow: 1;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 3px; }
+  .pagination .pagination-prev, .pagination .pagination-next {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; }
+  .pagination .pagination-prev .link, .pagination .pagination-next .link, .pagination .pagination-list .link {
+    padding: 0.36em 0.8em;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    margin: 0 0.234em;
+    color: #555555; }
+    .pagination .pagination-prev .link.ellipsis, .pagination .pagination-next .link.ellipsis, .pagination .pagination-list .link.ellipsis {
+      border: none;
+      pointer-events: none;
+      color: #777;
+      opacity: 0.4; }
+
 @keyframes navbar_toggle_menu_bar_start {
   from {
     transform: rotate(0deg);

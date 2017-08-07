@@ -1,0 +1,38 @@
+$pgntn-link-border-color: #d9d9d9
+$pgntn-link-border-radius: 3px
+$pgntn-link-padding-y: 0.36em
+$pgntn-link-padding-x: 0.8em
+$pgntn-link-margin-x: .234em
+$pgntn-link-ellipsis-color: #777
+$pgntn-link-color: #555555
+$pgntn-list-margin: 3px
+
+.pagination
+	display: flex
+	width: 100%
+	flex-wrap: wrap
+	& .pagination-list
+		flex-grow: 1
+		text-align: center
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		flex-wrap: wrap
+		margin: $pgntn-list-margin
+	& .pagination-prev, & .pagination-next
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		flex-grow: 1
+	& .pagination-prev, & .pagination-next, & .pagination-list
+		& .link
+			padding: $pgntn-link-padding-y $pgntn-link-padding-x
+			border: 1px solid $pgntn-link-border-color
+			border-radius: $pgntn-link-border-radius
+			margin: 0 $pgntn-link-margin-x
+			color: $pgntn-link-color
+			&.ellipsis
+				border: none
+				pointer-events: none
+				color: $pgntn-link-ellipsis-color
+				opacity: 0.4
