@@ -4,3 +4,6 @@ toast : 102
 modal : 999
 	modal-bg: 300
 	modal-content: 600
+side-nav-container: 50
+	side-nav: 2
+	back-drop: 1

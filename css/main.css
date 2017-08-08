@@ -10964,6 +10964,50 @@ span.icon.white {
       background-color: #f0f0f0;
       color: rgba(0, 0, 0, 0.7); }
 
+.nav-container {
+  display: flex;
+  flex-grow: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+  .nav-container .nav-content {
+    flex-grow: 1;
+    transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: auto; }
+  .nav-container .back-drop {
+    background-color: #000;
+    opacity: 0.7;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; }
+  .nav-container .side-nav {
+    width: 300px;
+    height: 100%;
+    overflow-y: auto;
+    flex-direction: column;
+    position: relative;
+    background-color: #d9d9d9;
+    transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin-left: -300px;
+    position: absolute;
+    z-index: 2;
+    max-width: 90%; }
+  .nav-container.active .side-nav {
+    margin-left: 0;
+    position: relative; }
+
+@media screen and (max-width: 999px) {
+  .nav-container.active .side-nav {
+    position: absolute; }
+  .nav-container.active .back-drop {
+    display: block; } }
+
 @keyframes navbar_toggle_menu_bar_start {
   from {
     transform: rotate(0deg);
