@@ -1,22 +1,27 @@
-$side-nav-width: 300px
-
-
+$side-nav-width: 260px
+$side-nav-border-color: #d9d9d9
+$side-nav-bg-color: #ffffff
+$side-nav-list-item-padding-x: 0.8em
+$side-nav-list-item-padding-y: 0.69em
+$nav-list-item-hover-color: #e9e9e9
+$nav-list-avtar-img-size: 52px
 
 .nav-container
 	display: flex
 	flex-grow: 1
-	position: absolute
 	top: 0
 	left: 0
 	width: 100%
 	height: 100%
+	z-index: 60
 	& .nav-content
 		flex-grow: 1
 		transition: .4s cubic-bezier(.25,.8,.25,1)
 		overflow: auto
+		position: relative
 	& .back-drop
 		background-color: #000
-		opacity: 0.7
+		opacity: $side-nav-bg-drop-opacity
 		display: none
 		position: absolute
 		left: 0
@@ -24,31 +29,133 @@ $side-nav-width: 300px
 		width: 100%
 		height: 100%
 		z-index: 1
+	&.container
+		& .side-nav
+			margin-left: initial
+			width: 0
+			box-shadow: none
+			position: fixed
+			border-right-color: transparent
+			height: calc(100% - #{$nav-height})
+		&.active
+			& .side-nav
+				position: fixed
+				border-right-color: transparent!important
+			& .nav-content
+				margin-left: $side-nav-width
 	& .side-nav
-		width: 300px
+		width: $side-nav-width
+		background-color: $side-nav-bg-color
 		height: 100%
 		overflow-y: auto
 		flex-direction: column
 		position: relative
-		background-color: #d9d9d9
+		border-right: 1px solid $side-nav-border-color
 		transition: .4s cubic-bezier(.25,.8,.25,1)
 		margin-left: -$side-nav-width
-		position: absolute
+		position: relative
 		z-index: 2
 		max-width: 90%
+		box-shadow: 3px 2px 7px 0px #e8e8e8
+		& .close
+			position: absolute
+			top: 9px
+			right: 9px
+			cursor: pointer
+			opacity: 0.6
+			z-index: 4
+			&:hover
+				opacity: 1
+		& .nav-list
+			display: block
+			position: relative
+			z-index: 1
+			& .nav-avtar
+				position: relative
+				height: 180px
+				width: 100%
+				display: flex
+				align-items: flex-end
+				& .avtar-bg
+					width: 100%
+					height: 100%
+					top: 0
+					left: 0
+					opacity: 0.5
+					position: absolute
+				& .avtar-img
+						width: $nav-list-avtar-img-size
+						height: $nav-list-avtar-img-size
+						border-radius: 50em
+						position: absolute
+						top: 15px
+						left: 15px
+				& .avtar-info
+					display: flex
+					align-items: center
+					padding: 11px
+					flex-wrap: wrap
+					& .avtar-text
+						margin-left: 9px
+					& .avtar-details
+						margin-left: 9px
+						width: 100%
+						font-weight: 500
+						font-size: 0.8em
+						opacity: 0.5
+						padding: 0.3em 0
+			& .nav-list-header
+				text-transform: uppercase
+				opacity: 0.5
+				padding: $side-nav-list-item-padding-y $side-nav-list-item-padding-x
+			& .nav-list-item
+				padding: $side-nav-list-item-padding-y $side-nav-list-item-padding-x
+				opacity: 0.8
+				cursor: pointer
+				transition: 0.133s all
+				display: flex
+				position: relative
+				&.active
+					background-color: transparentize($nav-list-item-hover-color, 0.2)
+					font-weight: 600
+					opacity: 1
+				&.disabled
+					opacity: 0.4
+					pointer-events: none
+				& span.icon
+					margin: 0 1.27em 0 0
+					opacity: 0.8
+				&:hover
+					background-color: transparentize($nav-list-item-hover-color, 0.4)
+				&:active
+					background-color: darken($nav-list-item-hover-color, 10%)
+					transition: 0.233s all
 	&.active
 		& .side-nav
 			margin-left: 0	
 			position: relative
+		&.container
+			& .side-nav
+				width: $side-nav-width
+				border-right-color: $side-nav-border-color
 
 
 +until-tablet
 	.nav-container
+		& .side-nav
+			box-shadow: none
+		& .nav-content
+				height: 100%
+				width: 100%
 		&.active
-			& .side-nav
+			& .nav-content
 				position: absolute
 			& .back-drop
 				display: block
+		&.container
+			&.active
+				& .nav-content
+					margin-left: 0
 		
 		
 

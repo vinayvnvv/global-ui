@@ -7,3 +7,5 @@ modal : 999
 side-nav-container: 50
 	side-nav: 2
 	back-drop: 1
+side-nav-bar: 60
+nav-bar: 70 (top-bar)

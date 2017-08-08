@@ -1,6 +1,5 @@
 $nav-bg-color: #fff
 $nav-color: #222
-$nav-height: 62px
 $nav-item-padding: 1.5rem
 
 
@@ -11,7 +10,7 @@ $nav-item-padding: 1.5rem
 	height: $nav-height
 	max-width: 100%
 	position: relative
-	margin: 0 auto
+	z-index: 70
 	& .container
 		display: flex
 		position: relative
@@ -192,11 +191,11 @@ $nav-item-padding: 1.5rem
 				padding: 0.7rem 1.1rem
 
 +desktop
-	.navbar
+	.navbar.container
 		& .nav-brand
 			margin-left: -$nav-item-padding
 		& .nav-right
-			margin-right: -$nav-item-padding
+			// margin-right: -$nav-item-padding
 .navbar
 	@each $name, $pair in $colors
     $color: nth($pair, 1)

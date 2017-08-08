@@ -1,19 +1,42 @@
 // container
-
+$cntr-desktop-padding: 5%
+$cntr-widescreen-padding: 12%
+$cntr-fullhd-padding: 17%
 .container
 	margin: 0 auto
+.layout-container
+	display: flex
+	width: 100%
+	height: 100%
+	position: fixed
+	overflow: hidden
+	flex-direction: column
 +until-tablet
 	.container
 		max-width: 100%
+		&.navbar
+			width: 100%
 +desktop-only
 	.container
-		padding: 0 5% 0 5%
+		padding: 0 $cntr-desktop-padding 0 $cntr-desktop-padding
+		&.nav-container
+			width: (100% - $cntr-desktop-padding - $cntr-desktop-padding)!important
+		&.navbar
+			width: (100% - $cntr-desktop-padding - $cntr-desktop-padding)!important
 +widescreen-only
 	.container
-		padding: 0 12% 0 12%
+		padding: 0 $cntr-widescreen-padding 0 $cntr-widescreen-padding
+		&.nav-container
+			width: (100% - $cntr-widescreen-padding - $cntr-widescreen-padding)!important
+		&.navbar
+			width: (100% - $cntr-widescreen-padding - $cntr-widescreen-padding)!important
 +fullhd
 	.container
-		padding: 0 17% 0 17%
+		padding: 0 $cntr-fullhd-padding 0 $cntr-fullhd-padding
+		&.nav-container
+			width: (100% - $cntr-fullhd-padding - $cntr-fullhd-padding)!important
+		&.navbar
+			width: (100% - $cntr-fullhd-padding - $cntr-fullhd-padding)!important
 .container
 	@each $name, $pair in $colors
     $color: nth($pair, 1)
