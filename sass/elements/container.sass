@@ -11,11 +11,39 @@ $cntr-fullhd-padding: 17%
 	position: fixed
 	overflow: hidden
 	flex-direction: column
+	&.scroll
+		height: initial
+		overflow: initial
+		position: absolute
+		& .nav-container
+			& .nav-content
+				overflow: initial
+			& .side-nav
+				position: fixed
+				box-shadow: none
+				height: calc(100% - #{$nav-height})!important
+				&:after
+					content: ""
+		& .nav-container:not(.container).active
+			& .side-nav
+				position: fixed
+				box-shadow: none
+				&:after
+					content: ""
+			& .nav-content
+				margin-left: $side-nav-width
 +until-tablet
 	.container
 		max-width: 100%
 		&.navbar
 			width: 100%
+	.layout-container
+		&.scroll
+			height: 100%
+			& .nav-container:not(.container).active
+				& .side-nav
+				& .nav-content
+					margin-left: initial!important
 +desktop-only
 	.container
 		padding: 0 $cntr-desktop-padding 0 $cntr-desktop-padding

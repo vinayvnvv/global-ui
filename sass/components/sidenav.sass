@@ -1,4 +1,3 @@
-$side-nav-width: 260px
 $side-nav-border-color: #d9d9d9
 $side-nav-bg-color: #ffffff
 $side-nav-list-item-padding-x: 0.8em
@@ -23,24 +22,26 @@ $nav-list-avtar-img-size: 52px
 		background-color: #000
 		opacity: $side-nav-bg-drop-opacity
 		display: none
-		position: absolute
+		position: fixed
 		left: 0
 		top: 0
 		width: 100%
 		height: 100%
 		z-index: 1
 	&.container
+		overflow: auto
 		& .side-nav
 			margin-left: initial
 			width: 0
 			box-shadow: none
 			position: fixed
 			border-right-color: transparent
-			height: calc(100% - #{$nav-height})
+			height: calc(100% - #{$nav-height})!important
+		& .nav-content
+			overflow: initial
 		&.active
 			& .side-nav
 				position: fixed
-				border-right-color: transparent!important
 			& .nav-content
 				margin-left: $side-nav-width
 	& .side-nav
@@ -57,6 +58,14 @@ $nav-list-avtar-img-size: 52px
 		z-index: 2
 		max-width: 90%
 		box-shadow: 3px 2px 7px 0px #e8e8e8
+		&:after //only for scroll
+			position: fixed
+			top: 0
+			height: $nav-height
+			background-color: inherit
+			box-shadow: inherit
+			border: inherit
+			width: inherit
 		& .close
 			position: absolute
 			top: 9px

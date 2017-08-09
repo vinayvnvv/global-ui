@@ -5645,12 +5645,35 @@ span.icon.white {
   position: fixed;
   overflow: hidden;
   flex-direction: column; }
+  .layout-container.scroll {
+    height: initial;
+    overflow: initial;
+    position: absolute; }
+    .layout-container.scroll .nav-container .nav-content {
+      overflow: initial; }
+    .layout-container.scroll .nav-container .side-nav {
+      position: fixed;
+      box-shadow: none;
+      height: calc(100% - 62px) !important; }
+      .layout-container.scroll .nav-container .side-nav:after {
+        content: ""; }
+    .layout-container.scroll .nav-container:not(.container).active .side-nav {
+      position: fixed;
+      box-shadow: none; }
+      .layout-container.scroll .nav-container:not(.container).active .side-nav:after {
+        content: ""; }
+    .layout-container.scroll .nav-container:not(.container).active .nav-content {
+      margin-left: 260px; }
 
 @media screen and (max-width: 999px) {
   .container {
     max-width: 100%; }
     .container.navbar {
-      width: 100%; } }
+      width: 100%; }
+  .layout-container.scroll {
+    height: 100%; }
+    .layout-container.scroll .nav-container:not(.container).active .nav-content {
+      margin-left: initial !important; } }
 
 @media screen and (min-width: 1000px) and (max-width: 1191px) {
   .container {
@@ -11001,24 +11024,27 @@ span.icon.white {
     background-color: #000;
     opacity: 0.6;
     display: none;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     z-index: 1; }
-  .nav-container.container .side-nav {
-    margin-left: initial;
-    width: 0;
-    box-shadow: none;
-    position: fixed;
-    border-right-color: transparent;
-    height: calc(100% - 62px); }
-  .nav-container.container.active .side-nav {
-    position: fixed;
-    border-right-color: transparent !important; }
-  .nav-container.container.active .nav-content {
-    margin-left: 260px; }
+  .nav-container.container {
+    overflow: auto; }
+    .nav-container.container .side-nav {
+      margin-left: initial;
+      width: 0;
+      box-shadow: none;
+      position: fixed;
+      border-right-color: transparent;
+      height: calc(100% - 62px) !important; }
+    .nav-container.container .nav-content {
+      overflow: initial; }
+    .nav-container.container.active .side-nav {
+      position: fixed; }
+    .nav-container.container.active .nav-content {
+      margin-left: 260px; }
   .nav-container .side-nav {
     width: 260px;
     background-color: #ffffff;
@@ -11033,6 +11059,14 @@ span.icon.white {
     z-index: 2;
     max-width: 90%;
     box-shadow: 3px 2px 7px 0px #e8e8e8; }
+    .nav-container .side-nav:after {
+      position: fixed;
+      top: 0;
+      height: 62px;
+      background-color: inherit;
+      box-shadow: inherit;
+      border: inherit;
+      width: inherit; }
     .nav-container .side-nav .close {
       position: absolute;
       top: 9px;
