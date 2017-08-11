@@ -1,0 +1,39 @@
+$sectn-padding: 15px
+$sectn-padding-more: 30px
+$sectn-advertisement-min-height: 150px
+section
+	&:not(.top):not(.left):not(.bottom):not(right)
+		padding: $sectn-padding
+	&.top
+		padding-top: $sectn-padding
+	&.left
+		padding-left: $sectn-padding
+	&.right
+		padding-right: $sectn-padding
+	&.bottom
+		padding-bottom: $sectn-padding
+	&.padding-more
+		&:not(.top):not(.left):not(.bottom):not(right)
+			padding: $sectn-padding-more
+		&.top
+			padding-top: $sectn-padding-more
+		&.left
+			padding-left: $sectn-padding-more
+		&.right
+			padding-right: $sectn-padding-more
+		&.bottom
+			padding-bottom: $sectn-padding-more
+	&.advertisement
+		min-height: $sectn-advertisement-min-height
+		display: flex
+		position: relative
+		flex-direction: column
+		justify-content: center
+		&.padding-more
+			min-height: ($sectn-advertisement-min-height - $sectn-padding-more)
+	@each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+    &.#{$name}
+    	background-color: $color
+    	color: $color-invert

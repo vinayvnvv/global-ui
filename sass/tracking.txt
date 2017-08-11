@@ -5,7 +5,7 @@ modal : 999
 	modal-bg: 300
 	modal-content: 600
 side-nav-container: 50
-	side-nav: 2
-	back-drop: 1
+	side-nav: 52
+	back-drop: 51
 side-nav-bar: 60
 nav-bar: 70 (top-bar)
