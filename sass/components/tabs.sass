@@ -21,6 +21,10 @@ $tb-style-2-active-bg-color: transparentize($tb-active-color, 0.09)
 		justify-content: center
 		transition: .16s all
 		z-index: 2
+		display: flex
+		flex-wrap: wrap
+		& .icon
+			margin: -2px 11px 0px 0px!important
 		&.disabled
 			opacity: 0.5!important
 			pointer-events: none
@@ -84,6 +88,8 @@ $tb-style-2-active-bg-color: transparentize($tb-active-color, 0.09)
 		border-radius: 4px
 		& .item
 			border-right: 1px solid $tb-border-color
+			display: flex
+			flex-wrap: wrap
 			&:last-child
 				border-right: none
 			&:after
@@ -96,6 +102,10 @@ $tb-style-2-active-bg-color: transparentize($tb-active-color, 0.09)
 				background-color: $tb-style-2-active-bg-color
 				color: findColorInvert($tb-active-color)
 				margin: -1px
+				&:first-child
+					border-radius: 4px 0 0 4px
+				&:last-child
+					border-radius: 0 4px 4px 0
 				@each $name, $pair in $colors
 			    $color: nth($pair, 1)
 			    $color-invert: nth($pair, 2)
