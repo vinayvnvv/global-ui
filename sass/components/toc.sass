@@ -1,0 +1,77 @@
+$toc-border-color: #d9d9d9
+$toc-padding-side: 19px
+$toc-item-padding: 5px 2px
+$toc-active-dot-color: #444
+$toc-active-dot-width: 10px
+$toc-active-dot-height: 10px
+$toc-text-color: #222222
+
+.toc
+	display: flex
+	position: relative
+	border-left: 1px solid $toc-border-color
+	padding-left: $toc-padding-side
+	flex-direction: column
+	&>.item
+		padding: $toc-item-padding
+		color: transparentize($toc-text-color, 0.47)
+		cursor: pointer
+		&:hover
+			color: $toc-text-color
+			&:before
+				content: ""
+				background-color: lighten($toc-text-color, 50%)
+		& .toc
+			border-left-color: transparentize($toc-border-color, 0.4)
+			margin: 15px 0
+			display: none
+			& .item
+				opacity: 1
+				font-weight: 500
+				&:first-child
+					padding-top: 0
+				&:last-child
+					padding-bottom: 0
+				&:before
+					width: ($toc-active-dot-width/2)
+					height: ($toc-active-dot-width/2)
+					margin-top: (($toc-active-dot-height/4) + ($toc-active-dot-height/2))
+					left: -($toc-active-dot-width/3)
+
+		&:before
+			position: absolute
+			width: $toc-active-dot-width
+			height: $toc-active-dot-width
+			background-color: $toc-active-dot-color
+			margin-top: ($toc-active-dot-height/2)
+			left: -($toc-active-dot-width/2)
+			border-radius: 50em
+		&.active
+			color: $toc-text-color
+			font-weight: 600
+			&>.toc
+				display: flex
+			&:before
+				content: ""
+
+	&.right-bordered
+		border-left: none
+		border-right: 1px solid $toc-border-color
+		&>.item
+			&:before
+				left: initial
+				right: -($toc-active-dot-width/2)
+			& .toc
+				margin-right: 11px
+				border-left: 0
+				border-right: 1px solid
+				border-right-color: transparentize($toc-border-color, 0.4)
+				& .item
+					&:before
+						left: initial
+						right: -($toc-active-dot-width/3)
+	&.inlined
+		display: inline-flex
+
+
+	

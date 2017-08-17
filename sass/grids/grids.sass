@@ -1,14 +1,17 @@
 .column
   flex-grow: 1
   flex-basis: 0
-  flex-grow: 1
   flex-shrink: 1
 
 .row
   flex-grow: 1
   flex-basis: 0
-  flex-grow: 1
   flex-shrink: 1
+
+.rows
+  & .row, & .column
+    &.auto-grow
+      flex-grow: initial
 
 @for $i from 1 through 12
 	.rows > &.grow-#{$i},
@@ -25,9 +28,9 @@
     flex-direction: row
 
 +tablet
-.rows
-    display: flex
-    flex-direction: row
+  .rows
+      display: flex
+      flex-direction: row
 
 +tablet-only
  .rows
