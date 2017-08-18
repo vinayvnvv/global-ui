@@ -29,7 +29,50 @@ $nav-item-padding: 1.5rem
 		display: flex
 		justify-content: flex-end
 	& .nav-brand
-		display: flex;
+		display: flex
+		position: relative
+		& .toggle-side-menu
+		 	min-width: 42px
+		 	width: 42px
+		 	max-width: 42px
+		 	display: flex
+		 	align-items: center
+		 	justify-content: center
+		 	position: relative
+		 	padding: 0 .6rem
+		 	cursor: pointer
+		 	
+		 	& span:first-child
+		 		position: absolute
+		 		top: 40%
+		 	& span:nth-child(2)
+		 		position: absolute
+		 		top: 50%
+		 	& span:last-child
+		 		position: absolute
+		 		top: 60%
+		 	& span
+		 		background-color: #777
+		 		width: 18px
+		 		height: 1px
+		 		transition: .1s all
+		 	&:hover
+		 		background-color: darken($nav-bg-color, 5%)
+		 	&.active
+		 		background-color: darken($nav-bg-color, 5%)
+		 		cursor: pointer
+		 		& span:first-child
+		 			animation-name: navbar_toggle_menu_bar_start
+		 			animation-duration: 0.2s
+		 			top: 50%
+		 			transform: rotate(-45deg)
+		 		& span:nth-child(2)
+		 			display: none
+			 	& span:last-child
+			 		transform: rotate(45deg)
+			 		animation-name: navbar_toggle_menu_bar_end
+		 			animation-duration: 0.2s
+			 		top: 50%
 	& .nav-item
 		display: flex
 		align-items: center
@@ -109,6 +152,7 @@ $nav-item-padding: 1.5rem
 	.navbar
 		& .nav-brand
 			padding: 0
+			width: 100%
 		& .container
 			margin: initial
 
@@ -122,19 +166,23 @@ $nav-item-padding: 1.5rem
 		 	position: relative
 		 	padding: 0 .6rem
 		 	cursor: pointer
-		 	
+		 	position: absolute
+		 	right: 0
+		 	width: 100%
+		 	height: 100%
 		 	& span:first-child
 		 		position: absolute
-		 		top: 40%
-		 	& span:nth-child(2)
-		 		position: absolute
 		 		top: 50%
+		 		transform: rotate(45deg)
+		 		margin-left: -3px
 		 	& span:last-child
 		 		position: absolute
-		 		top: 60%
+		 		top: 50%
+		 		transform: rotate(-45deg)
+		 		margin-left: 5px
 		 	& span
 		 		background-color: #777
-		 		width: 18px
+		 		width: 12px
 		 		height: 1px
 		 		transition: .3s all
 		 	&:hover
@@ -147,8 +195,6 @@ $nav-item-padding: 1.5rem
 		 			animation-duration: 0.2s
 		 			top: 50%
 		 			transform: rotate(-45deg)
-		 		& span:nth-child(2)
-		 			display: none
 			 	& span:last-child
 			 		transform: rotate(45deg)
 			 		animation-name: navbar_toggle_menu_bar_end
@@ -189,6 +235,7 @@ $nav-item-padding: 1.5rem
 			& .nav-item
 				padding: 0.7rem 1.1rem
 
+
 +desktop
 	.navbar.container
 		& .nav-brand
@@ -210,6 +257,11 @@ $nav-item-padding: 1.5rem
     		&.active
     			background-color: lighten($color, 5%)
     	& .mobile-toggle-menu
+    		& span
+    			background-color: $color-invert
+    		&:hover, &.active
+    			background-color: lighten($color, 5%)
+    	& .toggle-side-menu
     		& span
     			background-color: $color-invert
     		&:hover, &.active
