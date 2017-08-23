@@ -11406,6 +11406,7 @@ span.icon.white {
       margin-left: 260px; }
   .nav-container .side-nav {
     width: 260px;
+    min-width: 260px;
     background-color: #ffffff;
     height: 100%;
     overflow-y: auto;
@@ -11511,7 +11512,8 @@ span.icon.white {
     box-shadow: none; }
   .nav-container .nav-content {
     height: 100%;
-    width: 100%; }
+    width: 100%;
+    position: absolute; }
   .nav-container.active .nav-content {
     position: absolute; }
   .nav-container.active .back-drop {
