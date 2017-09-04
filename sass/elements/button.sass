@@ -207,7 +207,7 @@ $btn-huge : 1.42857143rem
 
   @for $i from 0 through 10
     &.border-#{$i}
-      border-width: $i!important
+      border-width: $i + px!important
 
   @each $name, $pair in $colors
     $color: nth($pair, 1)
