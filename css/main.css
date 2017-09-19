@@ -11484,7 +11484,8 @@ span.icon.white {
         cursor: pointer;
         transition: 0.133s all;
         display: flex;
-        position: relative; }
+        position: relative;
+        outline: none; }
         .nav-container .side-nav .nav-list .nav-list-item.active {
           background-color: rgba(233, 233, 233, 0.8);
           font-weight: 600;
