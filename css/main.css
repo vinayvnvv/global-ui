@@ -3321,12 +3321,16 @@ span.icon.white {
     .list > .item .actions, .list li .actions {
       text-align: right;
       display: flex; }
-  .list.unordered li {
-    display: list-item;
-    list-style-type: disc; }
-  .list.ordered li {
-    display: list-item;
-    list-style-type: decimal; }
+  .list.unordered {
+    padding: 0 0 0 20px; }
+    .list.unordered li {
+      display: list-item;
+      list-style-type: disc; }
+  .list.ordered {
+    padding: 0 0 0 20px; }
+    .list.ordered li {
+      display: list-item;
+      list-style-type: decimal; }
   .list.hovered > .item:hover, .list.hovered li:hover {
     background-color: rgba(0, 0, 0, 0.03);
     cursor: pointer; }
