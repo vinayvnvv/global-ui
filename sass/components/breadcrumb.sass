@@ -4,6 +4,7 @@ $brdcrmb-outline-padding: 0.577em
 $brdcrmb-icon-color: #333
 $brdcrmb-seperator-margin: 0.366em
 $brdcrmb-icon-margin: 0.43em
+$brdcrmb-outline-border: 4px
 
 //sizes
 $brdcrmb-mini : .78571429rem
@@ -41,6 +42,9 @@ $brdcrmb-huge : 1.42857143rem
 	&.outline
 		border: 1px solid $brdcrmb-border-color
 		padding: $brdcrmb-outline-padding
+		border-radius: $brdcrmb-outline-border
+	&.square
+		border-radius: 0px
 	&.circle
 		border-radius: 20em
 		padding: $brdcrmb-outline-padding $brdcrmb-outline-padding+0.5
