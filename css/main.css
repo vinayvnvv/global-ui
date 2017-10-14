@@ -7264,11 +7264,11 @@ span.icon.white {
   .panel.square .panel-body {
     border-radius: 0; }
   .panel.cicle .panel-header {
-    border-radius: 2em 2em 0 0;
+    border-radius: 1em 1em 0 0;
     padding-left: 1.376em;
     padding-right: 1.376em; }
   .panel.cicle .panel-body {
-    border-radius: 0 0 2em 2em;
+    border-radius: 0 0 1em 1em;
     padding-left: 1.825em;
     padding-right: 1.825em; }
   .panel.outline .panel-body {
@@ -8595,7 +8595,8 @@ span.icon.white {
 .loading-bar {
   position: relative;
   height: 3px;
-  overflow: hidden; }
+  overflow: hidden;
+  width: 100%; }
   .loading-bar .line {
     position: absolute;
     background-color: #222222;
@@ -10676,6 +10677,10 @@ span.icon.white {
     padding: 0.2em 0.47em; }
   .pagination.padding-more .pagination-prev .link, .pagination.padding-more .pagination-next .link, .pagination.padding-more .pagination-list .link {
     padding: 0.52em 1.13em; }
+  .pagination.circle .pagination-prev .link, .pagination.circle .pagination-next .link, .pagination.circle .pagination-list .link {
+    border-radius: 4em; }
+  .pagination.square .pagination-prev .link, .pagination.square .pagination-next .link, .pagination.square .pagination-list .link {
+    border-radius: 0em; }
   .pagination.outline .pagination-prev .link, .pagination.outline .pagination-next .link, .pagination.outline .pagination-list .link {
     background-color: transparent;
     border: 1px solid #d9d9d9; }
