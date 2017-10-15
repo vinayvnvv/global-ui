@@ -116,6 +116,10 @@ $tb-style-2-active-bg-color: transparentize($tb-active-color, 0.09)
 			    	color: $color-invert
 		&.square
 			border-radius: 0px
+			& .item
+				&.active
+					&:first-child, &:last-child
+						border-radius: 0
 	&.vertical
 		flex-direction: column
 		border-right: 1px solid $tb-border-color

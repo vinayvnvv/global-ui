@@ -9084,6 +9084,8 @@ span.icon.white {
           color: rgba(0, 0, 0, 0.7); }
     .tab.style-2.square {
       border-radius: 0px; }
+      .tab.style-2.square .item.active:first-child, .tab.style-2.square .item.active:last-child {
+        border-radius: 0; }
   .tab.vertical {
     flex-direction: column;
     border-right: 1px solid #d9d9d9;
