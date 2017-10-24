@@ -8,6 +8,7 @@ $nav-item-padding: 1.5rem
 	color: $nav-color
 	display: flex
 	height: $nav-height
+	min-height: $nav-height
 	max-width: 100%
 	position: relative
 	& .container
@@ -204,6 +205,8 @@ $nav-item-padding: 1.5rem
 		&.active
 			display: block
 			height: auto
+			min-height: initial
+			z-index: 70
 			& .container
 		 			display: block
 			& .nav-item.logo

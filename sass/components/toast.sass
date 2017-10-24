@@ -13,8 +13,10 @@ $toast-loading-padding-left: 1.72em
 	display: block
 	bottom: 0
 	z-index: 102
-	display: flex
+	display: none
 	align-items: center
+	&.active
+		display: flex
 	& .text
 		flex-grow: 1
 	& .actions
@@ -43,6 +45,7 @@ $toast-loading-padding-left: 1.72em
 +mobile
 	.toast
 		width: 100%
+		left: 0
 		& .actions
 			margin-right: $toast-padding + $toast-padding
 		&.loading .actions
@@ -62,6 +65,7 @@ $toast-loading-padding-left: 1.72em
 +tablet-only
 	.toast
 		width: 100%
+		left: 0
 		& .actions
 			margin-right: $toast-padding + $toast-padding
 		&.loading .actions

@@ -275,7 +275,11 @@ $btn-huge : 1.42857143rem
 
       &.label label
        background-color: lighten($color, 37%)
-       color: darken($color, 27%) 
+       color: darken($color, 27%)
+
+      @for $i from 1 through 10
+        &.border-dim-#{$i}
+          border-color: transparentize($color, (0.1 * $i))
 
 //icon button
 

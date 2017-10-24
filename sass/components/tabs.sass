@@ -6,7 +6,19 @@ $tb-style-2-active-bg-color: transparentize($tb-active-color, 0.09)
 
 .tab
 	display: flex
-	border-bottom: 1px solid $tb-border-color
+	// border-bottom: 1px solid $tb-border-color
+	overflow-x: auto
+	overflow-y: hidden
+	max-width: 100%
+	position: relative
+	&:before
+		position: absolute
+		content: ""
+		width: 100%
+		height: 1px
+		bottom: 0
+		left: 0
+		background-color: $tb-border-color
 	&.scrollable
 		overflow-x: auto
 		overflow-y: hidden
@@ -24,7 +36,7 @@ $tb-style-2-active-bg-color: transparentize($tb-active-color, 0.09)
 		transition: .16s all
 		z-index: 2
 		display: flex
-		flex-wrap: wrap
+		white-space: pre
 		& .icon
 			margin: -2px 11px 0px 0px!important
 		&.disabled
@@ -91,7 +103,6 @@ $tb-style-2-active-bg-color: transparentize($tb-active-color, 0.09)
 		& .item
 			border-right: 1px solid $tb-border-color
 			display: flex
-			flex-wrap: wrap
 			&:last-child
 				border-right: none
 			&:after
