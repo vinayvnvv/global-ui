@@ -1,9 +1,17 @@
 {
-  "name": "global-ui",
+  "name": "test-ui-aa",
   "version": "1.0.0",
-  "description": "",
+  "title": "Global - UI",
+  "description": "GlobalUI empowers designers and developers by creating a shared vocabulary for UI.",
+  "homepage": "http://www.global-ui.com",
+  "author": "Vinay B V",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vinayvnvv/global-ui.git"
+  },
   "main": "gulpfile.js",
-  "dependencies": {
+  "devDependencies": {
     "body-parser": "^1.17.2",
     "cors": "^2.8.1",
     "express": "^4.14.1",
@@ -11,10 +19,12 @@
     "gulp-livereload": "^3.8.1",
     "gulp-sass": "^3.1.0"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+
+  "files": [
+    "css",
+    "sass"
+  ]
 }
