@@ -2,84 +2,88 @@
   flex-grow: 1
   flex-basis: 0
   flex-shrink: 1
+  box-sizing: border-box
 
 .row
   flex-grow: 1
   flex-basis: 0
   flex-shrink: 1
+  box-sizing: border-box
 
-.rows
+.columns
   & .row, & .column
     &.auto-grow
       flex-grow: initial
+  &.layout-wrap
+    flex-wrap: wrap
 
 @for $i from 1 through 12
-	.rows > &.grow-#{$i},
+	.columns > &.grow-#{$i},
 	   flex: none
 	   flex-basis: ($i / 12) * 100%
-	.rows > &.grow-offset-#{$i}
+	.columns > &.grow-offset-#{$i}
 	   margin-left: ($i / 12) * 100%  
 
 +mobile
- .rows
+ .columns
     display: block
- .rows.grow-mobile
+ .columns.grow-mobile
     display: flex
     flex-direction: row
 
 +tablet
-  .rows
+  .columns
       display: flex
       flex-direction: row
 
 +tablet-only
- .rows
+ .columns
     display: flex
     flex-direction: row
 
     @for $i from 1 through 12
-      > .row.grow-tablet-#{$i},
+      > .column.grow-tablet-#{$i},
         flex: none
         flex-basis: ($i / 12) * 100%
-      > .row.grow-offset-tablet-#{$i}
+      > .column.grow-offset-tablet-#{$i}
         margin-left: ($i / 12) * 100%  
 
 
 +desktop-only
- .rows
+ .columns
     display: flex
     flex-direction: row
 
     @for $i from 1 through 12
-      > .row.grow-desktop-#{$i},
+      > .column.grow-desktop-#{$i},
         flex: none
         flex-basis: ($i / 12) * 100%
-      > .row.grow-offset-desktop-#{$i}
+      > .column.grow-offset-desktop-#{$i},
         margin-left: ($i / 12) * 100% 
 
 +widescreen-only
- .rows
+ .columns
     display: flex
     flex-direction: row
 
     @for $i from 1 through 12
-      > .row.grow-widescreen-#{$i},
+      > .column.grow-widescreen-#{$i},
         flex: none
         flex-basis: ($i / 12) * 100%
-      > .row.grow-offset-widescreen-#{$i}
+      > .column.grow-offset-widescreen-#{$i}
         margin-left: ($i / 12) * 100%  
 
 
 +fullhd
- .rows
+ .columns
     display: flex
     flex-direction: row
 
     @for $i from 1 through 12
-      > .row.grow-fullhd-#{$i},
+      > .column.grow-fullhd-#{$i},
         flex: none
         flex-basis: ($i / 12) * 100%
-      > .row.grow-offset-fullhd-#{$i}
+      > .column.grow-offset-fullhd-#{$i}
         margin-left: ($i / 12) * 100% 
 
 

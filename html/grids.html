@@ -1,15 +1,126 @@
 <link rel="stylesheet" href="css" />
 
+<!-- basic -->
+<div class="columns">
+	<section class="column red">column</section>
+	<section class="column green">column</section>
+	<section class="column blue">column</section>
+	<section class="column black">column</section>
+</div>
+<br/>
+<div class="columns">
+	<section class="column red grow-1">1</section>
+	<section class="column green grow-2">2</section>
+	<section class="column blue grow-3">3</section>
+	<section class="column black grow-6">6</section>
+</div>
+
+
+<br/>
+<div class="columns">
+	<section class="column red grow-1">1</section>
+	<section class="column green">auto</section>
+	<section class="column blue">auto</section>
+	<section class="column black">auto</section>
+	<section class="column green">auto</section>
+	<section class="column blue">auto</section>
+	<section class="column black">auto</section>
+	<section class="column green">auto</section>
+	<section class="column blue">auto</section>
+	<section class="column black">auto</section>
+	<section class="column green">auto</section>
+	<section class="column blue">auto</section>
+</div>
+
+
+<br/>
+<div class="columns">
+	<section class="column red grow-3">3</section>
+	<section class="column green">auto</section>
+	<section class="column blue">auto</section>
+	<section class="column black">auto</section>
+	<section class="column green">auto</section>
+	<section class="column blue">auto</section>
+	<section class="column black">auto</section>
+	<section class="column green">auto</section>
+	<section class="column blue">auto</section>
+	<section class="column black">auto</section>
+	<section class="column green">auto</section>
+	<section class="column blue">auto</section>
+</div>
+
+<br/>
+<div class="columns">
+	<section class="column red grow-10">10</section>
+	<section class="column green grow-2">2</section>
+</div>
+
+
+<br/>
+<!-- force grow in mobile -->
+<div class="columns grow-mobile">
+	<section class="column red">auto</section>
+	<section class="column green">auto</section>
+	<section class="column blue">auto</section>
+	<section class="column black grow-6">6</section>
+</div>
+
+<br/>
+
+<!-- responsiveness -->
+<div class="columns">
+	<section class="column red grow-tablet-3 grow-desktop-8 grow-fullhd-2">auto</section>
+	<section class="column green">auto</section>
+</div>
+
+
+<!-- wrapping -->
+
+<br/>
+<div class="columns layout-wrap">
+	<section class="column red grow-3">column</section>
+	<section class="column green grow-3">column</section>
+	<section class="column blue grow-3">column</section>
+	<section class="column orange grow-3">column</section>
+	<section class="column black grow-6">column</section>
+	<section class="column green grow-6">column</section>
+	<section class="column blue grow-2">column</section>
+	<section class="column black grow-2">column</section>
+	<section class="column green grow-2">column</section>
+	<section class="column blue grow-2">column</section>
+	<section class="column black grow-4">column</section>
+</div>
+
+
+<!-- offset -->
+<br/>
+<div class="columns">
+	<section class="column red">column</section>
+	<section class="column green grow-offset-1">column</section>
+	<section class="column blue grow-offset-1">column</section>
+	<section class="column black grow-offset-1">column</section>
+</div>
+<!-- offset with responsives -->
+<div class="columns">
+	<section class="column red">column</section>
+	<section class="column green grow-offset-1 grow-offset-desktop-2">column</section>
+	<section class="column blue grow-offset-1 grow-offset-desktop-2">column</section>
+	<section class="column black grow-offset-1 grow-offset-desktop-2">column</section>
+</div>
+
+
+
+
 Mobile:
-<div class="rows grow-mobile">
-	<div class="row grow-9">Row 1</div>
-	<div class="row">Row 2</div>
+<div class="columns grow-mobile">
+	<div class="column grow-9">column 1</div>
+	<div class="column">column 2</div>
 </div>
 
 After Tablet
-<div class="rows">
-	<div class="row grow-10 grow-tablet-3 grow-desktop-6 grow-fullhd-2">Row 1</div>
-	<div class="row">Row 2</div>
+<div class="columns">
+	<div class="column grow-10 grow-tablet-3 grow-desktop-6 grow-fullhd-2">column 1</div>
+	<div class="column">column 2</div>
 </div>
 
 
