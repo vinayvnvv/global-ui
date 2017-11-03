@@ -123,34 +123,34 @@ a {
   a:hover {
     color: #024154; }
 
-section:not(.top):not(.left):not(.bottom):not(right), .section:not(.top):not(.left):not(.bottom):not(right) {
+section:not(.top-space):not(.left-space):not(.bottom-space):not(.right-space), .section:not(.top-space):not(.left-space):not(.bottom-space):not(.right-space) {
   padding: 15px; }
 
-section.top, .section.top {
+section.top-space, .section.top-space {
   padding-top: 15px; }
 
-section.left, .section.left {
+section.left-space, .section.left-space {
   padding-left: 15px; }
 
-section.right, .section.right {
+section.right-space, .section.right-space {
   padding-right: 15px; }
 
-section.bottom, .section.bottom {
+section.bottom-space, .section.bottom-space {
   padding-bottom: 15px; }
 
-section.padding-more:not(.top):not(.left):not(.bottom):not(right), .section.padding-more:not(.top):not(.left):not(.bottom):not(right) {
+section.padding-more:not(.top-space):not(.left-space):not(.bottom-space):not(.right-space), .section.padding-more:not(.top-space):not(.left-space):not(.bottom-space):not(.right-space) {
   padding: 30px; }
 
-section.padding-more.top, .section.padding-more.top {
+section.padding-more.top-space, .section.padding-more.top-space {
   padding-top: 30px; }
 
-section.padding-more.left, .section.padding-more.left {
+section.padding-more.left-space, .section.padding-more.left-space {
   padding-left: 30px; }
 
-section.padding-more.right, .section.padding-more.right {
+section.padding-more.right-space, .section.padding-more.right-space {
   padding-right: 30px; }
 
-section.padding-more.bottom, .section.padding-more.bottom {
+section.padding-more.bottom-space, .section.padding-more.bottom-space {
   padding-bottom: 30px; }
 
 section.advertisement, .section.advertisement {
