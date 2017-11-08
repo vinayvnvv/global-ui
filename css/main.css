@@ -88,6 +88,9 @@
   margin-top: 5px;
   margin-bottom: 5px; }
 
+.no-shadow {
+  box-shadow: none !important; }
+
 .ripple {
   position: relative;
   overflow: hidden;
@@ -796,34 +799,34 @@ span.icon.white {
   color: #ffffff; }
 
 .whiteframe-1 {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12) !important; }
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12); }
 
 .whiteframe-2 {
-  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12) !important; }
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12); }
 
 .whiteframe-3 {
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12) !important; }
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12); }
 
 .whiteframe-4 {
-  box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.2), 0 7px 10px 1px rgba(0, 0, 0, 0.14), 0 2px 16px 1px rgba(0, 0, 0, 0.12) !important; }
+  box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.2), 0 7px 10px 1px rgba(0, 0, 0, 0.14), 0 2px 16px 1px rgba(0, 0, 0, 0.12); }
 
 .whiteframe-5 {
-  box-shadow: 0 5px 6px -3px rgba(0, 0, 0, 0.2), 0 9px 12px 1px rgba(0, 0, 0, 0.14), 0 3px 16px 2px rgba(0, 0, 0, 0.12) !important; }
+  box-shadow: 0 5px 6px -3px rgba(0, 0, 0, 0.2), 0 9px 12px 1px rgba(0, 0, 0, 0.14), 0 3px 16px 2px rgba(0, 0, 0, 0.12); }
 
 .whiteframe-6 {
-  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2), 0 11px 15px 1px rgba(0, 0, 0, 0.14), 0 4px 20px 3px rgba(0, 0, 0, 0.12) !important; }
+  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2), 0 11px 15px 1px rgba(0, 0, 0, 0.14), 0 4px 20px 3px rgba(0, 0, 0, 0.12); }
 
 .whiteframe-7 {
-  box-shadow: 0 7px 9px -4px rgba(0, 0, 0, 0.2), 0 14px 21px 2px rgba(0, 0, 0, 0.14), 0 5px 26px 4px rgba(0, 0, 0, 0.12) !important; }
+  box-shadow: 0 7px 9px -4px rgba(0, 0, 0, 0.2), 0 14px 21px 2px rgba(0, 0, 0, 0.14), 0 5px 26px 4px rgba(0, 0, 0, 0.12); }
 
 .whiteframe-8 {
-  box-shadow: 0 8px 11px -5px rgba(0, 0, 0, 0.2), 0 17px 26px 2px rgba(0, 0, 0, 0.14), 0 6px 32px 5px rgba(0, 0, 0, 0.12) !important; }
+  box-shadow: 0 8px 11px -5px rgba(0, 0, 0, 0.2), 0 17px 26px 2px rgba(0, 0, 0, 0.14), 0 6px 32px 5px rgba(0, 0, 0, 0.12); }
 
 .whiteframe-9 {
-  box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12) !important; }
+  box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12); }
 
 .whiteframe-10 {
-  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12) !important; }
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12); }
 
 .button {
   color: rgba(0, 0, 0, 0.95);
@@ -6804,7 +6807,10 @@ span.icon.white {
   display: none;
   align-items: center; }
   .toast.active {
-    display: flex; }
+    display: flex;
+    animation-name: toastAnimation;
+    animation-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1); }
   .toast .text {
     flex-grow: 1; }
   .toast .actions {
@@ -8098,7 +8104,8 @@ span.icon.white {
   height: 62px;
   min-height: 62px;
   max-width: 100%;
-  position: relative; }
+  position: relative;
+  z-index: 70; }
   .navbar .container {
     display: flex;
     position: relative; }
@@ -8233,10 +8240,8 @@ span.icon.white {
     min-width: 42px;
     width: 42px;
     max-width: 42px;
-    display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     padding: 0 .6rem;
     cursor: pointer;
     position: absolute;
@@ -8247,17 +8252,19 @@ span.icon.white {
       position: absolute;
       top: 50%;
       transform: rotate(45deg);
-      margin-left: -3px; }
+      margin-left: 12px;
+      animation-name: navbar_toggle_menu_bar_end; }
     .navbar .mobile-toggle-menu span:last-child {
       position: absolute;
       top: 50%;
       transform: rotate(-45deg);
-      margin-left: 5px; }
+      margin-left: 20px;
+      animation-name: navbar_toggle_menu_bar_start; }
     .navbar .mobile-toggle-menu span {
       background-color: #777;
       width: 12px;
       height: 1px;
-      transition: .3s all; }
+      animation-duration: 0.2s; }
     .navbar .mobile-toggle-menu:hover {
       background-color: #f2f2f2; }
     .navbar .mobile-toggle-menu.active {
@@ -8265,20 +8272,18 @@ span.icon.white {
       cursor: pointer; }
       .navbar .mobile-toggle-menu.active span:first-child {
         animation-name: navbar_toggle_menu_bar_start;
-        animation-duration: 0.2s;
         top: 50%;
         transform: rotate(-45deg); }
       .navbar .mobile-toggle-menu.active span:last-child {
         transform: rotate(45deg);
         animation-name: navbar_toggle_menu_bar_end;
-        animation-duration: 0.2s;
         top: 50%; }
   .navbar .nav-left, .navbar .nav-center, .navbar .nav-right {
     display: none; }
   .navbar.active {
     display: block;
     height: auto;
-    min-height: initial;
+    min-height: auto !important;
     z-index: 70; }
     .navbar.active .container {
       display: block; }
@@ -12235,3 +12240,11 @@ span.icon.white {
     opacity: 0; }
   to {
     opacity: 0.85; } }
+
+@keyframes toastAnimation {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+    to {
+      transform: rotate(0);
+      opacity: 1; } } }

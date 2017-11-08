@@ -1,7 +1,7 @@
 $nav-bg-color: #fff
 $nav-color: #222
 $nav-item-padding: 1.5rem
-
+$nav-bar-z-index: 70
 
 .navbar
 	background-color: $nav-bg-color
@@ -11,6 +11,7 @@ $nav-item-padding: 1.5rem
 	min-height: $nav-height
 	max-width: 100%
 	position: relative
+	z-index: $nav-bar-z-index
 	& .container
 		display: flex
 		position: relative
@@ -160,10 +161,8 @@ $nav-item-padding: 1.5rem
 		 	min-width: 42px
 		 	width: 42px
 		 	max-width: 42px
-		 	display: flex
 		 	align-items: center
 		 	justify-content: center
-		 	position: relative
 		 	padding: 0 .6rem
 		 	cursor: pointer
 		 	position: absolute
@@ -174,17 +173,19 @@ $nav-item-padding: 1.5rem
 		 		position: absolute
 		 		top: 50%
 		 		transform: rotate(45deg)
-		 		margin-left: -3px
+		 		margin-left: 12px
+		 		animation-name: navbar_toggle_menu_bar_end
 		 	& span:last-child
 		 		position: absolute
 		 		top: 50%
 		 		transform: rotate(-45deg)
-		 		margin-left: 5px
+		 		margin-left: 20px
+		 		animation-name: navbar_toggle_menu_bar_start
 		 	& span
 		 		background-color: #777
 		 		width: 12px
 		 		height: 1px
-		 		transition: .3s all
+		 		animation-duration: 0.2s
 		 	&:hover
 		 		background-color: darken($nav-bg-color, 5%)
 		 	&.active
@@ -192,20 +193,18 @@ $nav-item-padding: 1.5rem
 		 		cursor: pointer
 		 		& span:first-child
 		 			animation-name: navbar_toggle_menu_bar_start
-		 			animation-duration: 0.2s
 		 			top: 50%
 		 			transform: rotate(-45deg)
 			 	& span:last-child
 			 		transform: rotate(45deg)
 			 		animation-name: navbar_toggle_menu_bar_end
-		 			animation-duration: 0.2s
 			 		top: 50%
 		& .nav-left, & .nav-center, & .nav-right
 			display: none
 		&.active
 			display: block
 			height: auto
-			min-height: initial
+			min-height: auto!important
 			z-index: 70
 			& .container
 		 			display: block

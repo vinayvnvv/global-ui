@@ -17,6 +17,9 @@ $toast-loading-padding-left: 1.72em
 	align-items: center
 	&.active
 		display: flex
+		animation-name: toastAnimation
+		animation-duration: 0.2s
+		transition-timing-function: cubic-bezier(.25,.8,.25,1)
 	& .text
 		flex-grow: 1
 	& .actions
