@@ -1,0 +1,25 @@
+{
+	"vars": {
+		"colors": [
+			{"primary": "rgb(4, 131, 169)"},
+			{"info": "hsl(217, 71%,  53%)"},
+			{"success": "hsl(141, 71%,  48%)"},
+			{"warning": "hsl(48,  100%, 67%)"},
+			{"danger": "hsl(348, 100%, 61%)"},
+			{"light": "hsl(0, 0%, 96%)"},
+			{"dark": "hsl(0, 0%, 21%)"}
+		],
+		"site": {
+			"colors": {
+				"body-background": "#fff",
+				"body-text": "#000",
+				"link-color": "#3b5998"
+			}
+			
+		}
+	},
+	"modules": {
+		"extra_colors": ["red", "blue", "blue-grey"],
+		"components": []
+	}
+}

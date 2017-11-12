@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var spawn = require('child_process').spawn;
 var livereload = require('gulp-livereload');
+var task = require('./../tools/main')
 
 
 var gulpActivity = function(app, http) {
@@ -43,6 +44,19 @@ var gulpActivity = function(app, http) {
 			//livereload.listen();
 			gulp.watch(sass_files, ['sass']);
 			//gulp.watch(html, ['gulp-autoreload']);
+		})
+
+
+		gulp.task('build_colors', function(event) {
+			task.buildColors();
+		})
+
+		gulp.task('build_css', function(event) {
+			task.buildCss();
+		})
+
+		gulp.task('build', function(event) {
+			task.buildAll();
 		})
 
       
