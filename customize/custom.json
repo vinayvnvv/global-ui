@@ -11,15 +11,21 @@
 		],
 		"site": {
 			"colors": {
-				"body-background": "#fff",
+				"body-background": "#f6f6f6",
 				"body-text": "#000",
 				"link-color": "#3b5998"
+			}, 
+			"font": {
+				"font-family": "Lato,'Helvetica Neue','Open Sans',Arial,Helvetica,sans-serif"
+			},
+			"dimensions":{
+				"nav-height":"56px",
+				"side-nav-width": "260px"
 			}
 			
 		}
 	},
 	"modules": {
-		"extra_colors": ["red", "blue", "blue-grey"],
-		"components": []
+		"extra_colors": ["red", "blue", "blue-grey"]
 	}
 }

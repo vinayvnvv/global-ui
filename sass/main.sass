@@ -1,17 +1,15 @@
 @charset "utf-8"
 
-@import "sass/utilities/functions.sass"
-@import "sass/utilities/init_vars.sass"
-@import "sass/utilities/final_vars.sass"
-@import "sass/utilities/customized_colors.sass"
-@import "sass/utilities/mixins.sass"
-@import "sass/elements/helper.sass"
-@import "sass/base/generic.sass"
+
+///common
+@import "./include.sass"
+//end of common
+
+//modules
 @import "sass/base/section.sass"
 @import "sass/grids/grids.sass"
 @import "sass/elements/typography.sass"
-@import "sass/elements/icons.sass"
-@import "sass/elements/whiteframe.sass";
+@import "sass/elements/whiteframe.sass"
 @import "sass/elements/button.sass"
 @import "sass/elements/label.sass"
 @import "sass/elements/list.sass"
@@ -19,7 +17,6 @@
 @import "sass/elements/tabel.sass"
 @import "sass/elements/menu.sass"
 @import "sass/elements/image.sass"
-@import "sass/elements/container.sass"
 @import "sass/elements/divider.sass"
 @import "sass/components/toast.sass"
 @import "sass/components/messages.sass"
@@ -34,4 +31,3 @@
 @import "sass/components/pagination.sass";
 @import "sass/components/sidenav.sass";
 @import "sass/components/toc.sass"
-@import "sass/utilities/animation.sass"

@@ -1,0 +1,74 @@
+{
+	"section": {
+		"src": "./base/section.sass"
+	},
+	"grids": {
+		"src": "./grids/grids.sass"
+	},
+	"button" : {
+		"src": "./elements/button.sass"
+	},
+	"typography" : {
+		"src": "./elements/typography.sass"
+	},
+	"whiteframe" : {
+		"src": "./elements/whiteframe.sass"
+	},
+	"label" : {
+		"src": "./elements/label.sass"
+	},
+	"list" : {
+		"src": "./elements/list.sass"
+	},
+	"input" : {
+		"src": "./elements/input.sass"
+	},
+	"tabel" : {
+		"src": "./elements/tabel.sass"
+	},
+	"menu" : {
+		"src": "./elements/menu.sass"
+	},
+	"image" : {
+		"src": "./elements/image.sass"
+	},
+	"divider" : {
+		"src": "./elements/divider.sass"
+	},
+	"toast" : {
+		"src": "./components/toast.sass"
+	},
+	"messages" : {
+		"src": "./components/messages.sass"
+	},
+	"panel" : {
+		"src": "./components/panel.sass"
+	},
+	"navbar" : {
+		"src": "./components/navbar.sass"
+	},
+	"indicators" : {
+		"src": "./components/indicators.sass"
+	},
+	"breadcrumb" : {
+		"src": "./components/breadcrumb.sass"
+	},
+	"tabs" : {
+		"src": "./components/tabs.sass"
+	},
+	"modal" : {
+		"src": "./components/modal.sass"
+	},
+	"progress" : {
+		"src": "./components/progress.sass"
+	},
+	"pagination" : {
+		"src": "./components/pagination.sass"
+	},
+	"sidenav" : {
+		"src": "./components/sidenav.sass"
+	},
+	"toc" : {
+		"src": "./components/toc.sass"
+	}
+}

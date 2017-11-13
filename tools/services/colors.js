@@ -1,14 +1,17 @@
 var custom = require('./../../customize/custom.json');
 var colors_palette = require('./../default/colors.json');
+var site_colors = require('./../default/site_colors.json');
 var fs = require('fs');
 var common =require('./common');
 var colors_log = require('colors');
 var env = require('./../env.json');
 
 var colorsServive = function() {
+	var custom_primary_colors = (custom ? ( custom.vars ? ( custom.vars.colors ? custom.vars.colors : null) : null) : null);
+	var custom_fixed_colors = (custom ? ( custom.modules ? ( custom.modules.extra_colors ? custom.modules.extra_colors : null) : null) : null);
 	this.definePrimaryColors = function() {
-		var colors = custom.vars.colors;
-		if(colors.length == 0) return "";
+		var colors = custom_primary_colors;
+		if(!colors || colors.length == 0) return "";
 		var contents = "//primary colors\n";
 		if(common.isValidJson(colors)) {
 			console.info(env.project.logsPrefix + "Creating primary color palette....".blue)
@@ -28,8 +31,8 @@ var colorsServive = function() {
 	}
 
 	this.defineFixedColors = function() {
-		var colors = custom.modules.extra_colors;
-		if(colors.length == 0) return "";
+		var colors = custom_fixed_colors;
+		if(!colors || colors.length == 0) return "";
 		var contents = "//fixed colors palette\n";
 		if(common.isValidJson(colors)) {
 			console.info(env.project.logsPrefix + "Creating fixed color palette....".blue)
@@ -48,7 +51,9 @@ var colorsServive = function() {
 	}
 
 	this.generatePrimaryColorsArray = function() { //return array with color&invert-color
-		var colors = custom.vars.colors;
+		var colors = custom_primary_colors;
+		if(!colors) return this.generateDefaultPrimaryArray();
+		if(colors.length == 0) return "";
 		var contents = "";
 		if(common.isValidJson(colors)) {
 			console.info(env.project.logsPrefix + "Creating primary color array....".cyan)
@@ -68,7 +73,9 @@ var colorsServive = function() {
 	}
 
 	this.generateFixedColorsArray = function() { //return array with color&invert-color
-		var colors = custom.modules.extra_colors;
+		var colors = custom_fixed_colors;
+		if(!colors) return this.generateDefaultFixedArray();
+		if(colors.length == 0) return "";
 		var contents = "";
 		if(common.isValidJson(colors)) {
 			console.info(env.project.logsPrefix + "Creating fixed color array....".cyan)
@@ -82,6 +89,28 @@ var colorsServive = function() {
 			});
 			contents += "'" + clr.value + "': ($" + clr.value + ", findColorInvert($" + clr.value + '))';
 			if(i != colors.length-1) contents += ","; //add coomma when its last item
+			contents += " "; //space btwn each array;
+		}
+		return contents;
+	}
+
+	this.generateDefaultPrimaryArray = function() {
+		var contents = "";
+		console.log(env.project.logsPrefix + "Creating default primary color array....".cyan)
+		for(var i=0;i<site_colors.length;i++) {
+			contents += "'" + site_colors[i] + "': ($" + site_colors[i] + ", findColorInvert($" + site_colors[i] + '))';
+			if(i != site_colors.length-1) contents += ","; //add coomma when its last item
+			contents += " "; //space btwn each array;
+		}
+		return contents;
+	}
+
+	this.generateDefaultFixedArray = function() {
+		var contents = "";
+		console.log(env.project.logsPrefix + "Creating default color array....".cyan)
+		for(var i=0;i<colors_palette.length;i++) {
+			contents += "'" + colors_palette[i].value + "': ($" + colors_palette[i].value + ", findColorInvert($" + colors_palette[i].value + '))';
+			if(i != colors_palette.length-1) contents += ","; //add coomma when its last item
 			contents += " "; //space btwn each array;
 		}
 		return contents;

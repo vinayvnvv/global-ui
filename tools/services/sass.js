@@ -5,12 +5,15 @@ var env = require('./../env.json');
 var cleanCSS = require('gulp-clean-css');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
+var custom = require('./../../customize/custom.json');
 
 
 var sassService = function() {
 	this.buildCss = function(callback) {
+		var custom_modules = (custom ? ( custom.modules ? ( custom.modules.components ? custom.modules.components : null) : null) : null);
+		var sassMainFile = (custom_modules?env.src.sassCustomizedMainFile:env.src.sassMainFile);
 		console.log(env.project.logsPrefix + 'compiling sass....'.blue);
-		return gulp.src(env.src.sassMainFile)
+		return gulp.src(sassMainFile)
 			    .pipe(sass()
 			    		.on('error', sass.logError)
 			    	)
