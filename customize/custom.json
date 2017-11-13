@@ -26,6 +26,5 @@
 		}
 	},
 	"modules": {
-		"extra_colors": ["red", "blue", "blue-grey"]
 	}
 }
