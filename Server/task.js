@@ -2,7 +2,9 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var spawn = require('child_process').spawn;
 var livereload = require('gulp-livereload');
-var task = require('./../tools/main')
+var task = require('./../tools/main');
+var devTools = require('./dev_tools');
+var rename = require('gulp-rename');
 
 
 var gulpActivity = function(app, http) {
@@ -37,14 +39,25 @@ var gulpActivity = function(app, http) {
 		gulp.task('sass', function() {
 			return gulp.src('sass/main.sass')
 			    .pipe(sass().on('error', sass.logError))
-    			.pipe(gulp.dest('./css'));
+			    .pipe(rename("global-ui.min.css"))
+    			.pipe(gulp.dest('./dist'))
+    			.on('end', () => {
+	                    if(devTools) {
+	                    		devTools.copyCssFileToWiki();
+	                    } //only for dev
+	            });
+    		
 		})
+
 
 		gulp.task('watch', function(event) {
 			//livereload.listen();
 			gulp.watch(sass_files, ['sass']);
 			//gulp.watch(html, ['gulp-autoreload']);
 		})
+
+
+		
 
 
 		gulp.task('build_colors', function(event) {

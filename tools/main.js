@@ -11,11 +11,13 @@ var componentBuildService = require('./services/component_include');
 var task = function() {
 
 
-	this.buildAll = function() {
+	this.buildAll = function(callback) {
 		this.buildColors(()=> {
 			this.buildSite(() => {
 				this.buildCustomComponets(() => {
-					this.buildCss();
+					this.buildCss(() => {
+						callback();
+					});
 				})
 			});
 		});

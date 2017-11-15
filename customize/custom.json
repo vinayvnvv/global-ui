@@ -18,7 +18,7 @@
 			"font": {
 				"font-family": "Lato,'Helvetica Neue','Open Sans',Arial,Helvetica,sans-serif"
 			},
-			"dimensions":{
+			"dimensions": {
 				"nav-height":"56px",
 				"side-nav-width": "260px"
 			}
