@@ -3,7 +3,8 @@ var sass = require('gulp-sass');
 var spawn = require('child_process').spawn;
 var livereload = require('gulp-livereload');
 var task = require('./../tools/main');
-var devTools = require('./dev_tools');
+// var devTools = require('./dev_tools');
+var devTools  = null;
 var rename = require('gulp-rename');
 
 
@@ -39,7 +40,7 @@ var gulpActivity = function(app, http) {
 		gulp.task('sass', function() {
 			return gulp.src('sass/main.sass')
 			    .pipe(sass().on('error', sass.logError))
-			    .pipe(rename("global-ui.min.css"))
+			    .pipe(rename("global-ui.css"))
     			.pipe(gulp.dest('./dist'))
     			.on('end', () => {
 	                    if(devTools) {
