@@ -7,9 +7,18 @@ $cntr-fullhd-padding: 17%
 .layout-container
 	display: flex
 	width: 100%
-	height: 100%
-	position: fixed
 	flex-direction: column
+	& .navbar
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+	& .nav-container
+		margin-top: $nav-height
+		& .side-nav
+			position: fixed!important
+		& .nav-content
+			margin-left: $side-nav-width
 	&.scroll
 		height: initial
 		overflow: initial
